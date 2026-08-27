@@ -1,5 +1,12 @@
 # Stage A — First Model (WISDM Phone-Accelerometer, Teeth-Brushing Proxy)
 
+> **Superseded, kept for history.** This approach was later abandoned entirely (see the
+> Addendum below for why) and replaced with wearable stress detection on WESAD. The
+> model, its scripts, the confusion matrix image, and the raw WISDM dataset were all
+> deleted from the project on 2026-08-27 — this doc is the only surviving record of the
+> methodology and result, kept because the reasoning for abandoning it is good material
+> for the paper.
+
 ## Goal
 
 Build the first Stage A (motion/scratch) model. WISDM has no scratch label at all, so
@@ -56,7 +63,8 @@ Confusion matrix, test set (rows = true, columns = predicted):
 | **True not-teeth** | 3,193 (TN) | 135 (FP) |
 | **True teeth** | 134 (FN) | 45 (TP) |
 
-![Stage A confusion matrix](confusion_matrix_stage_a.png)
+*(Confusion matrix image deleted along with the rest of this model's artifacts — see note
+at top of this doc. Raw counts are in the table above.)*
 
 Top features by gain: `XSTANDDEV`, `YPEAK`, `ZPEAK`, `RESULTANT`, `XAVG`, `YMFCC0`,
 `YAVG` — dominated by axis standard deviation, peak values, and overall motion
@@ -85,7 +93,7 @@ scale).
 
 ## Addendum: a sharper explanation for the modest result
 
-After this was written, a paper the user added (Chun et al. 2021, the "ADAM sensor" —
+After this was written, a paper I added (Chun et al. 2021, the "ADAM sensor" —
 see `docs/paper_review_adam_sensor_2026-08-26.md`) gave a much more specific reason for
 the modest precision/recall here than just "teeth-brushing is an imperfect proxy for
 scratching." That paper shows the signal that actually distinguishes scratching from
@@ -108,7 +116,7 @@ vague "needs more data" caveat.
   pipeline (feature extraction → subject-level split → threshold tuning) on the actual
   target label.
 
-## Artifacts produced
+## Artifacts (deleted 2026-08-27, listed for the record only)
 
 - `dataset/WISDM/stage_a_features_phone_accel.csv` — feature table (91 features + label)
 - `dataset/WISDM/stage_a_subject_splits.csv` — subject → split assignment

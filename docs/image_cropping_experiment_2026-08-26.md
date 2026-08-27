@@ -55,7 +55,7 @@ CNN confusion matrix, cropped images, test set:
 | **True Normal** | 184 (TN) | 16 (FP) |
 | **True Eczema** | 2 (FN) | 213 (TP) |
 
-![Cropped CNN confusion matrix](confusion_matrix_cropped.png)
+![Cropped CNN confusion matrix](stage_b_cropped_cnn_confusion_matrix.png)
 
 **More tellingly: brightness didn't move either.** Measured directly on the cropped
 images' colour features: `MEAN_XYZ_2` (overall brightness) is **0.154 (Eczema) vs. 0.494
@@ -103,7 +103,7 @@ being trustworthy.
 - `dataset/manifest_cropped.csv`, `manifest_cropped_{train,val,test}.csv`
 - `dataset/color_features_cropped.csv`
 - `models/stage_b_resnet18_cropped.pt`, `models/stage_b_lightgbm_cropped.txt`
-- `docs/confusion_matrix_cropped.png`, `docs/confusion_matrix_lgbm_cropped.png`
+- `docs/stage_b_cropped_cnn_confusion_matrix.png`, `docs/stage_b_cropped_lightgbm_confusion_matrix.png`
 - Scripts: `scripts/crop_images.py`, `scripts/train_stage_b_cropped.py`,
   `scripts/eval_stage_b_cropped.py`, `scripts/extract_color_features_cropped.py`,
   `scripts/train_stage_b_lightgbm_cropped.py`, `scripts/make_confusion_matrix_cropped.py`,

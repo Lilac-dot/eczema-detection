@@ -26,5 +26,5 @@ for ax, cm, title in zip(axes, [cm_cnn, cm_lgbm],
 
 plt.suptitle("Eczema vs. Curated Similar-Looking Diseases — Test Set (n=831)")
 plt.tight_layout()
-plt.savefig(r"C:\Users\tishy\Documents\Honors\docs\confusion_matrix_curated.png", dpi=150)
+plt.savefig(r"C:\Users\tishy\Documents\Honors\docs\stage_b_curated_v1_cnn_vs_lightgbm_confusion_matrix.png", dpi=150)
 print("saved")

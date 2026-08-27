@@ -23,5 +23,5 @@ for i in range(2):
 
 fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
 plt.tight_layout()
-plt.savefig(r"C:\Users\tishy\Documents\Honors\docs\confusion_matrix_lgbm.png", dpi=150)
+plt.savefig(r"C:\Users\tishy\Documents\Honors\docs\stage_b_original_lightgbm_confusion_matrix.png", dpi=150)
 print("saved")

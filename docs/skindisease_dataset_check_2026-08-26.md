@@ -1,6 +1,6 @@
 # Checking the New "Human Skin Diseases (Image)" Dataset
 
-Source: Kaggle, `youssefmohmmed/human-skin-diseases-image`, downloaded by the user to
+Source: Kaggle, `youssefmohmmed/human-skin-diseases-image`, downloaded to
 `SkinDisease/{train,valid,test}/<class>/`. 20 classes, own pre-made train/valid/test
 split, 17,266 images total (13,114 train / 2,556 valid / 1,596 test).
 

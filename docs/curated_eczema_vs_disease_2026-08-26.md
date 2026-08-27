@@ -34,7 +34,7 @@ other:
 | F1 (Eczema) | 46.74% | 57.06% |
 | Test AUC | *(not computed)* | 0.854 |
 
-![Confusion matrices](confusion_matrix_curated.png)
+![Confusion matrices](stage_b_curated_v1_cnn_vs_lightgbm_confusion_matrix.png)
 
 **The CNN did noticeably worse than the simple colour-feature model** — the opposite of
 the original Eczema-vs-Normal result, where both models landed within half a point of
@@ -42,8 +42,8 @@ each other (95.66% vs. 95.18%). That reversal is itself informative, not a bug:
 
 - Last time, both models agreeing at ~95% was the red flag — it meant both had found the
   *same* shortcut (photo source/brightness). Here, the two models genuinely disagree,
-  which is what you'd expect when there's no shared shortcut left to exploit and the task
-  is actually hard.
+  which is the expected pattern when there's no shared shortcut left to exploit and the
+  task is actually hard.
 - The CNN here only had its last layer trained (the rest of the network stays exactly as
   pretrained on generic photos, per the same "frozen backbone" setup used throughout this
   project) — reasonable for the original easier/shortcut-prone task, but likely not enough
@@ -101,7 +101,7 @@ from the v1 CNN:
 
 Trained for up to 15 epochs (each now slower — more of the network needs a backward pass
 — roughly 5-10 min/epoch instead of ~5 min). The training run got killed by the
-environment at epoch 12/15 (a recurring issue with long background jobs this session);
+environment at epoch 12/15 (a recurring issue with long background training jobs);
 val accuracy had already plateaued around 87-88% for the last several epochs by then, so
 rather than restart for marginal-at-best gains, the best checkpoint (epoch 10, val_acc
 87.93%) was evaluated as final.
@@ -115,7 +115,7 @@ rather than restart for marginal-at-best gains, the best checkpoint (epoch 10, v
 | Recall (Eczema) | 71.15% | 58.97% | 62.18% |
 | F1 (Eczema) | 46.74% | **63.01%** | 57.06% |
 
-![Before/after confusion matrices](confusion_matrix_curated_v2.png)
+![Before/after confusion matrices](stage_b_curated_cnn_finetuning_confusion_matrix.png)
 
 The softer class weighting worked as intended: precision nearly doubled (35%→68%) at a
 smaller cost to recall (71%→59%), a much better trade-off, reflected in F1 climbing from
@@ -174,8 +174,8 @@ prediction time.
 
 ## Update — merging a third Eczema source and rebalancing to 50/50
 
-The user added a third dataset (`Eczema/`, 17 DermNet-style subtype subfolders, 1,395
-images) and asked to merge its Eczema images in and rebalance the dataset toward 50/50,
+A third dataset was added (`Eczema/`, 17 DermNet-style subtype subfolders, 1,395
+images), merging its Eczema images in and rebalancing the dataset toward 50/50,
 since the imbalance (~19% Eczema) was likely part of why recall/F1 lagged behind accuracy.
 
 **Curating which subfolders actually count as Eczema.** Not all 17 subfolders are
@@ -219,7 +219,7 @@ balanced):
 | Balanced LightGBM | 70.41% | 69.80% | 70.92% | 70.36% |
 | Balanced ensemble | 81.07% | 80.39% | 81.67% | 81.03% |
 
-![Balanced CNN confusion matrix](confusion_matrix_balanced.png)
+![Balanced CNN confusion matrix](stage_b_final_balanced_cnn_confusion_matrix.png)
 
 **Raw accuracy went down (89%→81%), but F1 went up a lot (68%→81%)** — and this is the
 expected, correct direction, not a regression. The earlier 89% was propped up by how easy
@@ -259,7 +259,7 @@ version to actually cite.
 - `SkinDisease/color_features_curated.csv`
 - `models/curated_resnet18.pt` (v1), `models/curated_resnet18_v2.pt` (fine-tuned, best),
   `models/curated_lightgbm.txt`
-- `docs/confusion_matrix_curated.png`, `docs/confusion_matrix_curated_v2.png`
+- `docs/stage_b_curated_v1_cnn_vs_lightgbm_confusion_matrix.png`, `docs/stage_b_curated_cnn_finetuning_confusion_matrix.png`
 - Scripts: `scripts/build_curated_subset.py`, `scripts/extract_color_features_curated.py`,
   `scripts/train_curated_lightgbm.py`, `scripts/train_curated_cnn.py`,
   `scripts/eval_curated_cnn.py`, `scripts/train_curated_cnn_v2.py`,

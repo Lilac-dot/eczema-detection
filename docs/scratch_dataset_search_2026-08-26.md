@@ -15,11 +15,11 @@ Kaggle, Zenodo, and PhysioNet, plus checking a 2025 systematic review of scratch
 methods and two individual scratch-detection papers directly for data-availability
 statements.
 
-## Update: a stronger finding than "no public dataset" (from a paper the user added)
+## Update: a stronger finding than "no public dataset" (from a paper added later)
 
-The user added `abf9405.pdf` (Chun et al. 2021, *Sci. Adv.*, the "ADAM sensor" paper —
-full review in `docs/paper_review_adam_sensor_2026-08-26.md`) after this search was
-first written. It sharpens the conclusion below considerably: scratching's actual
+`abf9405.pdf` (Chun et al. 2021, *Sci. Adv.*, the "ADAM sensor" paper —
+full review in `docs/paper_review_adam_sensor_2026-08-26.md`) was added after this search
+was first written. It sharpens the conclusion below considerably: scratching's actual
 discriminating signal is a **100–800 Hz acousto-mechanic vibration**, and the paper
 directly demonstrates that even a 100 Hz-sampling smartwatch (Apple Watch) can't capture
 it — the smartwatch algorithm they benchmarked against misclassified hand-waving as
@@ -121,7 +121,7 @@ I did not download or integrate any of the above (no public data to fetch) — t
 survey to inform the decision, not a change to the pipeline.
 
 Sources:
-- Chun et al. 2021, "A skin-conformable wireless sensor to objectively quantify symptoms of pruritus," *Sci. Adv.* 7, eabf9405 (added by user as `abf9405.pdf`; full review in `docs/paper_review_adam_sensor_2026-08-26.md`)
+- Chun et al. 2021, "A skin-conformable wireless sensor to objectively quantify symptoms of pruritus," *Sci. Adv.* 7, eabf9405 (`abf9405.pdf`; full review in `docs/paper_review_adam_sensor_2026-08-26.md`)
 - [SIGMA sensorised glove paper (data availability checked directly)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10748247/)
 - [Systematic review of scratch-detection methods (checked directly for public datasets)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12299226/)
 - [Quantifying Nocturnal Scratch via wrist actigraphy + ML](https://pmc.ncbi.nlm.nih.gov/articles/PMC11174528/)
