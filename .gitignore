@@ -1,0 +1,20 @@
+# Raw datasets -- large, publicly re-downloadable; see DATASETS.md for sources
+dataset/
+Eczema/
+SkinDisease/
+
+# Trained model weights -- large binaries, regenerate via scripts/
+models/
+
+# Reference papers (PDFs) and reports -- not part of the code/docs push
+*.pdf
+*.docx
+~$*.docx
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
