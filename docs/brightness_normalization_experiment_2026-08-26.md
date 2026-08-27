@@ -43,7 +43,7 @@ Confusion matrix, normalized model, test set:
 | **True Normal** | 186 (TN) | 14 (FP) |
 | **True Eczema** | 11 (FN) | 204 (TP) |
 
-![Normalized LightGBM confusion matrix](confusion_matrix_lgbm_normalized.png)
+![Normalized LightGBM confusion matrix](stage_b_normalized_lightgbm_confusion_matrix.png)
 
 Removing the entire brightness/exposure signal only cost about **1.2 percentage points**
 of accuracy. The classes are still almost perfectly separable.
@@ -92,7 +92,7 @@ more direct evidence behind it):
 
 - `dataset/color_features_normalized.csv`
 - `models/stage_b_lightgbm_normalized.txt`
-- `docs/confusion_matrix_lgbm_normalized.png`
+- `docs/stage_b_normalized_lightgbm_confusion_matrix.png`
 - Scripts: `scripts/extract_color_features_normalized.py`,
   `scripts/train_stage_b_lightgbm_normalized.py`,
   `scripts/make_confusion_matrix_lgbm_normalized.py`

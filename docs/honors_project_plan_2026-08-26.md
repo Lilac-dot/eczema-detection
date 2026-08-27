@@ -1,37 +1,39 @@
 # Honors Project Plan — 2026-08-26
 
-Based on everything established this session across `Progress_Log_2026-08-26.docx` and
-the dated docs in `docs/`. Three real decision points need your (and your advisor's)
-input, marked **DECISION** below — the rest is a proposed sequence I'd start on.
+Based on everything established so far across `Progress_Log_2026-08-26.docx` and
+the dated docs in `docs/`. Three real decision points needed input (marked **DECISION**
+below, since they involve judgment calls an advisor would normally weigh in on) — the
+rest is a proposed sequence. (Historical planning snapshot — see later docs for how each
+DECISION was actually resolved: [[curated-eczema-model]] for Stage B,
+[[wesad-stress-model]] for Stage A, [[stage-c-fusion-pipeline]] for Stage C.)
 
-## Where things actually stand right now
+## Where things actually stood at this point
 
 - **Stage A (motion/scratch):** WISDM cleaned, first model built (LightGBM, teeth-brushing
-  proxy, subject-level split, test AUC 0.83, modest F1 ~0.25). A paper you found (Chun et
-  al. 2021, ADAM sensor) gave a specific, literature-backed reason the ceiling is low:
-  scratch's real signal is 100–800 Hz, WISDM samples at 20 Hz. No public scratch-labelled
-  dataset exists anywhere (checked a systematic review + 2 papers directly — all say "data
-  on request" at best).
+  proxy, subject-level split, test AUC 0.83, modest F1 ~0.25). A paper added to the project
+  (Chun et al. 2021, ADAM sensor) gave a specific, literature-backed reason the ceiling is
+  low: scratch's real signal is 100–800 Hz, WISDM samples at 20 Hz. No public
+  scratch-labelled dataset exists anywhere (checked a systematic review + 2 papers directly
+  — all say "data on request" at best).
 - **Stage B (image severity):** Original Eczema/Normal set (2,757 images) cleaned, two
   models trained (CNN 95.66%, LightGBM 95.18%) — both proven to be inflated by a
   photo-source shortcut, not real lesion detection. Two candidate fixes (brightness
   normalization, background cropping) were both tested and both failed to remove it. A
   second dataset (`SkinDisease/`, 20 disease classes incl. Eczema, DermNet-style
-  same-source images) looks like it could genuinely fix this for Eczema-vs-other-disease
-  — currently finishing a corruption/duplicate cleaning pass on it. Its own "Normal" class
-  is separately confirmed contaminated (not real skin content, inconsistent across its own
-  train/test split) and shouldn't be used.
+  same-source images) looked like it could genuinely fix this for Eczema-vs-other-disease
+  — a corruption/duplicate cleaning pass was in progress on it at this point. Its own
+  "Normal" class was separately confirmed contaminated (not real skin content, inconsistent
+  across its own train/test split) and wasn't usable.
 - **Stage C (fusion):** not started — blocked on A and B each producing a trustworthy
-  per-session output first.
+  output first.
 - **Ethics/IRB:** unchanged from the original report — still the long-lead-time item
-  blocking real patient data, and now also blocking any self-collected scratch pilot.
+  blocking real patient data, and also blocking any self-collected scratch pilot.
 
 ## Proposed sequence
 
 ### 1. Finish Stage B's rebuild (in progress, days not weeks)
-- Finish cleaning `SkinDisease/` (corruption/duplicate check running now, plus the
-  cross-split duplicate check specifically, since a train/test leak would break
-  evaluation validity).
+- Finish cleaning `SkinDisease/` (corruption/duplicate check, plus the cross-split
+  duplicate check specifically, since a train/test leak would break evaluation validity).
 - **DECISION: which classes count as "other skin condition"?** All 19 non-Eczema classes
   lumped together, or a curated subset that's actually visually similar to eczema
   (candidates: Psoriasis, Lichen, Seborrh_Keratoses, Rosacea, Tinea, Candidiasis)? A
@@ -44,8 +46,8 @@ input, marked **DECISION** below — the rest is a proposed sequence I'd start o
   new result, not just the CNN.
 - **DECISION: what happens to "Normal"?** Recommendation: drop it from Stage B entirely
   given the contamination evidence, and state that explicitly as a scoped-out limitation
-  in the paper, backed by the investigation you already have documented. Revisit only if
-  a properly single-sourced normal-skin set turns up later.
+  in the paper, backed by the documented investigation. Revisit only if a properly
+  single-sourced normal-skin set turns up later.
 
 ### 2. Decide the Stage A path
 **DECISION: how much further to invest in Stage A given the sampling-rate ceiling?**
@@ -59,14 +61,14 @@ Three options, not mutually exclusive:
 - (c) **Scope a small self-collected pilot** (a few volunteers, scratch vs. a few control
   gestures) — the strongest option, but needs a higher-sampling-rate device than a typical
   smartwatch to actually capture the discriminating signal, and needs IRB sign-off, which
-  is the same bottleneck already blocking real patient data. This is the one worth
-  starting the paperwork conversation for now, regardless of which option you pick, since
+  is the same bottleneck already blocking real patient data. This was the item worth
+  starting the paperwork conversation for regardless of which option got picked, since
   it's the longest lead-time item in this entire plan.
 
 ### 3. Stage C (fusion) — once A and B each have a settled output
-Not enough is fixed yet to design this in detail. Once Stage B's Eczema-vs-other-disease
-model exists and Stage A's path is decided, this needs its own short design pass:
-what per-session summary each stage actually hands off (a severity score from B, a
+Not enough was fixed yet at this point to design this in detail. Once Stage B's
+Eczema-vs-other-disease model exists and Stage A's path is decided, this needed its own
+short design pass: what summary each stage actually hands off (a severity score from B, a
 scratch-frequency/intensity estimate from A), and a first fusion model (gradient
 boosting, consistent with what's worked well elsewhere in this project).
 
@@ -82,15 +84,15 @@ genuinely stronger content than a single clean headline number:
 - Explicit scoping decisions (dropping "Normal," choosing a disease-class subset) stated
   as deliberate, evidenced choices — not silently made and left for a reader to notice.
 
-## Suggested near-term priority order
+## Suggested near-term priority order (at the time)
 
 1. Finish `SkinDisease` cleaning (already running).
-2. You + advisor: decide the two Stage B DECISIONs above (class subset, Normal's fate).
-3. Build Eczema-vs-other-disease (both models) — this is the highest-payoff, lowest-effort
-   win available right now.
-4. Start the IRB conversation in parallel — it's the slowest-moving piece, so it shouldn't
+2. Decide the two Stage B DECISIONs above (class subset, Normal's fate).
+3. Build Eczema-vs-other-disease (both models) — the highest-payoff, lowest-effort win
+   available at that point.
+4. Start the IRB conversation in parallel — the slowest-moving piece, so it shouldn't
    wait for 1–3 to finish.
-5. Decide the Stage A path once IRB timeline is clearer (an IRB approval that's already
-   in motion changes whether option (c) is realistic on your timeline).
+5. Decide the Stage A path once IRB timeline is clearer (an IRB approval already in
+   motion would change whether option (c) is realistic).
 6. Stage C design pass.
 7. Writing pass.

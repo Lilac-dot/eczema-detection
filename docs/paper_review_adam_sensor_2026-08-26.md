@@ -1,6 +1,6 @@
 # Paper Review — Chun et al. 2021, "A Skin-Conformable Wireless Sensor to Objectively Quantify Symptoms of Pruritus" (Sci. Adv., the ADAM sensor)
 
-Source file: `abf9405.pdf` (added to project root by the user). Full citation: K. S. Chun
+Source file: `abf9405.pdf`. Full citation: K. S. Chun
 et al., *Sci. Adv.* 7, eabf9405 (2021).
 
 ## What the paper does
