@@ -106,11 +106,77 @@ single-timepoint pairing already flagged as missing.
 
 ## Status and next steps
 
-Not yet implemented in code or in the report. When it is:
+**Implemented (2026-09-14)**: `trigger_index()` and `flare_risk()` added to
+`fusion_pipeline.py` alongside (not replacing) the existing `fuse()` composite score.
+`trigger_index()` takes named trigger scores (e.g. `trigger_index(stress=0.8)`) and
+averages them, so it's already written to accept more than one trigger without a redesign.
+`demo()` now prints both `fuse()` and `flare_risk()` side by side for comparison.
 
-- Implement `flare_risk()` in `fusion_pipeline.py` alongside (not replacing) the existing
-  `fuse()` composite score.
-- Rewrite Section 6 of the report around this design, with the same "not yet validated" framing
-  used throughout.
-- Longer-term: add skin temperature as a second trigger once the stress-only version is written
-  up and working.
+**Update (2026-09-14, later the same day)**: **Stage A-sleep** was built and trained on
+AAUWSS (13 subjects, overnight, same Empatica E4 sensor set as WESAD) — the "Sleep"
+trigger candidate named below, previously blocked because WESAD's single ~1-hour lab
+session can't supply overnight sleep data. It does not work: LOSO-CV mean AUC 0.46
+(chance), corroborated by two literature-standard actigraphy formulas (Cole-Kripke 1992,
+Sadeh 1994) also scoring at chance on the same data — see
+`docs/aauwss_sleep_model_results_2026-09-14.md` for the full result and the diagnostics
+run to rule out an implementation bug before accepting it. `trigger_index(stress=...,
+sleep=...)` already supports a second named score with no interface change, but is not
+called with a sleep score in practice, since Stage A-sleep is a documented negative
+result, not a working second trigger.
+
+Remaining:
+- Longer-term: add WESAD's own skin-temperature channel as a further trigger (this is the
+  single-point wrist temperature sensor already collected in WESAD/AAUWSS, distinct from
+  lesion-vs-surrounding-skin thermal *imaging*, which remains out of scope — see
+  `docs/architecture_v2_2026-09-14.md`).
+- If ever revisited: Stage A-sleep's negative result used LightGBM on hand-crafted
+  features; a raw-signal CNN comparison was attempted but never completed (development
+  machine ran out of memory, then was too slow to finish even one LOSO fold) — this
+  remains a genuinely open question, not a second negative data point.
+
+## Refinement (2026-09-14): noisy-OR trigger combination, and a softening knob considered and partly rejected
+
+The user asked whether the plain-product gate (`flare_risk = image_score × trigger_index`,
+with `trigger_index` a plain mean of the individual trigger scores) is the best available
+formula, and to check the literature for something better. Two independent design
+questions came out of that, with two different outcomes:
+
+**1. Combining multiple triggers into `trigger_index` — changed.** A plain mean dilutes a
+high trigger toward the middle whenever a calmer second trigger is averaged in (e.g. high
+stress 0.8 + calm sleep 0.15 averages to 0.475, even though the high stress reading alone
+is arguably still the concerning signal). **Noisy-OR** — `trigger_index = 1 - ∏(1 -
+score_i)` — is the standard way multiple independent risk factors are combined in Bayesian
+medical-diagnosis networks (Pearl, 1988; e.g. the QMR-DT model), and fits this case better:
+it rises toward whichever trigger is most elevated rather than averaging them together.
+With exactly one trigger score this is numerically identical to a mean of one value (both
+just return that value), so nothing changes in practice since Stage A-sleep (built,
+trained, but a documented negative result — see the update above) isn't used as a real
+second trigger — `fusion_pipeline.py`'s `trigger_index()` now uses this formula, and
+`demo()` prints a synthetic worked example showing the mean vs. noisy-OR difference
+directly, rather than a real second trigger score.
+
+**2. Softening the outer product against one noisy score — added as an off-by-default
+option, not a new default.** Kittler et al. (1998) — already cited above — found that pure
+product combination of scores, despite having the cleanest theoretical justification under
+independence, is more fragile in practice to one noisy or miscalibrated input than blended
+alternatives. The obvious fix borrowed from that literature is a symmetric weighted
+geometric mean of `image_score` and `trigger_idx` (e.g. `image_score^0.5 ×
+trigger_idx^0.5`). **This was tried and deliberately rejected as the default**: it can push
+`flare_risk` ABOVE `image_score` whenever `trigger_idx > image_score` (e.g. image_score=0.3,
+trigger_idx=0.9 gives a geometric mean of ≈0.52, not ≤0.3), silently breaking the
+"`flare_risk` can never exceed `image_score`" gating property this design was built around
+and that the report already states as a deliberate feature (Section 6.2). Instead,
+`flare_risk()` gained an optional `gamma` exponent applied only to `trigger_idx`:
+`flare_risk = image_score × trigger_idx**gamma`. Since `trigger_idx**gamma ≤ 1` for any
+`gamma > 0`, the bound is preserved for every value of `gamma`, while `gamma < 1` still
+softens how harshly one low trigger reading can suppress the result (e.g. `0.01**0.5 =
+0.1`, not as punishing as the raw `0.01`). Left at `gamma=1.0` (the original, unmodified
+behaviour) by default, same reasoning as every other unfitted weight in this pipeline: no
+paired dataset exists to tune it against, so a non-default value would be an unjustified
+guess dressed up as an improvement.
+
+**What to cite for this addition**: Pearl, J. (1988). *Probabilistic Reasoning in
+Intelligent Systems: Networks of Plausible Inference.* Morgan Kaufmann — the original
+noisy-OR formulation, applied here in the same spirit as its use in Bayesian
+medical-diagnosis networks (e.g. QMR-DT) for combining multiple independent risk/finding
+signals.

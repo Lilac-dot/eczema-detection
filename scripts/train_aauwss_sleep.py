@@ -1,39 +1,28 @@
 """
-Train the WESAD stress classifier: LightGBM binary classifier on wrist-only windowed
-features (dataset/WESAD/wesad_wrist_features.csv), predicting stress vs not-stress
-(baseline/amusement).
+Train the AAUWSS sleep-disruption classifier: LightGBM binary classifier on wrist-only
+windowed features (dataset/AAUWSS/aauwss_features.csv), predicting Wake (disrupted) vs
+Asleep (N1/N2/N3/REM combined).
 
-Evaluation: LEAVE-ONE-SUBJECT-OUT cross-validation (LOSO-CV), not a single train/val/test
-split -- WESAD has only 15 subjects, too few for one held-out split to give a reliable
-estimate (a single unlucky test subject could swing the number a lot). This is also the
-same protocol Chun et al. 2021 uses for the closely related scratch-detection task, and
-matches the subject-level-split principle already established for Stage A (WISDM) --
-see docs/paper_review_adam_sensor_2026-08-26.md.
+Mirrors train_wesad_stress.py exactly -- same LOSO-CV protocol, same threshold-tuning
+approach, same reliability reporting -- since Stage A-sleep follows Stage A-stress's
+architectural pattern on the same sensor set (see docs/architecture_v2_2026-09-14.md).
+13 subjects (vs. WESAD's 15) is similarly too few for a single held-out split to be
+reliable.
 
-For each of the 15 folds: hold out one subject as test, hold out one more (rotating,
-deterministic given seed) as validation for early stopping and threshold tuning, train on
-the remaining 13. Report per-fold AUC/F1 plus the mean +/- std across folds (the standard
-way LOSO-CV results are reported in this literature) and a pooled confusion matrix.
-
-Also trains and saves a FINAL model on all 15 subjects for actual use in the Stage C
-fusion pipeline (models/wesad_stress_lightgbm.txt) -- its decision threshold is the
-median of the 15 per-fold thresholds, since a model trained on all subjects has no
-independent validation subject left to tune one directly.
+Also trains and saves a FINAL model on all 13 subjects for use in the Stage C fusion
+pipeline (models/aauwss_sleep_lightgbm.txt), threshold = median of the 13 per-fold
+thresholds, same reasoning as train_wesad_stress.py.
 """
-import csv
-import random
-from collections import defaultdict
-
 import numpy as np
 import pandas as pd
 import lightgbm as lgb
 from sklearn.metrics import roc_auc_score
 
-from paths import ROOT, WESAD_DIR
+from paths import ROOT, AAUWSS_DIR
 from loso_report import print_reliability_summary
 
-FEATURES_CSV = WESAD_DIR / "wesad_wrist_features.csv"
-FOLD_RESULTS_CSV = WESAD_DIR / "wesad_loso_fold_results.csv"
+FEATURES_CSV = AAUWSS_DIR / "aauwss_features.csv"
+FOLD_RESULTS_CSV = AAUWSS_DIR / "aauwss_loso_fold_results.csv"
 SEED = 42
 
 
@@ -72,20 +61,21 @@ PARAMS = {
     "verbosity": -1,
     "seed": SEED,
     "learning_rate": 0.05,
-    "num_leaves": 15,  # small: only ~13 subjects/few thousand windows per fold, keep it modest
+    "num_leaves": 15,  # small: only ~12 subjects/few thousand windows per fold, keep it modest
     "is_unbalance": True,
 }
 
 
 def main():
     df = pd.read_csv(FEATURES_CSV)
-    # "condition" is the raw 1/2/3 label build_wesad_features.py kept only to compute the
-    # personal-baseline "_rel" features -- condition==2 means stress, i.e. it's a direct
-    # encoding of "label", so it must never be used as a model input.
-    feat_cols = [c for c in df.columns if c not in ("subject_id", "label", "condition")]
-    subjects = sorted(df["subject_id"].unique(), key=lambda s: int(s[1:]))
+    # "condition" and "stage" are kept only to compute the personal-baseline "_rel"
+    # features and for readability -- condition directly encodes whether label==0, and
+    # stage directly encodes label, so neither must ever be used as a model input.
+    feat_cols = [c for c in df.columns if c not in
+                 ("subject_id", "label", "condition", "stage")]
+    subjects = sorted(df["subject_id"].unique())
     print(f"Subjects: {len(subjects)} -> {subjects}")
-    print(f"Windows: {len(df)}  Stress: {df['label'].sum()} ({100*df['label'].mean():.1f}%)")
+    print(f"Windows: {len(df)}  Wake: {df['label'].sum()} ({100*df['label'].mean():.1f}%)")
     print(f"Features: {len(feat_cols)}")
 
     fold_rows = []
@@ -93,7 +83,7 @@ def main():
 
     for i, test_subj in enumerate(subjects):
         remaining = [s for s in subjects if s != test_subj]
-        val_subj = remaining[i % len(remaining)]  # deterministic rotating choice
+        val_subj = remaining[i % len(remaining)]
         train_subjs = [s for s in remaining if s != val_subj]
 
         train_df = df[df["subject_id"].isin(train_subjs)]
@@ -132,7 +122,7 @@ def main():
     fold_df = pd.DataFrame(fold_rows)
     fold_df.to_csv(FOLD_RESULTS_CSV, index=False)
 
-    print("\n=== LOSO-CV summary across 15 folds ===")
+    print("\n=== LOSO-CV summary across 13 folds ===")
     print(f"AUC:       mean={fold_df['test_auc'].mean():.4f}  std={fold_df['test_auc'].std():.4f}")
     print(f"F1:        mean={fold_df['f1'].mean():.4f}  std={fold_df['f1'].std():.4f}")
     print(f"Accuracy:  mean={fold_df['acc'].mean():.4f}  std={fold_df['acc'].std():.4f}")
@@ -151,20 +141,17 @@ def main():
           f"Precision={pooled['precision']:.4f} Recall={pooled['recall']:.4f} F1={pooled['f1']:.4f}")
     print(f"TN={pooled['tn']} FP={pooled['fp']} FN={pooled['fn']} TP={pooled['tp']}")
 
-    # Final deployable model: train on ALL subjects. No held-out set left for early
-    # stopping, so use the median best_iteration across the 15 CV folds instead --
-    # a principled stand-in for the round count that would otherwise be tuned live.
     final_rounds = int(fold_df["best_iteration"].median())
     X_all, y_all = df[feat_cols].values, df["label"].values
     final_set = lgb.Dataset(X_all, label=y_all, feature_name=feat_cols)
     final_model = lgb.train(PARAMS, final_set, num_boost_round=final_rounds)
-    final_model.save_model(str(ROOT / "models" / "wesad_stress_lightgbm.txt"))
+    final_model.save_model(str(ROOT / "models" / "aauwss_sleep_lightgbm.txt"))
 
-    with open(ROOT / "models" / "wesad_stress_threshold.txt", "w") as f:
+    with open(ROOT / "models" / "aauwss_sleep_threshold.txt", "w") as f:
         f.write(str(pooled_thr))
 
-    print(f"\nFinal model saved: models/wesad_stress_lightgbm.txt")
-    print(f"Deployment threshold saved: models/wesad_stress_threshold.txt ({pooled_thr:.3f})")
+    print(f"\nFinal model saved: models/aauwss_sleep_lightgbm.txt")
+    print(f"Deployment threshold saved: models/aauwss_sleep_threshold.txt ({pooled_thr:.3f})")
 
     importances = sorted(zip(feat_cols, final_model.feature_importance(importance_type="gain")),
                           key=lambda x: -x[1])

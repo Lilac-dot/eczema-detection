@@ -21,14 +21,12 @@ Writes:
 import csv
 import hashlib
 import random
-from pathlib import Path
 from collections import defaultdict, Counter
 from PIL import Image
 import imagehash
 
-ORIG_ROOT = Path(r"C:\Users\tishy\Documents\Honors\dataset")
-SKINDISEASE_ROOT = Path(r"C:\Users\tishy\Documents\Honors\SkinDisease")
-NEW_ECZEMA_ROOT = Path(r"C:\Users\tishy\Documents\Honors\Eczema")
+from paths import DATASET_DIR as ORIG_ROOT, SKINDISEASE_DIR as SKINDISEASE_ROOT, ECZEMA_DIR as NEW_ECZEMA_ROOT
+
 random.seed(42)
 
 OTHER_CLASSES = ["Psoriasis", "Tinea", "Candidiasis", "Infestations_Bites", "Lichen",
@@ -65,6 +63,25 @@ def dedup_against(candidates, known_md5, known_phash):
     return survivors
 
 
+def find_cross_class_conflicts(candidates, known_md5, known_phash):
+    """Return [(path, matched_path)] for candidates that are exact/near duplicates of
+    something already in known_md5/known_phash. Used to catch the same underlying photo
+    carrying two different disease labels across sources -- a labeling conflict, not a
+    simple redundancy (dedup_against only ever checked Eczema against Eczema; this checks
+    the "Other" disease pools against the finalized Eczema pool)."""
+    conflicts = []
+    for p in candidates:
+        digest = md5_of(p)
+        if digest in known_md5:
+            conflicts.append((p, known_md5[digest]))
+            continue
+        ph = phash_of(p)
+        match = next((known_phash[h] for h in known_phash if ph - h <= 4), None)
+        if match is not None:
+            conflicts.append((p, match))
+    return conflicts
+
+
 def load_class(manifest, class_col, class_val):
     with open(manifest, newline="", encoding="utf-8") as f:
         return [row["path"] for row in csv.DictReader(f) if row[class_col] == class_val]
@@ -96,8 +113,29 @@ def main():
     # Other classes, unchanged content, from SkinDisease
     other_by_class = {cls: load_class(SKINDISEASE_ROOT / "manifest_clean.csv", "class", cls)
                        for cls in OTHER_CLASSES}
+
+    # Cross-class integrity check: dedup_against above only ever compared Eczema sources
+    # against each other. The same underlying photo can't legitimately carry both an
+    # Eczema label and a distinct disease label, so check the "Other" pools against the
+    # now-finalized Eczema pool too, and drop any match from BOTH sides (we have no way
+    # to know which of the two labels is correct, so exclude rather than guess).
+    print("\nChecking Other-class pools for cross-class duplicates against the Eczema pool...")
+    conflicting_eczema_paths = set()
+    for cls in OTHER_CLASSES:
+        conflicts = find_cross_class_conflicts(other_by_class[cls], known_md5, known_phash)
+        if conflicts:
+            print(f"  {cls}: {len(conflicts)} image(s) duplicate an Eczema-labeled photo -- dropping from both")
+            conflict_paths = {p for p, _ in conflicts}
+            other_by_class[cls] = [p for p in other_by_class[cls] if p not in conflict_paths]
+            conflicting_eczema_paths.update(ez_p for _, ez_p in conflicts)
+    if conflicting_eczema_paths:
+        all_eczema = [p for p in all_eczema if p not in conflicting_eczema_paths]
+        print(f"  Removed {len(conflicting_eczema_paths)} conflicting image(s) from the Eczema pool")
+    else:
+        print("  No cross-class conflicts found")
+
     other_total = sum(len(v) for v in other_by_class.values())
-    print(f"Other classes pool (before downsampling): {other_total}")
+    print(f"\nOther classes pool (before downsampling): {other_total}")
 
     # Downsample Other proportionally to match the Eczema count for ~50/50
     target_other_total = len(all_eczema)

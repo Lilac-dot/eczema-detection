@@ -23,7 +23,8 @@ from collections import defaultdict
 from PIL import Image
 import imagehash
 
-ROOT = Path(r"C:\Users\tishy\Documents\Honors\SkinDisease")
+from paths import SKINDISEASE_DIR as ROOT
+
 SPLITS = ["train", "valid", "test"]
 QUARANTINE = ROOT / "_quarantine"
 MIN_DIM = 64

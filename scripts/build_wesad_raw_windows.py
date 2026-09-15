@@ -23,12 +23,12 @@ Writes dataset/WESAD/wesad_raw_windows.npz with arrays:
   EDA (N,120)  TEMP (N,120)  BVP (N,1920)  ACC (N,960,3)  label (N,)  subject (N,) [strings]
 """
 import pickle
-from pathlib import Path
 
 import numpy as np
 
-WESAD_DIR = Path(r"C:\Users\tishy\Documents\Honors\dataset\WESAD")
-OUT_NPZ = Path(r"C:\Users\tishy\Documents\Honors\dataset\WESAD\wesad_raw_windows.npz")
+from paths import WESAD_DIR
+
+OUT_NPZ = WESAD_DIR / "wesad_raw_windows.npz"
 
 WINDOW_SEC = 30
 STRIDE_SEC = 15
@@ -68,7 +68,7 @@ def process_subject(subject_dir):
     total_sec = n_label / LABEL_HZ
     window_lbl_samples = WINDOW_SEC * LABEL_HZ
 
-    rows = {"EDA": [], "TEMP": [], "BVP": [], "ACC": [], "label": [], "subject": []}
+    rows = {"EDA": [], "TEMP": [], "BVP": [], "ACC": [], "label": [], "condition": [], "subject": []}
 
     t = 0.0
     while t + WINDOW_SEC <= total_sec:
@@ -97,6 +97,9 @@ def process_subject(subject_dir):
         for mod in FS:
             rows[mod].append(window_data[mod].astype(np.float32))
         rows["label"].append(int(lbl == STRESS_LABEL))
+        rows["condition"].append(int(lbl))  # raw 1=baseline/2=stress/3=amusement,
+        # kept (not just the binary label) so training can identify each subject's own
+        # baseline-condition windows for per-subject calibration normalization.
         rows["subject"].append(subject_id)
         t += STRIDE_SEC
 
@@ -110,7 +113,7 @@ def main():
     )
     print(f"Found {len(subject_dirs)} subject directories")
 
-    all_rows = {"EDA": [], "TEMP": [], "BVP": [], "ACC": [], "label": [], "subject": []}
+    all_rows = {"EDA": [], "TEMP": [], "BVP": [], "ACC": [], "label": [], "condition": [], "subject": []}
     for sd in subject_dirs:
         rows = process_subject(sd)
         n = len(rows["label"])
@@ -124,12 +127,15 @@ def main():
     BVP = np.stack(all_rows["BVP"])
     ACC = np.stack(all_rows["ACC"])
     label = np.array(all_rows["label"], dtype=np.int64)
+    condition = np.array(all_rows["condition"], dtype=np.int64)
     subject = np.array(all_rows["subject"])
 
     print(f"\nShapes: EDA={EDA.shape} TEMP={TEMP.shape} BVP={BVP.shape} ACC={ACC.shape}")
     print(f"Total windows: {len(label)}  Stress: {label.sum()} ({100*label.mean():.1f}%)")
+    print(f"Baseline-condition windows (for per-subject calibration): {(condition == 1).sum()}")
 
-    np.savez_compressed(OUT_NPZ, EDA=EDA, TEMP=TEMP, BVP=BVP, ACC=ACC, label=label, subject=subject)
+    np.savez_compressed(OUT_NPZ, EDA=EDA, TEMP=TEMP, BVP=BVP, ACC=ACC, label=label,
+                         condition=condition, subject=subject)
     print(f"Saved: {OUT_NPZ}")
 
 

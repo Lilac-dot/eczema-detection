@@ -1,11 +1,17 @@
 """
-CNN on the final 50/50-balanced dataset (manifest_curated_v3_*). Since the data itself
-is now balanced, no class weighting or oversampling is needed -- plain cross-entropy.
-Same partial fine-tuning as the earlier v2 CNN (layer4 + fc unfrozen, discriminative
-learning rates), which is what got the CNN from 69.55% to 87.00% on the previous
-(imbalanced) curated dataset.
+Experiment 1 (external-generalization improvement attempt): same architecture/recipe as
+train_curated_cnn_balanced.py, same internal-only training data, but with heavier/more
+diverse augmentation aimed at reducing sensitivity to source-specific photographic
+conventions (framing/zoom, focus, compression) -- since Phase 1 (docs/external_validation_
+2026-09-15.md) found the deployed model's failure on external data isn't the original
+brightness shortcut. No external data is touched here, so this is directly zero-shot
+comparable to Phase 1's SCIN/SkinDisNet numbers.
+
+Saves to models/curated_resnet18_augmented.pt -- never overwrites the deployed
+curated_resnet18_balanced.pt.
 """
 import csv
+import io
 import random
 import time
 
@@ -14,7 +20,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, models
-from PIL import Image
+from PIL import Image, ImageFilter
 
 from paths import SKINDISEASE_DIR as ROOT, MODELS_DIR
 MODELS_DIR.mkdir(exist_ok=True)
@@ -26,11 +32,41 @@ FC_LR = 1e-4
 BACKBONE_LR = 1e-5
 SEED = 42
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+OUT_PATH = MODELS_DIR / "curated_resnet18_augmented.pt"
 
 random.seed(SEED)
 np.random.seed(SEED)
 torch.manual_seed(SEED)
 torch.cuda.manual_seed_all(SEED)
+
+
+class RandomJPEGDegrade:
+    """Simulates a different compression pipeline than whatever produced the source
+    archive's images, by re-encoding through JPEG at a random low-ish quality."""
+    def __init__(self, p=0.3, quality_range=(30, 80)):
+        self.p = p
+        self.quality_range = quality_range
+
+    def __call__(self, img):
+        if random.random() > self.p:
+            return img
+        q = random.randint(*self.quality_range)
+        buf = io.BytesIO()
+        img.save(buf, format="JPEG", quality=q)
+        buf.seek(0)
+        return Image.open(buf).convert("RGB")
+
+
+class RandomGaussianBlur:
+    def __init__(self, p=0.3, radius_range=(0.3, 2.0)):
+        self.p = p
+        self.radius_range = radius_range
+
+    def __call__(self, img):
+        if random.random() > self.p:
+            return img
+        r = random.uniform(*self.radius_range)
+        return img.filter(ImageFilter.GaussianBlur(radius=r))
 
 
 class CuratedDataset(Dataset):
@@ -53,11 +89,18 @@ class CuratedDataset(Dataset):
 
 def make_transforms():
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    # RandomResizedCrop stands in for the fixed Resize -- simulates different
+    # framing/zoom/distance-from-lesion across photographic sources.
     train_tf = transforms.Compose([
-        transforms.Resize((IMG_SIZE, IMG_SIZE)),
+        transforms.RandomResizedCrop(IMG_SIZE, scale=(0.6, 1.0), ratio=(0.85, 1.15)),
         transforms.RandomHorizontalFlip(),
-        transforms.RandomRotation(15),
-        transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
+        transforms.RandomVerticalFlip(p=0.2),
+        transforms.RandomRotation(20),
+        transforms.ColorJitter(brightness=0.35, contrast=0.35, saturation=0.35, hue=0.05),
+        RandomGaussianBlur(p=0.3),
+        transforms.RandomAutocontrast(p=0.3),
+        transforms.RandomEqualize(p=0.15),
+        RandomJPEGDegrade(p=0.3),
         transforms.ToTensor(),
         normalize,
     ])
@@ -83,10 +126,6 @@ def build_model():
 
 
 def set_train_mode(model):
-    """model.train() would also flip frozen layers' BatchNorm back into training
-    mode, letting their running_mean/running_var keep drifting on this dataset even
-    though their weights never update. Keep the frozen backbone (conv1/bn1/layer1-3)
-    in eval mode so only the unfrozen layer4+fc actually train."""
     model.train()
     for name in FROZEN_SUBMODULES:
         getattr(model, name).eval()
@@ -129,6 +168,7 @@ def main():
     ])
 
     best_val_acc = 0.0
+    t_start = time.time()
     for epoch in range(1, EPOCHS + 1):
         t0 = time.time()
         train_loss, train_acc = run_epoch(model, train_loader, criterion, optimizer)
@@ -139,11 +179,13 @@ def main():
               f"val_loss={val_loss:.4f} val_acc={val_acc:.4f}")
         if val_acc > best_val_acc:
             best_val_acc = val_acc
-            torch.save(model.state_dict(), MODELS_DIR / "curated_resnet18_balanced.pt")
+            torch.save(model.state_dict(), OUT_PATH)
             print(f"  -> saved new best model (val_acc={val_acc:.4f})")
 
+    total_dt = time.time() - t_start
     print(f"\nBest val accuracy: {best_val_acc:.4f}")
-    print(f"Model saved to {MODELS_DIR / 'curated_resnet18_balanced.pt'}")
+    print(f"Total wall-clock time: {total_dt:.1f}s ({total_dt/60:.1f} min)")
+    print(f"Model saved to {OUT_PATH}")
 
 
 if __name__ == "__main__":

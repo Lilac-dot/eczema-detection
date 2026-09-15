@@ -16,7 +16,8 @@ from pathlib import Path
 from PIL import Image
 import imagehash
 
-ROOT = Path(r"C:\Users\tishy\Documents\Honors\dataset")
+from paths import DATASET_DIR as ROOT
+
 CLASSES = ["Eczema", "Normal"]
 QUARANTINE = ROOT / "_quarantine"
 MIN_DIM = 64  # px, below this we treat as a thumbnail/icon, not a usable photo

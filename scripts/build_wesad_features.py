@@ -30,17 +30,16 @@ Writes dataset/WESAD/wesad_wrist_features.csv:
   subject_id, label (0=not-stress, 1=stress), <feature columns>
 """
 import pickle
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-WESAD_DIR = Path(r"C:\Users\tishy\Documents\Honors\dataset\WESAD")
-OUT_CSV = Path(r"C:\Users\tishy\Documents\Honors\dataset\WESAD\wesad_wrist_features.csv")
+from paths import WESAD_DIR
+from wesad_features import WINDOW_SEC, FS, extract_window_features
 
-WINDOW_SEC = 60
+OUT_CSV = WESAD_DIR / "wesad_wrist_features.csv"
+
 LABEL_HZ = 700  # chest label channel sampling rate; all WESAD signals share this clock origin
-FS = {"EDA": 4, "TEMP": 4, "BVP": 64, "ACC": 32}
 KEEP_LABELS = {1, 2, 3}  # baseline, stress, amusement
 STRESS_LABEL = 2
 MAJORITY_THRESHOLD = 0.90
@@ -66,49 +65,6 @@ def window_label(label_slice):
     if top_label not in KEEP_LABELS:
         return None
     return int(top_label)
-
-
-def extract_window_features(sig_slices):
-    """sig_slices: dict modality -> 1D (or Nx3 for ACC) array covering one window."""
-    feats = {}
-
-    for mod in ("EDA", "TEMP"):
-        x = sig_slices[mod].astype(np.float64).ravel()
-        feats[f"{mod}_mean"] = x.mean()
-        feats[f"{mod}_std"] = x.std()
-        feats[f"{mod}_min"] = x.min()
-        feats[f"{mod}_max"] = x.max()
-        feats[f"{mod}_range"] = x.max() - x.min()
-        # linear trend across the window -- e.g. EDA tends to rise under stress,
-        # peripheral TEMP tends to fall (vasoconstriction)
-        t = np.arange(len(x))
-        feats[f"{mod}_slope"] = np.polyfit(t, x, 1)[0] if len(x) > 1 else 0.0
-
-    bvp = sig_slices["BVP"].astype(np.float64).ravel()
-    feats["BVP_mean"] = bvp.mean()
-    feats["BVP_std"] = bvp.std()
-    feats["BVP_min"] = bvp.min()
-    feats["BVP_max"] = bvp.max()
-    # crude heart-rate proxy: dominant frequency in the plausible cardiac band (42-210 bpm)
-    freqs = np.fft.rfftfreq(len(bvp), d=1.0 / FS["BVP"])
-    spec = np.abs(np.fft.rfft(bvp - bvp.mean()))
-    band = (freqs >= 0.7) & (freqs <= 3.5)
-    if band.any() and spec[band].sum() > 0:
-        feats["BVP_dominant_hz"] = freqs[band][np.argmax(spec[band])]
-        feats["BVP_band_power"] = spec[band].sum()
-    else:
-        feats["BVP_dominant_hz"] = 0.0
-        feats["BVP_band_power"] = 0.0
-
-    acc = sig_slices["ACC"].astype(np.float64)
-    mag = np.linalg.norm(acc, axis=1)
-    feats["ACC_mag_mean"] = mag.mean()
-    feats["ACC_mag_std"] = mag.std()
-    for i, axis in enumerate("xyz"):
-        feats[f"ACC_{axis}_mean"] = acc[:, i].mean()
-        feats[f"ACC_{axis}_std"] = acc[:, i].std()
-
-    return feats
 
 
 def process_subject(subject_dir):
@@ -150,9 +106,40 @@ def process_subject(subject_dir):
         feats = extract_window_features(sig_slices)
         feats["subject_id"] = subject_id
         feats["label"] = int(lbl == STRESS_LABEL)
+        feats["condition"] = int(lbl)  # raw 1=baseline/2=stress/3=amusement, kept so
+        # per-subject baseline-relative features can be computed afterward.
         rows.append(feats)
 
     return rows
+
+
+def add_personal_baseline_features(df, feat_cols):
+    """Add, for every feature column, a `_rel` version relative to that subject's own
+    baseline-condition (condition==1) mean for that feature.
+
+    Motivation: raw feature levels (e.g. EDA_mean) mix two things -- how aroused this
+    window is, and this particular person's overall physiology (some people simply run
+    with higher resting EDA or a cooler baseline temperature than others). A tree split
+    like "EDA_mean > 5" can mean stress for one subject and be perfectly normal for
+    another. Expressing every feature as a delta from that subject's own calm/baseline
+    state removes the between-subject nuisance factor and keeps only the within-subject
+    "how different is this window from how I normally am" signal, which is what should
+    actually generalize to a new, unseen subject. Original absolute columns are kept
+    alongside the new `_rel` ones so the model can still use either."""
+    baseline_means = (
+        df[df["condition"] == 1].groupby("subject_id")[feat_cols].mean()
+    )
+    rel = df[feat_cols].copy()
+    for subj in df["subject_id"].unique():
+        mask = df["subject_id"] == subj
+        if subj in baseline_means.index:
+            rel.loc[mask, feat_cols] = df.loc[mask, feat_cols] - baseline_means.loc[subj]
+        else:
+            # no baseline windows survived for this subject (shouldn't normally happen) --
+            # fall back to leaving the raw features as-is for them rather than dropping data.
+            print(f"  WARNING: no baseline windows for {subj}, leaving raw features unadjusted")
+    rel.columns = [f"{c}_rel" for c in feat_cols]
+    return pd.concat([df, rel], axis=1)
 
 
 def main():
@@ -170,14 +157,17 @@ def main():
         all_rows.extend(rows)
 
     df = pd.DataFrame(all_rows)
-    cols = ["subject_id", "label"] + [c for c in df.columns if c not in ("subject_id", "label")]
+    base_feat_cols = [c for c in df.columns if c not in ("subject_id", "label", "condition")]
+    df = add_personal_baseline_features(df, base_feat_cols)
+
+    cols = ["subject_id", "label", "condition"] + [c for c in df.columns if c not in ("subject_id", "label", "condition")]
     df = df[cols]
     df.to_csv(OUT_CSV, index=False)
 
     print(f"\nTotal windows: {len(df)}")
     print(f"Stress windows: {df['label'].sum()} ({100*df['label'].mean():.1f}%)")
     print(f"Subjects: {df['subject_id'].nunique()}")
-    print(f"Feature columns: {len(cols) - 2}")
+    print(f"Feature columns: {len(cols) - 3} (incl. {len(base_feat_cols)} personal-baseline-relative)")
     print(f"Saved: {OUT_CSV}")
 
 

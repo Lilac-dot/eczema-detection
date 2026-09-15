@@ -1,6 +1,5 @@
 """Evaluate the CNN trained on the 50/50-balanced curated dataset on its test split."""
 import csv
-from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -8,8 +7,9 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, models
 from PIL import Image
 
-ROOT = Path(r"C:\Users\tishy\Documents\Honors\SkinDisease")
-MODEL_PATH = Path(r"C:\Users\tishy\Documents\Honors\models\curated_resnet18_balanced.pt")
+from paths import SKINDISEASE_DIR as ROOT, MODELS_DIR
+
+MODEL_PATH = MODELS_DIR / "curated_resnet18_balanced.pt"
 IMG_SIZE = 224
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

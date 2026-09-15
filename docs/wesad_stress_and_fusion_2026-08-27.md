@@ -1,5 +1,13 @@
 # Stage A Pivot (Stress) + Stage C Fusion — 2026-08-27
 
+> **Update, 2026-09-12**: the numbers and the CNN-as-deployed-model decision below are
+> superseded. Personal-baseline calibration fixed the threshold-transfer instability
+> documented in this file's "Threshold-transfer instability" section, and Stage A's
+> deployed model changed from the CNN to LightGBM as a result. See
+> `docs/wesad_personal_baseline_calibration_2026-09-12.md` for the full before/after
+> comparison and reasoning. This file is kept as-is otherwise for the historical record of
+> how Stage A was built and how the instability was first found.
+
 ## Why this exists
 
 Stage A's original approach (WISDM teeth-brushing proxy for scratch detection) has a
@@ -59,6 +67,45 @@ The same handful of subjects (notably S14, S17) scored poorly under *both* model
 suggestive of genuine individual differences in autonomic stress response, not noise in
 either model. Worth naming explicitly as a limitation.
 
+### Threshold-transfer instability (added after re-reviewing the per-fold results directly)
+
+The mean AUC on its own overstates how deployable this is, and the saved per-fold CSV
+(`dataset/WESAD/wesad_cnn_loso_fold_results.csv`) shows exactly why. Per-subject test
+results, worst-F1-first:
+
+| Subject | Test AUC | F1 | Accuracy | Threshold used |
+|---|---|---|---|---|
+| S2 | 1.000 | 0.000 | 0.711 | 0.840 |
+| S14 | 0.541 | 0.175 | 0.674 | 0.050 |
+| S3 | 0.540 | 0.321 | 0.449 | 0.310 |
+| S7 | 1.000 | 0.450 | 0.291 | 0.010 |
+| S17 | 0.566 | 0.480 | 0.315 | 0.300 |
+| S11 | 0.918 | 0.494 | 0.375 | 0.450 |
+| S13 | 1.000 | 0.571 | 0.559 | 0.035 |
+| S8 | 1.000 | 0.589 | 0.577 | 0.345 |
+| S10 | 0.999 | 0.752 | 0.790 | 0.020 |
+| S15 | 0.934 | 0.846 | 0.916 | 0.480 |
+| S5 | 0.998 | 0.857 | 0.903 | 0.605 |
+| S6 | 0.990 | 0.880 | 0.937 | 0.575 |
+| S9 | 1.000 | 1.000 | 1.000 | 0.365 |
+| S4 | 1.000 | 1.000 | 1.000 | 0.585 |
+| S16 | 1.000 | 1.000 | 1.000 | 0.720 |
+
+S2 and S7 both have **perfect AUC (1.0) but F1 of 0.00 and 0.45** — the model's raw
+probability *ranking* is flawless for these subjects, but the decision threshold (tuned
+on that fold's validation subject, applied to the test subject) lands in the wrong place
+on their score distribution, so it predicts almost everyone the same class. The threshold
+column ranges from 0.01 to 0.84 across the 15 folds — an 84x spread — meaning there is no
+single fixed cutoff that would work well for a new, unseen person.
+
+**What this means:** the 0.899 mean AUC is a real, correctly-measured ceiling on ranking
+quality, not a promise about deployed accuracy. Any real use of this model needs either
+(a) a per-subject calibration step (a short baseline recording to set that person's own
+threshold) or (b) reporting AUC alongside per-subject F1/accuracy at a fixed threshold,
+never AUC alone. `scripts/loso_report.py` (used by both `train_wesad_stress.py` and
+`train_wesad_cnn_attention.py`) now prints this per-subject breakdown automatically at the
+end of every training run, instead of only the mean/std.
+
 ## Fine-tuning attempt (`train_wesad_cnn_attention_v2.py`) — made things WORSE
 
 Targeted the high fold-to-fold variance directly: added training-time data augmentation
@@ -86,8 +133,10 @@ independently-assessed components rather than being fit to one giant dataset.
 
 ```
 composite = 0.5 * (Stage B image severity, curated CNN, 81.07% acc / F1 81.18%)
-          + 0.5 * (Stage A stress score, WESAD CNN v1, mean AUC 0.899)
+          + 0.5 * (Stage A stress score, WESAD LightGBM, mean AUC 0.9405)
 ```
+(Stage A originally used the CNN v1 here, mean AUC 0.899 -- see the 2026-09-12 update note
+at the top of this file for why it changed to the recalibrated LightGBM model.)
 
 Weights are equal by default and explicitly stated as *proposed*, not fit to data (there's
 no ground truth for the combined task to fit against).
@@ -112,3 +161,6 @@ demonstration of the architecture, not a validated joint clinical claim.**
   fitted joint model.
 - The v1-vs-v2 comparison as evidence against blindly adding model complexity/regularization
   at small sample sizes — a genuine, reportable methodological finding.
+- The threshold-transfer instability above (AUC=1.0 folds with F1 as low as 0.00) as a
+  limitation to state explicitly, not omit — report per-subject results, not just the mean
+  AUC, wherever this model's performance is cited.

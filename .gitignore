@@ -2,6 +2,7 @@
 dataset/
 Eczema/
 SkinDisease/
+SkinDisNet/
 
 # Trained model weights -- large binaries, regenerate via scripts/
 models/

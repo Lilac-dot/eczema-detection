@@ -1,9 +1,13 @@
 """
-CNN on the final 50/50-balanced dataset (manifest_curated_v3_*). Since the data itself
-is now balanced, no class weighting or oversampling is needed -- plain cross-entropy.
-Same partial fine-tuning as the earlier v2 CNN (layer4 + fc unfrozen, discriminative
-learning rates), which is what got the CNN from 69.55% to 87.00% on the previous
-(imbalanced) curated dataset.
+Experiment 3 (external-generalization improvement attempt, quick check): a fast gray-world
+color-constancy normalization applied to every image (train and eval alike) before the usual
+pipeline, to test whether removing per-source color-cast differences helps zero-shot external
+performance. Given this project's own documented history of preprocessing fixes NOT fixing
+the original shortcut (Section 5.2 of the report -- brightness normalization and cropping
+both failed), this is treated as a cheap, quick check, not a major time investment: same
+recipe/epochs as the original baseline otherwise, single variable = the gray-world step.
+
+Saves to models/curated_resnet18_graypreproc.pt.
 """
 import csv
 import random
@@ -26,11 +30,25 @@ FC_LR = 1e-4
 BACKBONE_LR = 1e-5
 SEED = 42
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+OUT_PATH = MODELS_DIR / "curated_resnet18_graypreproc.pt"
 
 random.seed(SEED)
 np.random.seed(SEED)
 torch.manual_seed(SEED)
 torch.cuda.manual_seed_all(SEED)
+
+
+class GrayWorldNormalize:
+    """Classic gray-world color constancy: scale each RGB channel so its mean matches the
+    overall gray-level mean, removing per-image/per-source color-cast differences (e.g. a
+    warmer or cooler white balance from a different camera/lighting setup)."""
+    def __call__(self, img):
+        arr = np.asarray(img, dtype=np.float64)
+        means = arr.reshape(-1, 3).mean(axis=0)
+        gray_mean = means.mean()
+        scale = gray_mean / np.clip(means, 1e-6, None)
+        arr = np.clip(arr * scale, 0, 255).astype(np.uint8)
+        return Image.fromarray(arr)
 
 
 class CuratedDataset(Dataset):
@@ -47,14 +65,14 @@ class CuratedDataset(Dataset):
     def __getitem__(self, idx):
         path, label = self.rows[idx]
         img = Image.open(path).convert("RGB")
-        img = self.transform(img)
-        return img, label
+        return self.transform(img), label
 
 
 def make_transforms():
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     train_tf = transforms.Compose([
         transforms.Resize((IMG_SIZE, IMG_SIZE)),
+        GrayWorldNormalize(),
         transforms.RandomHorizontalFlip(),
         transforms.RandomRotation(15),
         transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
@@ -63,6 +81,7 @@ def make_transforms():
     ])
     eval_tf = transforms.Compose([
         transforms.Resize((IMG_SIZE, IMG_SIZE)),
+        GrayWorldNormalize(),
         transforms.ToTensor(),
         normalize,
     ])
@@ -83,10 +102,6 @@ def build_model():
 
 
 def set_train_mode(model):
-    """model.train() would also flip frozen layers' BatchNorm back into training
-    mode, letting their running_mean/running_var keep drifting on this dataset even
-    though their weights never update. Keep the frozen backbone (conv1/bn1/layer1-3)
-    in eval mode so only the unfrozen layer4+fc actually train."""
     model.train()
     for name in FROZEN_SUBMODULES:
         getattr(model, name).eval()
@@ -129,6 +144,7 @@ def main():
     ])
 
     best_val_acc = 0.0
+    t_start = time.time()
     for epoch in range(1, EPOCHS + 1):
         t0 = time.time()
         train_loss, train_acc = run_epoch(model, train_loader, criterion, optimizer)
@@ -139,11 +155,13 @@ def main():
               f"val_loss={val_loss:.4f} val_acc={val_acc:.4f}")
         if val_acc > best_val_acc:
             best_val_acc = val_acc
-            torch.save(model.state_dict(), MODELS_DIR / "curated_resnet18_balanced.pt")
+            torch.save(model.state_dict(), OUT_PATH)
             print(f"  -> saved new best model (val_acc={val_acc:.4f})")
 
+    total_dt = time.time() - t_start
     print(f"\nBest val accuracy: {best_val_acc:.4f}")
-    print(f"Model saved to {MODELS_DIR / 'curated_resnet18_balanced.pt'}")
+    print(f"Total wall-clock time: {total_dt:.1f}s ({total_dt/60:.1f} min)")
+    print(f"Model saved to {OUT_PATH}")
 
 
 if __name__ == "__main__":

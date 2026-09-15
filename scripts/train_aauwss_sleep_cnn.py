@@ -1,42 +1,25 @@
 """
-Train the "complex" WESAD stress model: a 4-branch 1D-CNN (one branch per modality --
-EDA, TEMP, BVP, ACC, since they have different sampling rates and signal character) with
-a learned attention-gated fusion layer, instead of LightGBM on hand-crafted stats
-(train_wesad_stress.py). Each branch reads the RAW windowed signal (see
-build_wesad_raw_windows.py) and learns its own features, rather than being told to look
-at mean/std/slope.
+Train the "complex" AAUWSS sleep-disruption model: a 4-branch 1D-CNN (one branch per
+modality -- EDA, TEMP, BVP, ACC) with a learned attention-gated fusion layer, instead of
+LightGBM on hand-crafted stats (train_aauwss_sleep.py). Mirrors
+train_wesad_cnn_attention.py exactly -- same architecture, same per-subject baseline
+normalization approach, same LOSO-CV protocol, same seed-ensembling -- since this is
+being tried specifically to check whether train_aauwss_sleep.py's near-chance LightGBM
+result (mean AUC ~0.46) reflects a genuine ceiling on what 30-second-epoch, hand-crafted
+window statistics can extract from this dataset, or whether a model that reads the raw
+signal directly does better. See docs/aauwss_sleep_model_results_2026-09-14.md for the
+full comparison once both are run.
 
-A pure Transformer was deliberately not used -- with only 15 subjects there isn't enough
-data for self-attention over long raw sequences to learn anything but noise. The
-attention here is a small gate over just 4 modality embeddings, not over time.
-
-Evaluation: same LEAVE-ONE-SUBJECT-OUT CV as the LightGBM baseline (15 folds, one val
-subject held out per fold for early stopping + threshold tuning, same rotating val-subject
-assignment) -- this is the fair, apples-to-apples comparison the whole point of building
-both models rests on.
-
-Per-subject baseline normalization: each modality is z-scored per SUBJECT, using that
-subject's own baseline-condition (calm, pre-task) windows -- not a pooled per-fold
-statistic shared across subjects. See wesad_calibration.py's docstring for why: pooled
-normalization leaves each person's absolute physiological level (which varies a lot
-between people) sitting in the model's input, and was a real, evidenced contributor to
-this model's per-subject threshold-transfer failures.
-
-Seed ensembling: each fold trains N_ENSEMBLE independently-initialized copies of the
-network (different random weight init + different minibatch order) and averages their
-predicted probabilities, instead of training just one. With only ~13 training subjects per
-fold, a single from-scratch network can land in a genuinely bad spot by chance (this is
-what produced a fold with test AUC exactly 0.0 -- an inverted ranking -- after the
-per-subject baseline fix alone). Averaging several independent copies cancels out any one
-unlucky run without changing what the network is allowed to learn, unlike adding more
-regularization/augmentation, which was already tried (train_wesad_cnn_attention_v2.py) and
-made things worse.
+13 subjects (vs. WESAD's 15). condition==1 marks each window's baseline/calibration
+reference state -- here "asleep" (N1/N2/N3/REM), not "calm pre-task" -- so
+wesad_calibration.compute_subject_baseline_stats()'s baseline_condition=1 default applies
+unmodified (see build_aauwss_raw_windows.py's docstring for the label/condition design).
 
 Writes:
-  dataset/WESAD/wesad_cnn_loso_fold_results.csv
-  models/wesad_stress_cnn_attention.pt  (final model, trained on all 15 subjects)
+  dataset/AAUWSS/aauwss_cnn_loso_fold_results.csv
+  models/aauwss_sleep_cnn_attention.pt  (final model, trained on all 13 subjects)
 """
-import csv
+import gc
 
 import numpy as np
 import pandas as pd
@@ -44,26 +27,36 @@ import torch
 import torch.nn as nn
 from sklearn.metrics import roc_auc_score
 
-from paths import ROOT, WESAD_DIR
+from paths import ROOT, AAUWSS_DIR
 from loso_report import print_reliability_summary
 from wesad_calibration import compute_subject_baseline_stats, normalize_by_subject
 
-NPZ_PATH = WESAD_DIR / "wesad_raw_windows.npz"
-FOLD_RESULTS_CSV = WESAD_DIR / "wesad_cnn_loso_fold_results.csv"
+NPZ_PATH = AAUWSS_DIR / "aauwss_raw_windows.npz"
+FOLD_RESULTS_CSV = AAUWSS_DIR / "aauwss_cnn_loso_fold_results.csv"
 SEED = 42
 EMBED_DIM = 32
-MAX_EPOCHS = 60
-PATIENCE = 10
-BATCH_SIZE = 32
+MAX_EPOCHS = 30
+PATIENCE = 6
+# Increased from WESAD's BATCH_SIZE=32 to 256: AAUWSS has ~4.5x more windows per fold
+# (~8200 vs ~1800 training windows), so at batch=32 each fold trains at ~256
+# Python-loop-bound optimizer steps per epoch on CPU-only hardware, which measured at
+# over 24 minutes without finishing even the first of 13 folds -- impractical. A larger
+# batch cuts steps-per-epoch by 8x with the same total data seen per epoch; this is a
+# disclosed practicality adaptation, not a tuning choice aimed at a better score.
+BATCH_SIZE = 256
 LR = 1e-3
-N_ENSEMBLE = 3
+# Reduced from WESAD's N_ENSEMBLE=3 to 1: this machine has 8GB total RAM with well under
+# 1GB free even before training starts (many background apps), and AAUWSS has ~4.5x more
+# windows per fold than WESAD's CNN was trained on (9700 vs ~2140) -- a 3-model ensemble
+# on this much data triggered an out-of-memory kill. This is a disclosed hardware-driven
+# adaptation, not a modeling choice; see docs/aauwss_sleep_model_results_2026-09-14.md.
+N_ENSEMBLE = 1
 
 torch.manual_seed(SEED)
 np.random.seed(SEED)
 
 
 class ModalityBranch(nn.Module):
-    """1D-CNN over one modality's raw signal -> fixed-size embedding."""
     def __init__(self, in_channels, embed_dim=EMBED_DIM, base=8):
         super().__init__()
         self.net = nn.Sequential(
@@ -76,12 +69,10 @@ class ModalityBranch(nn.Module):
         )
 
     def forward(self, x):
-        # x: (batch, in_channels, length)
-        return self.net(x).squeeze(-1)  # (batch, embed_dim)
+        return self.net(x).squeeze(-1)
 
 
 class AttentionFusion(nn.Module):
-    """Learns per-example weights over the 4 modality embeddings instead of plain concat."""
     def __init__(self, embed_dim=EMBED_DIM, n_modalities=4):
         super().__init__()
         self.gate = nn.Sequential(
@@ -90,15 +81,14 @@ class AttentionFusion(nn.Module):
         )
 
     def forward(self, embeds):
-        # embeds: (batch, n_modalities, embed_dim)
         b, m, d = embeds.shape
         flat = embeds.reshape(b, m * d)
-        weights = torch.softmax(self.gate(flat), dim=-1)  # (batch, n_modalities)
-        fused = (embeds * weights.unsqueeze(-1)).sum(dim=1)  # (batch, embed_dim)
+        weights = torch.softmax(self.gate(flat), dim=-1)
+        fused = (embeds * weights.unsqueeze(-1)).sum(dim=1)
         return fused, weights
 
 
-class WesadStressNet(nn.Module):
+class AauwssSleepNet(nn.Module):
     def __init__(self, embed_dim=EMBED_DIM):
         super().__init__()
         self.eda_branch = ModalityBranch(1, embed_dim)
@@ -116,7 +106,7 @@ class WesadStressNet(nn.Module):
         t = self.temp_branch(temp)
         b = self.bvp_branch(bvp)
         a = self.acc_branch(acc)
-        embeds = torch.stack([e, t, b, a], dim=1)  # (batch, 4, embed_dim)
+        embeds = torch.stack([e, t, b, a], dim=1)
         fused, weights = self.fusion(embeds)
         logit = self.classifier(fused).squeeze(-1)
         return logit, weights
@@ -124,10 +114,10 @@ class WesadStressNet(nn.Module):
 
 def load_data():
     npz = np.load(NPZ_PATH, allow_pickle=True)
-    EDA = npz["EDA"].squeeze(-1)      # (N, 120)
-    TEMP = npz["TEMP"].squeeze(-1)    # (N, 120)
-    BVP = npz["BVP"].squeeze(-1)      # (N, 1920)
-    ACC = npz["ACC"]                  # (N, 960, 3)
+    EDA = npz["EDA"]      # (N, 120) -- no trailing singleton dim in this npz, unlike WESAD's
+    TEMP = npz["TEMP"]    # (N, 120)
+    BVP = npz["BVP"]      # (N, 1920)
+    ACC = npz["ACC"]      # (N, 960, 3)
     label = npz["label"]
     condition = npz["condition"]
     subject = npz["subject"]
@@ -140,10 +130,10 @@ def to_tensors(idx, EDA, TEMP, BVP, ACC, label, subject, stats):
     t = normalize_by_subject(TEMP[idx], subj_ids, stats, "TEMP")
     b = normalize_by_subject(BVP[idx], subj_ids, stats, "BVP")
     a = normalize_by_subject(ACC[idx], subj_ids, stats, "ACC")
-    e = torch.tensor(e, dtype=torch.float32).unsqueeze(1)      # (n,1,120)
-    t = torch.tensor(t, dtype=torch.float32).unsqueeze(1)      # (n,1,120)
-    b = torch.tensor(b, dtype=torch.float32).unsqueeze(1)      # (n,1,1920)
-    a = torch.tensor(a, dtype=torch.float32).permute(0, 2, 1)  # (n,3,960)
+    e = torch.tensor(e, dtype=torch.float32).unsqueeze(1)
+    t = torch.tensor(t, dtype=torch.float32).unsqueeze(1)
+    b = torch.tensor(b, dtype=torch.float32).unsqueeze(1)
+    a = torch.tensor(a, dtype=torch.float32).permute(0, 2, 1)
     y = torch.tensor(label[idx], dtype=torch.float32)
     return e, t, b, a, y
 
@@ -173,15 +163,15 @@ def evaluate(probs, y, threshold):
     return dict(acc=acc, tp=tp, tn=tn, fp=fp, fn=fn, precision=precision, recall=recall, f1=f1)
 
 
-def train_one_fold(train_idx, val_idx, EDA, TEMP, BVP, ACC, label, subject, stats, seed=None):
+def train_one_fold(train_tensors, val_tensors, seed=None):
     if seed is not None:
         torch.manual_seed(seed)
         np.random.seed(seed)
 
-    e_tr, t_tr, b_tr, a_tr, y_tr = to_tensors(train_idx, EDA, TEMP, BVP, ACC, label, subject, stats)
-    e_va, t_va, b_va, a_va, y_va = to_tensors(val_idx, EDA, TEMP, BVP, ACC, label, subject, stats)
+    e_tr, t_tr, b_tr, a_tr, y_tr = train_tensors
+    e_va, t_va, b_va, a_va, y_va = val_tensors
 
-    model = WesadStressNet()
+    model = AauwssSleepNet()
     n_pos, n_neg = y_tr.sum().item(), (1 - y_tr).sum().item()
     pos_weight = torch.tensor([n_neg / max(n_pos, 1.0)])
     criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
@@ -220,22 +210,22 @@ def train_one_fold(train_idx, val_idx, EDA, TEMP, BVP, ACC, label, subject, stat
     return model, best_val_auc
 
 
-def train_ensemble(train_idx, val_idx, EDA, TEMP, BVP, ACC, label, subject, stats,
-                    n_models=N_ENSEMBLE, seed_base=0):
-    """Train n_models independently-initialized copies for the same fold. Returns
-    (models, val_aucs) -- val_aucs is each member's own best_val_auc, kept for reporting
-    but not used to pick a "winner"; every member contributes equally at prediction time."""
+def train_ensemble(train_tensors, val_tensors, n_models=N_ENSEMBLE, seed_base=0):
+    """train_tensors/val_tensors are built ONCE by the caller and reused across all
+    n_models members -- rebuilding them per member (the original approach) meant holding
+    multiple redundant copies of the full per-fold tensor set in memory at once, which is
+    what triggered the OOM kill on this machine at AAUWSS's window count. See N_ENSEMBLE's
+    comment above."""
     models, val_aucs = [], []
     for k in range(n_models):
-        model, val_auc = train_one_fold(train_idx, val_idx, EDA, TEMP, BVP, ACC, label,
-                                         subject, stats, seed=SEED + seed_base * 1000 + k)
+        model, val_auc = train_one_fold(train_tensors, val_tensors,
+                                         seed=SEED + seed_base * 1000 + k)
         models.append(model)
         val_aucs.append(val_auc)
     return models, val_aucs
 
 
 def ensemble_predict(models, e, t, b, a):
-    """Average sigmoid probability and attention weights across ensemble members."""
     probs_list, weights_list = [], []
     with torch.no_grad():
         for model in models:
@@ -248,13 +238,10 @@ def ensemble_predict(models, e, t, b, a):
 
 def main():
     EDA, TEMP, BVP, ACC, label, condition, subject = load_data()
-    subjects = sorted(np.unique(subject), key=lambda s: int(s[1:]))
+    subjects = sorted(np.unique(subject))
     print(f"Subjects: {len(subjects)} -> {subjects}")
-    print(f"Windows: {len(label)}  Stress: {label.sum()} ({100*label.mean():.1f}%)")
+    print(f"Windows: {len(label)}  Wake: {label.sum()} ({100*label.mean():.1f}%)")
 
-    # Per-subject baseline stats, computed once from each subject's OWN baseline-condition
-    # windows only -- not fold-dependent, since a subject's calibration never depends on
-    # who else is in train/val/test for a given fold (see wesad_calibration.py).
     stats = compute_subject_baseline_stats(EDA, TEMP, BVP, ACC, condition, subject)
 
     fold_rows = []
@@ -270,11 +257,14 @@ def main():
         val_idx = subject == val_subj
         test_idx = subject == test_subj
 
-        models, val_aucs = train_ensemble(train_idx, val_idx, EDA, TEMP, BVP, ACC, label,
-                                           subject, stats, seed_base=i)
+        train_tensors = to_tensors(train_idx, EDA, TEMP, BVP, ACC, label, subject, stats)
+        val_tensors = to_tensors(val_idx, EDA, TEMP, BVP, ACC, label, subject, stats)
+        test_tensors = to_tensors(test_idx, EDA, TEMP, BVP, ACC, label, subject, stats)
 
-        e_va, t_va, b_va, a_va, y_va = to_tensors(val_idx, EDA, TEMP, BVP, ACC, label, subject, stats)
-        e_te, t_te, b_te, a_te, y_te = to_tensors(test_idx, EDA, TEMP, BVP, ACC, label, subject, stats)
+        models, val_aucs = train_ensemble(train_tensors, val_tensors, seed_base=i)
+
+        e_va, t_va, b_va, a_va, y_va = val_tensors
+        e_te, t_te, b_te, a_te, y_te = test_tensors
 
         val_probs, _ = ensemble_predict(models, e_va, t_va, b_va, a_va)
         test_probs, test_weights = ensemble_predict(models, e_te, t_te, b_te, a_te)
@@ -294,10 +284,17 @@ def main():
         print(f"[{test_subj}] val_subj={val_subj} thr={thr:.3f} "
               f"test_auc={test_auc:.4f} test_f1={result['f1']:.4f} test_acc={result['acc']:.4f}")
 
+        # Explicit cleanup between folds -- this machine has very little free RAM (8GB
+        # total, well under 1GB free at baseline), and 13 folds' worth of tensors/models
+        # left for the garbage collector to find "eventually" was a real contributor to
+        # the earlier OOM kill.
+        del train_tensors, val_tensors, test_tensors, models
+        gc.collect()
+
     fold_df = pd.DataFrame(fold_rows)
     fold_df.to_csv(FOLD_RESULTS_CSV, index=False)
 
-    print("\n=== CNN+Attention LOSO-CV summary across 15 folds ===")
+    print("\n=== CNN+Attention LOSO-CV summary across 13 folds ===")
     print(f"AUC:       mean={fold_df['test_auc'].mean():.4f}  std={fold_df['test_auc'].std():.4f}")
     print(f"F1:        mean={fold_df['f1'].mean():.4f}  std={fold_df['f1'].std():.4f}")
     print(f"Accuracy:  mean={fold_df['acc'].mean():.4f}  std={fold_df['acc'].std():.4f}")
@@ -321,27 +318,19 @@ def main():
     for name, w in zip(["EDA", "TEMP", "BVP", "ACC"], mean_weights):
         print(f"  {name}: {w:.3f}")
 
-    # Final deployable model: train on ALL subjects, val = last subject rotated in (S17),
-    # for early stopping only -- same compromise train_wesad_stress.py makes for LightGBM's
-    # round count, since there's no fully independent held-out subject left otherwise.
     final_val_subj = subjects[-1]
     final_train_subjs = [s for s in subjects if s != final_val_subj]
     train_idx = np.isin(subject, final_train_subjs)
     val_idx = subject == final_val_subj
-    final_models, _ = train_ensemble(train_idx, val_idx, EDA, TEMP, BVP, ACC, label,
-                                      subject, stats, seed_base=999)
+    final_train_tensors = to_tensors(train_idx, EDA, TEMP, BVP, ACC, label, subject, stats)
+    final_val_tensors = to_tensors(val_idx, EDA, TEMP, BVP, ACC, label, subject, stats)
+    final_models, _ = train_ensemble(final_train_tensors, final_val_tensors, seed_base=999)
 
-    # No fixed norm_args saved here anymore: with per-subject baseline calibration, a real
-    # new user isn't one of these 15 training subjects, so there's no global normalization
-    # tuple that would even apply to them. At inference, the caller must supply that
-    # person's own short baseline recording -- see wesad_calibration.compute_baseline_
-    # stats_from_window(). The checkpoint now holds a LIST of state dicts (one per
-    # ensemble member) -- predictions must average all of them, not load just one.
     torch.save({
         "state_dicts": [m.state_dict() for m in final_models],
         "threshold": pooled_thr,
-    }, ROOT / "models" / "wesad_stress_cnn_attention.pt")
-    print(f"\nFinal model saved: models/wesad_stress_cnn_attention.pt ({N_ENSEMBLE}-model ensemble)")
+    }, ROOT / "models" / "aauwss_sleep_cnn_attention.pt")
+    print(f"\nFinal model saved: models/aauwss_sleep_cnn_attention.pt ({N_ENSEMBLE}-model ensemble)")
 
 
 if __name__ == "__main__":

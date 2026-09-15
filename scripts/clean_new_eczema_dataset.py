@@ -30,7 +30,8 @@ from pathlib import Path
 from PIL import Image
 import imagehash
 
-ROOT = Path(r"C:\Users\tishy\Documents\Honors\Eczema")
+from paths import ECZEMA_DIR as ROOT
+
 QUARANTINE = ROOT / "_quarantine"
 MIN_DIM = 64
 
