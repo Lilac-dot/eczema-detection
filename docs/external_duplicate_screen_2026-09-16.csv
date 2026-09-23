@@ -1,0 +1,42 @@
+check,path_a,path_b,distance
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (118).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (287).jpg,2
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (118).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (290).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (158).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (159).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (160).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (161).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (27).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (28).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (279).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (280).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (305).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (306).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (322).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (326).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (35).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (36).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (374).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (375).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (387).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (389).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (415).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (418).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (453).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (454).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (97).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Eczema (EC)\EC (98).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (187).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (188).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (236).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (237).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (320).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (322).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (370).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (371).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (371).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (372).jpg,2
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (419).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (421).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (7).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (9).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (79).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Contact Dermatitis (CD)\CD (82).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (10).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (7).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (118).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (120).jpg,2
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (12).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (9).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (199).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (200).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (201).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (203).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (243).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (244).jpg,2
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (287).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (290).jpg,2
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (49).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Scabies (SC)\SC (51).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Seborrheic Dermatitis (SD)\SD (53).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Seborrheic Dermatitis (SD)\SD (54).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Seborrheic Dermatitis (SD)\SD (69).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Seborrheic Dermatitis (SD)\SD (71).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Seborrheic Dermatitis (SD)\SD (70).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Seborrheic Dermatitis (SD)\SD (71).jpg,2
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (129).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (130).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (138).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (139).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (17).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (18).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (170).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (172).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (236).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (238).jpg,2
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (239).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (240).jpg,4
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (30).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (33).jpg,2
+within_skindisnet_near,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (37).jpg,C:\Users\tishy\Documents\Honors\SkinDisNet\Preprocessed\Tinea Corporis (TC)\TC (38).jpg,4

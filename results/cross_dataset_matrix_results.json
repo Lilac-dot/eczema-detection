@@ -1,0 +1,178 @@
+{
+  "scin_to_scin": {
+    "n": 294,
+    "acc": 0.5884353741496599,
+    "auc": 0.6369568235457448,
+    "auc_ci": [
+      0.5696210810867065,
+      0.7000206879584898
+    ],
+    "precision": 0.5902777777777778,
+    "recall": 0.5782312925170068,
+    "f1": 0.584192439862543,
+    "f1_ci": [
+      0.5110919540229885,
+      0.6501547987616099
+    ],
+    "tp": 85,
+    "tn": 88,
+    "fp": 59,
+    "fn": 62,
+    "confused_with_eczema": {
+      "Other": 59
+    },
+    "missed_eczema": {
+      "Eczema": 62
+    }
+  },
+  "scin_to_internal": {
+    "n": 507,
+    "acc": 0.5207100591715976,
+    "auc": 0.5395060383466135,
+    "auc_ci": [
+      0.48756027149945913,
+      0.5886307159363701
+    ],
+    "precision": 0.5256410256410257,
+    "recall": 0.32669322709163345,
+    "f1": 0.4029484029484029,
+    "f1_ci": [
+      0.3428465083303793,
+      0.46269347705914865
+    ],
+    "tp": 82,
+    "tn": 182,
+    "fp": 74,
+    "fn": 169,
+    "confused_with_eczema": {
+      "Psoriasis": 12,
+      "Tinea": 18,
+      "Candidiasis": 1,
+      "Infestations_Bites": 11,
+      "Lichen": 9,
+      "DrugEruption": 17,
+      "Rosacea": 6
+    },
+    "missed_eczema": {
+      "Eczema": 169
+    }
+  },
+  "scin_to_skindisnet": {
+    "n": 513,
+    "acc": 0.5614035087719298,
+    "auc": 0.5315852625635233,
+    "auc_ci": [
+      0.48059787203409776,
+      0.5803883794552984
+    ],
+    "precision": 0.35046728971962615,
+    "recall": 0.4658385093167702,
+    "f1": 0.39999999999999997,
+    "f1_ci": [
+      0.33636153964430315,
+      0.4587196078431372
+    ],
+    "tp": 75,
+    "tn": 213,
+    "fp": 139,
+    "fn": 86,
+    "confused_with_eczema": {
+      "Contact Dermatitis (CD)": 62,
+      "Scabies (SC)": 34,
+      "Tinea Corporis (TC)": 37,
+      "Seborrheic Dermatitis (SD)": 6
+    },
+    "missed_eczema": {
+      "Eczema (EC)": 80,
+      "Atopic Dermatitis (AD)": 6
+    }
+  },
+  "skindisnet_to_skindisnet": {
+    "n": 513,
+    "acc": 0.7855750487329435,
+    "auc": 0.8280985319028796,
+    "auc_ci": [
+      0.7871825240579929,
+      0.8657277398860133
+    ],
+    "precision": 0.6491228070175439,
+    "recall": 0.6894409937888198,
+    "f1": 0.6686746987951808,
+    "f1_ci": [
+      0.5993878968541082,
+      0.7229043834914124
+    ],
+    "tp": 111,
+    "tn": 292,
+    "fp": 60,
+    "fn": 50,
+    "confused_with_eczema": {
+      "Contact Dermatitis (CD)": 34,
+      "Tinea Corporis (TC)": 16,
+      "Seborrheic Dermatitis (SD)": 2,
+      "Scabies (SC)": 8
+    },
+    "missed_eczema": {
+      "Eczema (EC)": 36,
+      "Atopic Dermatitis (AD)": 14
+    }
+  },
+  "skindisnet_to_internal": {
+    "n": 507,
+    "acc": 0.4812623274161736,
+    "auc": 0.44140625000000006,
+    "auc_ci": [
+      0.39208427117381833,
+      0.4908983339420558
+    ],
+    "precision": 0.4032258064516129,
+    "recall": 0.099601593625498,
+    "f1": 0.15974440894568687,
+    "f1_ci": [
+      0.10423283116178068,
+      0.2163865990276897
+    ],
+    "tp": 25,
+    "tn": 219,
+    "fp": 37,
+    "fn": 226,
+    "confused_with_eczema": {
+      "Psoriasis": 5,
+      "Tinea": 5,
+      "Candidiasis": 2,
+      "Infestations_Bites": 6,
+      "Lichen": 6,
+      "DrugEruption": 7,
+      "Rosacea": 6
+    },
+    "missed_eczema": {
+      "Eczema": 226
+    }
+  },
+  "skindisnet_to_scin": {
+    "n": 294,
+    "acc": 0.47959183673469385,
+    "auc": 0.47614419917626916,
+    "auc_ci": [
+      0.40991937083489194,
+      0.5452171478103136
+    ],
+    "precision": 0.39285714285714285,
+    "recall": 0.07482993197278912,
+    "f1": 0.1257142857142857,
+    "f1_ci": [
+      0.059880239520958084,
+      0.19691396686215337
+    ],
+    "tp": 11,
+    "tn": 130,
+    "fp": 17,
+    "fn": 136,
+    "confused_with_eczema": {
+      "Other": 17
+    },
+    "missed_eczema": {
+      "Eczema": 136
+    }
+  }
+}
