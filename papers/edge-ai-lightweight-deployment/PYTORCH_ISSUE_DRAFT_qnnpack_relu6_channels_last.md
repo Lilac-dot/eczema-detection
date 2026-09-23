@@ -1,4 +1,4 @@
-# DRAFT: not posted. Review before filing at https://github.com/pytorch/pytorch/issues/new
+# Posted as https://github.com/pytorch/pytorch/issues/198373 (2026-09-23)
 
 **Title:** [quantization][qnnpack] quantized relu6 / hardtanh / clamp return wrong values for channels_last inputs (silently breaks FX-quantized MobileNetV2 on ARM)
 
