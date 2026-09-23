@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-18",
+  "manifest": "C:\\Users\\tishy\\Documents\\Honors\\SkinDisNet\\manifest_skindisnet_clean.csv",
+  "n": 1558,
+  "note": "zero-shot only, neither model fine-tuned on SkinDisNet",
+  "resnet18_baseline": {
+    "metrics": {
+      "n": 1558,
+      "accuracy": 0.6765083440308087,
+      "precision": 0.3010752688172043,
+      "recall": 0.059957173447537475,
+      "f1": 0.1,
+      "roc_auc": 0.4745052473321727
+    },
+    "auc_ci": [
+      0.4448605065108634,
+      0.5050841868408615
+    ]
+  },
+  "shufflenet_v2_1_0x_selected": {
+    "metrics": {
+      "n": 1558,
+      "accuracy": 0.696405648267009,
+      "precision": 0.25,
+      "recall": 0.006423982869379015,
+      "f1": 0.012526096033402923,
+      "roc_auc": 0.4806279526670422
+    },
+    "auc_ci": [
+      0.4461447839522489,
+      0.5108166491356474
+    ]
+  },
+  "paired_significance_shufflenet_minus_resnet18": {
+    "observed_diff": 0.006122705334869527,
+    "ci": [
+      -0.0290755164413346,
+      0.03823466053466944
+    ],
+    "p_value": 0.77,
+    "n_valid_draws": 1000
+  }
+}
