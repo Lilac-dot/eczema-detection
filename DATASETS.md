@@ -54,11 +54,19 @@ applying any timezone correction.
 
 ## SkinDisease (Stage B — curated Eczema vs. similar-disease comparison)
 
-20-class dermatology image dataset (DermNet-style, same-source photos across classes),
-used to build the shortcut-free Eczema-vs-other-disease comparison. Likely source (verify
-this is the exact one before re-downloading — there are several similarly-named Kaggle
-sets):
-https://www.kaggle.com/datasets/haroonalam16/20-skin-diseases-dataset
+"Human Skin Diseases (Image)" by Y. Mohamed (Kaggle, Apache 2.0): DermNet-style, same-source photos
+across classes, used to build the shortcut-free Eczema-vs-other-disease comparison. Verified against
+the local `SkinDisease/{train,valid,test}/<class>/` folder names (21 categories incl. Normal, own
+train/valid/test split). An earlier version of this file pointed to
+haroonalam16/20-skin-diseases-dataset, which is a different dataset.
+https://www.kaggle.com/datasets/youssefmohmmed/human-skin-diseases-image
+
+## Eczema subtype archive (Stage B — third merged eczema source)
+
+17 DermNet-style subtype folders (`Eczema/<subtype>/`). The original download link was not
+recorded. 11 eczema subtypes were kept and 6 distinct diagnoses excluded
+(`scripts/clean_new_eczema_dataset.py`); after cross-source deduplication only 5 of its 719 eczema
+images were new (`scripts/merge_all_eczema_sources.py`).
 
 ## SCIN (Stage B — external validation)
 
