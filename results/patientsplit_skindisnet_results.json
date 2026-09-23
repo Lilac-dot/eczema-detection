@@ -1,0 +1,120 @@
+{
+  "baseline": {
+    "n": 539,
+    "acc": 0.6660482374768089,
+    "auc": 0.450310856049737,
+    "auc_ci": [
+      0.39834634656307205,
+      0.5019113829656748
+    ],
+    "precision": 0.2727272727272727,
+    "recall": 0.03529411764705882,
+    "f1": 0.0625,
+    "f1_ci": [
+      0.020408163265306124,
+      0.11215191684150295
+    ],
+    "tp": 6,
+    "tn": 353,
+    "fp": 16,
+    "fn": 164,
+    "confused_with_eczema": {
+      "Scabies (SC)": 7,
+      "Contact Dermatitis (CD)": 5,
+      "Tinea Corporis (TC)": 4
+    },
+    "missed_eczema": {
+      "Eczema (EC)": 137,
+      "Atopic Dermatitis (AD)": 27
+    }
+  },
+  "leaky": {
+    "n": 539,
+    "acc": 0.6586270871985158,
+    "auc": 0.6130559540889527,
+    "auc_ci": [
+      0.5628349938624483,
+      0.6621245211976444
+    ],
+    "precision": 0.42857142857142855,
+    "recall": 0.24705882352941178,
+    "f1": 0.3134328358208955,
+    "f1_ci": [
+      0.24602849336455895,
+      0.38853307597824177
+    ],
+    "tp": 42,
+    "tn": 313,
+    "fp": 56,
+    "fn": 128,
+    "confused_with_eczema": {
+      "Scabies (SC)": 10,
+      "Tinea Corporis (TC)": 19,
+      "Contact Dermatitis (CD)": 21,
+      "Seborrheic Dermatitis (SD)": 6
+    },
+    "missed_eczema": {
+      "Eczema (EC)": 103,
+      "Atopic Dermatitis (AD)": 25
+    }
+  },
+  "patientsplit": {
+    "n": 539,
+    "acc": 0.6196660482374768,
+    "auc": 0.4881237047664594,
+    "auc_ci": [
+      0.43383632871359706,
+      0.5376280838010704
+    ],
+    "precision": 0.32673267326732675,
+    "recall": 0.19411764705882353,
+    "f1": 0.24354243542435422,
+    "f1_ci": [
+      0.1754351016984693,
+      0.3103479397485373
+    ],
+    "tp": 33,
+    "tn": 301,
+    "fp": 68,
+    "fn": 137,
+    "confused_with_eczema": {
+      "Scabies (SC)": 18,
+      "Contact Dermatitis (CD)": 35,
+      "Tinea Corporis (TC)": 13,
+      "Seborrheic Dermatitis (SD)": 2
+    },
+    "missed_eczema": {
+      "Eczema (EC)": 112,
+      "Atopic Dermatitis (AD)": 25
+    }
+  },
+  "paired_tests": {
+    "patientsplit_minus_baseline": {
+      "observed_diff": 0.037812848716722414,
+      "ci": [
+        -0.009453586131052655,
+        0.08524782682275447
+      ],
+      "p_value": 0.13,
+      "n_valid_draws": 1000
+    },
+    "patientsplit_minus_leaky": {
+      "observed_diff": -0.12493224932249336,
+      "ci": [
+        -0.15436783442715937,
+        -0.09656235132778028
+      ],
+      "p_value": 0.0,
+      "n_valid_draws": 1000
+    },
+    "leaky_minus_baseline_on_clean_test": {
+      "observed_diff": 0.16274509803921577,
+      "ci": [
+        0.1249176112143398,
+        0.20107140621086908
+      ],
+      "p_value": 0.0,
+      "n_valid_draws": 1000
+    }
+  }
+}
