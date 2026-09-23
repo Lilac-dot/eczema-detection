@@ -1,0 +1,57 @@
+menu "AD Wearable Node Configuration"
+
+    choice DEVICE_ROLE
+        prompt "Device role"
+        default DEVICE_ROLE_SKIN_PATCH
+        help
+            One firmware image, two build targets -- matches
+            docs/hardware_architecture_v3_2026-09-18.md's two-node split. Run
+            `idf.py menuconfig` and pick the role before flashing each physical device;
+            this is a compile-time choice, not something the firmware detects at runtime.
+
+        config DEVICE_ROLE_WRISTBAND
+            bool "Wristband (BMI270 accel+gyro + PPG)"
+            help
+                Motion + pulse node. Feeds the deployed WESAD stress model's BVP-derived
+                features and a future scratch-quantification model (Section "Wristband"
+                of hardware_architecture_v3).
+
+        config DEVICE_ROLE_SKIN_PATCH
+            bool "Skin patch (moisture + temperature + EDA)"
+            help
+                Skin-surface sensing node. Feeds the planned moisture channel and the
+                WESAD stress model's EDA/TEMP features (Section "Skin patch" of
+                hardware_architecture_v3).
+
+        config DEVICE_ROLE_IMAGING_GATE
+            bool "Imaging capture gate (distance + ambient light + LED ring)"
+            help
+                Standardized-acquisition node for the robustness/hardware research
+                question (docs/imaging_capture_gate_design_2026-09-19.md) -- not part of
+                hardware_architecture_v3's original two-node plan. Reports READY over BLE
+                once distance and illumination are both within tolerance; does not take
+                the photo itself (built for a plain ESP32, no confirmed camera module).
+    endchoice
+
+    choice SENSOR_BACKEND
+        prompt "Sensor backend"
+        default SENSOR_BACKEND_SIMULATED
+        help
+            No physical sensors exist for this project yet (see the honors-project chat
+            log this firmware was scaffolded from). SIMULATED lets every layer above the
+            I2C/ADC driver -- windowing, BLE packaging, the phone-side client -- be built
+            and tested honestly before any hardware exists. Switch to REAL once actual
+            parts are wired up; nothing above sensor_hal.h needs to change to do that.
+
+        config SENSOR_BACKEND_SIMULATED
+            bool "Simulated (synthetic waveforms, no hardware required)"
+
+        config SENSOR_BACKEND_REAL
+            bool "Real sensors (BMI270 / MAX30101-class PPG / moisture / EDA front end)"
+            help
+                Not implemented yet -- sensor_hal_real.c is a stub that fails loudly at
+                init time. Fill in the actual I2C/ADC driver calls once parts are on hand;
+                see sensor_hal.h for the exact interface every backend must implement.
+    endchoice
+
+endmenu

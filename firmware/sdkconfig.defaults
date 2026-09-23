@@ -1,0 +1,25 @@
+# Target: ESP32-S3, matching hardware_architecture_v3_2026-09-18.md (both the wristband
+# and skin-patch nodes use ESP32-S3 -- one firmware image, role picked at build time via
+# `idf.py menuconfig` -> "AD Wearable Node Configuration").
+CONFIG_IDF_TARGET="esp32s3"
+
+# Building the skin patch first (moisture + temperature + EDA), simulated -- no hardware
+# yet. Switch to CONFIG_DEVICE_ROLE_WRISTBAND=y for the other node, or just run
+# `idf.py menuconfig` and pick interactively; these two lines are only the default.
+CONFIG_DEVICE_ROLE_SKIN_PATCH=y
+CONFIG_SENSOR_BACKEND_SIMULATED=y
+
+# Bluetooth: NimBLE host (lighter-weight than Bluedroid, the usual choice for a
+# peripheral-only BLE sensor node that never needs classic Bluetooth or A2DP).
+CONFIG_BT_ENABLED=y
+CONFIG_BT_NIMBLE_ENABLED=y
+CONFIG_BT_CONTROLLER_ENABLED=y
+CONFIG_BT_BLUEDROID_ENABLED=n
+CONFIG_BT_NIMBLE_MAX_CONNECTIONS=1
+CONFIG_BT_NIMBLE_ROLE_PERIPHERAL=y
+CONFIG_BT_NIMBLE_ROLE_CENTRAL=n
+CONFIG_BT_NIMBLE_ROLE_OBSERVER=n
+CONFIG_BT_NIMBLE_ROLE_BROADCASTER=n
+
+# Both sensor sets here sample well under 1 kHz combined (PPG 64 Hz, IMU 32-100 Hz, EDA/TEMP
+# 4-10 Hz) -- default main-task stack/priority are fine, not tuned further.
