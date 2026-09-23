@@ -1,0 +1,80 @@
+Device: cpu
+Model: SqueezeNet 1.1
+Total params: 788,289  Trainable (stage 1, head only): 65,793
+[stage1_frozen] epoch 1/25 (113.0s) lr=1.00e-04 train_loss=0.6743 train_acc=0.5986 val_loss=0.5814 val_acc=0.7036 val_f1=0.7398 val_auc=0.7766
+  -> new best (stage1_frozen), val_loss=0.5814
+[stage1_frozen] epoch 2/25 (104.4s) lr=1.00e-04 train_loss=0.6006 train_acc=0.6691 val_loss=0.5568 val_acc=0.7137 val_f1=0.7473 val_auc=0.7976
+  -> new best (stage1_frozen), val_loss=0.5568
+[stage1_frozen] epoch 3/25 (110.0s) lr=1.00e-04 train_loss=0.5761 train_acc=0.6910 val_loss=0.5437 val_acc=0.7359 val_f1=0.7614 val_auc=0.8062
+  -> new best (stage1_frozen), val_loss=0.5437
+[stage1_frozen] epoch 4/25 (107.1s) lr=1.00e-04 train_loss=0.5507 train_acc=0.7232 val_loss=0.5345 val_acc=0.7460 val_f1=0.7692 val_auc=0.8126
+  -> new best (stage1_frozen), val_loss=0.5345
+[stage1_frozen] epoch 5/25 (110.0s) lr=1.00e-04 train_loss=0.5377 train_acc=0.7370 val_loss=0.5228 val_acc=0.7520 val_f1=0.7666 val_auc=0.8165
+  -> new best (stage1_frozen), val_loss=0.5228
+[stage1_frozen] epoch 6/25 (101.8s) lr=1.00e-04 train_loss=0.5257 train_acc=0.7353 val_loss=0.5187 val_acc=0.7540 val_f1=0.7715 val_auc=0.8208
+  -> new best (stage1_frozen), val_loss=0.5187
+[stage1_frozen] epoch 7/25 (102.8s) lr=1.00e-04 train_loss=0.5146 train_acc=0.7490 val_loss=0.5113 val_acc=0.7440 val_f1=0.7590 val_auc=0.8249
+  -> new best (stage1_frozen), val_loss=0.5113
+[stage1_frozen] epoch 8/25 (100.7s) lr=1.00e-04 train_loss=0.4968 train_acc=0.7568 val_loss=0.5130 val_acc=0.7460 val_f1=0.7632 val_auc=0.8234
+[stage1_frozen] epoch 9/25 (104.6s) lr=1.00e-04 train_loss=0.5007 train_acc=0.7619 val_loss=0.5070 val_acc=0.7399 val_f1=0.7485 val_auc=0.8271
+  -> new best (stage1_frozen), val_loss=0.5070
+[stage1_frozen] epoch 10/25 (108.1s) lr=1.00e-04 train_loss=0.4772 train_acc=0.7783 val_loss=0.5048 val_acc=0.7500 val_f1=0.7588 val_auc=0.8283
+  -> new best (stage1_frozen), val_loss=0.5048
+[stage1_frozen] epoch 11/25 (102.6s) lr=1.00e-04 train_loss=0.4925 train_acc=0.7563 val_loss=0.5004 val_acc=0.7621 val_f1=0.7704 val_auc=0.8328
+  -> new best (stage1_frozen), val_loss=0.5004
+[stage1_frozen] epoch 12/25 (99.8s) lr=1.00e-04 train_loss=0.4786 train_acc=0.7684 val_loss=0.5101 val_acc=0.7440 val_f1=0.7687 val_auc=0.8313
+[stage1_frozen] epoch 13/25 (104.6s) lr=1.00e-04 train_loss=0.4783 train_acc=0.7675 val_loss=0.5023 val_acc=0.7560 val_f1=0.7713 val_auc=0.8323
+[stage1_frozen] epoch 14/25 (102.4s) lr=1.00e-04 train_loss=0.4673 train_acc=0.7847 val_loss=0.5040 val_acc=0.7601 val_f1=0.7759 val_auc=0.8307
+[stage1_frozen] epoch 15/25 (101.3s) lr=5.00e-05 train_loss=0.4544 train_acc=0.7920 val_loss=0.5200 val_acc=0.7540 val_f1=0.7814 val_auc=0.8313
+[stage1_frozen] epoch 16/25 (100.7s) lr=5.00e-05 train_loss=0.4528 train_acc=0.7873 val_loss=0.4997 val_acc=0.7581 val_f1=0.7727 val_auc=0.8332
+  -> new best (stage1_frozen), val_loss=0.4997
+[stage1_frozen] epoch 17/25 (101.9s) lr=5.00e-05 train_loss=0.4614 train_acc=0.7873 val_loss=0.4989 val_acc=0.7601 val_f1=0.7767 val_auc=0.8360
+  -> new best (stage1_frozen), val_loss=0.4989
+[stage1_frozen] epoch 18/25 (102.4s) lr=5.00e-05 train_loss=0.4501 train_acc=0.7851 val_loss=0.4970 val_acc=0.7601 val_f1=0.7759 val_auc=0.8365
+  -> new best (stage1_frozen), val_loss=0.4970
+[stage1_frozen] epoch 19/25 (102.7s) lr=5.00e-05 train_loss=0.4489 train_acc=0.7993 val_loss=0.4928 val_acc=0.7641 val_f1=0.7728 val_auc=0.8375
+  -> new best (stage1_frozen), val_loss=0.4928
+[stage1_frozen] epoch 20/25 (102.7s) lr=5.00e-05 train_loss=0.4399 train_acc=0.8049 val_loss=0.5016 val_acc=0.7540 val_f1=0.7749 val_auc=0.8375
+[stage1_frozen] epoch 21/25 (105.0s) lr=5.00e-05 train_loss=0.4444 train_acc=0.7980 val_loss=0.4937 val_acc=0.7601 val_f1=0.7725 val_auc=0.8382
+[stage1_frozen] epoch 22/25 (111.0s) lr=5.00e-05 train_loss=0.4461 train_acc=0.7890 val_loss=0.4918 val_acc=0.7681 val_f1=0.7818 val_auc=0.8398
+  -> new best (stage1_frozen), val_loss=0.4918
+[stage1_frozen] epoch 23/25 (117.9s) lr=5.00e-05 train_loss=0.4389 train_acc=0.7894 val_loss=0.4969 val_acc=0.7560 val_f1=0.7730 val_auc=0.8374
+[stage1_frozen] epoch 24/25 (101.4s) lr=5.00e-05 train_loss=0.4346 train_acc=0.7954 val_loss=0.4921 val_acc=0.7621 val_f1=0.7739 val_auc=0.8395
+[stage1_frozen] epoch 25/25 (101.6s) lr=5.00e-05 train_loss=0.4297 train_acc=0.8049 val_loss=0.4938 val_acc=0.7661 val_f1=0.7795 val_auc=0.8389
+Trainable (stage 2, head + unfrozen blocks ['features.11', 'features.12']): 451,969
+[stage2_finetune] epoch 1/25 (108.9s) lr=1.00e-05 train_loss=0.4266 train_acc=0.8126 val_loss=0.4933 val_acc=0.7601 val_f1=0.7644 val_auc=0.8380
+  -> new best (stage2_finetune), val_loss=0.4933
+[stage2_finetune] epoch 2/25 (109.8s) lr=1.00e-05 train_loss=0.4261 train_acc=0.7993 val_loss=0.4944 val_acc=0.7621 val_f1=0.7677 val_auc=0.8383
+[stage2_finetune] epoch 3/25 (109.0s) lr=1.00e-05 train_loss=0.4101 train_acc=0.8178 val_loss=0.4938 val_acc=0.7500 val_f1=0.7634 val_auc=0.8405
+[stage2_finetune] epoch 4/25 (106.8s) lr=1.00e-05 train_loss=0.4161 train_acc=0.8096 val_loss=0.4882 val_acc=0.7802 val_f1=0.7816 val_auc=0.8430
+  -> new best (stage2_finetune), val_loss=0.4882
+[stage2_finetune] epoch 5/25 (108.1s) lr=1.00e-05 train_loss=0.4194 train_acc=0.8010 val_loss=0.4890 val_acc=0.7702 val_f1=0.7692 val_auc=0.8428
+[stage2_finetune] epoch 6/25 (109.3s) lr=1.00e-05 train_loss=0.4041 train_acc=0.8152 val_loss=0.4886 val_acc=0.7702 val_f1=0.7765 val_auc=0.8445
+[stage2_finetune] epoch 7/25 (106.5s) lr=1.00e-05 train_loss=0.4057 train_acc=0.8204 val_loss=0.4936 val_acc=0.7560 val_f1=0.7669 val_auc=0.8415
+[stage2_finetune] epoch 8/25 (107.4s) lr=5.00e-06 train_loss=0.4018 train_acc=0.8169 val_loss=0.4906 val_acc=0.7782 val_f1=0.7791 val_auc=0.8418
+[stage2_finetune] epoch 9/25 (109.0s) lr=5.00e-06 train_loss=0.3902 train_acc=0.8242 val_loss=0.4928 val_acc=0.7560 val_f1=0.7686 val_auc=0.8426
+  -> early stopping (stage2_finetune) at epoch 9, no val_loss improvement for 5 epochs
+Inference time: 32.69 ms/image (batch size 1, cpu, mean over 50 val images)
+
+=== DONE ===
+Final train metrics: {
+  "loss": 0.40643435414059254,
+  "accuracy": 0.812204555221315,
+  "precision": 0.8095238095238095,
+  "recall": 0.8171673819742489,
+  "f1": 0.8133276377616403,
+  "roc_auc": 0.8973100248941813
+}
+Final val metrics: {
+  "loss": 0.4882314464738292,
+  "accuracy": 0.780241935483871,
+  "precision": 0.78,
+  "recall": 0.7831325301204819,
+  "f1": 0.781563126252505,
+  "roc_auc": 0.8430483065866705
+}
+Train-val gap: {
+  "accuracy_gap": 0.032,
+  "f1_gap": 0.0318
+}
+TEST SET HAS NOT BEEN ACCESSED.

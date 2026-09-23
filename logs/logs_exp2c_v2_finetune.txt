@@ -1,0 +1,3 @@
+Device: cpu
+Free RAM before start: 74 MB
+Free RAM (74 MB) is already below the 400 MB safety floor before any data/model has even been loaded -- aborting before starting rather than risking an OS OOM kill mid-load.

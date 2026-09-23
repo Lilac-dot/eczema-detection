@@ -1,0 +1,11 @@
+Waiting for C:\Users\tishy\Documents\Honors\experiments\efficientnet_b0\checkpoints\best_overall.pt to appear (polling every 60s)...
+EfficientNet-B0 finished (checkpoint found after 0 min wait).
+
+Starting queue: ['mobilenetv3_small', 'shufflenet_v2_x0_5', 'squeezenet1_1', 'repghostnet_050', 'shufflenet_v2_x1_0', 'mobilenetv2_100', 'efficientnet_lite0', 'mobilenetv3_large']
+
+=== [1/8] Skipping mobilenetv3_small -- best_overall.pt already exists ===
+
+=== [2/8] Starting shufflenet_v2_x0_5 (09:13:08) ===
+=== [2/8] shufflenet_v2_x0_5: OK (10:15:22) -- log: C:\Users\tishy\Documents\Honors\logs_train_shufflenet_v2_x0_5.txt ===
+
+=== [3/8] Starting squeezenet1_1 (10:15:22) ===

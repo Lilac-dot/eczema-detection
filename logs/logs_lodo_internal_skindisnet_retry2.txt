@@ -1,0 +1,4 @@
+Config: internal_skindisnet  (held out entirely: scin)
+Device: cpu
+Free RAM (before start): 315 MB, below the 400 MB safety floor -- not proceeding.
+Aborting before loading any data/model.

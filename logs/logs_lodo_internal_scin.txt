@@ -1,0 +1,27 @@
+Config: internal_scin  (held out entirely: skindisnet)
+Device: cpu
+Combined training set: 2815 images (internal=2327, scin=488)
+Epoch 1/15 (299.7s) train_loss=0.6584 train_acc=0.6032 | val_internal=0.7117 val_scin=0.5155 combined=0.6136 | free_ram_after=444MB
+  -> saved new best model (combined_val_acc=0.6136)
+Epoch 2/15 (270.9s) train_loss=0.5881 train_acc=0.6888 | val_internal=0.7278 val_scin=0.4897 combined=0.6088 | free_ram_after=973MB
+Epoch 3/15 (255.8s) train_loss=0.5443 train_acc=0.7300 | val_internal=0.7258 val_scin=0.5206 combined=0.6232 | free_ram_after=1089MB
+  -> saved new best model (combined_val_acc=0.6232)
+Epoch 4/15 (290.4s) train_loss=0.5129 train_acc=0.7560 | val_internal=0.7077 val_scin=0.5361 combined=0.6219 | free_ram_after=443MB
+Epoch 5/15 (372.4s) train_loss=0.4780 train_acc=0.7829 | val_internal=0.7198 val_scin=0.4845 combined=0.6021 | free_ram_after=686MB
+Epoch 6/15 (264.8s) train_loss=0.4308 train_acc=0.8089 | val_internal=0.7440 val_scin=0.4948 combined=0.6194 | free_ram_after=1480MB
+Epoch 7/15 (256.9s) train_loss=0.3928 train_acc=0.8298 | val_internal=0.7339 val_scin=0.5000 combined=0.6169 | free_ram_after=1183MB
+Epoch 8/15 (242.2s) train_loss=0.3742 train_acc=0.8444 | val_internal=0.7258 val_scin=0.4948 combined=0.6103 | free_ram_after=1150MB
+Epoch 9/15 (234.0s) train_loss=0.3411 train_acc=0.8501 | val_internal=0.7419 val_scin=0.5103 combined=0.6261 | free_ram_after=1129MB
+  -> saved new best model (combined_val_acc=0.6261)
+Epoch 10/15 (236.3s) train_loss=0.3325 train_acc=0.8572 | val_internal=0.7581 val_scin=0.5309 combined=0.6445 | free_ram_after=1308MB
+  -> saved new best model (combined_val_acc=0.6445)
+Epoch 11/15 (236.1s) train_loss=0.2923 train_acc=0.8803 | val_internal=0.7560 val_scin=0.5103 combined=0.6332 | free_ram_after=1349MB
+Epoch 12/15 (236.7s) train_loss=0.2751 train_acc=0.8899 | val_internal=0.7601 val_scin=0.5258 combined=0.6429 | free_ram_after=1232MB
+Epoch 13/15 (244.6s) train_loss=0.2590 train_acc=0.9002 | val_internal=0.7500 val_scin=0.4948 combined=0.6224 | free_ram_after=1174MB
+Epoch 14/15 (240.8s) train_loss=0.2515 train_acc=0.8963 | val_internal=0.7661 val_scin=0.5206 combined=0.6434 | free_ram_after=1083MB
+Epoch 15/15 (242.4s) train_loss=0.2429 train_acc=0.9009 | val_internal=0.7843 val_scin=0.4948 combined=0.6396 | free_ram_after=1256MB
+
+Best combined val accuracy: 0.6445
+Total wall-clock time: 3924.4s (65.4 min)
+Stopped early due to low memory: False
+Model saved to C:\Users\tishy\Documents\Honors\models\lodo_internal_scin_resnet18.pt

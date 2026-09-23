@@ -1,0 +1,116 @@
+Device: cpu
+Model: EfficientNet-B0
+Total params: 4,171,645  Trainable (stage 1, head only): 164,097
+[stage1_frozen] epoch 1/25 (141.9s) lr=1.00e-04 train_loss=0.6532 train_acc=0.6407 val_loss=0.5963 val_acc=0.7198 val_f1=0.7431 val_auc=0.7981
+  -> new best (stage1_frozen), val_loss=0.5963
+[stage1_frozen] epoch 2/25 (140.3s) lr=1.00e-04 train_loss=0.5926 train_acc=0.7121 val_loss=0.5505 val_acc=0.7339 val_f1=0.7381 val_auc=0.8115
+  -> new best (stage1_frozen), val_loss=0.5505
+[stage1_frozen] epoch 3/25 (143.1s) lr=1.00e-04 train_loss=0.5597 train_acc=0.7275 val_loss=0.5303 val_acc=0.7500 val_f1=0.7597 val_auc=0.8250
+  -> new best (stage1_frozen), val_loss=0.5303
+[stage1_frozen] epoch 4/25 (145.6s) lr=1.00e-04 train_loss=0.5353 train_acc=0.7391 val_loss=0.5169 val_acc=0.7540 val_f1=0.7654 val_auc=0.8325
+  -> new best (stage1_frozen), val_loss=0.5169
+[stage1_frozen] epoch 5/25 (182.8s) lr=1.00e-04 train_loss=0.5132 train_acc=0.7589 val_loss=0.5059 val_acc=0.7641 val_f1=0.7710 val_auc=0.8378
+  -> new best (stage1_frozen), val_loss=0.5059
+[stage1_frozen] epoch 6/25 (206.8s) lr=1.00e-04 train_loss=0.5002 train_acc=0.7576 val_loss=0.5003 val_acc=0.7581 val_f1=0.7710 val_auc=0.8414
+  -> new best (stage1_frozen), val_loss=0.5003
+[stage1_frozen] epoch 7/25 (155.8s) lr=1.00e-04 train_loss=0.4849 train_acc=0.7744 val_loss=0.4961 val_acc=0.7581 val_f1=0.7692 val_auc=0.8446
+  -> new best (stage1_frozen), val_loss=0.4961
+[stage1_frozen] epoch 8/25 (170.6s) lr=1.00e-04 train_loss=0.4747 train_acc=0.7804 val_loss=0.4894 val_acc=0.7722 val_f1=0.7806 val_auc=0.8471
+  -> new best (stage1_frozen), val_loss=0.4894
+[stage1_frozen] epoch 9/25 (156.4s) lr=1.00e-04 train_loss=0.4648 train_acc=0.7813 val_loss=0.4862 val_acc=0.7560 val_f1=0.7585 val_auc=0.8470
+  -> new best (stage1_frozen), val_loss=0.4862
+[stage1_frozen] epoch 10/25 (152.0s) lr=1.00e-04 train_loss=0.4535 train_acc=0.7980 val_loss=0.4816 val_acc=0.7641 val_f1=0.7636 val_auc=0.8512
+  -> new best (stage1_frozen), val_loss=0.4816
+[stage1_frozen] epoch 11/25 (179.9s) lr=1.00e-04 train_loss=0.4455 train_acc=0.8049 val_loss=0.4778 val_acc=0.7661 val_f1=0.7661 val_auc=0.8512
+  -> new best (stage1_frozen), val_loss=0.4778
+[stage1_frozen] epoch 12/25 (193.8s) lr=1.00e-04 train_loss=0.4388 train_acc=0.7985 val_loss=0.4750 val_acc=0.7702 val_f1=0.7702 val_auc=0.8538
+  -> new best (stage1_frozen), val_loss=0.4750
+[stage1_frozen] epoch 13/25 (171.1s) lr=1.00e-04 train_loss=0.4327 train_acc=0.8144 val_loss=0.4760 val_acc=0.7722 val_f1=0.7651 val_auc=0.8527
+[stage1_frozen] epoch 14/25 (158.0s) lr=1.00e-04 train_loss=0.4186 train_acc=0.8144 val_loss=0.4732 val_acc=0.7681 val_f1=0.7714 val_auc=0.8542
+  -> new best (stage1_frozen), val_loss=0.4732
+[stage1_frozen] epoch 15/25 (183.5s) lr=1.00e-04 train_loss=0.4146 train_acc=0.8113 val_loss=0.4701 val_acc=0.7762 val_f1=0.7739 val_auc=0.8563
+  -> new best (stage1_frozen), val_loss=0.4701
+[stage1_frozen] epoch 16/25 (205.9s) lr=1.00e-04 train_loss=0.4101 train_acc=0.8109 val_loss=0.4703 val_acc=0.7742 val_f1=0.7667 val_auc=0.8558
+[stage1_frozen] epoch 17/25 (187.6s) lr=1.00e-04 train_loss=0.4037 train_acc=0.8178 val_loss=0.4657 val_acc=0.7762 val_f1=0.7836 val_auc=0.8592
+  -> new best (stage1_frozen), val_loss=0.4657
+[stage1_frozen] epoch 18/25 (202.2s) lr=1.00e-04 train_loss=0.4021 train_acc=0.8294 val_loss=0.4651 val_acc=0.7762 val_f1=0.7828 val_auc=0.8589
+  -> new best (stage1_frozen), val_loss=0.4651
+[stage1_frozen] epoch 19/25 (175.5s) lr=1.00e-04 train_loss=0.4006 train_acc=0.8268 val_loss=0.4648 val_acc=0.7802 val_f1=0.7762 val_auc=0.8598
+  -> new best (stage1_frozen), val_loss=0.4648
+[stage1_frozen] epoch 20/25 (151.8s) lr=1.00e-04 train_loss=0.3862 train_acc=0.8315 val_loss=0.4591 val_acc=0.7782 val_f1=0.7835 val_auc=0.8632
+  -> new best (stage1_frozen), val_loss=0.4591
+[stage1_frozen] epoch 21/25 (147.3s) lr=1.00e-04 train_loss=0.3803 train_acc=0.8320 val_loss=0.4595 val_acc=0.7802 val_f1=0.7789 val_auc=0.8622
+[stage1_frozen] epoch 22/25 (145.3s) lr=1.00e-04 train_loss=0.3691 train_acc=0.8427 val_loss=0.4561 val_acc=0.7863 val_f1=0.7888 val_auc=0.8651
+  -> new best (stage1_frozen), val_loss=0.4561
+[stage1_frozen] epoch 23/25 (142.2s) lr=1.00e-04 train_loss=0.3752 train_acc=0.8367 val_loss=0.4575 val_acc=0.7883 val_f1=0.7904 val_auc=0.8639
+[stage1_frozen] epoch 24/25 (144.7s) lr=1.00e-04 train_loss=0.3722 train_acc=0.8367 val_loss=0.4610 val_acc=0.7782 val_f1=0.7925 val_auc=0.8659
+[stage1_frozen] epoch 25/25 (141.5s) lr=1.00e-04 train_loss=0.3640 train_acc=0.8466 val_loss=0.4616 val_acc=0.7883 val_f1=0.7817 val_auc=0.8633
+Trainable (stage 2, head + unfrozen blocks ['7', '8']): 1,293,489
+[stage2_finetune] epoch 1/25 (151.3s) lr=1.00e-05 train_loss=0.5089 train_acc=0.7636 val_loss=0.5442 val_acc=0.7520 val_f1=0.7612 val_auc=0.8085
+  -> new best (stage2_finetune), val_loss=0.5442
+[stage2_finetune] epoch 2/25 (155.3s) lr=1.00e-05 train_loss=0.4789 train_acc=0.7783 val_loss=0.5162 val_acc=0.7560 val_f1=0.7565 val_auc=0.8293
+  -> new best (stage2_finetune), val_loss=0.5162
+[stage2_finetune] epoch 3/25 (175.1s) lr=1.00e-05 train_loss=0.4550 train_acc=0.7989 val_loss=0.4980 val_acc=0.7681 val_f1=0.7686 val_auc=0.8417
+  -> new best (stage2_finetune), val_loss=0.4980
+[stage2_finetune] epoch 4/25 (167.0s) lr=1.00e-05 train_loss=0.4403 train_acc=0.8092 val_loss=0.4936 val_acc=0.7661 val_f1=0.7593 val_auc=0.8436
+  -> new best (stage2_finetune), val_loss=0.4936
+[stage2_finetune] epoch 5/25 (155.6s) lr=1.00e-05 train_loss=0.4285 train_acc=0.8126 val_loss=0.4859 val_acc=0.7702 val_f1=0.7635 val_auc=0.8485
+  -> new best (stage2_finetune), val_loss=0.4859
+[stage2_finetune] epoch 6/25 (155.9s) lr=1.00e-05 train_loss=0.4231 train_acc=0.8079 val_loss=0.4807 val_acc=0.7641 val_f1=0.7547 val_auc=0.8518
+  -> new best (stage2_finetune), val_loss=0.4807
+[stage2_finetune] epoch 7/25 (159.7s) lr=1.00e-05 train_loss=0.4018 train_acc=0.8346 val_loss=0.4722 val_acc=0.7661 val_f1=0.7633 val_auc=0.8551
+  -> new best (stage2_finetune), val_loss=0.4722
+[stage2_finetune] epoch 8/25 (159.5s) lr=1.00e-05 train_loss=0.3960 train_acc=0.8350 val_loss=0.4670 val_acc=0.7742 val_f1=0.7733 val_auc=0.8581
+  -> new best (stage2_finetune), val_loss=0.4670
+[stage2_finetune] epoch 9/25 (156.7s) lr=1.00e-05 train_loss=0.3920 train_acc=0.8320 val_loss=0.4647 val_acc=0.7782 val_f1=0.7800 val_auc=0.8597
+  -> new best (stage2_finetune), val_loss=0.4647
+[stage2_finetune] epoch 10/25 (204.2s) lr=1.00e-05 train_loss=0.3741 train_acc=0.8505 val_loss=0.4732 val_acc=0.7581 val_f1=0.7425 val_auc=0.8574
+[stage2_finetune] epoch 11/25 (192.4s) lr=1.00e-05 train_loss=0.3654 train_acc=0.8423 val_loss=0.4647 val_acc=0.7863 val_f1=0.7888 val_auc=0.8592
+[stage2_finetune] epoch 12/25 (191.3s) lr=1.00e-05 train_loss=0.3762 train_acc=0.8358 val_loss=0.4615 val_acc=0.7883 val_f1=0.7835 val_auc=0.8627
+  -> new best (stage2_finetune), val_loss=0.4615
+[stage2_finetune] epoch 13/25 (202.3s) lr=1.00e-05 train_loss=0.3541 train_acc=0.8560 val_loss=0.4581 val_acc=0.7782 val_f1=0.7699 val_auc=0.8646
+  -> new best (stage2_finetune), val_loss=0.4581
+[stage2_finetune] epoch 14/25 (173.1s) lr=1.00e-05 train_loss=0.3483 train_acc=0.8535 val_loss=0.4527 val_acc=0.7883 val_f1=0.7879 val_auc=0.8679
+  -> new best (stage2_finetune), val_loss=0.4527
+[stage2_finetune] epoch 15/25 (149.4s) lr=1.00e-05 train_loss=0.3362 train_acc=0.8642 val_loss=0.4551 val_acc=0.7903 val_f1=0.7860 val_auc=0.8673
+[stage2_finetune] epoch 16/25 (145.5s) lr=1.00e-05 train_loss=0.3360 train_acc=0.8612 val_loss=0.4543 val_acc=0.7903 val_f1=0.7895 val_auc=0.8663
+[stage2_finetune] epoch 17/25 (144.7s) lr=1.00e-05 train_loss=0.3471 train_acc=0.8500 val_loss=0.4516 val_acc=0.7863 val_f1=0.7846 val_auc=0.8676
+  -> new best (stage2_finetune), val_loss=0.4516
+[stage2_finetune] epoch 18/25 (146.7s) lr=1.00e-05 train_loss=0.3139 train_acc=0.8827 val_loss=0.4459 val_acc=0.7984 val_f1=0.8016 val_auc=0.8707
+  -> new best (stage2_finetune), val_loss=0.4459
+[stage2_finetune] epoch 19/25 (146.0s) lr=1.00e-05 train_loss=0.3101 train_acc=0.8801 val_loss=0.4478 val_acc=0.8004 val_f1=0.7984 val_auc=0.8716
+[stage2_finetune] epoch 20/25 (145.6s) lr=1.00e-05 train_loss=0.3044 train_acc=0.8857 val_loss=0.4529 val_acc=0.7863 val_f1=0.7745 val_auc=0.8725
+[stage2_finetune] epoch 21/25 (144.2s) lr=1.00e-05 train_loss=0.3003 train_acc=0.8823 val_loss=0.4459 val_acc=0.7923 val_f1=0.7902 val_auc=0.8724
+  -> new best (stage2_finetune), val_loss=0.4459
+[stage2_finetune] epoch 22/25 (149.2s) lr=5.00e-06 train_loss=0.2979 train_acc=0.8827 val_loss=0.4433 val_acc=0.7964 val_f1=0.7891 val_auc=0.8756
+  -> new best (stage2_finetune), val_loss=0.4433
+[stage2_finetune] epoch 23/25 (147.7s) lr=5.00e-06 train_loss=0.2954 train_acc=0.8896 val_loss=0.4414 val_acc=0.8044 val_f1=0.8000 val_auc=0.8755
+  -> new best (stage2_finetune), val_loss=0.4414
+[stage2_finetune] epoch 24/25 (146.9s) lr=5.00e-06 train_loss=0.2907 train_acc=0.8878 val_loss=0.4377 val_acc=0.7984 val_f1=0.7934 val_auc=0.8784
+  -> new best (stage2_finetune), val_loss=0.4377
+[stage2_finetune] epoch 25/25 (147.2s) lr=5.00e-06 train_loss=0.2913 train_acc=0.8831 val_loss=0.4368 val_acc=0.8065 val_f1=0.8049 val_auc=0.8773
+  -> new best (stage2_finetune), val_loss=0.4368
+Inference time: 37.62 ms/image (batch size 1, cpu, mean over 50 val images)
+
+=== DONE ===
+Final train metrics: {
+  "loss": 0.3031913096563059,
+  "accuracy": 0.8852599914052428,
+  "precision": 0.9111721611721612,
+  "recall": 0.8540772532188842,
+  "f1": 0.8817013735046522,
+  "roc_auc": 0.9562479224069793
+}
+Final val metrics: {
+  "loss": 0.4368228472528919,
+  "accuracy": 0.8064516129032258,
+  "precision": 0.8148148148148148,
+  "recall": 0.7951807228915663,
+  "f1": 0.8048780487804879,
+  "roc_auc": 0.8773393167812952
+}
+Train-val gap: {
+  "accuracy_gap": 0.0788,
+  "f1_gap": 0.0768
+}
+TEST SET HAS NOT BEEN ACCESSED.

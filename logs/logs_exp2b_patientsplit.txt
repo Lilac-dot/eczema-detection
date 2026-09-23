@@ -1,0 +1,23 @@
+Device: cpu
+Free RAM before start: 1305 MB
+Combined training set: 3683 images (internal=2327, scin=488, skindisnet_patientsplit=868)
+Epoch 1/10 (252.8s) train_loss=0.6756 train_acc=0.6622 | val: internal=0.7782 scin=0.5155 skindisnet=0.6799 combined=0.6579 | free_ram_before=1237MB free_ram_after=1179MB
+  -> saved new best model (combined_val_acc=0.6579)
+Epoch 2/10 (255.7s) train_loss=0.5808 train_acc=0.6970 | val: internal=0.7742 scin=0.5000 skindisnet=0.7129 combined=0.6624 | free_ram_before=1143MB free_ram_after=1249MB
+  -> saved new best model (combined_val_acc=0.6624)
+Epoch 3/10 (256.9s) train_loss=0.5383 train_acc=0.7228 | val: internal=0.7762 scin=0.5155 skindisnet=0.6997 combined=0.6638 | free_ram_before=1215MB free_ram_after=1313MB
+  -> saved new best model (combined_val_acc=0.6638)
+Epoch 4/10 (261.2s) train_loss=0.5213 train_acc=0.7391 | val: internal=0.7742 scin=0.5103 skindisnet=0.6568 combined=0.6471 | free_ram_before=1279MB free_ram_after=1240MB
+Epoch 5/10 (265.7s) train_loss=0.5150 train_acc=0.7345 | val: internal=0.7702 scin=0.5052 skindisnet=0.6832 combined=0.6528 | free_ram_before=1240MB free_ram_after=1351MB
+Epoch 6/10 (266.5s) train_loss=0.4795 train_acc=0.7744 | val: internal=0.7843 scin=0.5000 skindisnet=0.6964 combined=0.6602 | free_ram_before=1351MB free_ram_after=1551MB
+Epoch 7/10 (267.3s) train_loss=0.4834 train_acc=0.7673 | val: internal=0.7702 scin=0.5258 skindisnet=0.6832 combined=0.6597 | free_ram_before=1551MB free_ram_after=1487MB
+Epoch 8/10 (269.3s) train_loss=0.4687 train_acc=0.7820 | val: internal=0.7762 scin=0.4897 skindisnet=0.7063 combined=0.6574 | free_ram_before=1487MB free_ram_after=1428MB
+Epoch 9/10 (272.9s) train_loss=0.4491 train_acc=0.7936 | val: internal=0.7823 scin=0.5155 skindisnet=0.7162 combined=0.6713 | free_ram_before=1428MB free_ram_after=1486MB
+  -> saved new best model (combined_val_acc=0.6713)
+Epoch 10/10 (269.5s) train_loss=0.4489 train_acc=0.7839 | val: internal=0.7762 scin=0.5258 skindisnet=0.7129 combined=0.6716 | free_ram_before=1471MB free_ram_after=1521MB
+  -> saved new best model (combined_val_acc=0.6716)
+
+Best combined val accuracy: 0.6716
+Total wall-clock time: 2638.1s (44.0 min)
+Stopped early due to low memory: False
+Model saved to C:\Users\tishy\Documents\Honors\models\curated_resnet18_multisource_weighted_patientsplit.pt

@@ -1,0 +1,26 @@
+Device: cpu
+SkinDisNet-train: 853  SkinDisNet-val: 340
+Epoch 1/15 (90.8s) train_loss=0.6716 train_acc=0.5967 val_loss=0.6016 val_acc=0.6941
+  -> saved new best model (val_acc=0.6941)
+Epoch 2/15 (93.4s) train_loss=0.5743 train_acc=0.7104 val_loss=0.5741 val_acc=0.6912
+Epoch 3/15 (95.0s) train_loss=0.5403 train_acc=0.7351 val_loss=0.5511 val_acc=0.7235
+  -> saved new best model (val_acc=0.7235)
+Epoch 4/15 (94.2s) train_loss=0.5146 train_acc=0.7503 val_loss=0.5466 val_acc=0.6971
+Epoch 5/15 (93.4s) train_loss=0.4966 train_acc=0.7632 val_loss=0.5362 val_acc=0.7206
+Epoch 6/15 (94.1s) train_loss=0.4744 train_acc=0.7913 val_loss=0.5276 val_acc=0.7206
+Epoch 7/15 (93.5s) train_loss=0.4501 train_acc=0.7972 val_loss=0.5111 val_acc=0.7412
+  -> saved new best model (val_acc=0.7412)
+Epoch 8/15 (93.5s) train_loss=0.4273 train_acc=0.8019 val_loss=0.5096 val_acc=0.7441
+  -> saved new best model (val_acc=0.7441)
+Epoch 9/15 (94.9s) train_loss=0.4044 train_acc=0.8324 val_loss=0.5171 val_acc=0.6912
+Epoch 10/15 (93.6s) train_loss=0.4015 train_acc=0.8312 val_loss=0.5066 val_acc=0.7176
+Epoch 11/15 (94.3s) train_loss=0.3736 train_acc=0.8441 val_loss=0.4941 val_acc=0.7382
+Epoch 12/15 (93.3s) train_loss=0.3448 train_acc=0.8617 val_loss=0.4984 val_acc=0.7382
+Epoch 13/15 (93.3s) train_loss=0.3357 train_acc=0.8839 val_loss=0.4830 val_acc=0.7647
+  -> saved new best model (val_acc=0.7647)
+Epoch 14/15 (97.5s) train_loss=0.3179 train_acc=0.8746 val_loss=0.4706 val_acc=0.7824
+  -> saved new best model (val_acc=0.7824)
+Epoch 15/15 (93.8s) train_loss=0.2917 train_acc=0.9004 val_loss=0.4794 val_acc=0.7676
+
+Best val accuracy: 0.7824
+Model saved to C:\Users\tishy\Documents\Honors\models\skindisnet_resnet18.pt

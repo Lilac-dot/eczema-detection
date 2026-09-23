@@ -1,0 +1,8 @@
+Already-used case_ids (train+val+test, excluded from new sampling): 976
+New secondary-Eczema candidates (weight >= 0.4, not top): 47
+New negative sample (matched 1:1): 47
+Downloading 94 new images...
+  50/94 done
+
+C:\Users\tishy\Documents\Honors\dataset\SCIN\manifest_scin_train_expanded.csv: 582 total (Eczema=291, Other=291) -- was 488 (244/244)
+manifest_scin_val.csv and manifest_scin_test.csv untouched.

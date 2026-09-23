@@ -1,0 +1,108 @@
+
+============================================================
+SCIN-trained model
+============================================================
+
+=== SCIN -> SCIN ===
+n=294 (Eczema=147, Other=147)
+Accuracy: 0.5884
+AUC: 0.6370  (95% CI bootstrap: 0.5696-0.7000)
+Precision (Eczema): 0.5903
+Recall (Eczema): 0.5782
+F1 (Eczema): 0.5842  (95% CI bootstrap: 0.5111-0.6502)
+Confusion: TN=88 FP=59 FN=62 TP=85
+Other-class images misclassified as Eczema:
+  Other: 59
+Eczema images missed (predicted Other):
+  Eczema: 62
+
+=== SCIN -> Internal ===
+n=507 (Eczema=251, Other=256)
+Accuracy: 0.5207
+AUC: 0.5395  (95% CI bootstrap: 0.4876-0.5886)
+Precision (Eczema): 0.5256
+Recall (Eczema): 0.3267
+F1 (Eczema): 0.4029  (95% CI bootstrap: 0.3428-0.4627)
+Confusion: TN=182 FP=74 FN=169 TP=82
+Other-class images misclassified as Eczema:
+  Tinea: 18
+  DrugEruption: 17
+  Psoriasis: 12
+  Infestations_Bites: 11
+  Lichen: 9
+  Rosacea: 6
+  Candidiasis: 1
+Eczema images missed (predicted Other):
+  Eczema: 169
+
+=== SCIN -> SkinDisNet ===
+n=513 (Eczema=161, Other=352)
+Accuracy: 0.5614
+AUC: 0.5316  (95% CI bootstrap: 0.4806-0.5804)
+Precision (Eczema): 0.3505
+Recall (Eczema): 0.4658
+F1 (Eczema): 0.4000  (95% CI bootstrap: 0.3364-0.4587)
+Confusion: TN=213 FP=139 FN=86 TP=75
+Other-class images misclassified as Eczema:
+  Contact Dermatitis (CD): 62
+  Tinea Corporis (TC): 37
+  Scabies (SC): 34
+  Seborrheic Dermatitis (SD): 6
+Eczema images missed (predicted Other):
+  Eczema (EC): 80
+  Atopic Dermatitis (AD): 6
+
+============================================================
+SkinDisNet-trained model
+============================================================
+
+=== SkinDisNet -> SkinDisNet ===
+n=513 (Eczema=161, Other=352)
+Accuracy: 0.7856
+AUC: 0.8281  (95% CI bootstrap: 0.7872-0.8657)
+Precision (Eczema): 0.6491
+Recall (Eczema): 0.6894
+F1 (Eczema): 0.6687  (95% CI bootstrap: 0.5994-0.7229)
+Confusion: TN=292 FP=60 FN=50 TP=111
+Other-class images misclassified as Eczema:
+  Contact Dermatitis (CD): 34
+  Tinea Corporis (TC): 16
+  Scabies (SC): 8
+  Seborrheic Dermatitis (SD): 2
+Eczema images missed (predicted Other):
+  Eczema (EC): 36
+  Atopic Dermatitis (AD): 14
+
+=== SkinDisNet -> Internal ===
+n=507 (Eczema=251, Other=256)
+Accuracy: 0.4813
+AUC: 0.4414  (95% CI bootstrap: 0.3921-0.4909)
+Precision (Eczema): 0.4032
+Recall (Eczema): 0.0996
+F1 (Eczema): 0.1597  (95% CI bootstrap: 0.1042-0.2164)
+Confusion: TN=219 FP=37 FN=226 TP=25
+Other-class images misclassified as Eczema:
+  DrugEruption: 7
+  Infestations_Bites: 6
+  Lichen: 6
+  Rosacea: 6
+  Psoriasis: 5
+  Tinea: 5
+  Candidiasis: 2
+Eczema images missed (predicted Other):
+  Eczema: 226
+
+=== SkinDisNet -> SCIN ===
+n=294 (Eczema=147, Other=147)
+Accuracy: 0.4796
+AUC: 0.4761  (95% CI bootstrap: 0.4099-0.5452)
+Precision (Eczema): 0.3929
+Recall (Eczema): 0.0748
+F1 (Eczema): 0.1257  (95% CI bootstrap: 0.0599-0.1969)
+Confusion: TN=130 FP=17 FN=136 TP=11
+Other-class images misclassified as Eczema:
+  Other: 17
+Eczema images missed (predicted Other):
+  Eczema: 136
+
+Saved: C:\Users\tishy\Documents\Honors\cross_dataset_matrix_results.json
