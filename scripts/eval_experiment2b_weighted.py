@@ -36,6 +36,6 @@ if __name__ == "__main__":
         print(f"  F1  {b['f1']:.4f} -> {m['f1']:.4f} -> {w['f1']:.4f}")
         print(f"  Acc {b['acc']:.4f} -> {m['acc']:.4f} -> {w['acc']:.4f}")
 
-    with open(MODELS_DIR.parent / "experiment2b_weighted_results.json", "w") as f:
+    with open(MODELS_DIR.parent / "results" / "experiment2b_weighted_results.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
     print(f"\nFull results saved to experiment2b_weighted_results.json")

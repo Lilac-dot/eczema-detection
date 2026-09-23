@@ -19,7 +19,7 @@ from torchvision import transforms, models
 from PIL import Image
 from sklearn.metrics import roc_auc_score
 
-from paths import MODELS_DIR
+from paths import MODELS_DIR, ROOT
 
 MODEL_PATH = MODELS_DIR / "curated_resnet18_balanced.pt"
 IMG_SIZE = 224
@@ -41,7 +41,9 @@ class ExternalDataset(Dataset):
 
     def __getitem__(self, idx):
         path, label, cls = self.rows[idx]
-        img = Image.open(path).convert("RGB")
+        from pathlib import Path
+        full_path = path if Path(path).is_absolute() else ROOT / path
+        img = Image.open(full_path).convert("RGB")
         return self.transform(img), label, cls
 
 
@@ -88,7 +90,7 @@ def default_eval_transform():
     ])
 
 
-def run_eval(manifest_path, dataset_label, model_path=None, eval_tf=None):
+def run_eval(manifest_path, dataset_label, model_path=None, eval_tf=None, return_raw=False):
     eval_tf = eval_tf or default_eval_transform()
     ds = ExternalDataset(manifest_path, eval_tf)
     loader = DataLoader(ds, batch_size=32, shuffle=False, num_workers=0,
@@ -154,7 +156,66 @@ def run_eval(manifest_path, dataset_label, model_path=None, eval_tf=None):
         for cls, n in missed_eczema.most_common():
             print(f"  {cls}: {n}")
 
-    return dict(n=len(y_true), acc=acc, auc=auc, auc_ci=(auc_lo, auc_hi),
-                precision=precision, recall=recall, f1=f1, f1_ci=(f1_lo, f1_hi),
-                tp=tp, tn=tn, fp=fp, fn=fn,
-                confused_with_eczema=dict(confused_with_eczema), missed_eczema=dict(missed_eczema))
+    result = dict(n=len(y_true), acc=acc, auc=auc, auc_ci=(auc_lo, auc_hi),
+                  precision=precision, recall=recall, f1=f1, f1_ci=(f1_lo, f1_hi),
+                  tp=tp, tn=tn, fp=fp, fn=fn,
+                  confused_with_eczema=dict(confused_with_eczema), missed_eczema=dict(missed_eczema))
+    if return_raw:
+        # Opt-in only -- existing callers are unaffected (same dict keys as before, plus these).
+        # Safe to pair against another run_eval() call on the SAME manifest_path: the
+        # DataLoader uses shuffle=False, so row order always matches the manifest file's
+        # own row order and two independent calls line up index-for-index.
+        result["y_true"] = y_true.tolist()
+        result["y_prob"] = y_prob.tolist()
+    return result
+
+
+def paired_bootstrap_test(y_true, y_prob_a, y_prob_b, n=1000, seed=42):
+    """Paired bootstrap significance test for AUC_a - AUC_b on the SAME test images.
+
+    Unlike two independent bootstrap_ci() calls (one per model), this resamples the same
+    image indices for both models on every draw -- required because the two models' scores
+    on the same image are correlated (same underlying difficulty), so treating them as two
+    independent samples would overstate the uncertainty of their difference. This is the
+    standard paired-bootstrap construction for comparing two classifiers on one shared test
+    set (e.g. Efron & Tibshirani 1993).
+
+    y_true, y_prob_a, y_prob_b must be same-length arrays over the SAME images in the SAME
+    order (e.g. two run_eval(..., return_raw=True) calls on the same manifest_path).
+
+    Returns dict(observed_diff, ci=(lo, hi), p_value) for AUC_a - AUC_b. A 95% CI that
+    excludes 0, or p < 0.05, indicates a statistically significant difference; report the
+    CI and p-value together, not just a significant/not-significant verdict.
+    """
+    y_true = np.asarray(y_true)
+    y_prob_a = np.asarray(y_prob_a)
+    y_prob_b = np.asarray(y_prob_b)
+    assert len(y_true) == len(y_prob_a) == len(y_prob_b), \
+        "paired_bootstrap_test requires all three arrays to be the same length (same images, same order)"
+
+    observed_diff = roc_auc_score(y_true, y_prob_a) - roc_auc_score(y_true, y_prob_b)
+
+    rng = np.random.RandomState(seed)
+    n_samples = len(y_true)
+    diffs = []
+    for _ in range(n):
+        idx = rng.randint(0, n_samples, n_samples)  # SAME indices for both models this draw
+        yt = y_true[idx]
+        if len(np.unique(yt)) < 2:
+            continue  # AUC undefined for a resample with only one class present
+        auc_a = roc_auc_score(yt, y_prob_a[idx])
+        auc_b = roc_auc_score(yt, y_prob_b[idx])
+        diffs.append(auc_a - auc_b)
+    diffs = np.array(diffs)
+
+    ci_lo, ci_hi = float(np.percentile(diffs, 2.5)), float(np.percentile(diffs, 97.5))
+    # Two-sided bootstrap p-value: fraction of resampled diffs on the opposite side of 0
+    # from the observed diff, doubled (standard construction), capped at 1.0.
+    if observed_diff >= 0:
+        p_one_sided = (diffs <= 0).mean()
+    else:
+        p_one_sided = (diffs >= 0).mean()
+    p_value = min(1.0, 2 * p_one_sided)
+
+    return dict(observed_diff=float(observed_diff), ci=(ci_lo, ci_hi), p_value=float(p_value),
+                n_valid_draws=int(len(diffs)))

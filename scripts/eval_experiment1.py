@@ -22,6 +22,6 @@ if __name__ == "__main__":
     for manifest_path, label in DATASETS:
         results[label] = run_eval(manifest_path, label, model_path=MODEL)
 
-    with open(MODELS_DIR.parent / "experiment1_results.json", "w") as f:
+    with open(MODELS_DIR.parent / "results" / "experiment1_results.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
     print(f"\nFull results saved to experiment1_results.json")

@@ -36,6 +36,6 @@ if __name__ == "__main__":
         print(f"{label}: AUC {b['auc']:.4f} -> {m['auc']:.4f}  |  "
               f"F1 {b['f1']:.4f} -> {m['f1']:.4f}  |  Acc {b['acc']:.4f} -> {m['acc']:.4f}")
 
-    with open(MODELS_DIR.parent / "experiment2_results.json", "w") as f:
+    with open(MODELS_DIR.parent / "results" / "experiment2_results.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
     print(f"\nFull results saved to experiment2_results.json")
