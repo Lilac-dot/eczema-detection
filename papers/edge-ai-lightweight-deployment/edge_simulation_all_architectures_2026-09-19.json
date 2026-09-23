@@ -1,0 +1,1748 @@
+{
+  "resnet18": {
+    "sanity_check_val_accuracy": 0.8024193548387096,
+    "pruning_sweep": [
+      {
+        "sparsity_target": 0.0,
+        "sparsity_actual": 0.0,
+        "val_metrics": {
+          "accuracy": 0.8024193548387096,
+          "precision": 0.7915057915057915,
+          "recall": 0.8232931726907631,
+          "f1": 0.8070866141732284,
+          "roc_auc": 0.888574541079297
+        },
+        "inference_ms_mean": 44.21804000012344,
+        "inference_ms_std": 3.084063485884529,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 85.27791595458984
+      },
+      {
+        "sparsity_target": 0.1,
+        "sparsity_actual": 0.10000003581682416,
+        "val_metrics": {
+          "accuracy": 0.7923387096774194,
+          "precision": 0.7829457364341085,
+          "recall": 0.8112449799196787,
+          "f1": 0.796844181459566,
+          "roc_auc": 0.8885745410792969
+        },
+        "inference_ms_mean": 55.94332500004384,
+        "inference_ms_std": 10.521726990775518,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 76.75745391845703
+      },
+      {
+        "sparsity_target": 0.2,
+        "sparsity_actual": 0.19999998209158792,
+        "val_metrics": {
+          "accuracy": 0.8064516129032258,
+          "precision": 0.7953667953667953,
+          "recall": 0.8273092369477911,
+          "f1": 0.8110236220472441,
+          "roc_auc": 0.8902492561338471
+        },
+        "inference_ms_mean": 45.28362500022922,
+        "inference_ms_std": 3.3472876690427045,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 68.23699951171875
+      },
+      {
+        "sparsity_target": 0.3,
+        "sparsity_actual": 0.3000000179084121,
+        "val_metrics": {
+          "accuracy": 0.7963709677419355,
+          "precision": 0.7913385826771654,
+          "recall": 0.8072289156626506,
+          "f1": 0.7992047713717694,
+          "roc_auc": 0.886704713591207
+        },
+        "inference_ms_mean": 46.92558499991719,
+        "inference_ms_std": 6.968399068099402,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 59.71653747558594
+      },
+      {
+        "sparsity_target": 0.4,
+        "sparsity_actual": 0.39999996418317585,
+        "val_metrics": {
+          "accuracy": 0.7842741935483871,
+          "precision": 0.7817460317460317,
+          "recall": 0.7911646586345381,
+          "f1": 0.7864271457085829,
+          "roc_auc": 0.8745752239728143
+        },
+        "inference_ms_mean": 48.48829000038677,
+        "inference_ms_std": 8.613587209758634,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 51.196083068847656
+      },
+      {
+        "sparsity_target": 0.5,
+        "sparsity_actual": 0.5,
+        "val_metrics": {
+          "accuracy": 0.7782258064516129,
+          "precision": 0.740484429065744,
+          "recall": 0.8594377510040161,
+          "f1": 0.7955390334572491,
+          "roc_auc": 0.8738598117165017
+        },
+        "inference_ms_mean": 41.46700000092096,
+        "inference_ms_std": 6.123067508492913,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 42.675621032714844
+      },
+      {
+        "sparsity_target": 0.6,
+        "sparsity_actual": 0.6000000358168242,
+        "val_metrics": {
+          "accuracy": 0.7298387096774194,
+          "precision": 0.6628895184135978,
+          "recall": 0.9397590361445783,
+          "f1": 0.7774086378737541,
+          "roc_auc": 0.8588849324423198
+        },
+        "inference_ms_mean": 42.15941000038583,
+        "inference_ms_std": 5.728346608601489,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 34.15515899658203
+      },
+      {
+        "sparsity_target": 0.7,
+        "sparsity_actual": 0.6999999820915879,
+        "val_metrics": {
+          "accuracy": 0.7358870967741935,
+          "precision": 0.6867088607594937,
+          "recall": 0.8714859437751004,
+          "f1": 0.768141592920354,
+          "roc_auc": 0.8236833975578427
+        },
+        "inference_ms_mean": 43.05814999897848,
+        "inference_ms_std": 3.8835093362839346,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 25.63470458984375
+      },
+      {
+        "sparsity_target": 0.8,
+        "sparsity_actual": 0.8000000179084121,
+        "val_metrics": {
+          "accuracy": 0.5463709677419355,
+          "precision": 0.5257510729613734,
+          "recall": 0.9839357429718876,
+          "f1": 0.6853146853146853,
+          "roc_auc": 0.7300294294587255
+        },
+        "inference_ms_mean": 49.22346499915875,
+        "inference_ms_std": 6.043905467220187,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 17.114242553710938
+      },
+      {
+        "sparsity_target": 0.9,
+        "sparsity_actual": 0.8999999641831758,
+        "val_metrics": {
+          "accuracy": 0.5201612903225806,
+          "precision": 0.5112936344969199,
+          "recall": 1.0,
+          "f1": 0.6766304347826086,
+          "roc_auc": 0.6446189616766662
+        },
+        "inference_ms_mean": 42.079695000938955,
+        "inference_ms_std": 4.366733435757381,
+        "state_dict_disk_mb_dense": 42.71552562713623,
+        "sparse_effective_mb_estimate": 8.593788146972656
+      }
+    ],
+    "quantization": {
+      "fp32": {
+        "val_metrics": {
+          "accuracy": 0.8024193548387096,
+          "precision": 0.7915057915057915,
+          "recall": 0.8232931726907631,
+          "f1": 0.8070866141732284,
+          "roc_auc": 0.888574541079297
+        },
+        "inference_ms_mean": 40.41128999924695,
+        "inference_ms_std": 6.5883773945918165,
+        "state_dict_disk_mb": 42.71552562713623
+      },
+      "dynamic_int8_linear_only": {
+        "val_metrics": {
+          "accuracy": 0.8004032258064516,
+          "precision": 0.7906976744186046,
+          "recall": 0.8192771084337349,
+          "f1": 0.8047337278106509,
+          "roc_auc": 0.888850950360145
+        },
+        "inference_ms_mean": 40.06730000000971,
+        "inference_ms_std": 4.233955941629563,
+        "state_dict_disk_mb": 42.713364601135254
+      },
+      "static_int8_fx": {
+        "val_metrics": {
+          "accuracy": 0.7943548387096774,
+          "precision": 0.7773584905660378,
+          "recall": 0.8273092369477911,
+          "f1": 0.8015564202334631,
+          "roc_auc": 0.8896639188332276
+        },
+        "inference_ms_mean": 10.606424999787123,
+        "inference_ms_std": 1.0193234015887829,
+        "state_dict_disk_mb": 10.786541938781738,
+        "calibration_batches": 8
+      }
+    }
+  },
+  "efficientnet_b0": {
+    "sanity_check_val_accuracy": 0.8064516129032258,
+    "pruning_sweep": [
+      {
+        "sparsity_target": 0.0,
+        "sparsity_actual": 0.0,
+        "val_metrics": {
+          "accuracy": 0.8064516129032258,
+          "precision": 0.8148148148148148,
+          "recall": 0.7951807228915663,
+          "f1": 0.8048780487804879,
+          "roc_auc": 0.8773393167812952
+        },
+        "inference_ms_mean": 37.8515399992466,
+        "inference_ms_std": 9.55409763683983,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 31.79119110107422
+      },
+      {
+        "sparsity_target": 0.1,
+        "sparsity_actual": 0.1,
+        "val_metrics": {
+          "accuracy": 0.8044354838709677,
+          "precision": 0.8166666666666667,
+          "recall": 0.7871485943775101,
+          "f1": 0.8016359918200409,
+          "roc_auc": 0.8782173227322244
+        },
+        "inference_ms_mean": 31.56390499934787,
+        "inference_ms_std": 4.013250104868967,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 28.64775848388672
+      },
+      {
+        "sparsity_target": 0.2,
+        "sparsity_actual": 0.2,
+        "val_metrics": {
+          "accuracy": 0.8104838709677419,
+          "precision": 0.7946768060836502,
+          "recall": 0.8393574297188755,
+          "f1": 0.81640625,
+          "roc_auc": 0.8870136416109783
+        },
+        "inference_ms_mean": 38.672539998515276,
+        "inference_ms_std": 4.516420950918299,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 25.50432586669922
+      },
+      {
+        "sparsity_target": 0.3,
+        "sparsity_actual": 0.3,
+        "val_metrics": {
+          "accuracy": 0.7741935483870968,
+          "precision": 0.7565543071161048,
+          "recall": 0.8112449799196787,
+          "f1": 0.7829457364341085,
+          "roc_auc": 0.8660715737443702
+        },
+        "inference_ms_mean": 34.652099999948405,
+        "inference_ms_std": 5.5790735773562545,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 22.36089324951172
+      },
+      {
+        "sparsity_target": 0.4,
+        "sparsity_actual": 0.4,
+        "val_metrics": {
+          "accuracy": 0.7842741935483871,
+          "precision": 0.808695652173913,
+          "recall": 0.7469879518072289,
+          "f1": 0.7766179540709812,
+          "roc_auc": 0.8414548883794286
+        },
+        "inference_ms_mean": 43.24925000000803,
+        "inference_ms_std": 7.248165925124441,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 19.21746063232422
+      },
+      {
+        "sparsity_target": 0.5,
+        "sparsity_actual": 0.5,
+        "val_metrics": {
+          "accuracy": 0.6391129032258065,
+          "precision": 0.8070175438596491,
+          "recall": 0.36947791164658633,
+          "f1": 0.5068870523415978,
+          "roc_auc": 0.7537518495032762
+        },
+        "inference_ms_mean": 34.049019999292796,
+        "inference_ms_std": 5.148545217914601,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 16.07402801513672
+      },
+      {
+        "sparsity_target": 0.6,
+        "sparsity_actual": 0.6,
+        "val_metrics": {
+          "accuracy": 0.4939516129032258,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5121863974115083
+        },
+        "inference_ms_mean": 42.14353499846766,
+        "inference_ms_std": 4.360289246226401,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 12.930595397949219
+      },
+      {
+        "sparsity_target": 0.7,
+        "sparsity_actual": 0.7,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5420304700583711
+        },
+        "inference_ms_mean": 34.943154999564285,
+        "inference_ms_std": 4.276539823077778,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 9.787162780761719
+      },
+      {
+        "sparsity_target": 0.8,
+        "sparsity_actual": 0.8,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 43.652125000880915,
+        "inference_ms_std": 9.674513306224414,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 6.643730163574219
+      },
+      {
+        "sparsity_target": 0.9,
+        "sparsity_actual": 0.9,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 36.96021999930963,
+        "inference_ms_std": 4.38017285846125,
+        "state_dict_disk_mb_dense": 16.201624870300293,
+        "sparse_effective_mb_estimate": 3.5002975463867188
+      }
+    ],
+    "quantization": {
+      "fp32": {
+        "val_metrics": {
+          "accuracy": 0.8064516129032258,
+          "precision": 0.8148148148148148,
+          "recall": 0.7951807228915663,
+          "f1": 0.8048780487804879,
+          "roc_auc": 0.8773393167812952
+        },
+        "inference_ms_mean": 35.48783500045829,
+        "inference_ms_std": 8.872623198684307,
+        "state_dict_disk_mb": 16.201624870300293
+      },
+      "dynamic_int8_linear_only": {
+        "val_metrics": {
+          "accuracy": 0.8104838709677419,
+          "precision": 0.8163265306122449,
+          "recall": 0.8032128514056225,
+          "f1": 0.8097165991902834,
+          "roc_auc": 0.8778108384956832
+        },
+        "inference_ms_mean": 33.85565999997198,
+        "inference_ms_std": 4.872309570840494,
+        "state_dict_disk_mb": 15.73404598236084
+      },
+      "static_int8_fx": {
+        "val_metrics": {
+          "accuracy": 0.5665322580645161,
+          "precision": 0.6545454545454545,
+          "recall": 0.2891566265060241,
+          "f1": 0.4011142061281337,
+          "roc_auc": 0.6313187974570347
+        },
+        "inference_ms_mean": 89.76392499898793,
+        "inference_ms_std": 17.123165836877067,
+        "state_dict_disk_mb": 4.7223920822143555,
+        "calibration_batches": 8
+      }
+    }
+  },
+  "efficientnet_lite0": {
+    "sanity_check_val_accuracy": 0.7641129032258065,
+    "pruning_sweep": [
+      {
+        "sparsity_target": 0.0,
+        "sparsity_actual": 0.0,
+        "val_metrics": {
+          "accuracy": 0.7641129032258065,
+          "precision": 0.7682926829268293,
+          "recall": 0.7590361445783133,
+          "f1": 0.7636363636363637,
+          "roc_auc": 0.8653073833796725
+        },
+        "inference_ms_mean": 28.110299999752897,
+        "inference_ms_std": 5.918750221861644,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 26.97040557861328
+      },
+      {
+        "sparsity_target": 0.1,
+        "sparsity_actual": 0.1,
+        "val_metrics": {
+          "accuracy": 0.7620967741935484,
+          "precision": 0.7673469387755102,
+          "recall": 0.7550200803212851,
+          "f1": 0.7611336032388664,
+          "roc_auc": 0.8651935677934409
+        },
+        "inference_ms_mean": 37.66951500001596,
+        "inference_ms_std": 8.718928799915089,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 24.30548858642578
+      },
+      {
+        "sparsity_target": 0.2,
+        "sparsity_actual": 0.2,
+        "val_metrics": {
+          "accuracy": 0.7681451612903226,
+          "precision": 0.7768595041322314,
+          "recall": 0.7550200803212851,
+          "f1": 0.7657841140529531,
+          "roc_auc": 0.8559582459392225
+        },
+        "inference_ms_mean": 30.98890999935975,
+        "inference_ms_std": 3.9938442731435977,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 21.64057159423828
+      },
+      {
+        "sparsity_target": 0.3,
+        "sparsity_actual": 0.3,
+        "val_metrics": {
+          "accuracy": 0.7439516129032258,
+          "precision": 0.7364341085271318,
+          "recall": 0.7630522088353414,
+          "f1": 0.7495069033530573,
+          "roc_auc": 0.8300895891257337
+        },
+        "inference_ms_mean": 40.30250499927206,
+        "inference_ms_std": 7.771822183059335,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 18.97565460205078
+      },
+      {
+        "sparsity_target": 0.4,
+        "sparsity_actual": 0.4,
+        "val_metrics": {
+          "accuracy": 0.7237903225806451,
+          "precision": 0.75,
+          "recall": 0.6746987951807228,
+          "f1": 0.7103594080338267,
+          "roc_auc": 0.7974082565078127
+        },
+        "inference_ms_mean": 48.41865000089456,
+        "inference_ms_std": 22.227469620587392,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 16.31073760986328
+      },
+      {
+        "sparsity_target": 0.5,
+        "sparsity_actual": 0.5,
+        "val_metrics": {
+          "accuracy": 0.5987903225806451,
+          "precision": 0.6984126984126984,
+          "recall": 0.3534136546184739,
+          "f1": 0.4693333333333333,
+          "roc_auc": 0.6870721753410404
+        },
+        "inference_ms_mean": 26.866374999372056,
+        "inference_ms_std": 3.528254966122861,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 13.645820617675781
+      },
+      {
+        "sparsity_target": 0.6,
+        "sparsity_actual": 0.6,
+        "val_metrics": {
+          "accuracy": 0.5201612903225806,
+          "precision": 0.5125858123569794,
+          "recall": 0.8995983935742972,
+          "f1": 0.6530612244897959,
+          "roc_auc": 0.5320716062631091
+        },
+        "inference_ms_mean": 25.986969999576104,
+        "inference_ms_std": 1.940130326289438,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 10.980903625488281
+      },
+      {
+        "sparsity_target": 0.7,
+        "sparsity_actual": 0.7,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5170560785652732
+        },
+        "inference_ms_mean": 29.15378999969107,
+        "inference_ms_std": 2.288322791775068,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 8.315986633300781
+      },
+      {
+        "sparsity_target": 0.8,
+        "sparsity_actual": 0.8,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5020242914979758
+        },
+        "inference_ms_mean": 26.799349999419064,
+        "inference_ms_std": 3.7886704572874628,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 5.651069641113281
+      },
+      {
+        "sparsity_target": 0.9,
+        "sparsity_actual": 0.9,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 27.362524999989546,
+        "inference_ms_std": 3.3488006396782697,
+        "state_dict_disk_mb_dense": 13.746912956237793,
+        "sparse_effective_mb_estimate": 2.9861526489257812
+      }
+    ],
+    "quantization": {
+      "fp32": {
+        "val_metrics": {
+          "accuracy": 0.7641129032258065,
+          "precision": 0.7682926829268293,
+          "recall": 0.7590361445783133,
+          "f1": 0.7636363636363637,
+          "roc_auc": 0.8653073833796725
+        },
+        "inference_ms_mean": 27.747095000813715,
+        "inference_ms_std": 1.8670222943751362,
+        "state_dict_disk_mb": 13.746912956237793
+      },
+      "dynamic_int8_linear_only": {
+        "val_metrics": {
+          "accuracy": 0.7721774193548387,
+          "precision": 0.7764227642276422,
+          "recall": 0.7670682730923695,
+          "f1": 0.7717171717171717,
+          "roc_auc": 0.865144789685056
+        },
+        "inference_ms_mean": 26.512999999977183,
+        "inference_ms_std": 2.3483055163143804,
+        "state_dict_disk_mb": 13.27933406829834
+      },
+      "static_int8_fx": {
+        "val_metrics": {
+          "accuracy": 0.7237903225806451,
+          "precision": 0.7477876106194691,
+          "recall": 0.678714859437751,
+          "f1": 0.7115789473684211,
+          "roc_auc": 0.8105783457717509
+        },
+        "inference_ms_mean": 71.19623000071442,
+        "inference_ms_std": 7.777459281795066,
+        "state_dict_disk_mb": 4.155826568603516,
+        "calibration_batches": 8
+      }
+    }
+  },
+  "mobilenetv3_small": {
+    "sanity_check_val_accuracy": 0.7600806451612904,
+    "pruning_sweep": [
+      {
+        "sparsity_target": 0.0,
+        "sparsity_actual": 0.0,
+        "val_metrics": {
+          "accuracy": 0.7600806451612904,
+          "precision": 0.7642276422764228,
+          "recall": 0.7550200803212851,
+          "f1": 0.7595959595959596,
+          "roc_auc": 0.8483813797700925
+        },
+        "inference_ms_mean": 10.974559999885969,
+        "inference_ms_std": 1.193218650278804,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 7.625591278076172
+      },
+      {
+        "sparsity_target": 0.1,
+        "sparsity_actual": 0.0999995942645233,
+        "val_metrics": {
+          "accuracy": 0.7560483870967742,
+          "precision": 0.753968253968254,
+          "recall": 0.7630522088353414,
+          "f1": 0.7584830339321357,
+          "roc_auc": 0.8461375867843846
+        },
+        "inference_ms_mean": 10.772194999299245,
+        "inference_ms_std": 1.1454860221445757,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 6.873439788818359
+      },
+      {
+        "sparsity_target": 0.2,
+        "sparsity_actual": 0.20000020286773834,
+        "val_metrics": {
+          "accuracy": 0.75,
+          "precision": 0.7394636015325671,
+          "recall": 0.7751004016064257,
+          "f1": 0.7568627450980392,
+          "roc_auc": 0.8326585695006748
+        },
+        "inference_ms_mean": 11.108425000929856,
+        "inference_ms_std": 1.279845025383511,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 6.121280670166016
+      },
+      {
+        "sparsity_target": 0.3,
+        "sparsity_actual": 0.29999979713226166,
+        "val_metrics": {
+          "accuracy": 0.7258064516129032,
+          "precision": 0.7025089605734767,
+          "recall": 0.7871485943775101,
+          "f1": 0.7424242424242424,
+          "roc_auc": 0.8052290132188673
+        },
+        "inference_ms_mean": 13.892370000394294,
+        "inference_ms_std": 1.285643093207944,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 5.369129180908203
+      },
+      {
+        "sparsity_target": 0.4,
+        "sparsity_actual": 0.4000004057354767,
+        "val_metrics": {
+          "accuracy": 0.6008064516129032,
+          "precision": 0.7428571428571429,
+          "recall": 0.3132530120481928,
+          "f1": 0.4406779661016949,
+          "roc_auc": 0.7125506072874493
+        },
+        "inference_ms_mean": 14.28259500025888,
+        "inference_ms_std": 1.0759270547064483,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 4.616970062255859
+      },
+      {
+        "sparsity_target": 0.5,
+        "sparsity_actual": 0.5,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 1.0,
+          "recall": 0.008032128514056224,
+          "f1": 0.01593625498007968,
+          "roc_auc": 0.6785360063736728
+        },
+        "inference_ms_mean": 37.30598000038299,
+        "inference_ms_std": 27.068732898791946,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 3.864818572998047
+      },
+      {
+        "sparsity_target": 0.6,
+        "sparsity_actual": 0.5999995942645233,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5958408532917094
+        },
+        "inference_ms_mean": 16.521324999121134,
+        "inference_ms_std": 1.7545294627974197,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 3.1126670837402344
+      },
+      {
+        "sparsity_target": 0.7,
+        "sparsity_actual": 0.7000002028677383,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.613018877127945
+        },
+        "inference_ms_mean": 18.49544500000775,
+        "inference_ms_std": 3.602551850474829,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 2.3605079650878906
+      },
+      {
+        "sparsity_target": 0.8,
+        "sparsity_actual": 0.7999997971322617,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 22.475494999889634,
+        "inference_ms_std": 8.663315487356801,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 1.6083564758300781
+      },
+      {
+        "sparsity_target": 0.9,
+        "sparsity_actual": 0.9000004057354767,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 15.123904999927618,
+        "inference_ms_std": 0.9204470884987718,
+        "state_dict_disk_mb_dense": 3.94796085357666,
+        "sparse_effective_mb_estimate": 0.8561973571777344
+      }
+    ],
+    "quantization": {
+      "fp32": {
+        "val_metrics": {
+          "accuracy": 0.7600806451612904,
+          "precision": 0.7642276422764228,
+          "recall": 0.7550200803212851,
+          "f1": 0.7595959595959596,
+          "roc_auc": 0.8483813797700925
+        },
+        "inference_ms_mean": 17.14857500010112,
+        "inference_ms_std": 1.1484589936447875,
+        "state_dict_disk_mb": 3.94796085357666
+      },
+      "dynamic_int8_linear_only": {
+        "val_metrics": {
+          "accuracy": 0.7560483870967742,
+          "precision": 0.7580645161290323,
+          "recall": 0.7550200803212851,
+          "f1": 0.7565392354124748,
+          "roc_auc": 0.8484301578784774
+        },
+        "inference_ms_mean": 18.355460000384483,
+        "inference_ms_std": 3.1668945532661144,
+        "state_dict_disk_mb": 3.738255500793457
+      },
+      "static_int8_fx": {
+        "val_metrics": {
+          "accuracy": 0.5,
+          "precision": 0.5263157894736842,
+          "recall": 0.040160642570281124,
+          "f1": 0.07462686567164178,
+          "roc_auc": 0.5374941059785702
+        },
+        "inference_ms_mean": 46.13891000080912,
+        "inference_ms_std": 12.826360002215157,
+        "state_dict_disk_mb": 1.2364702224731445,
+        "calibration_batches": 8
+      }
+    }
+  },
+  "mobilenetv2_100": {
+    "sanity_check_val_accuracy": 0.7883064516129032,
+    "pruning_sweep": [
+      {
+        "sparsity_target": 0.0,
+        "sparsity_actual": 0.0,
+        "val_metrics": {
+          "accuracy": 0.7883064516129032,
+          "precision": 0.7903225806451613,
+          "recall": 0.7871485943775101,
+          "f1": 0.7887323943661971,
+          "roc_auc": 0.8737785148691934
+        },
+        "inference_ms_mean": 52.421160000085365,
+        "inference_ms_std": 31.873648263261284,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 18.218463897705078
+      },
+      {
+        "sparsity_target": 0.1,
+        "sparsity_actual": 0.1000000849715855,
+        "val_metrics": {
+          "accuracy": 0.7782258064516129,
+          "precision": 0.7768924302788844,
+          "recall": 0.7831325301204819,
+          "f1": 0.78,
+          "roc_auc": 0.8684942197941564
+        },
+        "inference_ms_mean": 60.8684449998691,
+        "inference_ms_std": 28.051592544838805,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 16.422710418701172
+      },
+      {
+        "sparsity_target": 0.2,
+        "sparsity_actual": 0.200000169943171,
+        "val_metrics": {
+          "accuracy": 0.7358870967741935,
+          "precision": 0.8277777777777777,
+          "recall": 0.5983935742971888,
+          "f1": 0.6946386946386947,
+          "roc_auc": 0.8529340032193552
+        },
+        "inference_ms_mean": 70.78963000021758,
+        "inference_ms_std": 34.226148560587845,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 14.626956939697266
+      },
+      {
+        "sparsity_target": 0.3,
+        "sparsity_actual": 0.299999830056829,
+        "val_metrics": {
+          "accuracy": 0.6491935483870968,
+          "precision": 0.8640776699029126,
+          "recall": 0.357429718875502,
+          "f1": 0.5056818181818182,
+          "roc_auc": 0.8362356307822383
+        },
+        "inference_ms_mean": 84.69425000112096,
+        "inference_ms_std": 28.617097510739914,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 12.83121109008789
+      },
+      {
+        "sparsity_target": 0.4,
+        "sparsity_actual": 0.3999999150284145,
+        "val_metrics": {
+          "accuracy": 0.5786290322580645,
+          "precision": 0.7941176470588235,
+          "recall": 0.21686746987951808,
+          "f1": 0.34069400630914826,
+          "roc_auc": 0.7922702957579305
+        },
+        "inference_ms_mean": 67.0702399998845,
+        "inference_ms_std": 24.691269630385115,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 11.035457611083984
+      },
+      {
+        "sparsity_target": 0.5,
+        "sparsity_actual": 0.5,
+        "val_metrics": {
+          "accuracy": 0.530241935483871,
+          "precision": 0.7352941176470589,
+          "recall": 0.10040160642570281,
+          "f1": 0.17667844522968199,
+          "roc_auc": 0.6647968391785768
+        },
+        "inference_ms_mean": 71.25521999878401,
+        "inference_ms_std": 40.75511326721675,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 9.239704132080078
+      },
+      {
+        "sparsity_target": 0.6,
+        "sparsity_actual": 0.6000000849715855,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5589320846137588
+        },
+        "inference_ms_mean": 68.31769999880635,
+        "inference_ms_std": 27.560175713178097,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 7.443950653076172
+      },
+      {
+        "sparsity_target": 0.7,
+        "sparsity_actual": 0.700000169943171,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 65.39179999890621,
+        "inference_ms_std": 33.09913247571081,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 5.648197174072266
+      },
+      {
+        "sparsity_target": 0.8,
+        "sparsity_actual": 0.799999830056829,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 51.16809499959345,
+        "inference_ms_std": 16.6808016808231,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 3.8524513244628906
+      },
+      {
+        "sparsity_target": 0.9,
+        "sparsity_actual": 0.8999999150284145,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 63.096040000527864,
+        "inference_ms_std": 21.5280108537986,
+        "state_dict_disk_mb_dense": 9.345688819885254,
+        "sparse_effective_mb_estimate": 2.0566978454589844
+      }
+    ],
+    "quantization": {
+      "fp32": {
+        "val_metrics": {
+          "accuracy": 0.7883064516129032,
+          "precision": 0.7903225806451613,
+          "recall": 0.7871485943775101,
+          "f1": 0.7887323943661971,
+          "roc_auc": 0.8737785148691934
+        },
+        "inference_ms_mean": 89.37133499930496,
+        "inference_ms_std": 111.40959059131002,
+        "state_dict_disk_mb": 9.345688819885254
+      },
+      "dynamic_int8_linear_only": {
+        "val_metrics": {
+          "accuracy": 0.782258064516129,
+          "precision": 0.7808764940239044,
+          "recall": 0.7871485943775101,
+          "f1": 0.784,
+          "roc_auc": 0.8737785148691933
+        },
+        "inference_ms_mean": 69.63592000029166,
+        "inference_ms_std": 24.77634042345016,
+        "state_dict_disk_mb": 8.8781099319458
+      },
+      "static_int8_fx": {
+        "val_metrics": {
+          "accuracy": 0.7137096774193549,
+          "precision": 0.8022598870056498,
+          "recall": 0.570281124497992,
+          "f1": 0.6666666666666666,
+          "roc_auc": 0.8308293904362388
+        },
+        "inference_ms_mean": 45.45870999972976,
+        "inference_ms_std": 18.975951833295728,
+        "state_dict_disk_mb": 2.6819257736206055,
+        "calibration_batches": 8
+      }
+    }
+  },
+  "shufflenet_v2_x0_5": {
+    "sanity_check_val_accuracy": 0.7983870967741935,
+    "pruning_sweep": [
+      {
+        "sparsity_target": 0.0,
+        "sparsity_actual": 0.0,
+        "val_metrics": {
+          "accuracy": 0.7983870967741935,
+          "precision": 0.7832699619771863,
+          "recall": 0.8273092369477911,
+          "f1": 0.8046875,
+          "roc_auc": 0.8536168967367446
+        },
+        "inference_ms_mean": 30.68429500053753,
+        "inference_ms_std": 3.9585683678794004,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 3.6093482971191406
+      },
+      {
+        "sparsity_target": 0.1,
+        "sparsity_actual": 0.1,
+        "val_metrics": {
+          "accuracy": 0.7883064516129032,
+          "precision": 0.7727272727272727,
+          "recall": 0.8192771084337349,
+          "f1": 0.7953216374269005,
+          "roc_auc": 0.8541371965595175
+        },
+        "inference_ms_mean": 27.53136999963317,
+        "inference_ms_std": 3.2711588736694535,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 3.2545509338378906
+      },
+      {
+        "sparsity_target": 0.2,
+        "sparsity_actual": 0.2,
+        "val_metrics": {
+          "accuracy": 0.7883064516129032,
+          "precision": 0.7627737226277372,
+          "recall": 0.8393574297188755,
+          "f1": 0.7992351816443595,
+          "roc_auc": 0.8524950002438906
+        },
+        "inference_ms_mean": 29.397509999762406,
+        "inference_ms_std": 5.440206773911188,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 2.8997535705566406
+      },
+      {
+        "sparsity_target": 0.3,
+        "sparsity_actual": 0.3,
+        "val_metrics": {
+          "accuracy": 0.7681451612903226,
+          "precision": 0.7637795275590551,
+          "recall": 0.7791164658634538,
+          "f1": 0.7713717693836978,
+          "roc_auc": 0.8453733964196868
+        },
+        "inference_ms_mean": 23.831225000321865,
+        "inference_ms_std": 1.8794688567102524,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 2.5449562072753906
+      },
+      {
+        "sparsity_target": 0.4,
+        "sparsity_actual": 0.4,
+        "val_metrics": {
+          "accuracy": 0.7419354838709677,
+          "precision": 0.8071065989847716,
+          "recall": 0.6385542168674698,
+          "f1": 0.7130044843049327,
+          "roc_auc": 0.8386582768320244
+        },
+        "inference_ms_mean": 22.786245000679628,
+        "inference_ms_std": 1.4327686080439834,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 2.1901588439941406
+      },
+      {
+        "sparsity_target": 0.5,
+        "sparsity_actual": 0.5,
+        "val_metrics": {
+          "accuracy": 0.6774193548387096,
+          "precision": 0.8027210884353742,
+          "recall": 0.4738955823293173,
+          "f1": 0.5959595959595959,
+          "roc_auc": 0.8111149049639856
+        },
+        "inference_ms_mean": 25.980515000628657,
+        "inference_ms_std": 3.0818446974973384,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 1.8353614807128906
+      },
+      {
+        "sparsity_target": 0.6,
+        "sparsity_actual": 0.6,
+        "val_metrics": {
+          "accuracy": 0.5907258064516129,
+          "precision": 0.859375,
+          "recall": 0.22088353413654618,
+          "f1": 0.3514376996805112,
+          "roc_auc": 0.7814252963270083
+        },
+        "inference_ms_mean": 32.18280499968387,
+        "inference_ms_std": 11.341569883277444,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 1.4805641174316406
+      },
+      {
+        "sparsity_target": 0.7,
+        "sparsity_actual": 0.7,
+        "val_metrics": {
+          "accuracy": 0.5846774193548387,
+          "precision": 0.7590361445783133,
+          "recall": 0.25301204819277107,
+          "f1": 0.3795180722891566,
+          "roc_auc": 0.6868120254296539
+        },
+        "inference_ms_mean": 30.015274999823305,
+        "inference_ms_std": 3.8435065394702317,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 1.1257667541503906
+      },
+      {
+        "sparsity_target": 0.8,
+        "sparsity_actual": 0.8,
+        "val_metrics": {
+          "accuracy": 0.5745967741935484,
+          "precision": 0.548469387755102,
+          "recall": 0.8634538152610441,
+          "f1": 0.6708268330733229,
+          "roc_auc": 0.6185389330601759
+        },
+        "inference_ms_mean": 57.87317500071367,
+        "inference_ms_std": 18.522483561097346,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 0.7709693908691406
+      },
+      {
+        "sparsity_target": 0.9,
+        "sparsity_actual": 0.9,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 33.57051999955729,
+        "inference_ms_std": 4.949914379408749,
+        "state_dict_disk_mb_dense": 1.9458551406860352,
+        "sparse_effective_mb_estimate": 0.4161720275878906
+      }
+    ],
+    "quantization": {
+      "fp32": {
+        "val_metrics": {
+          "accuracy": 0.7983870967741935,
+          "precision": 0.7832699619771863,
+          "recall": 0.8273092369477911,
+          "f1": 0.8046875,
+          "roc_auc": 0.8536168967367446
+        },
+        "inference_ms_mean": 34.74856000029831,
+        "inference_ms_std": 3.4828047493516463,
+        "state_dict_disk_mb": 1.9458551406860352
+      },
+      "dynamic_int8_linear_only": {
+        "val_metrics": {
+          "accuracy": 0.7903225806451613,
+          "precision": 0.7735849056603774,
+          "recall": 0.8232931726907631,
+          "f1": 0.7976653696498055,
+          "roc_auc": 0.8534380436726663
+        },
+        "inference_ms_mean": 47.28207999978622,
+        "inference_ms_std": 21.53094902286269,
+        "state_dict_disk_mb": 1.572026252746582
+      },
+      "static_int8_fx": {
+        "val_metrics": {
+          "accuracy": 0.7842741935483871,
+          "precision": 0.7817460317460317,
+          "recall": 0.7911646586345381,
+          "f1": 0.7864271457085829,
+          "roc_auc": 0.8492431263515601
+        },
+        "inference_ms_mean": 54.51236500048253,
+        "inference_ms_std": 20.47985396314315,
+        "state_dict_disk_mb": 0.6447324752807617,
+        "calibration_batches": 8
+      }
+    }
+  },
+  "shufflenet_v2_x1_0": {
+    "sanity_check_val_accuracy": 0.7923387096774194,
+    "pruning_sweep": [
+      {
+        "sparsity_target": 0.0,
+        "sparsity_actual": 0.0,
+        "val_metrics": {
+          "accuracy": 0.7923387096774194,
+          "precision": 0.7896825396825397,
+          "recall": 0.7991967871485943,
+          "f1": 0.7944111776447106,
+          "roc_auc": 0.8612588003837212
+        },
+        "inference_ms_mean": 100.09992000013881,
+        "inference_ms_std": 68.74502677653246,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 10.565921783447266
+      },
+      {
+        "sparsity_target": 0.1,
+        "sparsity_actual": 0.09999970773565274,
+        "val_metrics": {
+          "accuracy": 0.7903225806451613,
+          "precision": 0.7865612648221344,
+          "recall": 0.7991967871485943,
+          "f1": 0.7928286852589641,
+          "roc_auc": 0.8616652846202624
+        },
+        "inference_ms_mean": 73.79360499908216,
+        "inference_ms_std": 34.62667311774506,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 9.521747589111328
+      },
+      {
+        "sparsity_target": 0.2,
+        "sparsity_actual": 0.20000014613217362,
+        "val_metrics": {
+          "accuracy": 0.7721774193548387,
+          "precision": 0.753731343283582,
+          "recall": 0.8112449799196787,
+          "f1": 0.781431334622824,
+          "roc_auc": 0.8604946100190235
+        },
+        "inference_ms_mean": 51.706759999797214,
+        "inference_ms_std": 48.63640651989167,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 8.47756576538086
+      },
+      {
+        "sparsity_target": 0.3,
+        "sparsity_actual": 0.29999985386782635,
+        "val_metrics": {
+          "accuracy": 0.7762096774193549,
+          "precision": 0.7974137931034483,
+          "recall": 0.7429718875502008,
+          "f1": 0.7692307692307693,
+          "roc_auc": 0.8595515665902477
+        },
+        "inference_ms_mean": 99.83503499970539,
+        "inference_ms_std": 60.94572253504901,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 7.433391571044922
+      },
+      {
+        "sparsity_target": 0.4,
+        "sparsity_actual": 0.40000029226434725,
+        "val_metrics": {
+          "accuracy": 0.7701612903225806,
+          "precision": 0.8391959798994975,
+          "recall": 0.6706827309236948,
+          "f1": 0.7455357142857143,
+          "roc_auc": 0.8594540103734778
+        },
+        "inference_ms_mean": 54.3730349992984,
+        "inference_ms_std": 24.406138235319958,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 6.389209747314453
+      },
+      {
+        "sparsity_target": 0.5,
+        "sparsity_actual": 0.5,
+        "val_metrics": {
+          "accuracy": 0.6935483870967742,
+          "precision": 0.8489208633093526,
+          "recall": 0.4738955823293173,
+          "f1": 0.6082474226804123,
+          "roc_auc": 0.8434385314537503
+        },
+        "inference_ms_mean": 108.15744000028644,
+        "inference_ms_std": 70.83704030051346,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 5.345035552978516
+      },
+      {
+        "sparsity_target": 0.6,
+        "sparsity_actual": 0.5999997077356527,
+        "val_metrics": {
+          "accuracy": 0.5766129032258065,
+          "precision": 0.819672131147541,
+          "recall": 0.20080321285140562,
+          "f1": 0.3225806451612903,
+          "roc_auc": 0.7954896509113376
+        },
+        "inference_ms_mean": 82.44826500013005,
+        "inference_ms_std": 32.10985277294571,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 4.300861358642578
+      },
+      {
+        "sparsity_target": 0.7,
+        "sparsity_actual": 0.7000001461321737,
+        "val_metrics": {
+          "accuracy": 0.49798387096774194,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.7504837162414841
+        },
+        "inference_ms_mean": 1377.40364499914,
+        "inference_ms_std": 1899.3410725426547,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 3.2566795349121094
+      },
+      {
+        "sparsity_target": 0.8,
+        "sparsity_actual": 0.7999998538678263,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 1.0,
+          "recall": 0.008032128514056224,
+          "f1": 0.01593625498007968,
+          "roc_auc": 0.6573988260735248
+        },
+        "inference_ms_mean": 42.72705000039423,
+        "inference_ms_std": 6.603887334684473,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 2.212505340576172
+      },
+      {
+        "sparsity_target": 0.9,
+        "sparsity_actual": 0.9000002922643473,
+        "val_metrics": {
+          "accuracy": 0.4959677419354839,
+          "precision": 0.4,
+          "recall": 0.008032128514056224,
+          "f1": 0.015748031496062992,
+          "roc_auc": 0.6262458741849992
+        },
+        "inference_ms_mean": 38.56191500017303,
+        "inference_ms_std": 10.260046594195256,
+        "state_dict_disk_mb_dense": 5.451409339904785,
+        "sparse_effective_mb_estimate": 1.1683235168457031
+      }
+    ],
+    "quantization": {
+      "fp32": {
+        "val_metrics": {
+          "accuracy": 0.7923387096774194,
+          "precision": 0.7896825396825397,
+          "recall": 0.7991967871485943,
+          "f1": 0.7944111776447106,
+          "roc_auc": 0.8612588003837212
+        },
+        "inference_ms_mean": 38.30513000066276,
+        "inference_ms_std": 9.48628982268862,
+        "state_dict_disk_mb": 5.451409339904785
+      },
+      "dynamic_int8_linear_only": {
+        "val_metrics": {
+          "accuracy": 0.7883064516129032,
+          "precision": 0.7857142857142857,
+          "recall": 0.7951807228915663,
+          "f1": 0.7904191616766467,
+          "roc_auc": 0.8610149098417963
+        },
+        "inference_ms_mean": 38.360585000918945,
+        "inference_ms_std": 10.119918468793744,
+        "state_dict_disk_mb": 5.077580451965332
+      },
+      "static_int8_fx": {
+        "val_metrics": {
+          "accuracy": 0.7842741935483871,
+          "precision": 0.7817460317460317,
+          "recall": 0.7911646586345381,
+          "f1": 0.7864271457085829,
+          "roc_auc": 0.8612262816447979
+        },
+        "inference_ms_mean": 57.574504999502096,
+        "inference_ms_std": 11.101318376797172,
+        "state_dict_disk_mb": 1.5812559127807617,
+        "calibration_batches": 8
+      }
+    }
+  },
+  "squeezenet1_1": {
+    "sanity_check_val_accuracy": 0.780241935483871,
+    "pruning_sweep": [
+      {
+        "sparsity_target": 0.0,
+        "sparsity_actual": 0.0,
+        "val_metrics": {
+          "accuracy": 0.780241935483871,
+          "precision": 0.78,
+          "recall": 0.7831325301204819,
+          "f1": 0.781563126252505,
+          "roc_auc": 0.8430483065866705
+        },
+        "inference_ms_mean": 39.86779500010016,
+        "inference_ms_std": 9.307371376050478,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 6.002445220947266
+      },
+      {
+        "sparsity_target": 0.1,
+        "sparsity_actual": 0.10000050941397017,
+        "val_metrics": {
+          "accuracy": 0.7782258064516129,
+          "precision": 0.7836734693877551,
+          "recall": 0.7710843373493976,
+          "f1": 0.7773279352226721,
+          "roc_auc": 0.845178283986147
+        },
+        "inference_ms_mean": 32.43517999944743,
+        "inference_ms_std": 4.55043164991216,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 5.403369903564453
+      },
+      {
+        "sparsity_target": 0.2,
+        "sparsity_actual": 0.19999974529301492,
+        "val_metrics": {
+          "accuracy": 0.7620967741935484,
+          "precision": 0.7673469387755102,
+          "recall": 0.7550200803212851,
+          "f1": 0.7611336032388664,
+          "roc_auc": 0.8397801733248785
+        },
+        "inference_ms_mean": 26.943584999025916,
+        "inference_ms_std": 4.11617625746409,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 4.804302215576172
+      },
+      {
+        "sparsity_target": 0.3,
+        "sparsity_actual": 0.3000002547069851,
+        "val_metrics": {
+          "accuracy": 0.7258064516129032,
+          "precision": 0.7958115183246073,
+          "recall": 0.6104417670682731,
+          "f1": 0.6909090909090909,
+          "roc_auc": 0.829048989480188
+        },
+        "inference_ms_mean": 31.28063500043936,
+        "inference_ms_std": 9.931551448779935,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 4.205226898193359
+      },
+      {
+        "sparsity_target": 0.4,
+        "sparsity_actual": 0.39999949058602985,
+        "val_metrics": {
+          "accuracy": 0.6834677419354839,
+          "precision": 0.7948717948717948,
+          "recall": 0.4979919678714859,
+          "f1": 0.6123456790123457,
+          "roc_auc": 0.8163666813000993
+        },
+        "inference_ms_mean": 33.56181999952241,
+        "inference_ms_std": 8.14424757001954,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 3.606159210205078
+      },
+      {
+        "sparsity_target": 0.5,
+        "sparsity_actual": 0.5,
+        "val_metrics": {
+          "accuracy": 0.6975806451612904,
+          "precision": 0.7704918032786885,
+          "recall": 0.5662650602409639,
+          "f1": 0.6527777777777778,
+          "roc_auc": 0.80407459798709
+        },
+        "inference_ms_mean": 31.740774999343557,
+        "inference_ms_std": 9.919664627994976,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 3.0070838928222656
+      },
+      {
+        "sparsity_target": 0.6,
+        "sparsity_actual": 0.6000005094139702,
+        "val_metrics": {
+          "accuracy": 0.592741935483871,
+          "precision": 0.5620052770448549,
+          "recall": 0.8554216867469879,
+          "f1": 0.678343949044586,
+          "roc_auc": 0.6475456481797636
+        },
+        "inference_ms_mean": 24.01840499951504,
+        "inference_ms_std": 2.9911047154716988,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 2.408008575439453
+      },
+      {
+        "sparsity_target": 0.7,
+        "sparsity_actual": 0.6999997452930149,
+        "val_metrics": {
+          "accuracy": 0.5423387096774194,
+          "precision": 0.5255813953488372,
+          "recall": 0.9076305220883534,
+          "f1": 0.6656848306332842,
+          "roc_auc": 0.5232752873843552
+        },
+        "inference_ms_mean": 32.63304999927641,
+        "inference_ms_std": 10.473781086584829,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 1.8089408874511719
+      },
+      {
+        "sparsity_target": 0.8,
+        "sparsity_actual": 0.8000002547069851,
+        "val_metrics": {
+          "accuracy": 0.4959677419354839,
+          "precision": 0.42857142857142855,
+          "recall": 0.012048192771084338,
+          "f1": 0.0234375,
+          "roc_auc": 0.5180072516787799
+        },
+        "inference_ms_mean": 33.8658349992329,
+        "inference_ms_std": 8.293386672885775,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 1.2098655700683594
+      },
+      {
+        "sparsity_target": 0.9,
+        "sparsity_actual": 0.8999994905860298,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 26.474410001173965,
+        "inference_ms_std": 2.5703290015789513,
+        "state_dict_disk_mb_dense": 3.0275087356567383,
+        "sparse_effective_mb_estimate": 0.6107978820800781
+      }
+    ],
+    "quantization": {
+      "fp32": {
+        "val_metrics": {
+          "accuracy": 0.780241935483871,
+          "precision": 0.78,
+          "recall": 0.7831325301204819,
+          "f1": 0.781563126252505,
+          "roc_auc": 0.8430483065866705
+        },
+        "inference_ms_mean": 26.203309999618796,
+        "inference_ms_std": 8.255096072712545,
+        "state_dict_disk_mb": 3.0275087356567383
+      },
+      "dynamic_int8_linear_only": {
+        "val_metrics": {
+          "accuracy": 0.7701612903225806,
+          "precision": 0.7689243027888446,
+          "recall": 0.7751004016064257,
+          "f1": 0.772,
+          "roc_auc": 0.8422841162219729
+        },
+        "inference_ms_mean": 32.87321999996493,
+        "inference_ms_std": 14.129257931229253,
+        "state_dict_disk_mb": 2.8412370681762695
+      },
+      "static_int8_fx": {
+        "val_metrics": {
+          "accuracy": 0.7560483870967742,
+          "precision": 0.7318840579710145,
+          "recall": 0.8112449799196787,
+          "f1": 0.7695238095238095,
+          "roc_auc": 0.8387395736793327
+        },
+        "inference_ms_mean": 13.197660000878386,
+        "inference_ms_std": 1.7492306905265753,
+        "state_dict_disk_mb": 0.8592672348022461,
+        "calibration_batches": 8
+      }
+    }
+  },
+  "repghostnet_050": {
+    "sanity_check_val_accuracy": 0.7681451612903226,
+    "pruning_sweep": [
+      {
+        "sparsity_target": 0.0,
+        "sparsity_actual": 0.0,
+        "val_metrics": {
+          "accuracy": 0.7681451612903226,
+          "precision": 0.7658730158730159,
+          "recall": 0.7751004016064257,
+          "f1": 0.7704590818363274,
+          "roc_auc": 0.8580231858608524
+        },
+        "inference_ms_mean": 33.437535000484786,
+        "inference_ms_std": 4.922859444492983,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 9.123188018798828
+      },
+      {
+        "sparsity_target": 0.1,
+        "sparsity_actual": 0.10000016987330848,
+        "val_metrics": {
+          "accuracy": 0.7681451612903226,
+          "precision": 0.7745901639344263,
+          "recall": 0.7590361445783133,
+          "f1": 0.7667342799188641,
+          "roc_auc": 0.8585434856836253
+        },
+        "inference_ms_mean": 39.22037000011187,
+        "inference_ms_std": 7.656340581084977,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 8.22494125366211
+      },
+      {
+        "sparsity_target": 0.2,
+        "sparsity_actual": 0.20000033974661696,
+        "val_metrics": {
+          "accuracy": 0.7681451612903226,
+          "precision": 0.7481481481481481,
+          "recall": 0.8112449799196787,
+          "f1": 0.7784200385356455,
+          "roc_auc": 0.8576654797326959
+        },
+        "inference_ms_mean": 29.87174000008963,
+        "inference_ms_std": 2.511214776724629,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 7.326694488525391
+      },
+      {
+        "sparsity_target": 0.3,
+        "sparsity_actual": 0.29999966025338304,
+        "val_metrics": {
+          "accuracy": 0.7338709677419355,
+          "precision": 0.8031088082901554,
+          "recall": 0.6224899598393574,
+          "f1": 0.7013574660633484,
+          "roc_auc": 0.8419426694632781
+        },
+        "inference_ms_mean": 28.026959999624523,
+        "inference_ms_std": 1.9545382038728725,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 6.428455352783203
+      },
+      {
+        "sparsity_target": 0.4,
+        "sparsity_actual": 0.3999998301266915,
+        "val_metrics": {
+          "accuracy": 0.5786290322580645,
+          "precision": 0.717391304347826,
+          "recall": 0.26506024096385544,
+          "f1": 0.3870967741935484,
+          "roc_auc": 0.7534591808529665
+        },
+        "inference_ms_mean": 32.54101000056835,
+        "inference_ms_std": 5.863765261565189,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 5.530208587646484
+      },
+      {
+        "sparsity_target": 0.5,
+        "sparsity_actual": 0.5,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5734923499666683
+        },
+        "inference_ms_mean": 28.6982400015404,
+        "inference_ms_std": 2.525058618369171,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 4.631961822509766
+      },
+      {
+        "sparsity_target": 0.6,
+        "sparsity_actual": 0.6000001698733085,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 30.66370999949868,
+        "inference_ms_std": 3.258212324717128,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 3.733715057373047
+      },
+      {
+        "sparsity_target": 0.7,
+        "sparsity_actual": 0.700000339746617,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 33.65279500176257,
+        "inference_ms_std": 7.691662754359782,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 2.835468292236328
+      },
+      {
+        "sparsity_target": 0.8,
+        "sparsity_actual": 0.799999660253383,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 34.435214999029995,
+        "inference_ms_std": 7.999087468121745,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 1.9372291564941406
+      },
+      {
+        "sparsity_target": 0.9,
+        "sparsity_actual": 0.8999998301266915,
+        "val_metrics": {
+          "accuracy": 0.5020161290322581,
+          "precision": 0.5020161290322581,
+          "recall": 1.0,
+          "f1": 0.6684563758389261,
+          "roc_auc": 0.5
+        },
+        "inference_ms_mean": 28.51003500072693,
+        "inference_ms_std": 2.969054021438743,
+        "state_dict_disk_mb_dense": 4.867373466491699,
+        "sparse_effective_mb_estimate": 1.0389823913574219
+      }
+    ],
+    "quantization": {
+      "fp32": {
+        "val_metrics": {
+          "accuracy": 0.7681451612903226,
+          "precision": 0.7658730158730159,
+          "recall": 0.7751004016064257,
+          "f1": 0.7704590818363274,
+          "roc_auc": 0.8580231858608524
+        },
+        "inference_ms_mean": 36.13020999873697,
+        "inference_ms_std": 10.823210651392696,
+        "state_dict_disk_mb": 4.867373466491699
+      },
+      "dynamic_int8_linear_only": {
+        "val_metrics": {
+          "accuracy": 0.7661290322580645,
+          "precision": 0.7649402390438247,
+          "recall": 0.7710843373493976,
+          "f1": 0.768,
+          "roc_auc": 0.8580557045997755
+        },
+        "inference_ms_mean": 34.534875000827014,
+        "inference_ms_std": 10.365509786319233,
+        "state_dict_disk_mb": 4.399855613708496
+      },
+      "static_int8_fx": {
+        "val_metrics": {
+          "accuracy": 0.4798387096774194,
+          "precision": 0.4262295081967213,
+          "recall": 0.10441767068273092,
+          "f1": 0.16774193548387098,
+          "roc_auc": 0.4699933336585207
+        },
+        "inference_ms_mean": 59.0475900000456,
+        "inference_ms_std": 3.7969068707152394,
+        "state_dict_disk_mb": 1.630197525024414,
+        "calibration_batches": 8
+      }
+    }
+  }
+}

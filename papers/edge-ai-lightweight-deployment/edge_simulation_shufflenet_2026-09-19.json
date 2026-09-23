@@ -1,0 +1,206 @@
+{
+  "model": "ShuffleNetV2-1.0x",
+  "checkpoint": "experiments\\shufflenet_v2_x1_0\\checkpoints\\best_overall.pt",
+  "val_manifest": "SkinDisease\\manifest_curated_v3_val.csv",
+  "test_manifest_opened": false,
+  "baseline_sanity_check_val_accuracy": 0.7923387096774194,
+  "pruning_sweep": [
+    {
+      "sparsity_target": 0.0,
+      "sparsity_actual": 0.0,
+      "val_metrics": {
+        "accuracy": 0.7923387096774194,
+        "precision": 0.7896825396825397,
+        "recall": 0.7991967871485943,
+        "f1": 0.7944111776447106,
+        "roc_auc": 0.8612588003837212
+      },
+      "inference_ms_mean": 38.553756666806294,
+      "inference_ms_std": 8.130792080124122,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 10.565921783447266
+    },
+    {
+      "sparsity_target": 0.1,
+      "sparsity_actual": 0.09999970773565274,
+      "val_metrics": {
+        "accuracy": 0.7903225806451613,
+        "precision": 0.7865612648221344,
+        "recall": 0.7991967871485943,
+        "f1": 0.7928286852589641,
+        "roc_auc": 0.8616652846202624
+      },
+      "inference_ms_mean": 47.77419333380143,
+      "inference_ms_std": 13.456536501979,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 9.521747589111328
+    },
+    {
+      "sparsity_target": 0.2,
+      "sparsity_actual": 0.20000014613217362,
+      "val_metrics": {
+        "accuracy": 0.7721774193548387,
+        "precision": 0.753731343283582,
+        "recall": 0.8112449799196787,
+        "f1": 0.781431334622824,
+        "roc_auc": 0.8604946100190235
+      },
+      "inference_ms_mean": 54.656576667669775,
+      "inference_ms_std": 22.907057782308385,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 8.47756576538086
+    },
+    {
+      "sparsity_target": 0.3,
+      "sparsity_actual": 0.29999985386782635,
+      "val_metrics": {
+        "accuracy": 0.7762096774193549,
+        "precision": 0.7974137931034483,
+        "recall": 0.7429718875502008,
+        "f1": 0.7692307692307693,
+        "roc_auc": 0.8595515665902477
+      },
+      "inference_ms_mean": 54.68302333320025,
+      "inference_ms_std": 12.195061282405801,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 7.433391571044922
+    },
+    {
+      "sparsity_target": 0.4,
+      "sparsity_actual": 0.40000029226434725,
+      "val_metrics": {
+        "accuracy": 0.7701612903225806,
+        "precision": 0.8391959798994975,
+        "recall": 0.6706827309236948,
+        "f1": 0.7455357142857143,
+        "roc_auc": 0.8594540103734778
+      },
+      "inference_ms_mean": 52.1675233329006,
+      "inference_ms_std": 18.5175480015746,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 6.389209747314453
+    },
+    {
+      "sparsity_target": 0.5,
+      "sparsity_actual": 0.5,
+      "val_metrics": {
+        "accuracy": 0.6935483870967742,
+        "precision": 0.8489208633093526,
+        "recall": 0.4738955823293173,
+        "f1": 0.6082474226804123,
+        "roc_auc": 0.8434385314537503
+      },
+      "inference_ms_mean": 33.02052333310712,
+      "inference_ms_std": 14.479214415546565,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 5.345035552978516
+    },
+    {
+      "sparsity_target": 0.6,
+      "sparsity_actual": 0.5999997077356527,
+      "val_metrics": {
+        "accuracy": 0.5766129032258065,
+        "precision": 0.819672131147541,
+        "recall": 0.20080321285140562,
+        "f1": 0.3225806451612903,
+        "roc_auc": 0.7954896509113376
+      },
+      "inference_ms_mean": 29.5066833338448,
+      "inference_ms_std": 3.058697529823884,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 4.300861358642578
+    },
+    {
+      "sparsity_target": 0.7,
+      "sparsity_actual": 0.7000001461321737,
+      "val_metrics": {
+        "accuracy": 0.49798387096774194,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc": 0.7504837162414841
+      },
+      "inference_ms_mean": 31.372806666089065,
+      "inference_ms_std": 11.894301288989578,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 3.2566795349121094
+    },
+    {
+      "sparsity_target": 0.8,
+      "sparsity_actual": 0.7999998538678263,
+      "val_metrics": {
+        "accuracy": 0.5020161290322581,
+        "precision": 1.0,
+        "recall": 0.008032128514056224,
+        "f1": 0.01593625498007968,
+        "roc_auc": 0.6573988260735248
+      },
+      "inference_ms_mean": 40.94268666643378,
+      "inference_ms_std": 38.2182437333161,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 2.212505340576172
+    },
+    {
+      "sparsity_target": 0.9,
+      "sparsity_actual": 0.9000002922643473,
+      "val_metrics": {
+        "accuracy": 0.4959677419354839,
+        "precision": 0.4,
+        "recall": 0.008032128514056224,
+        "f1": 0.015748031496062992,
+        "roc_auc": 0.6262458741849992
+      },
+      "inference_ms_mean": 37.81123000056444,
+      "inference_ms_std": 12.337033790279673,
+      "state_dict_disk_mb_dense": 5.450089454650879,
+      "sparse_effective_mb_estimate": 1.1683235168457031
+    }
+  ],
+  "quantization": {
+    "fp32": {
+      "val_metrics": {
+        "accuracy": 0.7923387096774194,
+        "precision": 0.7896825396825397,
+        "recall": 0.7991967871485943,
+        "f1": 0.7944111776447106,
+        "roc_auc": 0.8612588003837212
+      },
+      "inference_ms_mean": 16.506959998999566,
+      "inference_ms_std": 1.5522941000765524,
+      "state_dict_disk_mb": 5.450089454650879
+    },
+    "dynamic_int8_linear_only": {
+      "val_metrics": {
+        "accuracy": 0.7883064516129032,
+        "precision": 0.7857142857142857,
+        "recall": 0.7951807228915663,
+        "f1": 0.7904191616766467,
+        "roc_auc": 0.8610149098417963
+      },
+      "inference_ms_mean": 17.282233333632274,
+      "inference_ms_std": 2.498476576106563,
+      "state_dict_disk_mb": 5.076245307922363,
+      "note": "Only the 2 Linear layers in the classification head are quantized -- dynamic quantization does not touch Conv2d, so most of this conv-heavy backbone stays FP32. Included for completeness, not expected to be the main size/speed win."
+    },
+    "static_int8_fx": {
+      "val_metrics": {
+        "accuracy": 0.7883064516129032,
+        "precision": 0.788,
+        "recall": 0.7911646586345381,
+        "f1": 0.7895791583166333,
+        "roc_auc": 0.8619091751621872
+      },
+      "inference_ms_mean": 27.112379999744007,
+      "inference_ms_std": 3.309791296231745,
+      "state_dict_disk_mb": 1.5796995162963867,
+      "calibration_batches": 8,
+      "calibration_images": 256,
+      "note": "Full-network INT8 (weights + activations), calibrated on TRAIN images only (never validation or test), x86/onednn backend (the only backend torch.backends.quantized.supported_engines reports on this machine -- fbgemm/qnnpack are not available in this torch build)."
+    }
+  },
+  "notes": [
+    "Latency is CPU-only, batch=1, this dev machine -- not representative of real phone/edge hardware (same caveat as Section 8 of build_architecture_comparison_report_2026-09-18.py).",
+    "Pruning is one-shot magnitude pruning with NO fine-tuning after masking -- a sensitivity sweep, not a claim about the best achievable accuracy at each sparsity level (fine-tuning after pruning typically recovers some accuracy; not attempted here).",
+    "Unstructured pruning zeros individual weights but does not physically shrink the dense tensors PyTorch stores/computes on CPU -- 'state_dict_disk_mb_dense' will NOT shrink with sparsity; 'sparse_effective_mb_estimate' is a COO-format estimate of what a real sparse runtime could achieve, not a measured number."
+  ]
+}
