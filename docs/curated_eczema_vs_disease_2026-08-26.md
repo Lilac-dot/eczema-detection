@@ -253,6 +253,34 @@ version to actually cite.
   knowledge (this was picked based on general visual/clinical similarity, not expert
   review).
 
+## Update 2026-09-17 — train/val/test gap on the balanced CNN
+
+The headline 81.07% above is test accuracy only; train and val accuracy had never been
+computed for this checkpoint. Ran the same eval logic against all three
+`manifest_curated_v3_*` splits (`curated_resnet18_balanced.pt`, no retraining):
+
+| Split | n | Accuracy |
+|---|---|---|
+| Train | 2,327 | **93.81%** |
+| Val | 496 | **80.24%** |
+| Test | 507 | **81.07%** |
+
+**There is a real ~13-14 point overfitting gap between train and held-out data.** The
+positive sign: val (80.24%) and test (81.07%) land close together, so the 81% headline
+number is a stable, trustworthy estimate of generalization — not a fluke of one split —
+the model just also memorizes a meaningful amount of training-set-specific detail it
+can't turn into extra generalization.
+
+**Likely cause, from `scripts/train_curated_cnn_balanced.py`:** the optimizer has no
+`weight_decay`, and the `fc` head is a bare `nn.Linear` with no dropout. The only
+regularization in place is data augmentation (flip/rotation/color jitter) and
+best-val-checkpoint selection — both already help (the gap would likely be worse
+without them), but aren't enough on their own for ~2,327 training images.
+
+**Proposed next step (not yet done):** add `weight_decay` (e.g. `1e-4`) to the Adam
+optimizer and `nn.Dropout(0.5)` before `fc`, retrain, and compare the new train/val/test
+gap against this baseline.
+
 ## Artifacts produced
 
 - `SkinDisease/manifest_curated.csv`, `manifest_curated_{train,val,test}.csv`
