@@ -1,0 +1,67 @@
+{
+ "mobilenetv2_100": {
+  "fp32": {
+   "accuracy": 0.7883,
+   "sensitivity_recall": 0.7871,
+   "specificity": 0.7895,
+   "f1": 0.7887,
+   "auroc": 0.8738
+  },
+  "weight_only_per_tensor": {
+   "accuracy": 0.7258,
+   "sensitivity_recall": 0.6747,
+   "specificity": 0.7773,
+   "f1": 0.7119,
+   "auroc": 0.8113
+  },
+  "weight_only_per_channel": {
+   "accuracy": 0.7802,
+   "sensitivity_recall": 0.7671,
+   "specificity": 0.7935,
+   "f1": 0.778,
+   "auroc": 0.8709
+  },
+  "qnnpack_default_per_tensor|reference_sim": {
+   "accuracy": 0.7117,
+   "sensitivity_recall": 0.5863,
+   "specificity": 0.8381,
+   "f1": 0.6713,
+   "auroc": 0.8176
+  },
+  "qnnpack_default_per_tensor|qnnpack_kernels": {
+   "accuracy": 0.498,
+   "sensitivity_recall": 0.0,
+   "specificity": 1.0,
+   "f1": 0.0,
+   "auroc": 0.5661
+  },
+  "per_channel_rr_false_(09-20 diag)|reference_sim": {
+   "accuracy": 0.7581,
+   "sensitivity_recall": 0.7068,
+   "specificity": 0.8097,
+   "f1": 0.7458,
+   "auroc": 0.8546
+  },
+  "per_channel_rr_false_(09-20 diag)|qnnpack_kernels": {
+   "accuracy": 0.498,
+   "sensitivity_recall": 0.0,
+   "specificity": 1.0,
+   "f1": 0.0,
+   "auroc": 0.5224
+  },
+  "fbgemm_default_per_channel_rr_true|reference_sim": {
+   "accuracy": 0.7097,
+   "sensitivity_recall": 0.6225,
+   "specificity": 0.7976,
+   "f1": 0.6828,
+   "auroc": 0.8211
+  },
+  "fbgemm_default_per_channel_rr_true|qnnpack_kernels": {
+   "accuracy": 0.498,
+   "sensitivity_recall": 0.0,
+   "specificity": 1.0,
+   "f1": 0.0,
+   "auroc": 0.5
+  }
+ }
+}
