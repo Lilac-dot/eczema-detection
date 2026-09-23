@@ -1,0 +1,204 @@
+{
+  "date": "2026-09-18",
+  "test_subjects": [
+    "S11",
+    "S14",
+    "S16",
+    "S2"
+  ],
+  "tabular_test_n": 139,
+  "cnn_lstm_test_n": 566,
+  "tabular_metrics": {
+    "xgboost": {
+      "n": 139,
+      "accuracy": 0.8057553956834532,
+      "precision": 1.0,
+      "recall": 0.35714285714285715,
+      "f1": 0.5263157894736842,
+      "roc_auc": 0.8730976926853216,
+      "auc_95ci": [
+        0.8009039750445252,
+        0.9380296849755296
+      ]
+    },
+    "catboost": {
+      "n": 139,
+      "accuracy": 0.8201438848920863,
+      "precision": 0.9047619047619048,
+      "recall": 0.4523809523809524,
+      "f1": 0.6031746031746031,
+      "roc_auc": 0.8760432007854688,
+      "auc_95ci": [
+        0.7924213505518262,
+        0.9497015069695481
+      ]
+    },
+    "random_forest": {
+      "n": 139,
+      "accuracy": 0.8561151079136691,
+      "precision": 0.9583333333333334,
+      "recall": 0.5476190476190477,
+      "f1": 0.696969696969697,
+      "roc_auc": 0.8829160530191459,
+      "auc_95ci": [
+        0.8051186623516722,
+        0.9499759948789075
+      ]
+    },
+    "lightgbm_uncalibrated": {
+      "n": 139,
+      "accuracy": 0.841726618705036,
+      "precision": 1.0,
+      "recall": 0.47619047619047616,
+      "f1": 0.6451612903225806,
+      "roc_auc": 0.8022827687776143,
+      "auc_95ci": [
+        0.6993185989843236,
+        0.890537759368042
+      ]
+    }
+  },
+  "tabular_pairwise": {
+    "xgboost_vs_catboost": {
+      "mcnemar": {
+        "b": 2,
+        "c": 4,
+        "statistic": 0.16666666666666666,
+        "p_value": 0.6830913983096086
+      },
+      "auc_diff": {
+        "observed_diff": -0.002945508100147265,
+        "ci": [
+          -0.03338518508079018,
+          0.027979920649271243
+        ],
+        "p_value": 0.814
+      }
+    },
+    "xgboost_vs_random_forest": {
+      "mcnemar": {
+        "b": 1,
+        "c": 8,
+        "statistic": 4.0,
+        "p_value": 0.04550026389635857
+      },
+      "auc_diff": {
+        "observed_diff": -0.009818360333824327,
+        "ci": [
+          -0.04986643580877331,
+          0.025512486288221475
+        ],
+        "p_value": 0.639
+      }
+    },
+    "xgboost_vs_lightgbm_uncalibrated": {
+      "mcnemar": {
+        "b": 0,
+        "c": 5,
+        "statistic": 3.2,
+        "p_value": 0.07363827012030257
+      },
+      "auc_diff": {
+        "observed_diff": 0.07081492390770727,
+        "ci": [
+          0.018911451304182668,
+          0.13401580940685093
+        ],
+        "p_value": 0.004
+      }
+    },
+    "catboost_vs_random_forest": {
+      "mcnemar": {
+        "b": 0,
+        "c": 5,
+        "statistic": 3.2,
+        "p_value": 0.07363827012030257
+      },
+      "auc_diff": {
+        "observed_diff": -0.0068728522336770626,
+        "ci": [
+          -0.03975128601912693,
+          0.017176513764966022
+        ],
+        "p_value": 0.679
+      }
+    },
+    "catboost_vs_lightgbm_uncalibrated": {
+      "mcnemar": {
+        "b": 0,
+        "c": 3,
+        "statistic": 1.3333333333333333,
+        "p_value": 0.24821307898992026
+      },
+      "auc_diff": {
+        "observed_diff": 0.07376043200785454,
+        "ci": [
+          0.008076247165533002,
+          0.1469291802596729
+        ],
+        "p_value": 0.021
+      }
+    },
+    "random_forest_vs_lightgbm_uncalibrated": {
+      "mcnemar": {
+        "b": 3,
+        "c": 1,
+        "statistic": 0.25,
+        "p_value": 0.6170750774519739
+      },
+      "auc_diff": {
+        "observed_diff": 0.0806332842415316,
+        "ci": [
+          0.016195870408512256,
+          0.1585915115812022
+        ],
+        "p_value": 0.01
+      }
+    }
+  },
+  "tabular_holm_correction": {
+    "xgboost_vs_random_forest": {
+      "p_raw": 0.04550026389635857,
+      "p_holm": 0.2730015833781514,
+      "significant": false
+    },
+    "xgboost_vs_lightgbm_uncalibrated": {
+      "p_raw": 0.07363827012030257,
+      "p_holm": 0.3681913506015128,
+      "significant": false
+    },
+    "catboost_vs_random_forest": {
+      "p_raw": 0.07363827012030257,
+      "p_holm": 0.3681913506015128,
+      "significant": false
+    },
+    "catboost_vs_lightgbm_uncalibrated": {
+      "p_raw": 0.24821307898992026,
+      "p_holm": 0.7446392369697608,
+      "significant": false
+    },
+    "random_forest_vs_lightgbm_uncalibrated": {
+      "p_raw": 0.6170750774519739,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    "xgboost_vs_catboost": {
+      "p_raw": 0.6830913983096086,
+      "p_holm": 1.0,
+      "significant": false
+    }
+  },
+  "cnn_lstm_metrics": {
+    "n": 566,
+    "accuracy": 0.8551236749116607,
+    "precision": 0.8492063492063492,
+    "recall": 0.6294117647058823,
+    "f1": 0.722972972972973,
+    "roc_auc": 0.8681595365418896,
+    "auc_95ci": [
+      0.8307778091905119,
+      0.902184834635572
+    ]
+  },
+  "note": "CNN-LSTM not included in pairwise/Holm testing -- different test-window structure than the tabular models (566 raw windows vs 139 feature rows for the same 4 subjects), so predictions cannot be paired row-for-row."
+}
