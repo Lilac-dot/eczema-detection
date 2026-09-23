@@ -1,0 +1,123 @@
+{
+  "n_architectures": 8,
+  "rows": [
+    {
+      "model": "efficientnet_b0",
+      "clean_acc": 0.8064516129032258,
+      "gaussian_blur_drop": 0.2540322580645161,
+      "brightness_down_drop": 0.13306451612903225,
+      "brightness_up_drop": 0.06451612903225812,
+      "contrast_down_drop": 0.13911290322580638,
+      "gaussian_noise_drop": 0.07661290322580638,
+      "jpeg_compression_drop": 0.28830645161290325,
+      "color_shift_warm_drop": 0.06854838709677413
+    },
+    {
+      "model": "mobilenetv3_small",
+      "clean_acc": 0.7600806451612904,
+      "gaussian_blur_drop": 0.25806451612903225,
+      "brightness_down_drop": 0.07459677419354849,
+      "brightness_up_drop": 0.04435483870967749,
+      "contrast_down_drop": 0.008064516129032251,
+      "gaussian_noise_drop": 0.0040322580645161255,
+      "jpeg_compression_drop": 0.18145161290322587,
+      "color_shift_warm_drop": 0.05040322580645151
+    },
+    {
+      "model": "mobilenetv2_100",
+      "clean_acc": 0.7883064516129032,
+      "gaussian_blur_drop": 0.2701612903225806,
+      "brightness_down_drop": 0.02620967741935476,
+      "brightness_up_drop": 0.09879032258064513,
+      "contrast_down_drop": 0.040322580645161255,
+      "gaussian_noise_drop": 0.11895161290322576,
+      "jpeg_compression_drop": 0.2661290322580645,
+      "color_shift_warm_drop": 0.06048387096774199
+    },
+    {
+      "model": "squeezenet1_1",
+      "clean_acc": 0.780241935483871,
+      "gaussian_blur_drop": 0.2701612903225807,
+      "brightness_down_drop": 0.09072580645161288,
+      "brightness_up_drop": 0.10282258064516125,
+      "contrast_down_drop": 0.11895161290322576,
+      "gaussian_noise_drop": 0.16733870967741937,
+      "jpeg_compression_drop": 0.19354838709677413,
+      "color_shift_warm_drop": 0.05443548387096775
+    },
+    {
+      "model": "shufflenet_v2_x0_5",
+      "clean_acc": 0.7983870967741935,
+      "gaussian_blur_drop": 0.2782258064516129,
+      "brightness_down_drop": 0.09879032258064513,
+      "brightness_up_drop": 0.19959677419354838,
+      "contrast_down_drop": 0.20967741935483863,
+      "gaussian_noise_drop": 0.15120967741935487,
+      "jpeg_compression_drop": 0.189516129032258,
+      "color_shift_warm_drop": 0.11491935483870974
+    },
+    {
+      "model": "shufflenet_v2_x1_0",
+      "clean_acc": 0.7923387096774194,
+      "gaussian_blur_drop": 0.2358870967741935,
+      "brightness_down_drop": 0.022177419354838634,
+      "brightness_up_drop": 0.10685483870967738,
+      "contrast_down_drop": 0.13709677419354838,
+      "gaussian_noise_drop": 0.014112903225806495,
+      "jpeg_compression_drop": 0.23991935483870963,
+      "color_shift_warm_drop": 0.05241935483870974
+    },
+    {
+      "model": "repghostnet_050",
+      "clean_acc": 0.7681451612903226,
+      "gaussian_blur_drop": 0.2560483870967742,
+      "brightness_down_drop": 0.05645161290322587,
+      "brightness_up_drop": 0.032258064516129004,
+      "contrast_down_drop": 0.014112903225806384,
+      "gaussian_noise_drop": 0.02620967741935487,
+      "jpeg_compression_drop": 0.24395161290322576,
+      "color_shift_warm_drop": 0.040322580645161255
+    },
+    {
+      "model": "efficientnet_lite0",
+      "clean_acc": 0.7641129032258065,
+      "gaussian_blur_drop": 0.2641129032258064,
+      "brightness_down_drop": 0.07459677419354838,
+      "brightness_up_drop": 0.008064516129032251,
+      "contrast_down_drop": 0.0766129032258065,
+      "gaussian_noise_drop": 0.06048387096774199,
+      "jpeg_compression_drop": 0.22782258064516125,
+      "color_shift_warm_drop": 0.06854838709677413
+    }
+  ],
+  "mean_drop_ranked": [
+    [
+      "gaussian_blur",
+      0.26083669354838707
+    ],
+    [
+      "jpeg_compression",
+      0.2288306451612903
+    ],
+    [
+      "contrast_down",
+      0.09299395161290319
+    ],
+    [
+      "brightness_up",
+      0.08215725806451613
+    ],
+    [
+      "gaussian_noise",
+      0.07736895161290323
+    ],
+    [
+      "brightness_down",
+      0.0720766129032258
+    ],
+    [
+      "color_shift_warm",
+      0.06376008064516128
+    ]
+  ]
+}
