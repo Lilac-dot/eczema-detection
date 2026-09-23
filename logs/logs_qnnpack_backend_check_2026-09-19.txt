@@ -1,0 +1,50 @@
+Quantized backend in use: qnnpack
+
+=== qnnpack static INT8: resnet18 ===
+  x86: acc=0.7964 sens=0.8273 spec=0.7652
+  qnnpack: acc=0.7964 sens=0.8153 spec=0.7773 
+
+=== qnnpack static INT8: efficientnet_b0 ===
+  x86: acc=0.5302 sens=0.1847 spec=0.8785
+  qnnpack: acc=0.4879 sens=0.0442 spec=0.9352 
+
+=== qnnpack static INT8: efficientnet_lite0 ===
+  x86: acc=0.6673 sens=0.5422 spec=0.7935
+  qnnpack: acc=0.4980 sens=0.0000 spec=1.0000 *** COLLAPSED ***
+
+=== qnnpack static INT8: mobilenetv3_small ===
+  x86: acc=0.5040 sens=0.0482 spec=0.9636
+  qnnpack: acc=0.4819 sens=0.0361 spec=0.9312 
+
+=== qnnpack static INT8: mobilenetv2_100 ===
+  x86: acc=0.7198 sens=0.6185 spec=0.8219
+  qnnpack: acc=0.4980 sens=0.0000 spec=1.0000 *** COLLAPSED ***
+
+=== qnnpack static INT8: shufflenet_v2_x0_5 ===
+  x86: acc=0.7661 sens=0.7671 spec=0.7652
+  qnnpack: acc=0.7359 sens=0.7068 spec=0.7652 
+
+=== qnnpack static INT8: shufflenet_v2_x1_0 ===
+  x86: acc=0.7782 sens=0.8072 spec=0.7490
+  qnnpack: acc=0.7440 sens=0.8795 spec=0.6073 
+
+=== qnnpack static INT8: squeezenet1_1 ===
+  x86: acc=0.7661 sens=0.8032 spec=0.7287
+  qnnpack: acc=0.7641 sens=0.7952 spec=0.7328 
+
+=== qnnpack static INT8: repghostnet_050 ===
+  x86: acc=0.4839 sens=0.3373 spec=0.6316
+  qnnpack: acc=0.4980 sens=0.0000 spec=1.0000 *** COLLAPSED ***
+
+All done. Results at /Users/tishy/Documents/Honors/papers/edge-ai-lightweight-deployment/edge_ai_qnnpack_backend_check_2026-09-19.json
+
+Summary (accuracy: x86 vs qnnpack, delta):
+  resnet18               x86=0.7964  qnnpack=0.7964  delta=+0.0000
+  efficientnet_b0        x86=0.5302  qnnpack=0.4879  delta=-0.0423
+  efficientnet_lite0     x86=0.6673  qnnpack=0.4980  delta=-0.1694 *** COLLAPSED ON QNNPACK ***
+  mobilenetv3_small      x86=0.5040  qnnpack=0.4819  delta=-0.0222
+  mobilenetv2_100        x86=0.7198  qnnpack=0.4980  delta=-0.2218 *** COLLAPSED ON QNNPACK ***
+  shufflenet_v2_x0_5     x86=0.7661  qnnpack=0.7359  delta=-0.0302
+  shufflenet_v2_x1_0     x86=0.7782  qnnpack=0.7440  delta=-0.0343
+  squeezenet1_1          x86=0.7661  qnnpack=0.7641  delta=-0.0020
+  repghostnet_050        x86=0.4839  qnnpack=0.4980  delta=+0.0141 *** COLLAPSED ON QNNPACK ***

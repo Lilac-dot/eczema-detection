@@ -1,0 +1,605 @@
+{
+  "resnet18": {
+    "x86_fbgemm_backend_original": {
+      "accuracy": 0.7963709677419355,
+      "precision": 0.7803030303030303,
+      "sensitivity_recall": 0.8273092369477911,
+      "specificity": 0.7651821862348178,
+      "f1": 0.8031189083820662,
+      "auroc": 0.8895582329317269
+    },
+    "qnnpack_backend_this_mac": {
+      "point": {
+        "accuracy": 0.7963709677419355,
+        "precision": 0.7868217054263565,
+        "sensitivity_recall": 0.8152610441767069,
+        "specificity": 0.7773279352226721,
+        "f1": 0.8007889546351085,
+        "auroc": 0.8854771311968521
+      },
+      "bootstrap_ci": {
+        "accuracy": {
+          "mean": 0.7968497983870968,
+          "ci_lo": 0.7620967741935484,
+          "ci_hi": 0.8306451612903226,
+          "n_valid": 2000
+        },
+        "precision": {
+          "mean": 0.7874122127122557,
+          "ci_lo": 0.7330373334728326,
+          "ci_hi": 0.8371212121212122,
+          "n_valid": 2000
+        },
+        "sensitivity_recall": {
+          "mean": 0.815568868489096,
+          "ci_lo": 0.7672413793103449,
+          "ci_hi": 0.8636411992263056,
+          "n_valid": 2000
+        },
+        "specificity": {
+          "mean": 0.7780027576150621,
+          "ci_lo": 0.7261227977688592,
+          "ci_hi": 0.8290625,
+          "n_valid": 2000
+        },
+        "f1": {
+          "mean": 0.8009297993137939,
+          "ci_lo": 0.762499376247505,
+          "ci_hi": 0.8372945140883897,
+          "n_valid": 2000
+        },
+        "auroc": {
+          "mean": 0.8855792611648095,
+          "ci_lo": 0.8565487880238206,
+          "ci_hi": 0.9115076687346515,
+          "n_valid": 2000
+        }
+      },
+      "op_coverage": {
+        "n_quantized_int8": 21,
+        "n_fp32_fallback": 0,
+        "coverage_fraction": 1.0,
+        "fallback_module_names": []
+      }
+    },
+    "accuracy_delta_qnnpack_minus_x86": 0.0,
+    "collapsed_on_qnnpack": false,
+    "total_time_s": 13.098843097686768
+  },
+  "efficientnet_b0": {
+    "x86_fbgemm_backend_original": {
+      "accuracy": 0.530241935483871,
+      "precision": 0.6052631578947368,
+      "sensitivity_recall": 0.18473895582329317,
+      "specificity": 0.8785425101214575,
+      "f1": 0.28307692307692306,
+      "auroc": 0.6009300359332065
+    },
+    "qnnpack_backend_this_mac": {
+      "point": {
+        "accuracy": 0.4879032258064516,
+        "precision": 0.4074074074074074,
+        "sensitivity_recall": 0.04417670682730924,
+        "specificity": 0.9352226720647774,
+        "f1": 0.07971014492753623,
+        "auroc": 0.4974147602555973
+      },
+      "bootstrap_ci": {
+        "accuracy": {
+          "mean": 0.4880201612903226,
+          "ci_lo": 0.44556451612903225,
+          "ci_hi": 0.532258064516129,
+          "n_valid": 2000
+        },
+        "precision": {
+          "mean": 0.4094930195331269,
+          "ci_lo": 0.22213541666666667,
+          "ci_hi": 0.5925925925925926,
+          "n_valid": 2000
+        },
+        "sensitivity_recall": {
+          "mean": 0.044531175186384324,
+          "ci_lo": 0.020833333333333332,
+          "ci_hi": 0.07264957264957266,
+          "n_valid": 2000
+        },
+        "specificity": {
+          "mean": 0.9352345866641892,
+          "ci_lo": 0.9024366425304878,
+          "ci_hi": 0.9641505125742091,
+          "n_valid": 2000
+        },
+        "f1": {
+          "mean": 0.08003234504991646,
+          "ci_lo": 0.038461538461538464,
+          "ci_hi": 0.1267631910868194,
+          "n_valid": 2000
+        },
+        "auroc": {
+          "mean": 0.49809395028722103,
+          "ci_lo": 0.4474253610794533,
+          "ci_hi": 0.5481375179332728,
+          "n_valid": 2000
+        }
+      },
+      "op_coverage": {
+        "n_quantized_int8": 83,
+        "n_fp32_fallback": 0,
+        "coverage_fraction": 1.0,
+        "fallback_module_names": []
+      }
+    },
+    "accuracy_delta_qnnpack_minus_x86": -0.04233870967741937,
+    "collapsed_on_qnnpack": false,
+    "total_time_s": 19.47004222869873
+  },
+  "efficientnet_lite0": {
+    "x86_fbgemm_backend_original": {
+      "accuracy": 0.6673387096774194,
+      "precision": 0.7258064516129032,
+      "sensitivity_recall": 0.5421686746987951,
+      "specificity": 0.7935222672064778,
+      "f1": 0.6206896551724138,
+      "auroc": 0.7620522576134497
+    },
+    "qnnpack_backend_this_mac": {
+      "point": {
+        "accuracy": 0.49798387096774194,
+        "precision": 0.0,
+        "sensitivity_recall": 0.0,
+        "specificity": 1.0,
+        "f1": 0.0,
+        "auroc": 0.5107718322683445
+      },
+      "bootstrap_ci": {
+        "accuracy": {
+          "mean": 0.4979375,
+          "ci_lo": 0.4536290322580645,
+          "ci_hi": 0.5423387096774194,
+          "n_valid": 2000
+        },
+        "precision": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0,
+          "n_valid": 2000
+        },
+        "sensitivity_recall": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0,
+          "n_valid": 2000
+        },
+        "specificity": {
+          "mean": 1.0,
+          "ci_lo": 1.0,
+          "ci_hi": 1.0,
+          "n_valid": 2000
+        },
+        "f1": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0,
+          "n_valid": 2000
+        },
+        "auroc": {
+          "mean": 0.5111052437526411,
+          "ci_lo": 0.4623413060953203,
+          "ci_hi": 0.5623402861980572,
+          "n_valid": 2000
+        }
+      },
+      "op_coverage": {
+        "n_quantized_int8": 51,
+        "n_fp32_fallback": 0,
+        "coverage_fraction": 1.0,
+        "fallback_module_names": []
+      }
+    },
+    "accuracy_delta_qnnpack_minus_x86": -0.16935483870967744,
+    "collapsed_on_qnnpack": true,
+    "total_time_s": 21.639737129211426
+  },
+  "mobilenetv3_small": {
+    "x86_fbgemm_backend_original": {
+      "accuracy": 0.5040322580645161,
+      "precision": 0.5714285714285714,
+      "sensitivity_recall": 0.04819277108433735,
+      "specificity": 0.9635627530364372,
+      "f1": 0.08888888888888889,
+      "auroc": 0.5642651577971807
+    },
+    "qnnpack_backend_this_mac": {
+      "point": {
+        "accuracy": 0.48185483870967744,
+        "precision": 0.34615384615384615,
+        "sensitivity_recall": 0.03614457831325301,
+        "specificity": 0.9311740890688259,
+        "f1": 0.06545454545454546,
+        "auroc": 0.4308814204185161
+      },
+      "bootstrap_ci": {
+        "accuracy": {
+          "mean": 0.48205645161290317,
+          "ci_lo": 0.4375,
+          "ci_hi": 0.5262096774193549,
+          "n_valid": 2000
+        },
+        "precision": {
+          "mean": 0.3470827225499948,
+          "ci_lo": 0.16666666666666666,
+          "ci_hi": 0.5484274193548384,
+          "n_valid": 2000
+        },
+        "sensitivity_recall": {
+          "mean": 0.036127971298009626,
+          "ci_lo": 0.014491445612933605,
+          "ci_hi": 0.06178124700851971,
+          "n_valid": 2000
+        },
+        "specificity": {
+          "mean": 0.9316869678761842,
+          "ci_lo": 0.8978723404255319,
+          "ci_hi": 0.960788143382353,
+          "n_valid": 2000
+        },
+        "f1": {
+          "mean": 0.06522262803892682,
+          "ci_lo": 0.027195064072140483,
+          "ci_hi": 0.1099724003571718,
+          "n_valid": 2000
+        },
+        "auroc": {
+          "mean": 0.4316543265904275,
+          "ci_lo": 0.3819908122611595,
+          "ci_hi": 0.48097313842630524,
+          "n_valid": 2000
+        }
+      },
+      "op_coverage": {
+        "n_quantized_int8": 54,
+        "n_fp32_fallback": 0,
+        "coverage_fraction": 1.0,
+        "fallback_module_names": []
+      }
+    },
+    "accuracy_delta_qnnpack_minus_x86": -0.02217741935483869,
+    "collapsed_on_qnnpack": false,
+    "total_time_s": 7.820502042770386
+  },
+  "mobilenetv2_100": {
+    "x86_fbgemm_backend_original": {
+      "accuracy": 0.719758064516129,
+      "precision": 0.7777777777777778,
+      "sensitivity_recall": 0.6184738955823293,
+      "specificity": 0.8218623481781376,
+      "f1": 0.6890380313199105,
+      "auroc": 0.8308619091751621
+    },
+    "qnnpack_backend_this_mac": {
+      "point": {
+        "accuracy": 0.49798387096774194,
+        "precision": 0.0,
+        "sensitivity_recall": 0.0,
+        "specificity": 1.0,
+        "f1": 0.0,
+        "auroc": 0.4976423914280605
+      },
+      "bootstrap_ci": {
+        "accuracy": {
+          "mean": 0.4979375,
+          "ci_lo": 0.4536290322580645,
+          "ci_hi": 0.5423387096774194,
+          "n_valid": 2000
+        },
+        "precision": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0,
+          "n_valid": 2000
+        },
+        "sensitivity_recall": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0,
+          "n_valid": 2000
+        },
+        "specificity": {
+          "mean": 1.0,
+          "ci_lo": 1.0,
+          "ci_hi": 1.0,
+          "n_valid": 2000
+        },
+        "f1": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0,
+          "n_valid": 2000
+        },
+        "auroc": {
+          "mean": 0.4973239889089614,
+          "ci_lo": 0.45321816583685315,
+          "ci_hi": 0.5435367886178861,
+          "n_valid": 2000
+        }
+      },
+      "op_coverage": {
+        "n_quantized_int8": 54,
+        "n_fp32_fallback": 0,
+        "coverage_fraction": 1.0,
+        "fallback_module_names": []
+      }
+    },
+    "accuracy_delta_qnnpack_minus_x86": -0.22177419354838707,
+    "collapsed_on_qnnpack": true,
+    "total_time_s": 13.25754427909851
+  },
+  "shufflenet_v2_x0_5": {
+    "x86_fbgemm_backend_original": {
+      "accuracy": 0.7661290322580645,
+      "precision": 0.7670682730923695,
+      "sensitivity_recall": 0.7670682730923695,
+      "specificity": 0.7651821862348178,
+      "f1": 0.7670682730923695,
+      "auroc": 0.8394305968814529
+    },
+    "qnnpack_backend_this_mac": {
+      "point": {
+        "accuracy": 0.7358870967741935,
+        "precision": 0.7521367521367521,
+        "sensitivity_recall": 0.7068273092369478,
+        "specificity": 0.7651821862348178,
+        "f1": 0.7287784679089027,
+        "auroc": 0.8017982862624587
+      },
+      "bootstrap_ci": {
+        "accuracy": {
+          "mean": 0.7359586693548388,
+          "ci_lo": 0.6955645161290323,
+          "ci_hi": 0.7762096774193549,
+          "n_valid": 2000
+        },
+        "precision": {
+          "mean": 0.7520352802192992,
+          "ci_lo": 0.6950634643155734,
+          "ci_hi": 0.8093428766855577,
+          "n_valid": 2000
+        },
+        "sensitivity_recall": {
+          "mean": 0.7073075812719192,
+          "ci_lo": 0.6513389838694098,
+          "ci_hi": 0.7623002049180327,
+          "n_valid": 2000
+        },
+        "specificity": {
+          "mean": 0.7648704784849836,
+          "ci_lo": 0.7096774193548387,
+          "ci_hi": 0.8193291193129234,
+          "n_valid": 2000
+        },
+        "f1": {
+          "mean": 0.7285676380254096,
+          "ci_lo": 0.6819103194103194,
+          "ci_hi": 0.7733927314087635,
+          "n_valid": 2000
+        },
+        "auroc": {
+          "mean": 0.801709432627034,
+          "ci_lo": 0.7636299770289132,
+          "ci_hi": 0.8397170067813763,
+          "n_valid": 2000
+        }
+      },
+      "op_coverage": {
+        "n_quantized_int8": 58,
+        "n_fp32_fallback": 0,
+        "coverage_fraction": 1.0,
+        "fallback_module_names": []
+      }
+    },
+    "accuracy_delta_qnnpack_minus_x86": -0.030241935483870996,
+    "collapsed_on_qnnpack": false,
+    "total_time_s": 6.427062034606934
+  },
+  "shufflenet_v2_x1_0": {
+    "x86_fbgemm_backend_original": {
+      "accuracy": 0.7782258064516129,
+      "precision": 0.7642585551330798,
+      "sensitivity_recall": 0.8072289156626506,
+      "specificity": 0.7489878542510121,
+      "f1": 0.78515625,
+      "auroc": 0.8636407980098532
+    },
+    "qnnpack_backend_this_mac": {
+      "point": {
+        "accuracy": 0.7439516129032258,
+        "precision": 0.6930379746835443,
+        "sensitivity_recall": 0.8795180722891566,
+        "specificity": 0.6072874493927125,
+        "f1": 0.7752212389380531,
+        "auroc": 0.8465196819667333
+      },
+      "bootstrap_ci": {
+        "accuracy": {
+          "mean": 0.7436068548387096,
+          "ci_lo": 0.7056451612903226,
+          "ci_hi": 0.782258064516129,
+          "n_valid": 2000
+        },
+        "precision": {
+          "mean": 0.6927797129584768,
+          "ci_lo": 0.6419188428059396,
+          "ci_hi": 0.743425269905533,
+          "n_valid": 2000
+        },
+        "sensitivity_recall": {
+          "mean": 0.8793102152488687,
+          "ci_lo": 0.8380566801619433,
+          "ci_hi": 0.9163429614873837,
+          "n_valid": 2000
+        },
+        "specificity": {
+          "mean": 0.6068566800662764,
+          "ci_lo": 0.5483774193548386,
+          "ci_hi": 0.6679130914254637,
+          "n_valid": 2000
+        },
+        "f1": {
+          "mean": 0.774663395831248,
+          "ci_lo": 0.7342186047327521,
+          "ci_hi": 0.8114527120520271,
+          "n_valid": 2000
+        },
+        "auroc": {
+          "mean": 0.8461642100604506,
+          "ci_lo": 0.8106910111303741,
+          "ci_hi": 0.8781535388631193,
+          "n_valid": 2000
+        }
+      },
+      "op_coverage": {
+        "n_quantized_int8": 58,
+        "n_fp32_fallback": 0,
+        "coverage_fraction": 1.0,
+        "fallback_module_names": []
+      }
+    },
+    "accuracy_delta_qnnpack_minus_x86": -0.03427419354838712,
+    "collapsed_on_qnnpack": false,
+    "total_time_s": 8.607495069503784
+  },
+  "squeezenet1_1": {
+    "x86_fbgemm_backend_original": {
+      "accuracy": 0.7661290322580645,
+      "precision": 0.7490636704119851,
+      "sensitivity_recall": 0.8032128514056225,
+      "specificity": 0.728744939271255,
+      "f1": 0.7751937984496124,
+      "auroc": 0.8400565826057266
+    },
+    "qnnpack_backend_this_mac": {
+      "point": {
+        "accuracy": 0.7641129032258065,
+        "precision": 0.75,
+        "sensitivity_recall": 0.7951807228915663,
+        "specificity": 0.7327935222672065,
+        "f1": 0.7719298245614035,
+        "auroc": 0.8478854690015121
+      },
+      "bootstrap_ci": {
+        "accuracy": {
+          "mean": 0.7641663306451614,
+          "ci_lo": 0.7237903225806451,
+          "ci_hi": 0.8024193548387096,
+          "n_valid": 2000
+        },
+        "precision": {
+          "mean": 0.7500512184724822,
+          "ci_lo": 0.6969579059073223,
+          "ci_hi": 0.8021988272921109,
+          "n_valid": 2000
+        },
+        "sensitivity_recall": {
+          "mean": 0.7952446051712099,
+          "ci_lo": 0.7424817261266095,
+          "ci_hi": 0.8446300071033694,
+          "n_valid": 2000
+        },
+        "specificity": {
+          "mean": 0.7328577776259951,
+          "ci_lo": 0.6774161418840765,
+          "ci_hi": 0.7886820917371503,
+          "n_valid": 2000
+        },
+        "f1": {
+          "mean": 0.7716546996971224,
+          "ci_lo": 0.7284204028589993,
+          "ci_hi": 0.8113207547169812,
+          "n_valid": 2000
+        },
+        "auroc": {
+          "mean": 0.8479063193359402,
+          "ci_lo": 0.8119271007861616,
+          "ci_hi": 0.8821472574983072,
+          "n_valid": 2000
+        }
+      },
+      "op_coverage": {
+        "n_quantized_int8": 27,
+        "n_fp32_fallback": 0,
+        "coverage_fraction": 1.0,
+        "fallback_module_names": []
+      }
+    },
+    "accuracy_delta_qnnpack_minus_x86": -0.002016129032258007,
+    "collapsed_on_qnnpack": false,
+    "total_time_s": 7.3200318813323975
+  },
+  "repghostnet_050": {
+    "x86_fbgemm_backend_original": {
+      "accuracy": 0.4838709677419355,
+      "precision": 0.48,
+      "sensitivity_recall": 0.3373493975903614,
+      "specificity": 0.631578947368421,
+      "f1": 0.39622641509433965,
+      "auroc": 0.4951953563240818
+    },
+    "qnnpack_backend_this_mac": {
+      "point": {
+        "accuracy": 0.49798387096774194,
+        "precision": 0.0,
+        "sensitivity_recall": 0.0,
+        "specificity": 1.0,
+        "f1": 0.0,
+        "auroc": 0.5681104986748614
+      },
+      "bootstrap_ci": {
+        "accuracy": {
+          "mean": 0.4979375,
+          "ci_lo": 0.4536290322580645,
+          "ci_hi": 0.5423387096774194,
+          "n_valid": 2000
+        },
+        "precision": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0,
+          "n_valid": 2000
+        },
+        "sensitivity_recall": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0,
+          "n_valid": 2000
+        },
+        "specificity": {
+          "mean": 1.0,
+          "ci_lo": 1.0,
+          "ci_hi": 1.0,
+          "n_valid": 2000
+        },
+        "f1": {
+          "mean": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0,
+          "n_valid": 2000
+        },
+        "auroc": {
+          "mean": 0.5683623801597759,
+          "ci_lo": 0.5218358893021185,
+          "ci_hi": 0.6129615989783237,
+          "n_valid": 2000
+        }
+      },
+      "op_coverage": {
+        "n_quantized_int8": 97,
+        "n_fp32_fallback": 0,
+        "coverage_fraction": 1.0,
+        "fallback_module_names": []
+      }
+    },
+    "accuracy_delta_qnnpack_minus_x86": 0.014112903225806439,
+    "collapsed_on_qnnpack": true,
+    "total_time_s": 9.20369005203247
+  }
+}
