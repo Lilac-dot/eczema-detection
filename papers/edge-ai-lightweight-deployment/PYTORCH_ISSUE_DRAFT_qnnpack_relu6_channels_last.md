@@ -62,10 +62,33 @@ Model-level impact (binary image classifier, 496-image balanced validation set, 
 | torchvision mobilenet_v2 backbone | 78.8% | 71.2% | 49.8% (constant output) | 73.0% |
 | timm efficientnet_lite0 backbone | 76.4% | n/a | 49.8% (constant output) | 67.7% |
 
+Root cause (as far as we can tell from the source): in `aten/src/ATen/native/quantized/cpu/qclamp.cpp`,
+`qnnpack_clamp` keeps the input in its suggested memory format
+(`input.contiguous(input.suggest_memory_format())`) and runs the QNNPACK clamp over the raw buffer, but
+allocates the output with
+
+```cpp
+Tensor qy = at::_empty_affine_quantized(
+    input_contig.sizes(),
+    input_contig.options(),
+    input_contig.q_scale(),
+    input_contig.q_zero_point());
+```
+
+i.e. without a memory format, so it defaults to contiguous NCHW. The NHWC-ordered result is then
+interpreted as NCHW. With a traceable input (values -5..6, shape 1x3x2x2) the output exactly equals
+`clamp(raw NHWC buffer)` read back in NCHW order. The sibling kernels `qnnpack_sigmoid`
+(`qsigmoid.cpp`) and `qnnpack_hardsigmoid` (`qhardsigmoid.cpp`) pass
+`input_contig.suggest_memory_format()` to `_empty_affine_quantized`, and their channels_last results are
+correct. A likely one-line fix is to pass `input_contig.suggest_memory_format()` here as well. The code
+is unchanged on `main` as of 2026-09-23.
+
 Workaround: insert `x.contiguous()` before every relu6/hardtanh/clamp node in the converted GraphModule.
 
 ## Versions
 
+- Reproduced identically (channels_last max error 6.000, NCHW 0.000) on PyTorch 2.4.1, 2.6.0, 2.8.0 and
+  2.14.0 (pip wheels, macOS arm64).
 - PyTorch 2.8.0 (pip), `torch.backends.quantized.supported_engines == ['qnnpack', 'none']`
 - torchvision 0.23.0, timm 1.0.29
 - macOS 26.6 (build 25G72), Apple M5 (arm64)
@@ -75,7 +98,7 @@ Workaround: insert `x.contiguous()` before every relu6/hardtanh/clamp node in th
 
 ## Notes before posting
 
-- Search the tracker for "qnnpack hardtanh channels_last" / "quantized clamp channels_last" first. A quick
-  search on 2026-09-23 did not find an existing report, but it wasn't exhaustive.
+- Search the tracker for "qnnpack hardtanh channels_last" / "quantized clamp channels_last" first. Searches on 2026-09-23 (relu6 / hardtanh / clamp / channels_last / qnnpack_clamp) found no
+  existing report, and qclamp.cpp's commit history shows no fix.
 - The FX quantization APIs are deprecated in favour of torchao's pt2e flow; maintainers may ask whether it
   reproduces there. The standalone-op reproduction above doesn't depend on FX.
