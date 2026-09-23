@@ -19,3 +19,26 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Build output and training checkpoints -- regenerate via firmware/ and scripts/
+firmware/build/
+experiments/*/checkpoints/
+*.pt
+_edge_sim_all_tmp_checkpoint.pt
+
+# Presentations and document backups -- reports stay out of the repo, like *.docx / *.pdf
+*.pptx
+*.bak
+*.bak_*
+*.winpath.bak
+
+# Images derived from third-party dataset photos (the labels CSVs are kept)
+dead_ends/eczema_severity_proxy_attempt/severity_labels/**/*.jpg
+
+# Local tooling
+graphify-out/
+.claude/
+CLAUDE.md
+
+# Auto-generated CatBoost training output
+catboost_info/
