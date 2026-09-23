@@ -1,0 +1,57 @@
+{
+  "efficientnet_lite0": {
+    "status": "ok",
+    "point": {
+      "accuracy": 0.49798387096774194,
+      "precision": 0.0,
+      "sensitivity_recall": 0.0,
+      "specificity": 1.0,
+      "f1": 0.0,
+      "auroc": 0.5357787425003658
+    }
+  },
+  "mobilenetv2_100": {
+    "status": "ok",
+    "point": {
+      "accuracy": 0.49798387096774194,
+      "precision": 0.0,
+      "sensitivity_recall": 0.0,
+      "specificity": 1.0,
+      "f1": 0.0,
+      "auroc": 0.5269173861437653
+    }
+  },
+  "repghostnet_050": {
+    "status": "ok",
+    "point": {
+      "accuracy": 0.49798387096774194,
+      "precision": 0.0,
+      "sensitivity_recall": 0.0,
+      "specificity": 1.0,
+      "f1": 0.0,
+      "auroc": 0.6442531258637789
+    }
+  },
+  "efficientnet_b0": {
+    "status": "ok",
+    "point": {
+      "accuracy": 0.7137096774193549,
+      "precision": 0.8451612903225807,
+      "sensitivity_recall": 0.5261044176706827,
+      "specificity": 0.902834008097166,
+      "f1": 0.6485148514851485,
+      "auroc": 0.8355120888411947
+    }
+  },
+  "mobilenetv3_small": {
+    "status": "ok",
+    "point": {
+      "accuracy": 0.530241935483871,
+      "precision": 0.7666666666666667,
+      "sensitivity_recall": 0.09236947791164658,
+      "specificity": 0.97165991902834,
+      "f1": 0.16487455197132617,
+      "auroc": 0.562891241077671
+    }
+  }
+}

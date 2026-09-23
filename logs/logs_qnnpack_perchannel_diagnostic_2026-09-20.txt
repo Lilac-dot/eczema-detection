@@ -1,0 +1,247 @@
+
+=== efficientnet_lite0: qnnpack engine, weights forced per-channel ===
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:70: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  prepared = prepare_fx(model, qm, example_inputs)
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:76: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  return convert_fx(prepared)
+  acc=0.4980 sens=0.0000 spec=1.0000 f1=0.0000
+
+=== mobilenetv2_100: qnnpack engine, weights forced per-channel ===
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:70: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  prepared = prepare_fx(model, qm, example_inputs)
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:76: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  return convert_fx(prepared)
+  acc=0.4980 sens=0.0000 spec=1.0000 f1=0.0000
+
+=== repghostnet_050: qnnpack engine, weights forced per-channel ===
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:70: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  prepared = prepare_fx(model, qm, example_inputs)
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x1399bfee0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x1399bfee0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x139729c10>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x139729c10>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f16b80>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f16b80>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138bd2550>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138bd2550>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a1dbb80>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a1dbb80>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x139fc1670>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x139fc1670>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x139fc3940>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x139fc3940>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:76: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  return convert_fx(prepared)
+  acc=0.4980 sens=0.0000 spec=1.0000 f1=0.0000
+
+=== efficientnet_b0: qnnpack engine, weights forced per-channel ===
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:70: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  prepared = prepare_fx(model, qm, example_inputs)
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fa0700>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fa0700>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fee4c0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fee4c0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138feee50>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138feee50>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x139009700>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x139009700>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x1390050d0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x1390050d0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x1390059d0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x1390059d0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f9b3a0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f9b3a0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f9bca0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f9bca0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fc25e0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fc25e0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fc2f70>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fc2f70>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fae8b0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fae8b0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fbd1f0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fbd1f0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fbdb80>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fbdb80>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f994c0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f994c0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f99dc0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138f99dc0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fd3700>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fd3700>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:76: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  return convert_fx(prepared)
+  acc=0.7137 sens=0.5261 spec=0.9028 f1=0.6485
+
+=== mobilenetv3_small: qnnpack engine, weights forced per-channel ===
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:70: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  prepared = prepare_fx(model, qm, example_inputs)
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fa0b80>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x138fa0b80>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4e6a60>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4e6a60>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4f4790>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4f4790>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4e3160>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4e3160>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4e3af0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4e3af0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4db4c0>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4db4c0>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4dbe50>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4dbe50>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4d3820>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4d3820>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/fx/utils.py:927: UserWarning: QConfig must specify a FixedQParamsObserver or a FixedQParamsFakeQuantize for fixed qparams ops, ignoring QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=False){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4cc940>}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x13a4cc940>}).
+Please use torch.ao.quantization.get_default_qconfig_mapping or torch.ao.quantization.get_default_qat_qconfig_mapping. Example:
+    qconfig_mapping = get_default_qconfig_mapping("fbgemm")
+    model = prepare_fx(model, qconfig_mapping, example_inputs)
+  warnings.warn(
+/Users/tishy/Documents/Honors/scripts/qnnpack_perchannel_diagnostic.py:76: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  return convert_fx(prepared)
+  acc=0.5302 sens=0.0924 spec=0.9717 f1=0.1649
+
+All done. Results at /Users/tishy/Documents/Honors/papers/edge-ai-lightweight-deployment/qnnpack_perchannel_diagnostic_2026-09-20.json
