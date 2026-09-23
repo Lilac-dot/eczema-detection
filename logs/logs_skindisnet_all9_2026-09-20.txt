@@ -1,0 +1,48 @@
+Verified SkinDisNet label mapping (disease_class -> label values present):
+  Atopic Dermatitis (AD): {1}
+  Contact Dermatitis (CD): {0}
+  Eczema (EC): {1}
+  Scabies (SC): {0}
+  Seborrheic Dermatitis (SD): {0}
+  Tinea Corporis (TC): {0}
+
+SkinDisNet external eval set: n=1558
+Quantized backend in use: qnnpack
+
+=== resnet18 ===
+  FP32:    acc=0.6765 sens=0.0600 spec=0.9404 f1=0.1000 auroc=0.4745
+  qnnpack: acc=0.6772 sens=0.0685 spec=0.9377 f1=0.1129 auroc=0.4741 -- SEVERELY_DEGRADED
+
+=== efficientnet_b0 ===
+  FP32:    acc=0.6874 sens=0.0514 spec=0.9597 f1=0.0897 auroc=0.5192
+  qnnpack: acc=0.6919 sens=0.0300 spec=0.9753 f1=0.0551 auroc=0.5232 -- SEVERELY_DEGRADED
+
+=== efficientnet_lite0 ===
+  FP32:    acc=0.6874 sens=0.0257 spec=0.9707 f1=0.0470 auroc=0.4619
+  qnnpack: acc=0.7003 sens=0.0000 spec=1.0000 f1=0.0000 auroc=0.4709 -- COLLAPSED
+
+=== mobilenetv3_small ===
+  FP32:    acc=0.6772 sens=0.0493 spec=0.9459 f1=0.0838 auroc=0.5133
+  qnnpack: acc=0.6964 sens=0.0171 spec=0.9872 f1=0.0327 auroc=0.5625 -- COLLAPSED
+
+=== mobilenetv2_100 ===
+  FP32:    acc=0.6945 sens=0.0171 spec=0.9844 f1=0.0325 auroc=0.4475
+  qnnpack: acc=0.7003 sens=0.0000 spec=1.0000 f1=0.0000 auroc=0.4984 -- COLLAPSED
+
+=== shufflenet_v2_x0_5 ===
+  FP32:    acc=0.6926 sens=0.0193 spec=0.9808 f1=0.0362 auroc=0.4641
+  qnnpack: acc=0.6932 sens=0.0171 spec=0.9826 f1=0.0324 auroc=0.5037 -- COLLAPSED
+
+=== shufflenet_v2_x1_0 ===
+  FP32:    acc=0.6964 sens=0.0064 spec=0.9918 f1=0.0125 auroc=0.4806
+  qnnpack: acc=0.6938 sens=0.0514 spec=0.9688 f1=0.0914 auroc=0.4972 -- SEVERELY_DEGRADED
+
+=== squeezenet1_1 ===
+  FP32:    acc=0.6630 sens=0.0278 spec=0.9349 f1=0.0472 auroc=0.4619
+  qnnpack: acc=0.6605 sens=0.0450 spec=0.9239 f1=0.0736 auroc=0.4551 -- SEVERELY_DEGRADED
+
+=== repghostnet_050 ===
+  FP32:    acc=0.6823 sens=0.0257 spec=0.9633 f1=0.0462 auroc=0.4308
+  qnnpack: acc=0.7003 sens=0.0000 spec=1.0000 f1=0.0000 auroc=0.5694 -- COLLAPSED
+
+All done. Results at /Users/tishy/Documents/Honors/papers/edge-ai-lightweight-deployment/skindisnet_all9_external_validation_2026-09-20.json
