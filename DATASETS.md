@@ -114,5 +114,5 @@ https://www.kaggle.com/datasets/adityush/eczema2
 
 Smartphone/watch accelerometer activity dataset, used for an early motion-proxy scratch
 model. Abandoned: its 20Hz sampling rate can't capture the 100-800Hz signal that actually
-distinguishes scratching from other hand motion (see `docs/paper_review_adam_sensor_2026-08-26.md`).
+distinguishes scratching from other hand motion (see `dead_ends/negative_results/paper_review_adam_sensor_2026-08-26.md`).
 Not re-downloaded or referenced by any current script.

@@ -65,17 +65,60 @@ why lesion-vs-surrounding-skin temperature (a candidate factor) is deferred to f
 
 - `scripts/` — all data cleaning, feature extraction, training, and evaluation code.
 - `docs/` — methodology write-ups, results, and honestly-reported limitations for each
-  stage (dataset issues found, fixes tried and ruled out, why certain approaches were
-  abandoned).
+  stage that are still active/current or actively read or written by a script (e.g.
+  confusion-matrix images, the duplicate/skin-content screening CSVs). Superseded or
+  ruled-out write-ups have moved to `dead_ends/negative_results/` (below) — if a doc you
+  expect isn't here, check there first.
+- `papers/` — each distinct paper/report direction in its own folder, reorganized
+  2026-09-19 (`reorganize folder structure` commit) so parallel writeups don't get
+  tangled together:
+  - `papers/architecture-selection-report/` — the current report
+    (`honors-paper-report.docx` + its literature review), covering the image and stress
+    architecture comparisons (Sections 5-6) and planned moisture methodology (Section 7).
+  - `papers/widiawaty-image-text-fusion/` — a separate, newer workstream (started
+    2026-09-19) building a genuinely jointly-trained image+text fusion model on the
+    Widiawaty et al. Figshare dataset; not yet folded into the main report.
+  - `papers/edge-ai-lightweight-deployment/` — an edge/on-device framing of the already-
+    completed image-architecture comparison: quantization and pruning simulated on this
+    project's CPU-only dev machine (no real Pi/Android hardware available).
+- `dead_ends/` — abandoned lines of investigation, kept for history rather than deleted:
+  - `dead_ends/v1_prototype/` — the project's first prototype (image CNN + two Random
+    Forest models). Superseded for methodological reasons documented in `docs/` —
+    notably, its stress and scratch models used labels derived directly from the same
+    features fed into the model rather than the dataset's real condition labels. Also
+    holds two superseded top-level status reports (`AD_Wearable_Project_Report.docx`,
+    `AD_Wearable_Model_and_Project_Report_2026-08-26.docx`) that predate the WISDM->WESAD
+    pivot and the fusion pipeline — `docs/` and this README are the current source of
+    truth, not those files.
+  - `dead_ends/multimodal_system_paper/` — an earlier full-system paper draft, superseded
+    by the current per-modality architecture-selection report
+    (`papers/architecture-selection-report/`) per the 2026-09-18 publication pivot.
+  - `dead_ends/negative_results/` — ruled-out fixes and negative findings that are no
+    longer being pursued: brightness normalization and image cropping (both tried and
+    ruled out as fixes for a Stage B shortcut-learning problem), the AAUWSS sleep-quality
+    trigger (scored at chance, corroborated by two independent scoring methods), and the
+    WISDM-based scratch-detection attempt (abandoned — 20 Hz sampling can't capture the
+    100-800 Hz signal real scratch detection needs, a hardware ceiling not a label
+    problem).
+  - `dead_ends/eczema_severity_proxy_attempt/` — image-based eczema severity scoring
+    (SCORAD/EASI/IGA), dropped 2026-09-21. No public dataset has clinically-validated
+    severity labels (real ones are privacy-gated, request-only); the one public dataset
+    claiming severity labels was found contaminated with non-eczema diagnoses on
+    inspection. A fallback non-dermatologist visual-proxy label set (EASI's 4 objective
+    signs, scored per-image by AI labeling agents against a documented rubric) was built
+    and applied to this project's own clean Stage B eczema images, but abandoned before
+    training since literature shows non-expert severity labels correlate weakly with true
+    severity and introduce measurable label noise — see
+    `severity_scale_selection_2026-09-21.md` in that folder for the full scale comparison
+    and labeling methodology.
+- `logs/` — raw stdout logs from training/eval runs (`logs_*.txt`), kept for debugging,
+  not narrative documentation — see `docs/` or `papers/` for the written-up results.
+- `results/` — raw result JSON files written by evaluation scripts (e.g.
+  `cross_dataset_matrix_results.json`, `lodo_matrix_results.json`), not narrative —
+  see `docs/` or `papers/` for the written-up interpretation of these numbers.
+- `reference_papers/` — external literature PDFs referenced in `docs/` citations, not
+  this project's own output.
 - `DATASETS.md` — where to get the raw data (not tracked in this repo).
-- `archive/` — an earlier prototype of this same project (image CNN + two Random Forest
-  models), kept for history. Superseded by the current code for methodological reasons
-  documented in `docs/` — notably, its stress and scratch models used labels derived
-  directly from the same features fed into the model rather than the dataset's real
-  condition labels. Also holds two superseded top-level status reports
-  (`AD_Wearable_Project_Report.docx`, `AD_Wearable_Model_and_Project_Report_2026-08-26.docx`)
-  that predate the WISDM->WESAD pivot and the fusion pipeline — `docs/` and this README
-  are the current source of truth, not those files.
 
 ## Setup
 
