@@ -35,7 +35,7 @@ from pptx.oxml.ns import qn
 from paths import ROOT
 
 PAPER_DIR = ROOT / "papers" / "edge-ai-lightweight-deployment"
-OUT_PATH = PAPER_DIR / "edge_ai_eval_presentation_FINAL_v4.pptx"
+OUT_PATH = ROOT / "presentations" / "honors_eval_deck_v4_2026-09-23.pptx"
 
 # ---------- palette (unchanged from v2) ----------
 DARK = RGBColor(0x14, 0x21, 0x3D)

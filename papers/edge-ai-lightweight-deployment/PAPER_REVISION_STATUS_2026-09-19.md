@@ -105,7 +105,7 @@ priority order and never reached.
   written yet.
 - **Real Raspberry Pi / Android hardware benchmarking.** Not attempted. This project has
   no such hardware — confirmed earlier in this session (only a Raspberry Pi *product
-  brief PDF* exists in `reference_papers/`, not an actual device). This should be
+  brief PDF* exists in `papers/references/`, not an actual device). This should be
   reported to the user as genuinely infeasible in this project's current state, not
   merely "not gotten to."
 - **The actual paper rewrite itself** — no changes have been made to

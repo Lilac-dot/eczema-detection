@@ -137,8 +137,14 @@ Quantized models are labelled collapsed (95% CI of Youden's J includes 0), degra
 - `results/` — raw result JSON files written by evaluation scripts (e.g.
   `cross_dataset_matrix_results.json`, `lodo_matrix_results.json`), not narrative —
   see `docs/` or `papers/` for the written-up interpretation of these numbers.
-- `reference_papers/` — external literature PDFs referenced in `docs/` citations, not
+- `papers/references/` — external literature PDFs referenced in `docs/` citations, not
   this project's own output.
+- `presentations/` — the current evaluation deck (`.pptx`, not tracked; regenerate with
+  `scripts/build_eval_presentation_FINAL_v4.py`).
+- `experiments/` — per-architecture training configs, histories and plots for the 9-architecture
+  comparison (checkpoints not tracked).
+- `firmware/` — ESP-IDF firmware for the wearable sensor node (build output not tracked).
+- `third_party/` — vendored PaPaGei PPG foundation model (BSD-3-Clause).
 - `DATASETS.md` — where to get the raw data (not tracked in this repo).
 
 ## Setup
