@@ -1,0 +1,41 @@
+Opening TEST manifest for the first time in this compression study: /Users/tishy/Documents/Honors/SkinDisease/manifest_curated_v3_test.csv
+n_test = 507
+Quantized backend in use: qnnpack
+
+=== resnet18 ===
+  FP32: acc=0.8107 sens=0.8247 spec=0.7969 f1=0.8118 auroc=0.8644
+  qnnpack INT8: acc=0.7988 sens=0.8048 spec=0.7930 f1=0.7984 auroc=0.8611
+
+=== efficientnet_b0 ===
+  FP32: acc=0.7751 sens=0.7012 spec=0.8477 f1=0.7554 auroc=0.8762
+  qnnpack INT8: acc=0.4911 sens=0.0757 spec=0.8984 f1=0.1284 auroc=0.5474
+
+=== efficientnet_lite0 ===
+  FP32: acc=0.7890 sens=0.7410 spec=0.8359 f1=0.7766 auroc=0.8739
+  qnnpack INT8: acc=0.5049 sens=0.0000 spec=1.0000 f1=0.0000 auroc=0.5125
+
+=== mobilenetv3_small ===
+  FP32: acc=0.7673 sens=0.7530 spec=0.7812 f1=0.7621 auroc=0.8547
+  qnnpack INT8: acc=0.4990 sens=0.0159 spec=0.9727 f1=0.0305 auroc=0.4617
+
+=== mobilenetv2_100 ===
+  FP32: acc=0.7890 sens=0.7530 spec=0.8242 f1=0.7794 auroc=0.8654
+  qnnpack INT8: acc=0.5049 sens=0.0000 spec=1.0000 f1=0.0000 auroc=0.5030
+
+=== shufflenet_v2_x0_5 ===
+  FP32: acc=0.7495 sens=0.8088 spec=0.6914 f1=0.7617 auroc=0.8356
+  qnnpack INT8: acc=0.7357 sens=0.6733 spec=0.7969 f1=0.7161 auroc=0.8038
+
+=== shufflenet_v2_x1_0 ===
+  FP32: acc=0.7968 sens=0.8048 spec=0.7891 f1=0.7968 auroc=0.8672
+  qnnpack INT8: acc=0.7475 sens=0.8645 spec=0.6328 f1=0.7722 auroc=0.8584
+
+=== squeezenet1_1 ===
+  FP32: acc=0.7554 sens=0.7410 spec=0.7695 f1=0.7500 auroc=0.8375
+  qnnpack INT8: acc=0.7574 sens=0.7729 spec=0.7422 f1=0.7593 auroc=0.8359
+
+=== repghostnet_050 ===
+  FP32: acc=0.7653 sens=0.7649 spec=0.7656 f1=0.7634 auroc=0.8549
+  qnnpack INT8: acc=0.5049 sens=0.0000 spec=1.0000 f1=0.0000 auroc=0.5405
+
+All done. Results at /Users/tishy/Documents/Honors/papers/edge-ai-lightweight-deployment/final_test_frozen_results_2026-09-20.json
