@@ -1,0 +1,51 @@
+
+=== structured pruning: resnet18 ===
+  fp32: acc=0.8024 params=11177538 size=42.71MB
+  ratio=0.2: acc=0.5464 params 11177538->7125200 (36.3% smaller) size 42.71->27.24MB
+  ratio=0.3: acc=0.5464 params 11177538->5462274 (51.1% smaller) size 42.71->20.90MB
+  ratio=0.5: acc=0.5000 params 11177538->2799394 (75.0% smaller) size 42.71->10.73MB
+  Saved progress (1/7).
+
+=== structured pruning: mobilenetv2_100 ===
+  fp32: acc=0.7883 params=2387969 size=9.34MB
+  ratio=0.2: acc=0.5020 params 2387969->1566469 (34.4% smaller) size 9.34->6.17MB
+  ratio=0.3: acc=0.5020 params 2387969->1222147 (48.8% smaller) size 9.34->4.85MB
+  ratio=0.5: acc=0.5020 params 2387969->662945 (72.2% smaller) size 9.34->2.69MB
+  Saved progress (2/7).
+
+=== structured pruning: mobilenetv3_small ===
+  fp32: acc=0.7601 params=1000993 size=3.94MB
+  ratio=0.2: acc=0.5000 params 1000993->659884 (34.1% smaller) size 3.94->2.63MB
+  ratio=0.3: acc=0.4960 params 1000993->517992 (48.3% smaller) size 3.94->2.08MB
+  ratio=0.5: acc=0.4980 params 1000993->287377 (71.3% smaller) size 3.94->1.20MB
+  Saved progress (3/7).
+
+=== structured pruning: squeezenet1_1 ===
+  fp32: acc=0.7802 params=788289 size=3.03MB
+  ratio=0.2: acc=0.5544 params 788289->509081 (35.4% smaller) size 3.03->1.96MB
+  ratio=0.3: acc=0.5000 params 788289->393683 (50.1% smaller) size 3.03->1.52MB
+  ratio=0.5: acc=0.5020 params 788289->214817 (72.7% smaller) size 3.03->0.84MB
+  Saved progress (4/7).
+
+=== structured pruning: efficientnet_lite0 ===
+  fp32: acc=0.7641 params=3535105 size=13.74MB
+  ratio=0.2: acc=0.5081 params 3535105->2317184 (34.5% smaller) size 13.74->9.06MB
+  ratio=0.3: acc=0.4859 params 3535105->1809251 (48.8% smaller) size 13.74->7.10MB
+  ratio=0.5: acc=0.4980 params 3535105->981153 (72.2% smaller) size 13.74->3.92MB
+  Saved progress (5/7).
+
+=== structured pruning: efficientnet_b0 ===
+  fp32: acc=0.8065 params=4171645 size=16.19MB
+  ratio=0.2: acc=0.5000 params 4171645->2721117 (34.8% smaller) size 16.19->10.62MB
+  ratio=0.3: acc=0.5020 params 4171645->2117158 (49.2% smaller) size 16.19->8.30MB
+  ratio=0.5: acc=0.4940 params 4171645->1142623 (72.6% smaller) size 16.19->4.56MB
+  Saved progress (6/7).
+
+=== structured pruning: repghostnet_050 ===
+  fp32: acc=0.7681 params=1197065 size=4.85MB
+  ratio=0.2: acc=0.4980 params 1197065->799226 (33.2% smaller) size 4.85->3.32MB
+  ratio=0.3: acc=0.4980 params 1197065->630553 (47.3% smaller) size 4.85->2.66MB
+  ratio=0.5: acc=0.4980 params 1197065->352865 (70.5% smaller) size 4.85->1.59MB
+  Saved progress (7/7).
+
+All done. Results at /Users/tishy/Documents/Honors/papers/edge-ai-lightweight-deployment/edge_ai_structured_pruning_2026-09-19.json

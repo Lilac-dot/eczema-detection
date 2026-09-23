@@ -1,0 +1,72 @@
+Both prior jobs finished, launching pruning+finetune...
+
+=== resnet18: fp32 baseline acc=0.8024 ===
+
+--- resnet18: prune to 0.3 + fine-tune ---
+  immediately after pruning (no fine-tune yet): acc=0.7964
+    epoch 1/3 loss=0.2603 (89.3s)
+    epoch 2/3 loss=0.0862 (92.6s)
+    epoch 3/3 loss=0.0406 (97.5s)
+  after fine-tune: acc=0.8407 (recovered +0.0444 from pre-finetune, total 300s)
+
+--- resnet18: prune to 0.5 + fine-tune ---
+  immediately after pruning (no fine-tune yet): acc=0.7782
+    epoch 1/3 loss=0.2714 (107.3s)
+    epoch 2/3 loss=0.1077 (111.2s)
+    epoch 3/3 loss=0.0533 (114.3s)
+  after fine-tune: acc=0.8226 (recovered +0.0444 from pre-finetune, total 357s)
+
+--- resnet18: prune to 0.7 + fine-tune ---
+  immediately after pruning (no fine-tune yet): acc=0.7359
+    epoch 1/3 loss=0.3513 (114.3s)
+    epoch 2/3 loss=0.1923 (113.1s)
+    epoch 3/3 loss=0.1187 (113.1s)
+  after fine-tune: acc=0.8145 (recovered +0.0786 from pre-finetune, total 366s)
+
+=== shufflenet_v2_x1_0: fp32 baseline acc=0.7923 ===
+
+--- shufflenet_v2_x1_0: prune to 0.3 + fine-tune ---
+  immediately after pruning (no fine-tune yet): acc=0.7762
+    epoch 1/3 loss=0.4568 (132.1s)
+    epoch 2/3 loss=0.4031 (131.4s)
+    epoch 3/3 loss=0.3629 (131.0s)
+  after fine-tune: acc=0.8004 (recovered +0.0242 from pre-finetune, total 411s)
+
+--- shufflenet_v2_x1_0: prune to 0.5 + fine-tune ---
+  immediately after pruning (no fine-tune yet): acc=0.6935
+    epoch 1/3 loss=0.4919 (129.6s)
+    epoch 2/3 loss=0.4395 (130.0s)
+    epoch 3/3 loss=0.4076 (134.0s)
+  after fine-tune: acc=0.7984 (recovered +0.1048 from pre-finetune, total 411s)
+
+--- shufflenet_v2_x1_0: prune to 0.7 + fine-tune ---
+  immediately after pruning (no fine-tune yet): acc=0.4980
+    epoch 1/3 loss=0.5778 (129.4s)
+    epoch 2/3 loss=0.5359 (130.3s)
+    epoch 3/3 loss=0.5052 (131.1s)
+  after fine-tune: acc=0.7581 (recovered +0.2601 from pre-finetune, total 407s)
+
+=== mobilenetv3_small: fp32 baseline acc=0.7601 ===
+
+--- mobilenetv3_small: prune to 0.3 + fine-tune ---
+  immediately after pruning (no fine-tune yet): acc=0.7258
+    epoch 1/3 loss=0.5491 (123.7s)
+    epoch 2/3 loss=0.4623 (125.0s)
+    epoch 3/3 loss=0.4270 (112.9s)
+  after fine-tune: acc=0.7923 (recovered +0.0665 from pre-finetune, total 376s)
+
+--- mobilenetv3_small: prune to 0.5 + fine-tune ---
+  immediately after pruning (no fine-tune yet): acc=0.5020
+    epoch 1/3 loss=0.6693 (113.5s)
+    epoch 2/3 loss=0.6242 (113.5s)
+    epoch 3/3 loss=0.5923 (3824.2s)
+  after fine-tune: acc=0.7419 (recovered +0.2399 from pre-finetune, total 4070s)
+
+--- mobilenetv3_small: prune to 0.7 + fine-tune ---
+  immediately after pruning (no fine-tune yet): acc=0.4980
+    epoch 1/3 loss=0.6914 (5533.1s)
+    epoch 2/3 loss=0.6876 (6395.4s)
+    epoch 3/3 loss=0.6842 (6379.7s)
+  after fine-tune: acc=0.4980 (recovered +0.0000 from pre-finetune, total 19081s)
+
+All done. Results at /Users/tishy/Documents/Honors/papers/edge-ai-lightweight-deployment/edge_ai_pruning_finetune_2026-09-19.json
