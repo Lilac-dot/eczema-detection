@@ -1,0 +1,122 @@
+{
+  "accuracy_vs_size_points": [
+    {
+      "label": "resnet18 (FP32)",
+      "size_mb": 42.71552562713623,
+      "accuracy": 0.8024193548387096
+    },
+    {
+      "label": "resnet18 (INT8)",
+      "size_mb": 10.786541938781738,
+      "accuracy": 0.7943548387096774
+    },
+    {
+      "label": "efficientnet_b0 (FP32)",
+      "size_mb": 16.201624870300293,
+      "accuracy": 0.8064516129032258
+    },
+    {
+      "label": "efficientnet_b0 (INT8)",
+      "size_mb": 4.7223920822143555,
+      "accuracy": 0.5665322580645161
+    },
+    {
+      "label": "efficientnet_lite0 (FP32)",
+      "size_mb": 13.746912956237793,
+      "accuracy": 0.7641129032258065
+    },
+    {
+      "label": "efficientnet_lite0 (INT8)",
+      "size_mb": 4.155826568603516,
+      "accuracy": 0.7237903225806451
+    },
+    {
+      "label": "mobilenetv3_small (FP32)",
+      "size_mb": 3.94796085357666,
+      "accuracy": 0.7600806451612904
+    },
+    {
+      "label": "mobilenetv3_small (INT8)",
+      "size_mb": 1.2364702224731445,
+      "accuracy": 0.5
+    },
+    {
+      "label": "mobilenetv2_100 (FP32)",
+      "size_mb": 9.345688819885254,
+      "accuracy": 0.7883064516129032
+    },
+    {
+      "label": "mobilenetv2_100 (INT8)",
+      "size_mb": 2.6819257736206055,
+      "accuracy": 0.7137096774193549
+    },
+    {
+      "label": "shufflenet_v2_x0_5 (FP32)",
+      "size_mb": 1.9458551406860352,
+      "accuracy": 0.7983870967741935
+    },
+    {
+      "label": "shufflenet_v2_x0_5 (INT8)",
+      "size_mb": 0.6447324752807617,
+      "accuracy": 0.7842741935483871
+    },
+    {
+      "label": "shufflenet_v2_x1_0 (FP32)",
+      "size_mb": 5.451409339904785,
+      "accuracy": 0.7923387096774194
+    },
+    {
+      "label": "shufflenet_v2_x1_0 (INT8)",
+      "size_mb": 1.5812559127807617,
+      "accuracy": 0.7842741935483871
+    },
+    {
+      "label": "squeezenet1_1 (FP32)",
+      "size_mb": 3.0275087356567383,
+      "accuracy": 0.780241935483871
+    },
+    {
+      "label": "squeezenet1_1 (INT8)",
+      "size_mb": 0.8592672348022461,
+      "accuracy": 0.7560483870967742
+    },
+    {
+      "label": "repghostnet_050 (FP32)",
+      "size_mb": 4.867373466491699,
+      "accuracy": 0.7681451612903226
+    },
+    {
+      "label": "repghostnet_050 (INT8)",
+      "size_mb": 1.630197525024414,
+      "accuracy": 0.4798387096774194
+    }
+  ],
+  "accuracy_vs_size_pareto_front": [
+    {
+      "label": "efficientnet_b0 (FP32)",
+      "size_mb": 16.201624870300293,
+      "accuracy": 0.8064516129032258
+    },
+    {
+      "label": "shufflenet_v2_x0_5 (FP32)",
+      "size_mb": 1.9458551406860352,
+      "accuracy": 0.7983870967741935
+    },
+    {
+      "label": "shufflenet_v2_x0_5 (INT8)",
+      "size_mb": 0.6447324752807617,
+      "accuracy": 0.7842741935483871
+    }
+  ],
+  "pruning_knees": {
+    "resnet18": 0.6,
+    "efficientnet_b0": 0.5,
+    "efficientnet_lite0": 0.5,
+    "mobilenetv3_small": 0.4,
+    "mobilenetv2_100": 0.2,
+    "shufflenet_v2_x0_5": 0.4,
+    "shufflenet_v2_x1_0": 0.5,
+    "squeezenet1_1": 0.3,
+    "repghostnet_050": 0.4
+  }
+}
