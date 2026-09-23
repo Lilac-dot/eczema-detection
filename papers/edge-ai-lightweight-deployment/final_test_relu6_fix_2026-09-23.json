@@ -1,0 +1,317 @@
+{
+ "resnet18": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "point": {
+    "accuracy": 0.7988165680473372,
+    "precision": 0.7898832684824902,
+    "sensitivity_recall": 0.8087649402390438,
+    "specificity": 0.7890625,
+    "f1": 0.7992125984251969,
+    "auroc": 0.8615771289840637
+   },
+   "confusion_matrix": {
+    "tp": 203,
+    "fp": 54,
+    "tn": 202,
+    "fn": 48
+   }
+  },
+  "fixed": {
+   "point": {
+    "accuracy": 0.7988165680473372,
+    "precision": 0.7898832684824902,
+    "sensitivity_recall": 0.8087649402390438,
+    "specificity": 0.7890625,
+    "f1": 0.7992125984251969,
+    "auroc": 0.8615771289840637
+   },
+   "confusion_matrix": {
+    "tp": 203,
+    "fp": 54,
+    "tn": 202,
+    "fn": 48
+   }
+  }
+ },
+ "efficientnet_b0": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "point": {
+    "accuracy": 0.514792899408284,
+    "precision": 0.6086956521739131,
+    "sensitivity_recall": 0.055776892430278883,
+    "specificity": 0.96484375,
+    "f1": 0.10218978102189781,
+    "auroc": 0.5570296937250997
+   },
+   "confusion_matrix": {
+    "tp": 14,
+    "fp": 9,
+    "tn": 247,
+    "fn": 237
+   }
+  },
+  "fixed": {
+   "point": {
+    "accuracy": 0.514792899408284,
+    "precision": 0.6086956521739131,
+    "sensitivity_recall": 0.055776892430278883,
+    "specificity": 0.96484375,
+    "f1": 0.10218978102189781,
+    "auroc": 0.5570296937250997
+   },
+   "confusion_matrix": {
+    "tp": 14,
+    "fp": 9,
+    "tn": 247,
+    "fn": 237
+   }
+  }
+ },
+ "efficientnet_lite0": {
+  "n_clamp_nodes_fixed": 33,
+  "as_is": {
+   "point": {
+    "accuracy": 0.504930966469428,
+    "precision": 0.0,
+    "sensitivity_recall": 0.0,
+    "specificity": 1.0,
+    "f1": 0.0,
+    "auroc": 0.4889504482071713
+   },
+   "confusion_matrix": {
+    "tp": 0,
+    "fp": 0,
+    "tn": 256,
+    "fn": 251
+   }
+  },
+  "fixed": {
+   "point": {
+    "accuracy": 0.6706114398422091,
+    "precision": 0.7592592592592593,
+    "sensitivity_recall": 0.4900398406374502,
+    "specificity": 0.84765625,
+    "f1": 0.5956416464891041,
+    "auroc": 0.7797559760956175
+   },
+   "confusion_matrix": {
+    "tp": 123,
+    "fp": 39,
+    "tn": 217,
+    "fn": 128
+   }
+  }
+ },
+ "mobilenetv3_small": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "point": {
+    "accuracy": 0.4990138067061144,
+    "precision": 0.42105263157894735,
+    "sensitivity_recall": 0.03187250996015936,
+    "specificity": 0.95703125,
+    "f1": 0.05925925925925926,
+    "auroc": 0.47747292081673315
+   },
+   "confusion_matrix": {
+    "tp": 8,
+    "fp": 11,
+    "tn": 245,
+    "fn": 243
+   }
+  },
+  "fixed": {
+   "point": {
+    "accuracy": 0.4990138067061144,
+    "precision": 0.42105263157894735,
+    "sensitivity_recall": 0.03187250996015936,
+    "specificity": 0.95703125,
+    "f1": 0.05925925925925926,
+    "auroc": 0.47747292081673315
+   },
+   "confusion_matrix": {
+    "tp": 8,
+    "fp": 11,
+    "tn": 245,
+    "fn": 243
+   }
+  }
+ },
+ "mobilenetv2_100": {
+  "n_clamp_nodes_fixed": 35,
+  "as_is": {
+   "point": {
+    "accuracy": 0.504930966469428,
+    "precision": 0.0,
+    "sensitivity_recall": 0.0,
+    "specificity": 1.0,
+    "f1": 0.0,
+    "auroc": 0.5183718251992032
+   },
+   "confusion_matrix": {
+    "tp": 0,
+    "fp": 0,
+    "tn": 256,
+    "fn": 251
+   }
+  },
+  "fixed": {
+   "point": {
+    "accuracy": 0.7140039447731755,
+    "precision": 0.8192771084337349,
+    "sensitivity_recall": 0.5418326693227091,
+    "specificity": 0.8828125,
+    "f1": 0.6522781774580336,
+    "auroc": 0.8152468251992032
+   },
+   "confusion_matrix": {
+    "tp": 136,
+    "fp": 30,
+    "tn": 226,
+    "fn": 115
+   }
+  }
+ },
+ "shufflenet_v2_x0_5": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "point": {
+    "accuracy": 0.727810650887574,
+    "precision": 0.7579908675799086,
+    "sensitivity_recall": 0.6613545816733067,
+    "specificity": 0.79296875,
+    "f1": 0.7063829787234043,
+    "auroc": 0.803839330179283
+   },
+   "confusion_matrix": {
+    "tp": 166,
+    "fp": 53,
+    "tn": 203,
+    "fn": 85
+   }
+  },
+  "fixed": {
+   "point": {
+    "accuracy": 0.727810650887574,
+    "precision": 0.7579908675799086,
+    "sensitivity_recall": 0.6613545816733067,
+    "specificity": 0.79296875,
+    "f1": 0.7063829787234043,
+    "auroc": 0.803839330179283
+   },
+   "confusion_matrix": {
+    "tp": 166,
+    "fp": 53,
+    "tn": 203,
+    "fn": 85
+   }
+  }
+ },
+ "shufflenet_v2_x1_0": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "point": {
+    "accuracy": 0.7514792899408284,
+    "precision": 0.7022653721682848,
+    "sensitivity_recall": 0.8645418326693227,
+    "specificity": 0.640625,
+    "f1": 0.775,
+    "auroc": 0.8611413720119521
+   },
+   "confusion_matrix": {
+    "tp": 217,
+    "fp": 92,
+    "tn": 164,
+    "fn": 34
+   }
+  },
+  "fixed": {
+   "point": {
+    "accuracy": 0.7514792899408284,
+    "precision": 0.7022653721682848,
+    "sensitivity_recall": 0.8645418326693227,
+    "specificity": 0.640625,
+    "f1": 0.775,
+    "auroc": 0.8611413720119521
+   },
+   "confusion_matrix": {
+    "tp": 217,
+    "fp": 92,
+    "tn": 164,
+    "fn": 34
+   }
+  }
+ },
+ "squeezenet1_1": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "point": {
+    "accuracy": 0.7593688362919132,
+    "precision": 0.7549407114624506,
+    "sensitivity_recall": 0.7609561752988048,
+    "specificity": 0.7578125,
+    "f1": 0.7579365079365079,
+    "auroc": 0.8376805278884463
+   },
+   "confusion_matrix": {
+    "tp": 191,
+    "fp": 62,
+    "tn": 194,
+    "fn": 60
+   }
+  },
+  "fixed": {
+   "point": {
+    "accuracy": 0.7593688362919132,
+    "precision": 0.7549407114624506,
+    "sensitivity_recall": 0.7609561752988048,
+    "specificity": 0.7578125,
+    "f1": 0.7579365079365079,
+    "auroc": 0.8376805278884463
+   },
+   "confusion_matrix": {
+    "tp": 191,
+    "fp": 62,
+    "tn": 194,
+    "fn": 60
+   }
+  }
+ },
+ "repghostnet_050": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "point": {
+    "accuracy": 0.504930966469428,
+    "precision": 0.0,
+    "sensitivity_recall": 0.0,
+    "specificity": 1.0,
+    "f1": 0.0,
+    "auroc": 0.5407744023904382
+   },
+   "confusion_matrix": {
+    "tp": 0,
+    "fp": 0,
+    "tn": 256,
+    "fn": 251
+   }
+  },
+  "fixed": {
+   "point": {
+    "accuracy": 0.504930966469428,
+    "precision": 0.0,
+    "sensitivity_recall": 0.0,
+    "specificity": 1.0,
+    "f1": 0.0,
+    "auroc": 0.5407744023904382
+   },
+   "confusion_matrix": {
+    "tp": 0,
+    "fp": 0,
+    "tn": 256,
+    "fn": 251
+   }
+  }
+ }
+}
