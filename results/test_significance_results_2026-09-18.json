@@ -1,0 +1,175 @@
+{
+  "test_n": 507,
+  "per_model_ci": {
+    "resnet18": {
+      "acc_ci": [
+        0.7751479289940828,
+        0.8441814595660749
+      ],
+      "f1_ci": [
+        0.7711864406779662,
+        0.8474593052525592
+      ]
+    },
+    "efficientnet_b0": {
+      "acc_ci": [
+        0.7396449704142012,
+        0.8106508875739645
+      ],
+      "f1_ci": [
+        0.7107044540299519,
+        0.7991636086151314
+      ]
+    },
+    "mobilenetv3_small": {
+      "acc_ci": [
+        0.7297830374753451,
+        0.8047337278106509
+      ],
+      "f1_ci": [
+        0.7182766516263721,
+        0.8023727368353947
+      ]
+    },
+    "shufflenet_v2_x0_5": {
+      "acc_ci": [
+        0.7120315581854043,
+        0.7869822485207101
+      ],
+      "f1_ci": [
+        0.7207520433885876,
+        0.8007314300748126
+      ]
+    }
+  },
+  "pairwise": {
+    "resnet18_vs_efficientnet_b0": {
+      "acc_diff_mean": 0.035519921104536493,
+      "acc_diff_ci": [
+        -0.0019723865877712132,
+        0.07100591715976334
+      ],
+      "acc_diff_bootstrap_p": 0.066,
+      "f1_diff_mean": 0.056541469189375505,
+      "f1_diff_ci": [
+        0.017736390433639757,
+        0.09548712825373949
+      ],
+      "f1_diff_bootstrap_p": 0.0044,
+      "mcnemar_statistic": 3.2111111111111112,
+      "mcnemar_p_raw": 0.07313979965890911
+    },
+    "resnet18_vs_mobilenetv3_small": {
+      "acc_diff_mean": 0.04328915187376725,
+      "acc_diff_ci": [
+        0.005917159763313637,
+        0.08086785009861941
+      ],
+      "acc_diff_bootstrap_p": 0.0268,
+      "f1_diff_mean": 0.04960287590622632,
+      "f1_diff_ci": [
+        0.010467451625188303,
+        0.08909587718000722
+      ],
+      "f1_diff_bootstrap_p": 0.012,
+      "mcnemar_statistic": 4.59375,
+      "mcnemar_p_raw": 0.032088733978231254
+    },
+    "resnet18_vs_shufflenet_v2_x0_5": {
+      "acc_diff_mean": 0.061119526627218944,
+      "acc_diff_ci": [
+        0.023668639053254448,
+        0.10059171597633132
+      ],
+      "acc_diff_bootstrap_p": 0.0012,
+      "f1_diff_mean": 0.049986553138729684,
+      "f1_diff_ci": [
+        0.013301188345794296,
+        0.08774291477195612
+      ],
+      "f1_diff_bootstrap_p": 0.0056,
+      "mcnemar_statistic": 8.910891089108912,
+      "mcnemar_p_raw": 0.002834749080259389
+    },
+    "efficientnet_b0_vs_mobilenetv3_small": {
+      "acc_diff_mean": 0.0074986193293885605,
+      "acc_diff_ci": [
+        -0.0335305719921104,
+        0.047337278106508895
+      ],
+      "acc_diff_bootstrap_p": 0.7404,
+      "f1_diff_mean": -0.006966396617187806,
+      "f1_diff_ci": [
+        -0.052377204085771685,
+        0.03804211124185579
+      ],
+      "f1_diff_bootstrap_p": 0.7548,
+      "mcnemar_statistic": 0.08181818181818182,
+      "mcnemar_p_raw": 0.774848422162878
+    },
+    "efficientnet_b0_vs_shufflenet_v2_x0_5": {
+      "acc_diff_mean": 0.02461854043392505,
+      "acc_diff_ci": [
+        -0.01972386587771202,
+        0.0650887573964497
+      ],
+      "acc_diff_bootstrap_p": 0.2908,
+      "f1_diff_mean": -0.007559364123893366,
+      "f1_diff_ci": [
+        -0.052956225233438,
+        0.03636048102553347
+      ],
+      "f1_diff_bootstrap_p": 0.7584,
+      "mcnemar_statistic": 1.170731707317073,
+      "mcnemar_p_raw": 0.2792509453687346
+    },
+    "mobilenetv3_small_vs_shufflenet_v2_x0_5": {
+      "acc_diff_mean": 0.017974753451676526,
+      "acc_diff_ci": [
+        -0.017751479289940808,
+        0.05522682445759364
+      ],
+      "acc_diff_bootstrap_p": 0.3428,
+      "f1_diff_mean": 0.000487121851835577,
+      "f1_diff_ci": [
+        -0.036937275874110845,
+        0.03759439481519065
+      ],
+      "f1_diff_bootstrap_p": 0.9808,
+      "mcnemar_statistic": 0.7032967032967034,
+      "mcnemar_p_raw": 0.4016781664697727
+    }
+  },
+  "holm_correction": {
+    "resnet18_vs_efficientnet_b0": {
+      "p_raw": 0.07313979965890911,
+      "p_holm": 0.29255919863563645,
+      "significant": false
+    },
+    "resnet18_vs_mobilenetv3_small": {
+      "p_raw": 0.032088733978231254,
+      "p_holm": 0.16044366989115627,
+      "significant": false
+    },
+    "resnet18_vs_shufflenet_v2_x0_5": {
+      "p_raw": 0.002834749080259389,
+      "p_holm": 0.017008494481556335,
+      "significant": true
+    },
+    "efficientnet_b0_vs_mobilenetv3_small": {
+      "p_raw": 0.774848422162878,
+      "p_holm": 0.8377528361062039,
+      "significant": false
+    },
+    "efficientnet_b0_vs_shufflenet_v2_x0_5": {
+      "p_raw": 0.2792509453687346,
+      "p_holm": 0.8377528361062039,
+      "significant": false
+    },
+    "mobilenetv3_small_vs_shufflenet_v2_x0_5": {
+      "p_raw": 0.4016781664697727,
+      "p_holm": 0.8377528361062039,
+      "significant": false
+    }
+  }
+}

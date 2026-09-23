@@ -1,0 +1,73 @@
+{
+  "model": "repghostnet_050",
+  "display_name": "RepGhostNet 0.5x (substitute for GhostNet 0.5x -- no real pretrained weights exist for GhostNet 0.5x in torchvision or timm)",
+  "seed": 42,
+  "image_size": 224,
+  "batch_size": 32,
+  "device": "cpu",
+  "dataset": {
+    "train_manifest": "C:\\Users\\tishy\\Documents\\Honors\\SkinDisease\\manifest_curated_v3_train.csv",
+    "val_manifest": "C:\\Users\\tishy\\Documents\\Honors\\SkinDisease\\manifest_curated_v3_val.csv",
+    "test_manifest_used": false,
+    "n_train": 2327,
+    "n_val": 496
+  },
+  "architecture": {
+    "backbone": "RepGhostNet 0.5x (substitute for GhostNet 0.5x -- no real pretrained weights exist for GhostNet 0.5x in torchvision or timm)",
+    "pretrained": "ImageNet1K",
+    "head": "GlobalAvgPool -> Linear(->128) -> ReLU -> Dropout(0.3) -> Linear(128->1) -> Sigmoid (BCEWithLogitsLoss)",
+    "total_params": 1197065,
+    "trainable_params_stage1": 164097,
+    "trainable_params_stage2": 1050137,
+    "unfrozen_backbone_blocks_stage2": [
+      "blocks.8",
+      "blocks.9",
+      "conv_head"
+    ],
+    "model_size_mb": 4.85
+  },
+  "training": {
+    "stage1": {
+      "lr": 0.0001,
+      "max_epochs": 25,
+      "patience": 5,
+      "best_epoch": 24,
+      "best_val_loss": 0.49371407060853895,
+      "time_s": 1695.3
+    },
+    "stage2": {
+      "lr": 1e-05,
+      "max_epochs": 25,
+      "patience": 5,
+      "best_epoch": 25,
+      "best_val_loss": 0.46575780549357015,
+      "time_s": 1907.7
+    },
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "lr_scheduler": "ReduceLROnPlateau(mode=min, factor=0.5, patience=2, monitors val_loss)",
+    "class_weighting": "none -- train/val splits are already ~50/50 balanced",
+    "total_time_s": 3603.0
+  },
+  "inference_time_ms_per_image": 38.952,
+  "final_train_metrics": {
+    "loss": 0.39248502309877165,
+    "accuracy": 0.826385904598195,
+    "precision": 0.8232795242141037,
+    "recall": 0.8317596566523605,
+    "f1": 0.8274978650725875,
+    "roc_auc": 0.906526042859359
+  },
+  "final_validation_metrics": {
+    "loss": 0.46575780549357015,
+    "accuracy": 0.7681451612903226,
+    "precision": 0.7658730158730159,
+    "recall": 0.7751004016064257,
+    "f1": 0.7704590818363274,
+    "roc_auc": 0.8580231858608524
+  },
+  "train_val_gap": {
+    "accuracy_gap": 0.0582,
+    "f1_gap": 0.057
+  }
+}

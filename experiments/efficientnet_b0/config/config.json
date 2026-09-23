@@ -1,0 +1,72 @@
+{
+  "model": "efficientnet_b0",
+  "display_name": "EfficientNet-B0",
+  "seed": 42,
+  "image_size": 224,
+  "batch_size": 32,
+  "device": "cpu",
+  "dataset": {
+    "train_manifest": "C:\\Users\\tishy\\Documents\\Honors\\SkinDisease\\manifest_curated_v3_train.csv",
+    "val_manifest": "C:\\Users\\tishy\\Documents\\Honors\\SkinDisease\\manifest_curated_v3_val.csv",
+    "test_manifest_used": false,
+    "n_train": 2327,
+    "n_val": 496
+  },
+  "architecture": {
+    "backbone": "EfficientNet-B0",
+    "pretrained": "ImageNet1K",
+    "head": "GlobalAvgPool -> Linear(->128) -> ReLU -> Dropout(0.3) -> Linear(128->1) -> Sigmoid (BCEWithLogitsLoss)",
+    "total_params": 4171645,
+    "trainable_params_stage1": 164097,
+    "trainable_params_stage2": 1293489,
+    "unfrozen_backbone_blocks_stage2": [
+      "7",
+      "8"
+    ],
+    "model_size_mb": 16.2
+  },
+  "training": {
+    "stage1": {
+      "lr": 0.0001,
+      "max_epochs": 25,
+      "patience": 5,
+      "best_epoch": 22,
+      "best_val_loss": 0.45605701929138553,
+      "time_s": 4126.5
+    },
+    "stage2": {
+      "lr": 1e-05,
+      "max_epochs": 25,
+      "patience": 5,
+      "best_epoch": 25,
+      "best_val_loss": 0.4368228472528919,
+      "time_s": 4013.9
+    },
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "lr_scheduler": "ReduceLROnPlateau(mode=min, factor=0.5, patience=2, monitors val_loss)",
+    "class_weighting": "none -- train/val splits are already ~50/50 balanced",
+    "total_time_s": 8140.4
+  },
+  "inference_time_ms_per_image": 37.623,
+  "final_train_metrics": {
+    "loss": 0.3031913096563059,
+    "accuracy": 0.8852599914052428,
+    "precision": 0.9111721611721612,
+    "recall": 0.8540772532188842,
+    "f1": 0.8817013735046522,
+    "roc_auc": 0.9562479224069793
+  },
+  "final_validation_metrics": {
+    "loss": 0.4368228472528919,
+    "accuracy": 0.8064516129032258,
+    "precision": 0.8148148148148148,
+    "recall": 0.7951807228915663,
+    "f1": 0.8048780487804879,
+    "roc_auc": 0.8773393167812952
+  },
+  "train_val_gap": {
+    "accuracy_gap": 0.0788,
+    "f1_gap": 0.0768
+  }
+}

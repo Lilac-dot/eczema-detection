@@ -1,0 +1,45 @@
+{
+  "note": "Frozen record of the dataset split used by scripts/train_transfer_cnn.py (EfficientNet-B0 / MobileNetV3-Small experiments, 2026-09-17). This is the SAME split already used for the balanced ResNet18 CNN (docs/curated_eczema_vs_disease_2026-08-26.md) -- reused, not regenerated, because it was already built the same way this protocol would have required (deterministic seed, stratified by class, image-level because no patient IDs exist for this dataset). See docs/transfer_cnn_experiment_2026-09-17.md for full reasoning.",
+  "source_script": "scripts/merge_all_eczema_sources.py",
+  "manifest_files": {
+    "all": "SkinDisease/manifest_curated_v3.csv",
+    "train": "SkinDisease/manifest_curated_v3_train.csv",
+    "val": "SkinDisease/manifest_curated_v3_val.csv",
+    "test": "SkinDisease/manifest_curated_v3_test.csv"
+  },
+  "random_seed": 42,
+  "split_method": "70/15/15, stratified by 8-way disease_class (not just binary label), image-level (no patient/subject IDs available for this dataset)",
+  "patient_level_splitting": "NOT POSSIBLE -- this dataset merges 3 Kaggle/DermNet-style dermatology image archives (original Eczema/Normal set, SkinDisease 20-class set, and a third DermNet-subtype Eczema set), none of which carry patient or subject identifiers, only per-image files. Patient-level splitting is used elsewhere in this project (SkinDisNet, which does have 416 real patient IDs) but is structurally unavailable here.",
+  "total_images": 3330,
+  "splits": {
+    "train": {
+      "total": 2327,
+      "percent_of_total": 69.9,
+      "label_counts": {"Eczema (1)": 1165, "Other (0)": 1162},
+      "by_disease_class": {
+        "Eczema": 1165, "Tinea": 254, "Psoriasis": 226, "Rosacea": 173,
+        "Lichen": 154, "Infestations_Bites": 146, "DrugEruption": 140, "Candidiasis": 69
+      }
+    },
+    "val": {
+      "total": 496,
+      "percent_of_total": 14.9,
+      "label_counts": {"Eczema (1)": 249, "Other (0)": 247},
+      "by_disease_class": {
+        "Eczema": 249, "Tinea": 54, "Psoriasis": 48, "Rosacea": 37,
+        "Lichen": 33, "Infestations_Bites": 31, "DrugEruption": 30, "Candidiasis": 14
+      }
+    },
+    "test": {
+      "total": 507,
+      "percent_of_total": 15.2,
+      "label_counts": {"Eczema (1)": 251, "Other (0)": 256},
+      "by_disease_class": {
+        "Eczema": 251, "Tinea": 56, "Psoriasis": 50, "Rosacea": 38,
+        "Lichen": 33, "Infestations_Bites": 32, "DrugEruption": 31, "Candidiasis": 16
+      },
+      "status": "HELD OUT -- not opened, read, or referenced by scripts/train_transfer_cnn.py or any code path used in this experiment. Not to be touched until explicit permission is given."
+    }
+  },
+  "class_balance_conclusion": "Train and val are both already ~50/50 Eczema vs Other (1165/1162 and 249/247) -- no class weighting or resampling applied in scripts/train_transfer_cnn.py."
+}
