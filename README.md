@@ -6,6 +6,27 @@ drivers of eczema flares — fused with the image score into one composite. See
 `docs/architecture_v2_2026-09-14.md` for the reasoning behind this structure, including
 why lesion-vs-surrounding-skin temperature (a candidate factor) is deferred to future work.
 
+## Latest results (compression study, Sep 2026)
+
+`papers/edge-ai-lightweight-deployment/` asks whether the eczema-vs-look-alike image classifier can run on a
+phone. Nine CNN architectures were pruned and INT8-quantized on x86 (fbgemm) and ARM (qnnpack) backends,
+with a frozen held-out test split.
+
+- **Pruning tolerance is architecture-specific**: McNemar-tested pruning knees range from 20% to 60% sparsity
+  (`scripts/pruning_knee_mcnemar_2026-09-23.py`).
+- **Squeeze-and-excitation / swish models don't survive default INT8 PTQ** (EfficientNet-B0,
+  MobileNetV3-Small, RepGhostNet-0.5x) on either backend; 3-epoch QAT does not recover them.
+- **A silent PyTorch 2.8 qnnpack bug**: quantized ReLU6 / hardtanh / clamp return wrong values on
+  channels-last tensors, which made MobileNetV2 and EfficientNet-Lite0 predict one class for every image on
+  ARM. A one-line workaround (`.contiguous()` before each ReLU6) restores them to within ~1 pt of x86
+  (`scripts/qnnpack_relu6_layout_fix_2026_09_23.py`; bug-report draft in
+  `papers/edge-ai-lightweight-deployment/PYTORCH_ISSUE_DRAFT_qnnpack_relu6_channels_last.md`).
+- **Deployment finalists**: ShuffleNetV2-0.5x (smallest) and SqueezeNet1.1 (most accurate lightweight
+  model) are Pareto non-dominant on both validation and test.
+
+Quantized models are labelled collapsed (95% CI of Youden's J includes 0), degraded, or backend-stable
+(retains the MLPerf Inference target of 98-99% of FP32 accuracy).
+
 ## Stages
 
 - **Stage B — image-based eczema diagnosis (the core stage).** Eczema vs. 7 visually-similar
