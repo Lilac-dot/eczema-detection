@@ -1,0 +1,173 @@
+{
+ "resnet18": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "accuracy": 0.7181208053691275,
+   "precision": 0.5285714285714286,
+   "sensitivity_recall": 0.42045454545454547,
+   "specificity": 0.8428571428571429,
+   "f1": 0.46835443037974683,
+   "auroc": 0.6699675324675325
+  },
+  "fixed": {
+   "accuracy": 0.7181208053691275,
+   "precision": 0.5285714285714286,
+   "sensitivity_recall": 0.42045454545454547,
+   "specificity": 0.8428571428571429,
+   "f1": 0.46835443037974683,
+   "auroc": 0.6699675324675325
+  }
+ },
+ "efficientnet_b0": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "accuracy": 0.7046979865771812,
+   "precision": 0.0,
+   "sensitivity_recall": 0.0,
+   "specificity": 1.0,
+   "f1": 0.0,
+   "auroc": 0.5842803030303031
+  },
+  "fixed": {
+   "accuracy": 0.7046979865771812,
+   "precision": 0.0,
+   "sensitivity_recall": 0.0,
+   "specificity": 1.0,
+   "f1": 0.0,
+   "auroc": 0.5842803030303031
+  }
+ },
+ "efficientnet_lite0": {
+  "n_clamp_nodes_fixed": 33,
+  "as_is": {
+   "accuracy": 0.7046979865771812,
+   "precision": 0.0,
+   "sensitivity_recall": 0.0,
+   "specificity": 1.0,
+   "f1": 0.0,
+   "auroc": 0.42692099567099573
+  },
+  "fixed": {
+   "accuracy": 0.6677852348993288,
+   "precision": 0.3333333333333333,
+   "sensitivity_recall": 0.125,
+   "specificity": 0.8952380952380953,
+   "f1": 0.18181818181818182,
+   "auroc": 0.5656926406926407
+  }
+ },
+ "mobilenetv3_small": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "accuracy": 0.7046979865771812,
+   "precision": 0.0,
+   "sensitivity_recall": 0.0,
+   "specificity": 1.0,
+   "f1": 0.0,
+   "auroc": 0.6254599567099567
+  },
+  "fixed": {
+   "accuracy": 0.7046979865771812,
+   "precision": 0.0,
+   "sensitivity_recall": 0.0,
+   "specificity": 1.0,
+   "f1": 0.0,
+   "auroc": 0.6254599567099567
+  }
+ },
+ "mobilenetv2_100": {
+  "n_clamp_nodes_fixed": 35,
+  "as_is": {
+   "accuracy": 0.7046979865771812,
+   "precision": 0.0,
+   "sensitivity_recall": 0.0,
+   "specificity": 1.0,
+   "f1": 0.0,
+   "auroc": 0.4858495670995671
+  },
+  "fixed": {
+   "accuracy": 0.714765100671141,
+   "precision": 0.5517241379310345,
+   "sensitivity_recall": 0.18181818181818182,
+   "specificity": 0.9380952380952381,
+   "f1": 0.27350427350427353,
+   "auroc": 0.697267316017316
+  }
+ },
+ "shufflenet_v2_x0_5": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "accuracy": 0.6543624161073825,
+   "precision": 0.4369747899159664,
+   "sensitivity_recall": 0.5909090909090909,
+   "specificity": 0.680952380952381,
+   "f1": 0.5024154589371981,
+   "auroc": 0.6839285714285714
+  },
+  "fixed": {
+   "accuracy": 0.6543624161073825,
+   "precision": 0.4369747899159664,
+   "sensitivity_recall": 0.5909090909090909,
+   "specificity": 0.680952380952381,
+   "f1": 0.5024154589371981,
+   "auroc": 0.6839285714285714
+  }
+ },
+ "shufflenet_v2_x1_0": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "accuracy": 0.697986577181208,
+   "precision": 0.4909090909090909,
+   "sensitivity_recall": 0.6136363636363636,
+   "specificity": 0.7333333333333333,
+   "f1": 0.5454545454545454,
+   "auroc": 0.7448051948051948
+  },
+  "fixed": {
+   "accuracy": 0.697986577181208,
+   "precision": 0.4909090909090909,
+   "sensitivity_recall": 0.6136363636363636,
+   "specificity": 0.7333333333333333,
+   "f1": 0.5454545454545454,
+   "auroc": 0.7448051948051948
+  }
+ },
+ "squeezenet1_1": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "accuracy": 0.7449664429530202,
+   "precision": 0.6304347826086957,
+   "sensitivity_recall": 0.32954545454545453,
+   "specificity": 0.919047619047619,
+   "f1": 0.43283582089552236,
+   "auroc": 0.7644209956709958
+  },
+  "fixed": {
+   "accuracy": 0.7449664429530202,
+   "precision": 0.6304347826086957,
+   "sensitivity_recall": 0.32954545454545453,
+   "specificity": 0.919047619047619,
+   "f1": 0.43283582089552236,
+   "auroc": 0.7644209956709958
+  }
+ },
+ "repghostnet_050": {
+  "n_clamp_nodes_fixed": 0,
+  "as_is": {
+   "accuracy": 0.697986577181208,
+   "precision": 0.0,
+   "sensitivity_recall": 0.0,
+   "specificity": 0.9904761904761905,
+   "f1": 0.0,
+   "auroc": 0.4758928571428571
+  },
+  "fixed": {
+   "accuracy": 0.697986577181208,
+   "precision": 0.0,
+   "sensitivity_recall": 0.0,
+   "specificity": 0.9904761904761905,
+   "f1": 0.0,
+   "auroc": 0.4758928571428571
+  }
+ }
+}
