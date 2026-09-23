@@ -1,0 +1,37 @@
+<articles>
+<article xmlns:xlink="http://www.w3.org/1999/xlink/">
+<front>
+<article-meta>
+<title-group><article-title>&lt;b&gt;Multimodal Machine Learning Approach for Diagnosing Atopic Dermatitis&lt;/b&gt;</article-title></title-group>
+<contrib-group>
+<contrib contrib-type="author"><name><surname>Widiawaty</surname><given-name>Alida</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Indriatmi</surname><given-name>Wresti</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Jatmiko</surname><given-name>Wisnu</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Novianto</surname><given-name>Endi</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Gunawan</surname><given-name>Hendra</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Kekalih</surname><given-name>Aria</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Satria Palar</surname><given-name>Pramudita</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Rachmadi</surname><given-name>Muhammad Febrian</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Dermawan</surname><given-name>Sherly</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Laras Malahayati</surname><given-name>Tengku</given-name></name></contrib>
+<contrib contrib-type="author"><name><surname>Wicaksana Ramadhan</surname><given-name>Alif</given-name></name></contrib>
+</contrib-group>
+<pub-date pub-type="pub"><year>2025</year></pub-date>
+<self-uri xlink:href="10.6084/m9.figshare.29925533.v4"/>
+<self-uri xlink:href="https://figshare.com/articles/dataset/Clinical_data_of_AD_and_non-AD_research_samples_from_phases_1_and_2_Translated_xlsx/29925533"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57236444"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57236735"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57236753"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57236756"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57236819"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57236864"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57236918"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57237212"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57237275"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57237302"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57371182"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57371185"/>
+<self-uri xlink:href="https://ndownloader.figshare.com/files/57487219"/>
+</article-meta>
+<abstract>&lt;p dir=&quot;ltr&quot;&gt;This research is part of our multi phase research for doctoral study program. This study presents a novel multimodal deep learning model that combines clinical image analysis with structured anamnesis using a late-fusion architecture. ResNet50 was employed for image-based feature extraction, while MPNet was used to process textual clinical data. Trained and validated across multiple centers, the model achieved an internal validation accuracy of 98.28%, significantly outperforming single-modality models and standard diagnostic baselines. Our approach not only enhances diagnostic accuracy for atopic dermatitis but also highlights the translational potential of multimodal AI to support clinical decision-making in dermatology. It would be an honor for this research to be published in a Scopus-indexed journal, and we offer it as our contribution to promoting aviation safety.&lt;/p&gt;</abstract>
+</front></article></articles>
