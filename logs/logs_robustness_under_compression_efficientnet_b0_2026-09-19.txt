@@ -1,0 +1,132 @@
+Loading existing FP32 corruption-sweep results for efficientnet_b0 (not re-running -- deterministic, already on disk)
+Knee sparsity for efficientnet_b0: 0.5
+
+=== Variant: pruned_at_knee (0.5) ===
+  [pruned@0.5] clean                        acc=0.6391 f1=0.5069 ece=0.0693
+  [pruned@0.5] gaussian_blur_sev1           acc=0.6331 f1=0.5027 ece=0.0613
+  [pruned@0.5] gaussian_blur_sev2           acc=0.5927 f1=0.4094 ece=0.0276
+  [pruned@0.5] gaussian_blur_sev3           acc=0.5484 f1=0.2774 ece=0.0554
+  [pruned@0.5] gaussian_blur_sev4           acc=0.5202 f1=0.1849 ece=0.0871
+  [pruned@0.5] gaussian_blur_sev5           acc=0.5222 f1=0.2020 ece=0.0907
+  [pruned@0.5] brightness_down_sev1         acc=0.6250 f1=0.4746 ece=0.0562
+  [pruned@0.5] brightness_down_sev2         acc=0.5948 f1=0.4106 ece=0.0347
+  [pruned@0.5] brightness_down_sev3         acc=0.5645 f1=0.3333 ece=0.0554
+  [pruned@0.5] brightness_down_sev4         acc=0.5403 f1=0.2400 ece=0.0675
+  [pruned@0.5] brightness_down_sev5         acc=0.5081 f1=0.1095 ece=0.0832
+  [pruned@0.5] brightness_up_sev1           acc=0.6472 f1=0.5333 ece=0.0789
+  [pruned@0.5] brightness_up_sev2           acc=0.6431 f1=0.5330 ece=0.0758
+  [pruned@0.5] brightness_up_sev3           acc=0.6391 f1=0.5375 ece=0.0769
+  [pruned@0.5] brightness_up_sev4           acc=0.6210 f1=0.5026 ece=0.0797
+  [pruned@0.5] brightness_up_sev5           acc=0.6028 f1=0.4603 ece=0.0762
+  [pruned@0.5] contrast_down_sev1           acc=0.6250 f1=0.4918 ece=0.0681
+  [pruned@0.5] contrast_down_sev2           acc=0.6169 f1=0.4693 ece=0.0513
+  [pruned@0.5] contrast_down_sev3           acc=0.5887 f1=0.4035 ece=0.0626
+  [pruned@0.5] contrast_down_sev4           acc=0.5444 f1=0.2756 ece=0.0590
+  [pruned@0.5] contrast_down_sev5           acc=0.5222 f1=0.1799 ece=0.0601
+  [pruned@0.5] gaussian_noise_sev1          acc=0.6371 f1=0.5135 ece=0.0690
+  [pruned@0.5] gaussian_noise_sev2          acc=0.6431 f1=0.5305 ece=0.0747
+  [pruned@0.5] gaussian_noise_sev3          acc=0.6310 f1=0.5247 ece=0.0622
+  [pruned@0.5] gaussian_noise_sev4          acc=0.6149 f1=0.4907 ece=0.0627
+  [pruned@0.5] gaussian_noise_sev5          acc=0.6149 f1=0.4987 ece=0.0582
+  [pruned@0.5] jpeg_compression_sev1        acc=0.6331 f1=0.5054 ece=0.0631
+  [pruned@0.5] jpeg_compression_sev2        acc=0.6290 f1=0.4973 ece=0.0552
+  [pruned@0.5] jpeg_compression_sev3        acc=0.6250 f1=0.4655 ece=0.0455
+  [pruned@0.5] jpeg_compression_sev4        acc=0.5605 f1=0.2685 ece=0.0833
+  [pruned@0.5] jpeg_compression_sev5        acc=0.4919 f1=0.0156 ece=0.1544
+  [pruned@0.5] color_shift_warm_sev1        acc=0.6552 f1=0.5440 ece=0.0893
+  [pruned@0.5] color_shift_warm_sev2        acc=0.6431 f1=0.5280 ece=0.0776
+  [pruned@0.5] color_shift_warm_sev3        acc=0.6472 f1=0.5232 ece=0.0771
+  [pruned@0.5] color_shift_warm_sev4        acc=0.6028 f1=0.4223 ece=0.0552
+  [pruned@0.5] color_shift_warm_sev5        acc=0.5766 f1=0.3438 ece=0.0630
+  [pruned@0.5] sweep done in 752.6s
+
+=== Variant: static_int8 ===
+  [int8] clean                        acc=0.4859 f1=0.0727 ece=0.3100
+  [int8] gaussian_blur_sev1           acc=0.4798 f1=0.0584 ece=0.3167
+  [int8] gaussian_blur_sev2           acc=0.4940 f1=0.0806 ece=0.3131
+  [int8] gaussian_blur_sev3           acc=0.5040 f1=0.0889 ece=0.3541
+  [int8] gaussian_blur_sev4           acc=0.5040 f1=0.0315 ece=0.4211
+  [int8] gaussian_blur_sev5           acc=0.5000 f1=0.0080 ece=0.4219
+  [int8] brightness_down_sev1         acc=0.4859 f1=0.0520 ece=0.3034
+  [int8] brightness_down_sev2         acc=0.4960 f1=0.0530 ece=0.3052
+  [int8] brightness_down_sev3         acc=0.4960 f1=0.0310 ece=0.3212
+  [int8] brightness_down_sev4         acc=0.4980 f1=0.0080 ece=0.3513
+  [int8] brightness_down_sev5         acc=0.4980 f1=0.0000 ece=0.3521
+  [int8] brightness_up_sev1           acc=0.4859 f1=0.0520 ece=0.3113
+  [int8] brightness_up_sev2           acc=0.4980 f1=0.0604 ece=0.3090
+  [int8] brightness_up_sev3           acc=0.4980 f1=0.0674 ece=0.3047
+  [int8] brightness_up_sev4           acc=0.5081 f1=0.0615 ece=0.3066
+  [int8] brightness_up_sev5           acc=0.5101 f1=0.0690 ece=0.2944
+  [int8] contrast_down_sev1           acc=0.4859 f1=0.0520 ece=0.3113
+  [int8] contrast_down_sev2           acc=0.4919 f1=0.0382 ece=0.3157
+  [int8] contrast_down_sev3           acc=0.4919 f1=0.0156 ece=0.3341
+  [int8] contrast_down_sev4           acc=0.4980 f1=0.0000 ece=0.3341
+  [int8] contrast_down_sev5           acc=0.4980 f1=0.0000 ece=0.3116
+  [int8] gaussian_noise_sev1          acc=0.4899 f1=0.0866 ece=0.2862
+  [int8] gaussian_noise_sev2          acc=0.4879 f1=0.0863 ece=0.2843
+  [int8] gaussian_noise_sev3          acc=0.4960 f1=0.0672 ece=0.3009
+  [int8] gaussian_noise_sev4          acc=0.5020 f1=0.0463 ece=0.3174
+  [int8] gaussian_noise_sev5          acc=0.5020 f1=0.0314 ece=0.3190
+  [int8] jpeg_compression_sev1        acc=0.4778 f1=0.0443 ece=0.3217
+  [int8] jpeg_compression_sev2        acc=0.4899 f1=0.0524 ece=0.3192
+  [int8] jpeg_compression_sev3        acc=0.4980 f1=0.0386 ece=0.3444
+  [int8] jpeg_compression_sev4        acc=0.4940 f1=0.0456 ece=0.3481
+  [int8] jpeg_compression_sev5        acc=0.5000 f1=0.0080 ece=0.3841
+  [int8] color_shift_warm_sev1        acc=0.4940 f1=0.0806 ece=0.2895
+  [int8] color_shift_warm_sev2        acc=0.4919 f1=0.0870 ece=0.2762
+  [int8] color_shift_warm_sev3        acc=0.4940 f1=0.1068 ece=0.2777
+  [int8] color_shift_warm_sev4        acc=0.4899 f1=0.0800 ece=0.2783
+  [int8] color_shift_warm_sev5        acc=0.4940 f1=0.0599 ece=0.2764
+  [int8] sweep done in 187.9s
+
+=== Variant: pruned30_plus_int8 ===
+  [pruned30+int8] clean                        acc=0.4960 f1=0.0741 ece=0.2854
+  [pruned30+int8] gaussian_blur_sev1           acc=0.4960 f1=0.0530 ece=0.2950
+  [pruned30+int8] gaussian_blur_sev2           acc=0.5000 f1=0.0462 ece=0.3141
+  [pruned30+int8] gaussian_blur_sev3           acc=0.5020 f1=0.0389 ece=0.3312
+  [pruned30+int8] gaussian_blur_sev4           acc=0.5040 f1=0.0238 ece=0.3471
+  [pruned30+int8] gaussian_blur_sev5           acc=0.4980 f1=0.0000 ece=0.3474
+  [pruned30+int8] brightness_down_sev1         acc=0.4919 f1=0.0526 ece=0.3118
+  [pruned30+int8] brightness_down_sev2         acc=0.4919 f1=0.0156 ece=0.3322
+  [pruned30+int8] brightness_down_sev3         acc=0.4980 f1=0.0158 ece=0.3382
+  [pruned30+int8] brightness_down_sev4         acc=0.4980 f1=0.0000 ece=0.3428
+  [pruned30+int8] brightness_down_sev5         acc=0.4980 f1=0.0000 ece=0.3491
+  [pruned30+int8] brightness_up_sev1           acc=0.5000 f1=0.0949 ece=0.2737
+  [pruned30+int8] brightness_up_sev2           acc=0.4960 f1=0.0809 ece=0.2617
+  [pruned30+int8] brightness_up_sev3           acc=0.4839 f1=0.0588 ece=0.2615
+  [pruned30+int8] brightness_up_sev4           acc=0.5121 f1=0.1037 ece=0.2358
+  [pruned30+int8] brightness_up_sev5           acc=0.5121 f1=0.0902 ece=0.2378
+  [pruned30+int8] contrast_down_sev1           acc=0.4940 f1=0.0528 ece=0.3054
+  [pruned30+int8] contrast_down_sev2           acc=0.5000 f1=0.0312 ece=0.3265
+  [pruned30+int8] contrast_down_sev3           acc=0.4980 f1=0.0158 ece=0.3617
+  [pruned30+int8] contrast_down_sev4           acc=0.4980 f1=0.0000 ece=0.3712
+  [pruned30+int8] contrast_down_sev5           acc=0.4980 f1=0.0000 ece=0.3645
+  [pruned30+int8] gaussian_noise_sev1          acc=0.5000 f1=0.0882 ece=0.2839
+  [pruned30+int8] gaussian_noise_sev2          acc=0.4940 f1=0.0806 ece=0.2758
+  [pruned30+int8] gaussian_noise_sev3          acc=0.5161 f1=0.1111 ece=0.2768
+  [pruned30+int8] gaussian_noise_sev4          acc=0.5202 f1=0.1119 ece=0.2470
+  [pruned30+int8] gaussian_noise_sev5          acc=0.5161 f1=0.1241 ece=0.2198
+  [pruned30+int8] jpeg_compression_sev1        acc=0.4940 f1=0.0528 ece=0.2946
+  [pruned30+int8] jpeg_compression_sev2        acc=0.4919 f1=0.0455 ece=0.2980
+  [pruned30+int8] jpeg_compression_sev3        acc=0.4960 f1=0.0385 ece=0.3108
+  [pruned30+int8] jpeg_compression_sev4        acc=0.4980 f1=0.0386 ece=0.3218
+  [pruned30+int8] jpeg_compression_sev5        acc=0.5000 f1=0.0080 ece=0.3905
+  [pruned30+int8] color_shift_warm_sev1        acc=0.4919 f1=0.0935 ece=0.2683
+  [pruned30+int8] color_shift_warm_sev2        acc=0.4980 f1=0.1011 ece=0.2586
+  [pruned30+int8] color_shift_warm_sev3        acc=0.4819 f1=0.1168 ece=0.2521
+  [pruned30+int8] color_shift_warm_sev4        acc=0.5020 f1=0.1453 ece=0.2487
+  [pruned30+int8] color_shift_warm_sev5        acc=0.5000 f1=0.1329 ece=0.2569
+  [pruned30+int8] sweep done in 196.8s
+
+Saved to /Users/tishy/Documents/Honors/results/robustness_under_compression_efficientnet_b0.json
+
+Accuracy drop (severity 1 -> 5) per corruption type, per variant:
+variant                clean  gaussian_b  brightness  brightness  contrast_d  gaussian_n  jpeg_compr  color_shif
+fp32                   0.806      +0.254      +0.133      +0.065      +0.139      +0.077      +0.288      +0.069
+pruned_at_knee         0.639      +0.111      +0.117      +0.044      +0.103      +0.022      +0.141      +0.079
+static_int8            0.486      -0.020      -0.012      -0.024      -0.012      -0.012      -0.022      +0.000
+pruned30_plus_int8     0.496      -0.002      -0.006      -0.012      -0.004      -0.016      -0.006      -0.008
+Saved /Users/tishy/Documents/Honors/docs/robustness_under_compression_efficientnet_b0_gaussian_blur_2026-09-19.png
+Saved /Users/tishy/Documents/Honors/docs/robustness_under_compression_efficientnet_b0_jpeg_compression_2026-09-19.png
+
+Done. This never opened manifest_curated_v3_test.csv.
