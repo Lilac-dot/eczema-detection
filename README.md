@@ -27,6 +27,29 @@ with a frozen held-out test split.
 Quantized models are labelled collapsed (95% CI of Youden's J includes 0), degraded, or backend-stable
 (retains the MLPerf Inference target of 98-99% of FP32 accuracy).
 
+## Latest results (skin-tone compression audit, Sep 2026)
+
+Does compressing the eczema classifier for a phone cost darker-skinned patients more? It was
+tested on three datasets with Fitzpatrick skin-type labels: SCIN, Fitzpatrick17k-C and
+DermaCon-IN (6,103 clean images). All results are case-grouped 5-fold CV; the test split is
+still frozen. Full write-up: `docs/skintone_compression_audit_results_2026-09-24.md`.
+
+- **Pooling the three datasets hurts.** SCIN loses −0.058 AUC and Fitzpatrick17k FST V–VI
+  loses −0.105 compared with per-source models. Balanced subsampling and last-layer
+  retraining don't fix it, so the study uses one model per source.
+- **Standard compression doesn't measurably widen the skin-tone gap.** Across 4
+  architectures (ResNet18, ShuffleNetV2 0.5x/1.0x, SqueezeNet1.1) × 3 sources × 7 variants
+  (qnnpack INT8, pruning, both), only 3 of 84 cells show a significant dark-skin penalty.
+- **Architecture matters more than skin tone.** INT8 is near-lossless for ResNet18 and
+  SqueezeNet1.1, while ShuffleNetV2 loses 0.015–0.042 AUC for every skin type. The skin tone
+  of the INT8 calibration images makes no difference.
+- **Novelty:** a systematic search (1,993 unique records) found no prior per-skin-type audit
+  of standard compression in dermatology
+  (`docs/literature_review_skintone_compression_2026-09-24.md`).
+
+Scripts: `scripts/*skintone*.py`, `scripts/run_skintone_overnight.sh`. Results:
+`experiments/skintone_cv/`, `experiments/skintone_audit/`.
+
 ## Stages
 
 - **Stage B — image-based eczema diagnosis (the core stage).** Eczema vs. 7 visually-similar
