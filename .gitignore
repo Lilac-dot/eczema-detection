@@ -42,3 +42,8 @@ CLAUDE.md
 
 # Auto-generated CatBoost training output
 catboost_info/
+
+# Literature-search API response cache and raw record dump -- regenerate with
+# scripts/systematic_search_skintone_compression.py (the screened lists and log are kept)
+docs/lit_search_*/api_cache.json
+docs/lit_search_*/records_all.csv
