@@ -1,0 +1,36 @@
+S2 'quantization fairness skin tone dermatology': 86
+S2 'pruning fairness skin disease diagnosis': 100
+S2 'model compression fairness dermatology': 100
+S2 'quantization bias Fitzpatrick skin type': 100
+S2 'compressed neural network skin lesion fairness': 100
+S2 'post-training quantization subgroup performance medical imaging': 100
+S2 'pruning disparate impact medical image classification': 100
+S2 'model compression demographic bias medical imaging': 100
+S2 'edge deployment fairness skin cancer classification': 100
+S2 'on-device skin disease classification skin tone bias': 61
+S2 'quantization fairness computer vision demographic': 68
+S2 'pruning bias underrepresented groups neural network': 100
+S2 'compression identified exemplars fairness': 100
+S2 'calibration data post-training quantization bias': 100
+S2 'eczema atopic dermatitis deep learning skin of color': 29
+S2 'inflammatory skin disease classification darker skin performance': 100
+arXiv 'abs:quantization AND abs:fairness AND abs:skin': 1
+arXiv 'abs:pruning AND abs:fairness AND abs:skin': 5
+arXiv 'abs:compression AND abs:fairness AND abs:dermatology': 0
+arXiv 'abs:quantization AND abs:bias AND abs:medical': 0
+arXiv 'abs:pruning AND abs:bias AND abs:medical': 5
+arXiv 'abs:quantization AND abs:Fitzpatrick': 3
+arXiv 'abs:pruning AND abs:Fitzpatrick': 1
+citations of Hooker 2019 What do compressed DNNs forget: 228
+citations of Hooker 2020 Characterising bias in compressed models: 220
+citations of Iofinova 2023 Bias in pruned vision models: 16
+citations of Stoychev & Gunes 2022 compression fairness FER: 27
+citations of FairPrune 2022: 87
+citations of FairQuant 2026: 0
+citations of Groh 2021 Fitzpatrick17k: 331
+{
+  "n_identified": 2368,
+  "n_unique": 1993,
+  "n_direct": 45,
+  "n_general": 110
+}
