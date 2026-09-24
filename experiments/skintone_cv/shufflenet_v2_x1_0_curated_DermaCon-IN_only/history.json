@@ -1,0 +1,893 @@
+[
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 1,
+    "train_loss": 0.5728691864287716,
+    "inner_val_macro_auc": 0.7356751370204285,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.7356751370204285
+    },
+    "secs": 12
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 2,
+    "train_loss": 0.4577010286722147,
+    "inner_val_macro_auc": 0.8021923268560041,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8021923268560041
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 3,
+    "train_loss": 0.4164519576505683,
+    "inner_val_macro_auc": 0.8292227204783258,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8292227204783258
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 4,
+    "train_loss": 0.38213833029242766,
+    "inner_val_macro_auc": 0.8357000498256104,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8357000498256104
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 5,
+    "train_loss": 0.34041788313123916,
+    "inner_val_macro_auc": 0.8428001993024414,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8428001993024414
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 6,
+    "train_loss": 0.3041919880328964,
+    "inner_val_macro_auc": 0.8413054309915297,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8413054309915297
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 7,
+    "train_loss": 0.292607940316657,
+    "inner_val_macro_auc": 0.8451669157947185,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8451669157947185
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 8,
+    "train_loss": 0.2706564113897382,
+    "inner_val_macro_auc": 0.843423019431988,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.843423019431988
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 9,
+    "train_loss": 0.25733244215848344,
+    "inner_val_macro_auc": 0.8333333333333333,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8333333333333333
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 10,
+    "train_loss": 0.21648325365165183,
+    "inner_val_macro_auc": 0.8247384155455904,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8247384155455904
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 1,
+    "epoch": 11,
+    "train_loss": 0.2092204167011597,
+    "inner_val_macro_auc": 0.8371948181365222,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8371948181365222
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 2,
+    "epoch": 1,
+    "train_loss": 0.35039412667011394,
+    "inner_val_macro_auc": 0.8054309915296463,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8054309915296463
+    },
+    "secs": 3
+  },
+  {
+    "fold": 0,
+    "stage": 2,
+    "epoch": 2,
+    "train_loss": 0.3223358264371353,
+    "inner_val_macro_auc": 0.807299451918286,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.807299451918286
+    },
+    "secs": 2
+  },
+  {
+    "fold": 0,
+    "stage": 2,
+    "epoch": 3,
+    "train_loss": 0.3312281086070327,
+    "inner_val_macro_auc": 0.8085450921773792,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8085450921773792
+    },
+    "secs": 3
+  },
+  {
+    "fold": 0,
+    "stage": 2,
+    "epoch": 4,
+    "train_loss": 0.30136258186508413,
+    "inner_val_macro_auc": 0.8110363726955655,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8110363726955655
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 1,
+    "epoch": 1,
+    "train_loss": 0.5872057502240581,
+    "inner_val_macro_auc": 0.7886015003918935,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.7886015003918935
+    },
+    "secs": 12
+  },
+  {
+    "fold": 1,
+    "stage": 1,
+    "epoch": 2,
+    "train_loss": 0.47266315839706213,
+    "inner_val_macro_auc": 0.8198410032471168,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8198410032471168
+    },
+    "secs": 2
+  },
+  {
+    "fold": 1,
+    "stage": 1,
+    "epoch": 3,
+    "train_loss": 0.4123689790202208,
+    "inner_val_macro_auc": 0.8272309931698578,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8272309931698578
+    },
+    "secs": 2
+  },
+  {
+    "fold": 1,
+    "stage": 1,
+    "epoch": 4,
+    "train_loss": 0.36679358607220724,
+    "inner_val_macro_auc": 0.8312618967640801,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8312618967640801
+    },
+    "secs": 2
+  },
+  {
+    "fold": 1,
+    "stage": 1,
+    "epoch": 5,
+    "train_loss": 0.3415997186020609,
+    "inner_val_macro_auc": 0.8078602620087336,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8078602620087336
+    },
+    "secs": 2
+  },
+  {
+    "fold": 1,
+    "stage": 1,
+    "epoch": 6,
+    "train_loss": 0.31629217637059154,
+    "inner_val_macro_auc": 0.826895084537006,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.826895084537006
+    },
+    "secs": 2
+  },
+  {
+    "fold": 1,
+    "stage": 1,
+    "epoch": 7,
+    "train_loss": 0.2843683196134888,
+    "inner_val_macro_auc": 0.8253275109170306,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8253275109170306
+    },
+    "secs": 2
+  },
+  {
+    "fold": 1,
+    "stage": 1,
+    "epoch": 8,
+    "train_loss": 0.24443765321820518,
+    "inner_val_macro_auc": 0.8240958459299071,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8240958459299071
+    },
+    "secs": 2
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 1,
+    "train_loss": 0.43449656697223676,
+    "inner_val_macro_auc": 0.8354047699025865,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8354047699025865
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 2,
+    "train_loss": 0.39001056196492745,
+    "inner_val_macro_auc": 0.8393237039525249,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8393237039525249
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 3,
+    "train_loss": 0.3736407570882675,
+    "inner_val_macro_auc": 0.8434665770910312,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8434665770910312
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 4,
+    "train_loss": 0.40207002259540264,
+    "inner_val_macro_auc": 0.8485052065838092,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8485052065838092
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 5,
+    "train_loss": 0.3673309301017621,
+    "inner_val_macro_auc": 0.8519762624566118,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8519762624566118
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 6,
+    "train_loss": 0.3562271820113564,
+    "inner_val_macro_auc": 0.8498488411152166,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8498488411152166
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 7,
+    "train_loss": 0.36909702083021856,
+    "inner_val_macro_auc": 0.8492889933937969,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8492889933937969
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 8,
+    "train_loss": 0.35794170013990606,
+    "inner_val_macro_auc": 0.8548874706079946,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8548874706079946
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 9,
+    "train_loss": 0.35529484251223575,
+    "inner_val_macro_auc": 0.8507445974694884,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8507445974694884
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 10,
+    "train_loss": 0.3429119613374774,
+    "inner_val_macro_auc": 0.8548874706079945,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8548874706079945
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 11,
+    "train_loss": 0.34018296313212915,
+    "inner_val_macro_auc": 0.8541036837980069,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8541036837980069
+    },
+    "secs": 3
+  },
+  {
+    "fold": 1,
+    "stage": 2,
+    "epoch": 12,
+    "train_loss": 0.3349190839204584,
+    "inner_val_macro_auc": 0.8525361101780315,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8525361101780315
+    },
+    "secs": 3
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 1,
+    "train_loss": 0.5775250271019721,
+    "inner_val_macro_auc": 0.853121306543462,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.853121306543462
+    },
+    "secs": 12
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 2,
+    "train_loss": 0.47378604774175936,
+    "inner_val_macro_auc": 0.8654775975072526,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8654775975072526
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 3,
+    "train_loss": 0.42776957491744816,
+    "inner_val_macro_auc": 0.876437090362093,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.876437090362093
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 4,
+    "train_loss": 0.3889039339413603,
+    "inner_val_macro_auc": 0.8650478134737295,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8650478134737295
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 5,
+    "train_loss": 0.3303026830821705,
+    "inner_val_macro_auc": 0.8616095412055442,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8616095412055442
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 6,
+    "train_loss": 0.3152198784777292,
+    "inner_val_macro_auc": 0.8707424519179112,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8707424519179112
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 7,
+    "train_loss": 0.28395370567857353,
+    "inner_val_macro_auc": 0.8771892124207585,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8771892124207585
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 8,
+    "train_loss": 0.2647002767472205,
+    "inner_val_macro_auc": 0.8662297195659181,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8662297195659181
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 9,
+    "train_loss": 0.22934265122353437,
+    "inner_val_macro_auc": 0.8628988933061137,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8628988933061137
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 10,
+    "train_loss": 0.20684841678812016,
+    "inner_val_macro_auc": 0.8357150531857742,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8357150531857742
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 1,
+    "epoch": 11,
+    "train_loss": 0.19640862002296128,
+    "inner_val_macro_auc": 0.8541957666272699,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8541957666272699
+    },
+    "secs": 2
+  },
+  {
+    "fold": 2,
+    "stage": 2,
+    "epoch": 1,
+    "train_loss": 0.36565927797451037,
+    "inner_val_macro_auc": 0.8504351563339422,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8504351563339422
+    },
+    "secs": 3
+  },
+  {
+    "fold": 2,
+    "stage": 2,
+    "epoch": 2,
+    "train_loss": 0.3255789953967316,
+    "inner_val_macro_auc": 0.8500053723004191,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8500053723004191
+    },
+    "secs": 3
+  },
+  {
+    "fold": 2,
+    "stage": 2,
+    "epoch": 3,
+    "train_loss": 0.3133969862860583,
+    "inner_val_macro_auc": 0.8572042548619319,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8572042548619319
+    },
+    "secs": 3
+  },
+  {
+    "fold": 2,
+    "stage": 2,
+    "epoch": 4,
+    "train_loss": 0.3285058757209012,
+    "inner_val_macro_auc": 0.8538734286021274,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8538734286021274
+    },
+    "secs": 3
+  },
+  {
+    "fold": 3,
+    "stage": 1,
+    "epoch": 1,
+    "train_loss": 0.5912834978285637,
+    "inner_val_macro_auc": 0.8721130221130222,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8721130221130222
+    },
+    "secs": 13
+  },
+  {
+    "fold": 3,
+    "stage": 1,
+    "epoch": 2,
+    "train_loss": 0.4644575866579099,
+    "inner_val_macro_auc": 0.8853808353808355,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8853808353808355
+    },
+    "secs": 2
+  },
+  {
+    "fold": 3,
+    "stage": 1,
+    "epoch": 3,
+    "train_loss": 0.4175548742745669,
+    "inner_val_macro_auc": 0.8948402948402949,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8948402948402949
+    },
+    "secs": 2
+  },
+  {
+    "fold": 3,
+    "stage": 1,
+    "epoch": 4,
+    "train_loss": 0.37206008184047146,
+    "inner_val_macro_auc": 0.8995085995085995,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8995085995085995
+    },
+    "secs": 2
+  },
+  {
+    "fold": 3,
+    "stage": 1,
+    "epoch": 5,
+    "train_loss": 0.34841605447630847,
+    "inner_val_macro_auc": 0.8965601965601966,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8965601965601966
+    },
+    "secs": 2
+  },
+  {
+    "fold": 3,
+    "stage": 1,
+    "epoch": 6,
+    "train_loss": 0.31082266814836107,
+    "inner_val_macro_auc": 0.8988943488943488,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8988943488943488
+    },
+    "secs": 2
+  },
+  {
+    "fold": 3,
+    "stage": 1,
+    "epoch": 7,
+    "train_loss": 0.29918023962100954,
+    "inner_val_macro_auc": 0.897911547911548,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.897911547911548
+    },
+    "secs": 2
+  },
+  {
+    "fold": 3,
+    "stage": 1,
+    "epoch": 8,
+    "train_loss": 0.2696034264246016,
+    "inner_val_macro_auc": 0.8963144963144962,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8963144963144962
+    },
+    "secs": 2
+  },
+  {
+    "fold": 3,
+    "stage": 2,
+    "epoch": 1,
+    "train_loss": 0.4238512279878136,
+    "inner_val_macro_auc": 0.8756756756756756,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8756756756756756
+    },
+    "secs": 3
+  },
+  {
+    "fold": 3,
+    "stage": 2,
+    "epoch": 2,
+    "train_loss": 0.3947207750254915,
+    "inner_val_macro_auc": 0.8785012285012285,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8785012285012285
+    },
+    "secs": 3
+  },
+  {
+    "fold": 3,
+    "stage": 2,
+    "epoch": 3,
+    "train_loss": 0.3821993430607191,
+    "inner_val_macro_auc": 0.875921375921376,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.875921375921376
+    },
+    "secs": 3
+  },
+  {
+    "fold": 3,
+    "stage": 2,
+    "epoch": 4,
+    "train_loss": 0.3833995478753825,
+    "inner_val_macro_auc": 0.8734643734643734,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8734643734643734
+    },
+    "secs": 3
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 1,
+    "train_loss": 0.5957061113317359,
+    "inner_val_macro_auc": 0.7729981860585644,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.7729981860585644
+    },
+    "secs": 12
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 2,
+    "train_loss": 0.4597401346946857,
+    "inner_val_macro_auc": 0.8338947913967348,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8338947913967348
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 3,
+    "train_loss": 0.42798576586402565,
+    "inner_val_macro_auc": 0.8630474216118165,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8630474216118165
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 4,
+    "train_loss": 0.3868243285953057,
+    "inner_val_macro_auc": 0.8745789064524487,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8745789064524487
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 5,
+    "train_loss": 0.3494807692332946,
+    "inner_val_macro_auc": 0.887146929256284,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.887146929256284
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 6,
+    "train_loss": 0.318469358531042,
+    "inner_val_macro_auc": 0.880020730759264,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.880020730759264
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 7,
+    "train_loss": 0.29779449524603185,
+    "inner_val_macro_auc": 0.8924591863176989,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8924591863176989
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 8,
+    "train_loss": 0.27505191308470756,
+    "inner_val_macro_auc": 0.8973827416429127,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8973827416429127
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 9,
+    "train_loss": 0.237404176375308,
+    "inner_val_macro_auc": 0.8936252915263021,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8936252915263021
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 10,
+    "train_loss": 0.21449389395586435,
+    "inner_val_macro_auc": 0.8883130344648873,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8883130344648873
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 11,
+    "train_loss": 0.20128939383186012,
+    "inner_val_macro_auc": 0.9045089401399327,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.9045089401399327
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 12,
+    "train_loss": 0.19052552181226676,
+    "inner_val_macro_auc": 0.8991966830785177,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8991966830785177
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 13,
+    "train_loss": 0.15927441276895812,
+    "inner_val_macro_auc": 0.8964757709251101,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8964757709251101
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 14,
+    "train_loss": 0.1573262114534708,
+    "inner_val_macro_auc": 0.8999740865509199,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8999740865509199
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 1,
+    "epoch": 15,
+    "train_loss": 0.14913530536752792,
+    "inner_val_macro_auc": 0.9069707178025395,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.9069707178025395
+    },
+    "secs": 2
+  },
+  {
+    "fold": 4,
+    "stage": 2,
+    "epoch": 1,
+    "train_loss": 0.2624403802051501,
+    "inner_val_macro_auc": 0.8763928478880538,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8763928478880538
+    },
+    "secs": 3
+  },
+  {
+    "fold": 4,
+    "stage": 2,
+    "epoch": 2,
+    "train_loss": 0.2291160928627842,
+    "inner_val_macro_auc": 0.8762632806426536,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8762632806426536
+    },
+    "secs": 3
+  },
+  {
+    "fold": 4,
+    "stage": 2,
+    "epoch": 3,
+    "train_loss": 0.22378451936087096,
+    "inner_val_macro_auc": 0.8797615962684633,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8797615962684633
+    },
+    "secs": 3
+  },
+  {
+    "fold": 4,
+    "stage": 2,
+    "epoch": 4,
+    "train_loss": 0.1901573703825429,
+    "inner_val_macro_auc": 0.8841668826120757,
+    "inner_val_auc_by_source": {
+      "DermaCon-IN": 0.8841668826120757
+    },
+    "secs": 3
+  }
+]
