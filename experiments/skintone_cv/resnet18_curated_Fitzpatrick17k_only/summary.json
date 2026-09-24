@@ -1,0 +1,192 @@
+{
+  "per_fold": [
+    {
+      "fold": 0,
+      "outer_macro_auc": 0.7511,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.7511
+      },
+      "best": {
+        "auc": 0.819704433497537,
+        "stage": 2,
+        "epoch": 2,
+        "select": "macro"
+      },
+      "n_outer": 349
+    },
+    {
+      "fold": 1,
+      "outer_macro_auc": 0.8275,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.8275
+      },
+      "best": {
+        "auc": 0.7206588881262869,
+        "stage": 2,
+        "epoch": 3,
+        "select": "macro"
+      },
+      "n_outer": 349
+    },
+    {
+      "fold": 2,
+      "outer_macro_auc": 0.8169,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.8169
+      },
+      "best": {
+        "auc": 0.7948981926332646,
+        "stage": 2,
+        "epoch": 4,
+        "select": "macro"
+      },
+      "n_outer": 351
+    },
+    {
+      "fold": 3,
+      "outer_macro_auc": 0.7784,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.7784
+      },
+      "best": {
+        "auc": 0.8363251059586138,
+        "stage": 1,
+        "epoch": 14,
+        "select": "macro"
+      },
+      "n_outer": 350
+    },
+    {
+      "fold": 4,
+      "outer_macro_auc": 0.7805,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.7805
+      },
+      "best": {
+        "auc": 0.7874352331606218,
+        "stage": 2,
+        "epoch": 6,
+        "select": "macro"
+      },
+      "n_outer": 349
+    }
+  ],
+  "fold_macro_auc_mean": 0.7909,
+  "fold_macro_auc_sd": 0.0278,
+  "pooled_oof": {
+    "all": {
+      "auc": 0.7866,
+      "ci_low": 0.7602,
+      "ci_high": 0.8147,
+      "n_images": 1748,
+      "n_cases": 1747,
+      "n_pos": 333
+    },
+    "zero_shot_all": {
+      "auc": 0.6176,
+      "ci_low": 0.5866,
+      "ci_high": 0.6506,
+      "n_images": 1748,
+      "n_cases": 1747,
+      "n_pos": 333
+    },
+    "Fitzpatrick17k": {
+      "all": {
+        "auc": 0.7866,
+        "ci_low": 0.7602,
+        "ci_high": 0.8147,
+        "n_images": 1748,
+        "n_cases": 1747,
+        "n_pos": 333
+      },
+      "zero_shot": {
+        "auc": 0.6176,
+        "ci_low": 0.5866,
+        "ci_high": 0.6506,
+        "n_images": 1748,
+        "n_cases": 1747,
+        "n_pos": 333
+      },
+      "I-II": {
+        "auc": 0.7739,
+        "ci_low": 0.736,
+        "ci_high": 0.8128,
+        "n_images": 876,
+        "n_cases": 875,
+        "n_pos": 167
+      },
+      "III-IV": {
+        "auc": 0.7838,
+        "ci_low": 0.7337,
+        "ci_high": 0.8333,
+        "n_images": 585,
+        "n_cases": 585,
+        "n_pos": 114
+      },
+      "V-VI": {
+        "auc": 0.8252,
+        "ci_low": 0.7538,
+        "ci_high": 0.8892,
+        "n_images": 238,
+        "n_cases": 238,
+        "n_pos": 45
+      }
+    },
+    "by_fst_all_sources": {
+      "I-II": {
+        "auc": 0.7739,
+        "ci_low": 0.736,
+        "ci_high": 0.8128,
+        "n_images": 876,
+        "n_cases": 875,
+        "n_pos": 167
+      },
+      "III-IV": {
+        "auc": 0.7838,
+        "ci_low": 0.7337,
+        "ci_high": 0.8333,
+        "n_images": 585,
+        "n_cases": 585,
+        "n_pos": 114
+      },
+      "V-VI": {
+        "auc": 0.8252,
+        "ci_low": 0.7538,
+        "ci_high": 0.8892,
+        "n_images": 238,
+        "n_cases": 238,
+        "n_pos": 45
+      }
+    }
+  },
+  "config": {
+    "model": "resnet18",
+    "init": "curated",
+    "sources": [
+      "Fitzpatrick17k"
+    ],
+    "seed": 42,
+    "balance": "none",
+    "select": "macro",
+    "stages": [
+      [
+        [
+          "layer4"
+        ],
+        0.0001,
+        15
+      ],
+      [
+        [
+          "layer3",
+          "layer4"
+        ],
+        1e-05,
+        15
+      ]
+    ],
+    "patience": 4,
+    "test_manifest_used": false,
+    "device": "mps"
+  }
+}

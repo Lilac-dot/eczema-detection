@@ -1,0 +1,82 @@
+{
+  "resnet18_curated_pooled": {
+    "Fitzpatrick17k": {
+      "all": {
+        "auc_ref": 0.7866,
+        "auc_run": 0.7552,
+        "diff": -0.0314,
+        "ci_low": -0.059,
+        "ci_high": -0.0047,
+        "p_run_not_better": 0.99,
+        "n_cases": 1747
+      },
+      "I-II": {
+        "auc_ref": 0.7739,
+        "auc_run": 0.7362,
+        "diff": -0.0377,
+        "ci_low": -0.0759,
+        "ci_high": 0.0024,
+        "p_run_not_better": 0.9665,
+        "n_cases": 875
+      },
+      "III-IV": {
+        "auc_ref": 0.7838,
+        "auc_run": 0.7947,
+        "diff": 0.0108,
+        "ci_low": -0.0321,
+        "ci_high": 0.0567,
+        "p_run_not_better": 0.3265,
+        "n_cases": 585
+      },
+      "V-VI": {
+        "auc_ref": 0.8252,
+        "auc_run": 0.7197,
+        "diff": -0.1055,
+        "ci_low": -0.1882,
+        "ci_high": -0.0272,
+        "p_run_not_better": 0.995,
+        "n_cases": 238
+      }
+    }
+  },
+  "resnet18_curated_pooled_balanced": {
+    "Fitzpatrick17k": {
+      "all": {
+        "auc_ref": 0.7866,
+        "auc_run": 0.7182,
+        "diff": -0.0684,
+        "ci_low": -0.1009,
+        "ci_high": -0.0368,
+        "p_run_not_better": 1.0,
+        "n_cases": 1747
+      },
+      "I-II": {
+        "auc_ref": 0.7739,
+        "auc_run": 0.6953,
+        "diff": -0.0786,
+        "ci_low": -0.1254,
+        "ci_high": -0.034,
+        "p_run_not_better": 1.0,
+        "n_cases": 875
+      },
+      "III-IV": {
+        "auc_ref": 0.7838,
+        "auc_run": 0.7581,
+        "diff": -0.0257,
+        "ci_low": -0.0767,
+        "ci_high": 0.0265,
+        "p_run_not_better": 0.824,
+        "n_cases": 585
+      },
+      "V-VI": {
+        "auc_ref": 0.8252,
+        "auc_run": 0.6649,
+        "diff": -0.1603,
+        "ci_low": -0.2394,
+        "ci_high": -0.087,
+        "p_run_not_better": 1.0,
+        "n_cases": 238
+      }
+    }
+  }
+}

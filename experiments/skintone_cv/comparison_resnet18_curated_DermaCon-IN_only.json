@@ -1,0 +1,64 @@
+{
+  "resnet18_curated_pooled": {
+    "DermaCon-IN": {
+      "all": {
+        "auc_ref": 0.8293,
+        "auc_run": 0.8269,
+        "diff": -0.0025,
+        "ci_low": -0.0249,
+        "ci_high": 0.0208,
+        "p_run_not_better": 0.5925,
+        "n_cases": 1254
+      },
+      "III-IV": {
+        "auc_ref": 0.7968,
+        "auc_run": 0.7876,
+        "diff": -0.0092,
+        "ci_low": -0.0436,
+        "ci_high": 0.023,
+        "p_run_not_better": 0.7195,
+        "n_cases": 930
+      },
+      "V-VI": {
+        "auc_ref": 0.8632,
+        "auc_run": 0.8682,
+        "diff": 0.0049,
+        "ci_low": -0.0234,
+        "ci_high": 0.0333,
+        "p_run_not_better": 0.3995,
+        "n_cases": 436
+      }
+    }
+  },
+  "resnet18_curated_pooled_balanced": {
+    "DermaCon-IN": {
+      "all": {
+        "auc_ref": 0.8293,
+        "auc_run": 0.7999,
+        "diff": -0.0294,
+        "ci_low": -0.0568,
+        "ci_high": -0.0018,
+        "p_run_not_better": 0.984,
+        "n_cases": 1254
+      },
+      "III-IV": {
+        "auc_ref": 0.7968,
+        "auc_run": 0.766,
+        "diff": -0.0309,
+        "ci_low": -0.0704,
+        "ci_high": 0.0096,
+        "p_run_not_better": 0.941,
+        "n_cases": 930
+      },
+      "V-VI": {
+        "auc_ref": 0.8632,
+        "auc_run": 0.8456,
+        "diff": -0.0176,
+        "ci_low": -0.0522,
+        "ci_high": 0.0173,
+        "p_run_not_better": 0.833,
+        "n_cases": 436
+      }
+    }
+  }
+}
