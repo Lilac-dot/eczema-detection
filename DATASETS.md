@@ -88,6 +88,37 @@ image per case, `image_1_path` only) to `dataset/SCIN/images/` and writes
 `dataset/SCIN/manifest_scin.csv`. See `docs/external_validation_2026-09-15.md` for what this
 was used for and the result.
 
+For the skin-tone compression audit, `scripts/download_scin_skintone.py` downloads **every**
+image (up to 3 per case) of the cases whose top diagnosis maps onto the Stage B classes
+(787 cases, 1,742 images) to `dataset/SCIN/images_all/`, together with the dermatologist
+Fitzpatrick labels, Monk skin tone, sex and age.
+
+## Fitzpatrick17k-C (skin-tone compression audit)
+
+The cleaned release of Fitzpatrick17k (Groh et al. 2021) by Abhishek, Jain & Hamarneh
+(*Scientific Data* 2025): duplicates, leakage and mislabels are corrected, leaving 11,394
+clinical-atlas images with Fitzpatrick I–VI labels. CC BY-NC 4.0. Zenodo record 11101338:
+```
+https://zenodo.org/api/records/11101338/files/Fitzpatrick17k-C.csv/content
+https://zenodo.org/api/records/11101338/files/Fitzpatrick17k_CategorizedAbbrvs.zip/content   (1.4 GB, images)
+```
+`scripts/fetch_skintone_images.py f17k` extracts only the 2,120 images that map onto the
+Stage B classes, using HTTP range requests, to `dataset/Fitzpatrick17k/images/`.
+Fitzpatrick17k has no tinea or candidiasis classes.
+
+## DermaCon-IN (skin-tone compression audit)
+
+Madarkar et al., NeurIPS 2025 Datasets & Benchmarks. 5,450 clinical images from 3,002
+patients at South Indian outpatient clinics, with per-image dermatologist Fitzpatrick
+(III–VI) and Monk skin-tone labels and subject IDs. CC BY-NC-SA 4.0. Harvard Dataverse
+doi:10.7910/DVN/W7OUZM (metadata `Skin_Metadata.tab`, images `DATASET_0.zip` +
+`DATASET_1.zip`, 3.6 GB). `scripts/fetch_skintone_images.py dermacon` extracts only the
+2,493 Stage B-relevant images judged diagnosable to `dataset/DermaConIN/images/`. On this
+project's connection, 165 of them (the largest files) could not be fetched.
+
+After download, run in order: `build_skintone_manifest.py`, `clean_skintone_manifest.py`,
+`preprocess_skintone_images.py`, `split_skintone.py` (all in `scripts/`).
+
 ## SkinDisNet (Stage B — external validation)
 
 Clinical smartphone photos from two Bangladesh hospitals (Sultana et al., *Data in Brief*
