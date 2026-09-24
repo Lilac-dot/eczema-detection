@@ -1,0 +1,200 @@
+device mps; development set 1748 images, 1747 groups; sources ['Fitzpatrick17k']
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 0: inner-train 1166, inner-val 233, outer 349 images ===
+fold 0 stage 1 epoch 1: loss 0.7328 inner-val macro-AUC 0.6524 {'Fitzpatrick17k': 0.652}
+fold 0 stage 1 epoch 2: loss 0.6499 inner-val macro-AUC 0.7048 {'Fitzpatrick17k': 0.705}
+fold 0 stage 1 epoch 3: loss 0.6376 inner-val macro-AUC 0.7144 {'Fitzpatrick17k': 0.714}
+fold 0 stage 1 epoch 4: loss 0.6045 inner-val macro-AUC 0.7263 {'Fitzpatrick17k': 0.726}
+fold 0 stage 1 epoch 5: loss 0.5717 inner-val macro-AUC 0.7243 {'Fitzpatrick17k': 0.724}
+fold 0 stage 1 epoch 6: loss 0.5567 inner-val macro-AUC 0.7051 {'Fitzpatrick17k': 0.705}
+fold 0 stage 1 epoch 7: loss 0.5506 inner-val macro-AUC 0.7210 {'Fitzpatrick17k': 0.721}
+fold 0 stage 1 epoch 8: loss 0.5220 inner-val macro-AUC 0.7246 {'Fitzpatrick17k': 0.725}
+fold 0 stage 2 epoch 1: loss 0.5767 inner-val macro-AUC 0.7236 {'Fitzpatrick17k': 0.724}
+fold 0 stage 2 epoch 2: loss 0.5567 inner-val macro-AUC 0.7253 {'Fitzpatrick17k': 0.725}
+fold 0 stage 2 epoch 3: loss 0.5561 inner-val macro-AUC 0.7319 {'Fitzpatrick17k': 0.732}
+fold 0 stage 2 epoch 4: loss 0.5383 inner-val macro-AUC 0.7342 {'Fitzpatrick17k': 0.734}
+fold 0 stage 2 epoch 5: loss 0.5303 inner-val macro-AUC 0.7289 {'Fitzpatrick17k': 0.729}
+fold 0 stage 2 epoch 6: loss 0.5334 inner-val macro-AUC 0.7340 {'Fitzpatrick17k': 0.734}
+fold 0 stage 2 epoch 7: loss 0.5223 inner-val macro-AUC 0.7287 {'Fitzpatrick17k': 0.729}
+fold 0 stage 2 epoch 8: loss 0.5076 inner-val macro-AUC 0.7309 {'Fitzpatrick17k': 0.731}
+fold 0 OUTER macro-AUC 0.6684 {'Fitzpatrick17k': 0.6684013127051102}
+
+=== fold 1: inner-train 1166, inner-val 233, outer 349 images ===
+fold 1 stage 1 epoch 1: loss 0.7553 inner-val macro-AUC 0.6025 {'Fitzpatrick17k': 0.602}
+fold 1 stage 1 epoch 2: loss 0.6456 inner-val macro-AUC 0.6437 {'Fitzpatrick17k': 0.644}
+fold 1 stage 1 epoch 3: loss 0.6257 inner-val macro-AUC 0.6381 {'Fitzpatrick17k': 0.638}
+fold 1 stage 1 epoch 4: loss 0.5943 inner-val macro-AUC 0.6671 {'Fitzpatrick17k': 0.667}
+fold 1 stage 1 epoch 5: loss 0.5797 inner-val macro-AUC 0.6674 {'Fitzpatrick17k': 0.667}
+fold 1 stage 1 epoch 6: loss 0.5621 inner-val macro-AUC 0.6827 {'Fitzpatrick17k': 0.683}
+fold 1 stage 1 epoch 7: loss 0.5294 inner-val macro-AUC 0.6973 {'Fitzpatrick17k': 0.697}
+fold 1 stage 1 epoch 8: loss 0.4909 inner-val macro-AUC 0.6828 {'Fitzpatrick17k': 0.683}
+fold 1 stage 1 epoch 9: loss 0.4758 inner-val macro-AUC 0.6957 {'Fitzpatrick17k': 0.696}
+fold 1 stage 1 epoch 10: loss 0.4352 inner-val macro-AUC 0.6980 {'Fitzpatrick17k': 0.698}
+fold 1 stage 1 epoch 11: loss 0.4388 inner-val macro-AUC 0.6902 {'Fitzpatrick17k': 0.69}
+fold 1 stage 1 epoch 12: loss 0.4323 inner-val macro-AUC 0.7009 {'Fitzpatrick17k': 0.701}
+fold 1 stage 1 epoch 13: loss 0.4301 inner-val macro-AUC 0.6796 {'Fitzpatrick17k': 0.68}
+fold 1 stage 1 epoch 14: loss 0.4094 inner-val macro-AUC 0.7012 {'Fitzpatrick17k': 0.701}
+fold 1 stage 1 epoch 15: loss 0.3910 inner-val macro-AUC 0.6829 {'Fitzpatrick17k': 0.683}
+fold 1 stage 2 epoch 1: loss 0.3317 inner-val macro-AUC 0.7024 {'Fitzpatrick17k': 0.702}
+fold 1 stage 2 epoch 2: loss 0.3440 inner-val macro-AUC 0.7048 {'Fitzpatrick17k': 0.705}
+fold 1 stage 2 epoch 3: loss 0.3157 inner-val macro-AUC 0.7068 {'Fitzpatrick17k': 0.707}
+fold 1 stage 2 epoch 4: loss 0.3161 inner-val macro-AUC 0.7062 {'Fitzpatrick17k': 0.706}
+fold 1 stage 2 epoch 5: loss 0.3281 inner-val macro-AUC 0.7120 {'Fitzpatrick17k': 0.712}
+fold 1 stage 2 epoch 6: loss 0.3276 inner-val macro-AUC 0.7085 {'Fitzpatrick17k': 0.709}
+fold 1 stage 2 epoch 7: loss 0.3086 inner-val macro-AUC 0.7054 {'Fitzpatrick17k': 0.705}
+fold 1 stage 2 epoch 8: loss 0.3002 inner-val macro-AUC 0.7056 {'Fitzpatrick17k': 0.706}
+fold 1 stage 2 epoch 9: loss 0.3056 inner-val macro-AUC 0.7094 {'Fitzpatrick17k': 0.709}
+fold 1 OUTER macro-AUC 0.7239 {'Fitzpatrick17k': 0.7238872238872239}
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 2: inner-train 1164, inner-val 233, outer 351 images ===
+fold 2 stage 1 epoch 1: loss 0.7645 inner-val macro-AUC 0.6248 {'Fitzpatrick17k': 0.625}
+fold 2 stage 1 epoch 2: loss 0.6619 inner-val macro-AUC 0.6553 {'Fitzpatrick17k': 0.655}
+fold 2 stage 1 epoch 3: loss 0.6280 inner-val macro-AUC 0.6768 {'Fitzpatrick17k': 0.677}
+fold 2 stage 1 epoch 4: loss 0.5999 inner-val macro-AUC 0.6964 {'Fitzpatrick17k': 0.696}
+fold 2 stage 1 epoch 5: loss 0.5928 inner-val macro-AUC 0.6935 {'Fitzpatrick17k': 0.694}
+fold 2 stage 1 epoch 6: loss 0.5704 inner-val macro-AUC 0.7209 {'Fitzpatrick17k': 0.721}
+fold 2 stage 1 epoch 7: loss 0.5555 inner-val macro-AUC 0.7321 {'Fitzpatrick17k': 0.732}
+fold 2 stage 1 epoch 8: loss 0.5342 inner-val macro-AUC 0.7450 {'Fitzpatrick17k': 0.745}
+fold 2 stage 1 epoch 9: loss 0.5283 inner-val macro-AUC 0.7378 {'Fitzpatrick17k': 0.738}
+fold 2 stage 1 epoch 10: loss 0.5043 inner-val macro-AUC 0.7199 {'Fitzpatrick17k': 0.72}
+fold 2 stage 1 epoch 11: loss 0.4518 inner-val macro-AUC 0.7539 {'Fitzpatrick17k': 0.754}
+fold 2 stage 1 epoch 12: loss 0.4473 inner-val macro-AUC 0.7455 {'Fitzpatrick17k': 0.745}
+fold 2 stage 1 epoch 13: loss 0.4379 inner-val macro-AUC 0.7610 {'Fitzpatrick17k': 0.761}
+fold 2 stage 1 epoch 14: loss 0.3957 inner-val macro-AUC 0.7520 {'Fitzpatrick17k': 0.752}
+fold 2 stage 1 epoch 15: loss 0.4189 inner-val macro-AUC 0.7668 {'Fitzpatrick17k': 0.767}
+fold 2 stage 2 epoch 1: loss 0.3776 inner-val macro-AUC 0.7613 {'Fitzpatrick17k': 0.761}
+fold 2 stage 2 epoch 2: loss 0.3353 inner-val macro-AUC 0.7656 {'Fitzpatrick17k': 0.766}
+fold 2 stage 2 epoch 3: loss 0.3399 inner-val macro-AUC 0.7630 {'Fitzpatrick17k': 0.763}
+fold 2 stage 2 epoch 4: loss 0.3229 inner-val macro-AUC 0.7649 {'Fitzpatrick17k': 0.765}
+fold 2 OUTER macro-AUC 0.7256 {'Fitzpatrick17k': 0.7256210819596006}
+
+=== fold 3: inner-train 1165, inner-val 233, outer 350 images ===
+fold 3 stage 1 epoch 1: loss 0.7473 inner-val macro-AUC 0.6377 {'Fitzpatrick17k': 0.638}
+fold 3 stage 1 epoch 2: loss 0.6392 inner-val macro-AUC 0.6673 {'Fitzpatrick17k': 0.667}
+fold 3 stage 1 epoch 3: loss 0.6206 inner-val macro-AUC 0.6936 {'Fitzpatrick17k': 0.694}
+fold 3 stage 1 epoch 4: loss 0.6024 inner-val macro-AUC 0.6660 {'Fitzpatrick17k': 0.666}
+fold 3 stage 1 epoch 5: loss 0.5864 inner-val macro-AUC 0.7190 {'Fitzpatrick17k': 0.719}
+fold 3 stage 1 epoch 6: loss 0.5541 inner-val macro-AUC 0.6925 {'Fitzpatrick17k': 0.692}
+fold 3 stage 1 epoch 7: loss 0.5441 inner-val macro-AUC 0.6827 {'Fitzpatrick17k': 0.683}
+fold 3 stage 1 epoch 8: loss 0.5357 inner-val macro-AUC 0.7258 {'Fitzpatrick17k': 0.726}
+fold 3 stage 1 epoch 9: loss 0.5081 inner-val macro-AUC 0.6750 {'Fitzpatrick17k': 0.675}
+fold 3 stage 1 epoch 10: loss 0.4867 inner-val macro-AUC 0.7208 {'Fitzpatrick17k': 0.721}
+fold 3 stage 1 epoch 11: loss 0.4698 inner-val macro-AUC 0.7073 {'Fitzpatrick17k': 0.707}
+fold 3 stage 1 epoch 12: loss 0.4671 inner-val macro-AUC 0.7157 {'Fitzpatrick17k': 0.716}
+fold 3 stage 2 epoch 1: loss 0.4717 inner-val macro-AUC 0.7177 {'Fitzpatrick17k': 0.718}
+fold 3 stage 2 epoch 2: loss 0.4551 inner-val macro-AUC 0.7231 {'Fitzpatrick17k': 0.723}
+fold 3 stage 2 epoch 3: loss 0.4579 inner-val macro-AUC 0.7198 {'Fitzpatrick17k': 0.72}
+fold 3 stage 2 epoch 4: loss 0.4567 inner-val macro-AUC 0.7331 {'Fitzpatrick17k': 0.733}
+fold 3 stage 2 epoch 5: loss 0.4291 inner-val macro-AUC 0.7295 {'Fitzpatrick17k': 0.729}
+fold 3 stage 2 epoch 6: loss 0.4248 inner-val macro-AUC 0.7442 {'Fitzpatrick17k': 0.744}
+fold 3 stage 2 epoch 7: loss 0.4347 inner-val macro-AUC 0.7337 {'Fitzpatrick17k': 0.734}
+fold 3 stage 2 epoch 8: loss 0.4225 inner-val macro-AUC 0.7441 {'Fitzpatrick17k': 0.744}
+fold 3 stage 2 epoch 9: loss 0.4229 inner-val macro-AUC 0.7336 {'Fitzpatrick17k': 0.734}
+fold 3 stage 2 epoch 10: loss 0.4173 inner-val macro-AUC 0.7403 {'Fitzpatrick17k': 0.74}
+fold 3 OUTER macro-AUC 0.7760 {'Fitzpatrick17k': 0.7759941006296444}
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 4: inner-train 1166, inner-val 233, outer 349 images ===
+fold 4 stage 1 epoch 1: loss 0.7510 inner-val macro-AUC 0.6348 {'Fitzpatrick17k': 0.635}
+fold 4 stage 1 epoch 2: loss 0.6481 inner-val macro-AUC 0.6304 {'Fitzpatrick17k': 0.63}
+fold 4 stage 1 epoch 3: loss 0.5972 inner-val macro-AUC 0.6075 {'Fitzpatrick17k': 0.608}
+fold 4 stage 1 epoch 4: loss 0.5914 inner-val macro-AUC 0.5863 {'Fitzpatrick17k': 0.586}
+fold 4 stage 1 epoch 5: loss 0.5432 inner-val macro-AUC 0.6032 {'Fitzpatrick17k': 0.603}
+fold 4 stage 2 epoch 1: loss 0.6428 inner-val macro-AUC 0.6381 {'Fitzpatrick17k': 0.638}
+fold 4 stage 2 epoch 2: loss 0.6311 inner-val macro-AUC 0.6328 {'Fitzpatrick17k': 0.633}
+fold 4 stage 2 epoch 3: loss 0.6157 inner-val macro-AUC 0.6329 {'Fitzpatrick17k': 0.633}
+fold 4 stage 2 epoch 4: loss 0.6103 inner-val macro-AUC 0.6210 {'Fitzpatrick17k': 0.621}
+fold 4 stage 2 epoch 5: loss 0.5965 inner-val macro-AUC 0.6277 {'Fitzpatrick17k': 0.628}
+fold 4 OUTER macro-AUC 0.6277 {'Fitzpatrick17k': 0.6277231735738169}
+{
+  "all": {
+    "auc": 0.7062,
+    "ci_low": 0.6772,
+    "ci_high": 0.7366,
+    "n_images": 1748,
+    "n_cases": 1747,
+    "n_pos": 333
+  },
+  "zero_shot_all": {
+    "auc": 0.5904,
+    "ci_low": 0.5583,
+    "ci_high": 0.6222,
+    "n_images": 1748,
+    "n_cases": 1747,
+    "n_pos": 333
+  },
+  "Fitzpatrick17k": {
+    "all": {
+      "auc": 0.7062,
+      "ci_low": 0.6772,
+      "ci_high": 0.7366,
+      "n_images": 1748,
+      "n_cases": 1747,
+      "n_pos": 333
+    },
+    "zero_shot": {
+      "auc": 0.5904,
+      "ci_low": 0.5583,
+      "ci_high": 0.6222,
+      "n_images": 1748,
+      "n_cases": 1747,
+      "n_pos": 333
+    },
+    "I-II": {
+      "auc": 0.7068,
+      "ci_low": 0.6635,
+      "ci_high": 0.7497,
+      "n_images": 876,
+      "n_cases": 875,
+      "n_pos": 167
+    },
+    "III-IV": {
+      "auc": 0.7046,
+      "ci_low": 0.6473,
+      "ci_high": 0.755,
+      "n_images": 585,
+      "n_cases": 585,
+      "n_pos": 114
+    },
+    "V-VI": {
+      "auc": 0.6925,
+      "ci_low": 0.6061,
+      "ci_high": 0.772,
+      "n_images": 238,
+      "n_cases": 238,
+      "n_pos": 45
+    }
+  },
+  "by_fst_all_sources": {
+    "I-II": {
+      "auc": 0.7068,
+      "ci_low": 0.6635,
+      "ci_high": 0.7497,
+      "n_images": 876,
+      "n_cases": 875,
+      "n_pos": 167
+    },
+    "III-IV": {
+      "auc": 0.7046,
+      "ci_low": 0.6473,
+      "ci_high": 0.755,
+      "n_images": 585,
+      "n_cases": 585,
+      "n_pos": 114
+    },
+    "V-VI": {
+      "auc": 0.6925,
+      "ci_low": 0.6061,
+      "ci_high": 0.772,
+      "n_images": 238,
+      "n_cases": 238,
+      "n_pos": 45
+    }
+  }
+}
+per-fold macro-AUC mean 0.7043 sd 0.0513

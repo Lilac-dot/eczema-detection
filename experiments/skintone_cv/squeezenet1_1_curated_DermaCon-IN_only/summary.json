@@ -1,0 +1,179 @@
+{
+  "per_fold": [
+    {
+      "fold": 0,
+      "outer_macro_auc": 0.8224,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8224
+      },
+      "best": {
+        "auc": 0.851270553064275,
+        "stage": 2,
+        "epoch": 1,
+        "select": "macro"
+      },
+      "n_outer": 404
+    },
+    {
+      "fold": 1,
+      "outer_macro_auc": 0.8217,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8217
+      },
+      "best": {
+        "auc": 0.8641809427835629,
+        "stage": 1,
+        "epoch": 9,
+        "select": "macro"
+      },
+      "n_outer": 392
+    },
+    {
+      "fold": 2,
+      "outer_macro_auc": 0.8578,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8578
+      },
+      "best": {
+        "auc": 0.9032985924572902,
+        "stage": 1,
+        "epoch": 9,
+        "select": "macro"
+      },
+      "n_outer": 393
+    },
+    {
+      "fold": 3,
+      "outer_macro_auc": 0.8538,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8538
+      },
+      "best": {
+        "auc": 0.8488943488943489,
+        "stage": 1,
+        "epoch": 5,
+        "select": "macro"
+      },
+      "n_outer": 401
+    },
+    {
+      "fold": 4,
+      "outer_macro_auc": 0.8353,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8353
+      },
+      "best": {
+        "auc": 0.8791137600414615,
+        "stage": 2,
+        "epoch": 1,
+        "select": "macro"
+      },
+      "n_outer": 378
+    }
+  ],
+  "fold_macro_auc_mean": 0.8382,
+  "fold_macro_auc_sd": 0.0152,
+  "pooled_oof": {
+    "all": {
+      "auc": 0.8367,
+      "ci_low": 0.8089,
+      "ci_high": 0.863,
+      "n_images": 1968,
+      "n_cases": 1254,
+      "n_pos": 295
+    },
+    "zero_shot_all": {
+      "auc": 0.5327,
+      "ci_low": 0.4865,
+      "ci_high": 0.5778,
+      "n_images": 1968,
+      "n_cases": 1254,
+      "n_pos": 295
+    },
+    "DermaCon-IN": {
+      "all": {
+        "auc": 0.8367,
+        "ci_low": 0.8089,
+        "ci_high": 0.863,
+        "n_images": 1968,
+        "n_cases": 1254,
+        "n_pos": 295
+      },
+      "zero_shot": {
+        "auc": 0.5327,
+        "ci_low": 0.4865,
+        "ci_high": 0.5778,
+        "n_images": 1968,
+        "n_cases": 1254,
+        "n_pos": 295
+      },
+      "III-IV": {
+        "auc": 0.809,
+        "ci_low": 0.7714,
+        "ci_high": 0.8454,
+        "n_images": 1395,
+        "n_cases": 930,
+        "n_pos": 164
+      },
+      "V-VI": {
+        "auc": 0.8663,
+        "ci_low": 0.8257,
+        "ci_high": 0.9054,
+        "n_images": 570,
+        "n_cases": 436,
+        "n_pos": 131
+      }
+    },
+    "by_fst_all_sources": {
+      "III-IV": {
+        "auc": 0.809,
+        "ci_low": 0.7714,
+        "ci_high": 0.8454,
+        "n_images": 1395,
+        "n_cases": 930,
+        "n_pos": 164
+      },
+      "V-VI": {
+        "auc": 0.8663,
+        "ci_low": 0.8257,
+        "ci_high": 0.9054,
+        "n_images": 570,
+        "n_cases": 436,
+        "n_pos": 131
+      }
+    }
+  },
+  "config": {
+    "model": "squeezenet1_1",
+    "init": "curated",
+    "sources": [
+      "DermaCon-IN"
+    ],
+    "seed": 42,
+    "balance": "none",
+    "select": "macro",
+    "stages": [
+      [
+        [
+          "features.11",
+          "features.12"
+        ],
+        0.0001,
+        15
+      ],
+      [
+        [
+          "features.9",
+          "features.10",
+          "features.11",
+          "features.12"
+        ],
+        1e-05,
+        15
+      ]
+    ],
+    "patience": 4,
+    "test_manifest_used": false,
+    "device": "mps"
+  }
+}

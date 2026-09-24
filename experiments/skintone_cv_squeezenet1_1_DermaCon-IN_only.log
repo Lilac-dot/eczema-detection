@@ -1,0 +1,176 @@
+device mps; development set 1968 images, 1254 groups; sources ['DermaCon-IN']
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 0: inner-train 1305, inner-val 259, outer 404 images ===
+fold 0 stage 1 epoch 1: loss 0.6176 inner-val macro-AUC 0.7967 {'DermaCon-IN': 0.797}
+fold 0 stage 1 epoch 2: loss 0.5159 inner-val macro-AUC 0.8298 {'DermaCon-IN': 0.83}
+fold 0 stage 1 epoch 3: loss 0.4709 inner-val macro-AUC 0.8462 {'DermaCon-IN': 0.846}
+fold 0 stage 1 epoch 4: loss 0.4530 inner-val macro-AUC 0.8322 {'DermaCon-IN': 0.832}
+fold 0 stage 1 epoch 5: loss 0.4277 inner-val macro-AUC 0.8361 {'DermaCon-IN': 0.836}
+fold 0 stage 1 epoch 6: loss 0.4045 inner-val macro-AUC 0.8301 {'DermaCon-IN': 0.83}
+fold 0 stage 1 epoch 7: loss 0.3782 inner-val macro-AUC 0.8508 {'DermaCon-IN': 0.851}
+fold 0 stage 1 epoch 8: loss 0.3664 inner-val macro-AUC 0.8477 {'DermaCon-IN': 0.848}
+fold 0 stage 1 epoch 9: loss 0.3437 inner-val macro-AUC 0.8428 {'DermaCon-IN': 0.843}
+fold 0 stage 1 epoch 10: loss 0.3407 inner-val macro-AUC 0.8447 {'DermaCon-IN': 0.845}
+fold 0 stage 1 epoch 11: loss 0.3221 inner-val macro-AUC 0.8387 {'DermaCon-IN': 0.839}
+fold 0 stage 2 epoch 1: loss 0.3575 inner-val macro-AUC 0.8513 {'DermaCon-IN': 0.851}
+fold 0 stage 2 epoch 2: loss 0.3416 inner-val macro-AUC 0.8428 {'DermaCon-IN': 0.843}
+fold 0 stage 2 epoch 3: loss 0.3577 inner-val macro-AUC 0.8457 {'DermaCon-IN': 0.846}
+fold 0 stage 2 epoch 4: loss 0.3114 inner-val macro-AUC 0.8381 {'DermaCon-IN': 0.838}
+fold 0 stage 2 epoch 5: loss 0.3215 inner-val macro-AUC 0.8406 {'DermaCon-IN': 0.841}
+fold 0 OUTER macro-AUC 0.8224 {'DermaCon-IN': 0.8224079232435779}
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 1: inner-train 1308, inner-val 268, outer 392 images ===
+fold 1 stage 1 epoch 1: loss 0.6461 inner-val macro-AUC 0.7763 {'DermaCon-IN': 0.776}
+fold 1 stage 1 epoch 2: loss 0.5178 inner-val macro-AUC 0.8138 {'DermaCon-IN': 0.814}
+fold 1 stage 1 epoch 3: loss 0.4786 inner-val macro-AUC 0.8053 {'DermaCon-IN': 0.805}
+fold 1 stage 1 epoch 4: loss 0.4424 inner-val macro-AUC 0.8451 {'DermaCon-IN': 0.845}
+fold 1 stage 1 epoch 5: loss 0.4157 inner-val macro-AUC 0.8542 {'DermaCon-IN': 0.854}
+fold 1 stage 1 epoch 6: loss 0.4027 inner-val macro-AUC 0.8510 {'DermaCon-IN': 0.851}
+fold 1 stage 1 epoch 7: loss 0.3738 inner-val macro-AUC 0.8427 {'DermaCon-IN': 0.843}
+fold 1 stage 1 epoch 8: loss 0.3654 inner-val macro-AUC 0.8570 {'DermaCon-IN': 0.857}
+fold 1 stage 1 epoch 9: loss 0.3371 inner-val macro-AUC 0.8642 {'DermaCon-IN': 0.864}
+fold 1 stage 1 epoch 10: loss 0.3350 inner-val macro-AUC 0.8571 {'DermaCon-IN': 0.857}
+fold 1 stage 1 epoch 11: loss 0.2897 inner-val macro-AUC 0.8528 {'DermaCon-IN': 0.853}
+fold 1 stage 1 epoch 12: loss 0.2986 inner-val macro-AUC 0.8542 {'DermaCon-IN': 0.854}
+fold 1 stage 1 epoch 13: loss 0.2964 inner-val macro-AUC 0.8373 {'DermaCon-IN': 0.837}
+fold 1 stage 2 epoch 1: loss 0.3075 inner-val macro-AUC 0.8595 {'DermaCon-IN': 0.859}
+fold 1 stage 2 epoch 2: loss 0.3023 inner-val macro-AUC 0.8604 {'DermaCon-IN': 0.86}
+fold 1 stage 2 epoch 3: loss 0.2922 inner-val macro-AUC 0.8586 {'DermaCon-IN': 0.859}
+fold 1 stage 2 epoch 4: loss 0.2683 inner-val macro-AUC 0.8513 {'DermaCon-IN': 0.851}
+fold 1 OUTER macro-AUC 0.8217 {'DermaCon-IN': 0.8216943027210883}
+
+=== fold 2: inner-train 1307, inner-val 268, outer 393 images ===
+fold 2 stage 1 epoch 1: loss 0.7406 inner-val macro-AUC 0.8317 {'DermaCon-IN': 0.832}
+fold 2 stage 1 epoch 2: loss 0.5621 inner-val macro-AUC 0.8729 {'DermaCon-IN': 0.873}
+fold 2 stage 1 epoch 3: loss 0.5082 inner-val macro-AUC 0.8836 {'DermaCon-IN': 0.884}
+fold 2 stage 1 epoch 4: loss 0.4855 inner-val macro-AUC 0.8813 {'DermaCon-IN': 0.881}
+fold 2 stage 1 epoch 5: loss 0.4533 inner-val macro-AUC 0.8819 {'DermaCon-IN': 0.882}
+fold 2 stage 1 epoch 6: loss 0.4220 inner-val macro-AUC 0.8952 {'DermaCon-IN': 0.895}
+fold 2 stage 1 epoch 7: loss 0.3760 inner-val macro-AUC 0.8988 {'DermaCon-IN': 0.899}
+fold 2 stage 1 epoch 8: loss 0.4011 inner-val macro-AUC 0.8977 {'DermaCon-IN': 0.898}
+fold 2 stage 1 epoch 9: loss 0.3752 inner-val macro-AUC 0.9033 {'DermaCon-IN': 0.903}
+fold 2 stage 1 epoch 10: loss 0.3428 inner-val macro-AUC 0.8796 {'DermaCon-IN': 0.88}
+fold 2 stage 1 epoch 11: loss 0.3562 inner-val macro-AUC 0.8860 {'DermaCon-IN': 0.886}
+fold 2 stage 1 epoch 12: loss 0.3087 inner-val macro-AUC 0.8751 {'DermaCon-IN': 0.875}
+fold 2 stage 1 epoch 13: loss 0.3457 inner-val macro-AUC 0.8721 {'DermaCon-IN': 0.872}
+fold 2 stage 2 epoch 1: loss 0.3148 inner-val macro-AUC 0.8937 {'DermaCon-IN': 0.894}
+fold 2 stage 2 epoch 2: loss 0.3082 inner-val macro-AUC 0.8916 {'DermaCon-IN': 0.892}
+fold 2 stage 2 epoch 3: loss 0.2960 inner-val macro-AUC 0.8901 {'DermaCon-IN': 0.89}
+fold 2 stage 2 epoch 4: loss 0.3152 inner-val macro-AUC 0.8910 {'DermaCon-IN': 0.891}
+fold 2 OUTER macro-AUC 0.8578 {'DermaCon-IN': 0.8577552270142594}
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 3: inner-train 1310, inner-val 257, outer 401 images ===
+fold 3 stage 1 epoch 1: loss 0.6443 inner-val macro-AUC 0.8168 {'DermaCon-IN': 0.817}
+fold 3 stage 1 epoch 2: loss 0.5305 inner-val macro-AUC 0.8323 {'DermaCon-IN': 0.832}
+fold 3 stage 1 epoch 3: loss 0.4800 inner-val macro-AUC 0.8437 {'DermaCon-IN': 0.844}
+fold 3 stage 1 epoch 4: loss 0.4502 inner-val macro-AUC 0.8472 {'DermaCon-IN': 0.847}
+fold 3 stage 1 epoch 5: loss 0.4408 inner-val macro-AUC 0.8489 {'DermaCon-IN': 0.849}
+fold 3 stage 1 epoch 6: loss 0.4248 inner-val macro-AUC 0.8394 {'DermaCon-IN': 0.839}
+fold 3 stage 1 epoch 7: loss 0.4008 inner-val macro-AUC 0.8419 {'DermaCon-IN': 0.842}
+fold 3 stage 1 epoch 8: loss 0.3887 inner-val macro-AUC 0.8461 {'DermaCon-IN': 0.846}
+fold 3 stage 1 epoch 9: loss 0.3617 inner-val macro-AUC 0.8447 {'DermaCon-IN': 0.845}
+fold 3 stage 2 epoch 1: loss 0.4043 inner-val macro-AUC 0.8429 {'DermaCon-IN': 0.843}
+fold 3 stage 2 epoch 2: loss 0.3934 inner-val macro-AUC 0.8430 {'DermaCon-IN': 0.843}
+fold 3 stage 2 epoch 3: loss 0.3966 inner-val macro-AUC 0.8382 {'DermaCon-IN': 0.838}
+fold 3 stage 2 epoch 4: loss 0.3834 inner-val macro-AUC 0.8376 {'DermaCon-IN': 0.838}
+fold 3 OUTER macro-AUC 0.8538 {'DermaCon-IN': 0.8537516106650808}
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 4: inner-train 1329, inner-val 261, outer 378 images ===
+fold 4 stage 1 epoch 1: loss 0.7104 inner-val macro-AUC 0.7497 {'DermaCon-IN': 0.75}
+fold 4 stage 1 epoch 2: loss 0.5325 inner-val macro-AUC 0.8133 {'DermaCon-IN': 0.813}
+fold 4 stage 1 epoch 3: loss 0.4862 inner-val macro-AUC 0.8250 {'DermaCon-IN': 0.825}
+fold 4 stage 1 epoch 4: loss 0.4885 inner-val macro-AUC 0.8353 {'DermaCon-IN': 0.835}
+fold 4 stage 1 epoch 5: loss 0.4494 inner-val macro-AUC 0.8524 {'DermaCon-IN': 0.852}
+fold 4 stage 1 epoch 6: loss 0.4349 inner-val macro-AUC 0.8414 {'DermaCon-IN': 0.841}
+fold 4 stage 1 epoch 7: loss 0.4074 inner-val macro-AUC 0.8786 {'DermaCon-IN': 0.879}
+fold 4 stage 1 epoch 8: loss 0.4199 inner-val macro-AUC 0.8735 {'DermaCon-IN': 0.874}
+fold 4 stage 1 epoch 9: loss 0.4039 inner-val macro-AUC 0.8717 {'DermaCon-IN': 0.872}
+fold 4 stage 1 epoch 10: loss 0.3765 inner-val macro-AUC 0.8773 {'DermaCon-IN': 0.877}
+fold 4 stage 1 epoch 11: loss 0.3516 inner-val macro-AUC 0.8518 {'DermaCon-IN': 0.852}
+fold 4 stage 2 epoch 1: loss 0.3832 inner-val macro-AUC 0.8791 {'DermaCon-IN': 0.879}
+fold 4 stage 2 epoch 2: loss 0.3957 inner-val macro-AUC 0.8690 {'DermaCon-IN': 0.869}
+fold 4 stage 2 epoch 3: loss 0.3722 inner-val macro-AUC 0.8686 {'DermaCon-IN': 0.869}
+fold 4 stage 2 epoch 4: loss 0.3496 inner-val macro-AUC 0.8694 {'DermaCon-IN': 0.869}
+fold 4 stage 2 epoch 5: loss 0.3639 inner-val macro-AUC 0.8708 {'DermaCon-IN': 0.871}
+fold 4 OUTER macro-AUC 0.8353 {'DermaCon-IN': 0.8352906050955414}
+{
+  "all": {
+    "auc": 0.8367,
+    "ci_low": 0.8089,
+    "ci_high": 0.863,
+    "n_images": 1968,
+    "n_cases": 1254,
+    "n_pos": 295
+  },
+  "zero_shot_all": {
+    "auc": 0.5327,
+    "ci_low": 0.4865,
+    "ci_high": 0.5778,
+    "n_images": 1968,
+    "n_cases": 1254,
+    "n_pos": 295
+  },
+  "DermaCon-IN": {
+    "all": {
+      "auc": 0.8367,
+      "ci_low": 0.8089,
+      "ci_high": 0.863,
+      "n_images": 1968,
+      "n_cases": 1254,
+      "n_pos": 295
+    },
+    "zero_shot": {
+      "auc": 0.5327,
+      "ci_low": 0.4865,
+      "ci_high": 0.5778,
+      "n_images": 1968,
+      "n_cases": 1254,
+      "n_pos": 295
+    },
+    "III-IV": {
+      "auc": 0.809,
+      "ci_low": 0.7714,
+      "ci_high": 0.8454,
+      "n_images": 1395,
+      "n_cases": 930,
+      "n_pos": 164
+    },
+    "V-VI": {
+      "auc": 0.8663,
+      "ci_low": 0.8257,
+      "ci_high": 0.9054,
+      "n_images": 570,
+      "n_cases": 436,
+      "n_pos": 131
+    }
+  },
+  "by_fst_all_sources": {
+    "III-IV": {
+      "auc": 0.809,
+      "ci_low": 0.7714,
+      "ci_high": 0.8454,
+      "n_images": 1395,
+      "n_cases": 930,
+      "n_pos": 164
+    },
+    "V-VI": {
+      "auc": 0.8663,
+      "ci_low": 0.8257,
+      "ci_high": 0.9054,
+      "n_images": 570,
+      "n_cases": 436,
+      "n_pos": 131
+    }
+  }
+}
+per-fold macro-AUC mean 0.8382 sd 0.0152
