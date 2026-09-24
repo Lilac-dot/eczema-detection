@@ -1,0 +1,12 @@
+[2026-09-24 00:29:09] start
+[2026-09-24 00:56:10] CV squeezenet1_1 Fitzpatrick17k
+per-fold macro-AUC mean 0.7043 sd 0.0513
+[2026-09-24 01:06:05] CV shufflenet_v2_x1_0 SCIN
+per-fold macro-AUC mean 0.6498 sd 0.039
+[2026-09-24 01:14:56] CV shufflenet_v2_x1_0 DermaCon-IN
+per-fold macro-AUC mean 0.8504 sd 0.0133
+[2026-09-24 01:26:05] CV shufflenet_v2_x1_0 Fitzpatrick17k
+per-fold macro-AUC mean 0.7298 sd 0.05
+[2026-09-24 01:36:32] audit
+[2026-09-24 04:12:45] mechanisms
+[2026-09-24 04:42:21] ALL DONE

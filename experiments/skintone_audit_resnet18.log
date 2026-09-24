@@ -1,0 +1,42 @@
+resnet18 SCIN fold 0 done
+resnet18 SCIN fold 1 done
+resnet18 SCIN fold 2 done
+resnet18 SCIN fold 3 done
+resnet18 SCIN fold 4 done
+resnet18 DermaCon-IN fold 0 done
+resnet18 DermaCon-IN fold 1 done
+resnet18 DermaCon-IN fold 2 done
+resnet18 DermaCon-IN fold 3 done
+resnet18 DermaCon-IN fold 4 done
+resnet18 Fitzpatrick17k fold 0 done
+resnet18 Fitzpatrick17k fold 1 done
+resnet18 Fitzpatrick17k fold 2 done
+resnet18 Fitzpatrick17k fold 3 done
+resnet18 Fitzpatrick17k fold 4 done
+
+resnet18 / DermaCon-IN  FP32 AUC {'all': 0.8295, 'III-IV': 0.7968, 'V-VI': 0.8632}  cases {'III-IV': 930, 'V-VI': 436}
+  int8               dAUC all -0.001  III-IV +0.003  V-VI -0.007  | dark-light -0.010 [-0.019, -0.002]  | flips 0.032
+  int8_calib_dark    dAUC all -0.003  III-IV +0.001  V-VI -0.008  | dark-light -0.009 [-0.018, -0.001]  | flips 0.028
+  int8_calib_light   dAUC all -0.003  III-IV +0.000  V-VI -0.007  | dark-light -0.007 [-0.015, +0.002]  | flips 0.033
+  prune30            dAUC all +0.002  III-IV +0.003  V-VI +0.001  | dark-light -0.002 [-0.010, +0.006]  | flips 0.034
+  prune30_int8       dAUC all -0.001  III-IV +0.002  V-VI -0.004  | dark-light -0.006 [-0.018, +0.005]  | flips 0.047
+  prune50            dAUC all -0.002  III-IV +0.002  V-VI -0.008  | dark-light -0.010 [-0.029, +0.011]  | flips 0.071
+  prune70            dAUC all -0.035  III-IV -0.030  V-VI -0.039  | dark-light -0.009 [-0.058, +0.038]  | flips 0.157
+
+resnet18 / Fitzpatrick17k  FP32 AUC {'all': 0.7842, 'I-II': 0.7739, 'III-IV': 0.7838, 'V-VI': 0.8252}  cases {'I-II': 875, 'III-IV': 585, 'V-VI': 238}
+  int8               dAUC all -0.002  I-II +0.000  III-IV -0.003  V-VI -0.006  | dark-light -0.006 [-0.022, +0.008]  | flips 0.032
+  int8_calib_dark    dAUC all -0.000  I-II +0.001  III-IV -0.002  V-VI -0.001  | dark-light -0.001 [-0.017, +0.013]  | flips 0.034
+  int8_calib_light   dAUC all -0.000  I-II +0.002  III-IV -0.002  V-VI -0.004  | dark-light -0.006 [-0.023, +0.008]  | flips 0.036
+  prune30            dAUC all -0.004  I-II -0.004  III-IV -0.002  V-VI -0.010  | dark-light -0.006 [-0.027, +0.012]  | flips 0.034
+  prune30_int8       dAUC all -0.005  I-II -0.003  III-IV -0.005  V-VI -0.013  | dark-light -0.010 [-0.038, +0.014]  | flips 0.046
+  prune50            dAUC all -0.017  I-II -0.010  III-IV -0.016  V-VI -0.041  | dark-light -0.031 [-0.073, +0.008]  | flips 0.077
+  prune70            dAUC all -0.061  I-II -0.063  III-IV -0.035  V-VI -0.129  | dark-light -0.067 [-0.146, +0.017]  | flips 0.147
+
+resnet18 / SCIN  FP32 AUC {'all': 0.6612, 'I-II': 0.6674, 'III-IV': 0.6482, 'V-VI': 0.6781}  cases {'I-II': 294, 'III-IV': 300, 'V-VI': 59}
+  int8               dAUC all +0.003  I-II +0.005  III-IV +0.005  V-VI -0.008  | dark-light -0.013 [-0.038, +0.010]  | flips 0.047
+  int8_calib_dark    dAUC all +0.002  I-II +0.002  III-IV +0.005  V-VI -0.004  | dark-light -0.006 [-0.031, +0.020]  | flips 0.046
+  int8_calib_light   dAUC all +0.004  I-II +0.005  III-IV +0.006  V-VI -0.003  | dark-light -0.008 [-0.034, +0.016]  | flips 0.050
+  prune30            dAUC all -0.003  I-II +0.010  III-IV -0.012  V-VI -0.016  | dark-light -0.026 [-0.055, +0.005]  | flips 0.049
+  prune30_int8       dAUC all -0.003  I-II +0.008  III-IV -0.006  V-VI -0.032  | dark-light -0.040 [-0.084, +0.003]  | flips 0.070
+  prune50            dAUC all -0.008  I-II +0.010  III-IV -0.031  V-VI +0.008  | dark-light -0.002 [-0.062, +0.056]  | flips 0.128
+  prune70            dAUC all -0.062  I-II -0.049  III-IV -0.084  V-VI -0.015  | dark-light +0.034 [-0.063, +0.127]  | flips 0.290

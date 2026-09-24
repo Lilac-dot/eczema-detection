@@ -1,0 +1,1505 @@
+{
+  "v_vi_share_of_dev": {
+    "DermaCon-IN": 0.29,
+    "Fitzpatrick17k": 0.136,
+    "SCIN": 0.081
+  },
+  "by_model": {
+    "resnet18": {
+      "DermaCon-IN": {
+        "fp32_margin_median_by_fst": {
+          "III-IV": 0.4279,
+          "V-VI": 0.4482
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": -0.0101,
+            "ci_low": -0.0191,
+            "ci_high": -0.0017
+          },
+          "prune30": {
+            "point": -0.0016,
+            "ci_low": -0.01,
+            "ci_high": 0.0061
+          },
+          "prune30_int8": {
+            "point": -0.0064,
+            "ci_low": -0.0185,
+            "ci_high": 0.0053
+          },
+          "prune50": {
+            "point": -0.0098,
+            "ci_low": -0.0294,
+            "ci_high": 0.0105
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.001,
+                "p": 0.9965
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.043,
+                "p": 0.9031
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.382,
+                "p": 0.2049
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.662,
+                "p": 0.1107
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.057,
+                "p": 0.8174
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.187,
+                "p": 0.5584
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.015,
+                "p": 0.9401
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.141,
+                "p": 0.5565
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Fitzpatrick17k": {
+        "fp32_margin_median_by_fst": {
+          "I-II": 0.4537,
+          "III-IV": 0.4638,
+          "V-VI": 0.4515
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": -0.0059,
+            "ci_low": -0.0223,
+            "ci_high": 0.0078
+          },
+          "prune30": {
+            "point": -0.006,
+            "ci_low": -0.0273,
+            "ci_high": 0.0118
+          },
+          "prune30_int8": {
+            "point": -0.0101,
+            "ci_low": -0.0382,
+            "ci_high": 0.014
+          },
+          "prune50": {
+            "point": -0.0312,
+            "ci_low": -0.0735,
+            "ci_high": 0.0078
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.607,
+                "p": 0.1217
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.64,
+                "p": 0.3213
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.637,
+                "p": 0.2165
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.652,
+                "p": 0.424
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.831,
+                "p": 0.5267
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.531,
+                "p": 0.1925
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.961,
+                "p": 0.9136
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.49,
+                "p": 0.1865
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.722,
+                "p": 0.2021
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.362,
+                "p": 0.0328
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.791,
+                "p": 0.4635
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.303,
+                "p": 0.0396
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.881,
+                "p": 0.5248
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.626,
+                "p": 0.1314
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.027,
+                "p": 0.9077
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.641,
+                "p": 0.2143
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      },
+      "SCIN": {
+        "fp32_margin_median_by_fst": {
+          "I-II": 0.3466,
+          "III-IV": 0.3484,
+          "V-VI": 0.3916
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": -0.013,
+            "ci_low": -0.0379,
+            "ci_high": 0.0096
+          },
+          "prune30": {
+            "point": -0.0263,
+            "ci_low": -0.0549,
+            "ci_high": 0.0046
+          },
+          "prune30_int8": {
+            "point": -0.0401,
+            "ci_low": -0.084,
+            "ci_high": 0.0032
+          },
+          "prune50": {
+            "point": -0.002,
+            "ci_low": -0.0619,
+            "ci_high": 0.0556
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.389,
+                "p": 0.2176
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.295,
+                "p": 0.5772
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.369,
+                "p": 0.2898
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.687,
+                "p": 0.3392
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.414,
+                "p": 0.1743
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.245,
+                "p": 0.6706
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.404,
+                "p": 0.2549
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.672,
+                "p": 0.4062
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.161,
+                "p": 0.4976
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.034,
+                "p": 0.9388
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.13,
+                "p": 0.6251
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.261,
+                "p": 0.6461
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.082,
+                "p": 0.6414
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.78,
+                "p": 0.4191
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.062,
+                "p": 0.7501
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.877,
+                "p": 0.697
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "shufflenet_v2_x0_5": {
+      "DermaCon-IN": {
+        "fp32_margin_median_by_fst": {
+          "III-IV": 0.3085,
+          "V-VI": 0.3518
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": -0.0031,
+            "ci_low": -0.0385,
+            "ci_high": 0.0333
+          },
+          "prune30": {
+            "point": -0.0007,
+            "ci_low": -0.0105,
+            "ci_high": 0.0095
+          },
+          "prune30_int8": {
+            "point": -0.001,
+            "ci_low": -0.0414,
+            "ci_high": 0.0379
+          },
+          "prune50": {
+            "point": 0.0026,
+            "ci_low": -0.0339,
+            "ci_high": 0.0409
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.869,
+                "p": 0.2709
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.076,
+                "p": 0.5978
+              },
+              "margin": {
+                "odds_ratio": 0.002,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.827,
+                "p": 0.5194
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.522,
+                "p": 0.2473
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.894,
+                "p": 0.3359
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.071,
+                "p": 0.5761
+              },
+              "margin": {
+                "odds_ratio": 0.006,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.775,
+                "p": 0.123
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.083,
+                "p": 0.6661
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Fitzpatrick17k": {
+        "fp32_margin_median_by_fst": {
+          "I-II": 0.2177,
+          "III-IV": 0.2238,
+          "V-VI": 0.2255
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": -0.0214,
+            "ci_low": -0.0843,
+            "ci_high": 0.0402
+          },
+          "prune30": {
+            "point": 0.0025,
+            "ci_low": -0.0203,
+            "ci_high": 0.0287
+          },
+          "prune30_int8": {
+            "point": -0.0131,
+            "ci_low": -0.0777,
+            "ci_high": 0.0488
+          },
+          "prune50": {
+            "point": -0.0095,
+            "ci_low": -0.0787,
+            "ci_high": 0.0613
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.286,
+                "p": 0.0382
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.303,
+                "p": 0.1059
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.391,
+                "p": 0.0114
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.364,
+                "p": 0.0764
+              },
+              "margin": {
+                "odds_ratio": 0.002,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.92,
+                "p": 0.6656
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.913,
+                "p": 0.7347
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.043,
+                "p": 0.8498
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.911,
+                "p": 0.7551
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.237,
+                "p": 0.0856
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.071,
+                "p": 0.6891
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.336,
+                "p": 0.0301
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.092,
+                "p": 0.6297
+              },
+              "margin": {
+                "odds_ratio": 0.001,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.959,
+                "p": 0.7334
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.951,
+                "p": 0.7666
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.997,
+                "p": 0.9837
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.953,
+                "p": 0.7937
+              },
+              "margin": {
+                "odds_ratio": 0.002,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      },
+      "SCIN": {
+        "fp32_margin_median_by_fst": {
+          "I-II": 0.1533,
+          "III-IV": 0.1392,
+          "V-VI": 0.1903
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": 0.0096,
+            "ci_low": -0.139,
+            "ci_high": 0.1558
+          },
+          "prune30": {
+            "point": 0.0362,
+            "ci_low": -0.0082,
+            "ci_high": 0.0818
+          },
+          "prune30_int8": {
+            "point": 0.0353,
+            "ci_low": -0.118,
+            "ci_high": 0.1922
+          },
+          "prune50": {
+            "point": 0.0596,
+            "ci_low": -0.0447,
+            "ci_high": 0.1613
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.084,
+                "p": 0.5611
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.015,
+                "p": 0.9536
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.005,
+                "p": 0.9724
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.291,
+                "p": 0.3237
+              },
+              "margin": {
+                "odds_ratio": 0.001,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.212,
+                "p": 0.3541
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.33,
+                "p": 0.0632
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.981,
+                "p": 0.9351
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.556,
+                "p": 0.4021
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.991,
+                "p": 0.9475
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.947,
+                "p": 0.8237
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.92,
+                "p": 0.552
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.164,
+                "p": 0.5285
+              },
+              "margin": {
+                "odds_ratio": 0.001,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.894,
+                "p": 0.4228
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.749,
+                "p": 0.2919
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.774,
+                "p": 0.0952
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.002,
+                "p": 0.9959
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "shufflenet_v2_x1_0": {
+      "DermaCon-IN": {
+        "fp32_margin_median_by_fst": {
+          "III-IV": 0.3629,
+          "V-VI": 0.4116
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": -0.0028,
+            "ci_low": -0.03,
+            "ci_high": 0.0198
+          },
+          "prune30": {
+            "point": -0.0016,
+            "ci_low": -0.0106,
+            "ci_high": 0.0079
+          },
+          "prune30_int8": {
+            "point": -0.0021,
+            "ci_low": -0.0328,
+            "ci_high": 0.0267
+          },
+          "prune50": {
+            "point": 0.0107,
+            "ci_low": -0.0256,
+            "ci_high": 0.0475
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.744,
+                "p": 0.1326
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.154,
+                "p": 0.5159
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.037,
+                "p": 0.8876
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 2.062,
+                "p": 0.018
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.697,
+                "p": 0.0531
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.012,
+                "p": 0.9531
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.82,
+                "p": 0.1764
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.106,
+                "p": 0.5261
+              },
+              "margin": {
+                "odds_ratio": 0.001,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Fitzpatrick17k": {
+        "fp32_margin_median_by_fst": {
+          "I-II": 0.3003,
+          "III-IV": 0.3186,
+          "V-VI": 0.3221
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": 0.0266,
+            "ci_low": -0.0142,
+            "ci_high": 0.068
+          },
+          "prune30": {
+            "point": 0.0096,
+            "ci_low": -0.0169,
+            "ci_high": 0.0373
+          },
+          "prune30_int8": {
+            "point": 0.0352,
+            "ci_low": -0.0158,
+            "ci_high": 0.0832
+          },
+          "prune50": {
+            "point": -0.0184,
+            "ci_low": -0.0844,
+            "ci_high": 0.0475
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.125,
+                "p": 0.4453
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.847,
+                "p": 0.4652
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.214,
+                "p": 0.2687
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.81,
+                "p": 0.3986
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.831,
+                "p": 0.4179
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.036,
+                "p": 0.9051
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.87,
+                "p": 0.589
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.989,
+                "p": 0.9728
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.902,
+                "p": 0.5101
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.859,
+                "p": 0.4845
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.919,
+                "p": 0.6216
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.835,
+                "p": 0.4529
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.886,
+                "p": 0.3486
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.037,
+                "p": 0.8309
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.901,
+                "p": 0.4473
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.068,
+                "p": 0.7298
+              },
+              "margin": {
+                "odds_ratio": 0.003,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      },
+      "SCIN": {
+        "fp32_margin_median_by_fst": {
+          "I-II": 0.1972,
+          "III-IV": 0.1744,
+          "V-VI": 0.222
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": -0.0525,
+            "ci_low": -0.1236,
+            "ci_high": 0.0102
+          },
+          "prune30": {
+            "point": -0.0063,
+            "ci_low": -0.0372,
+            "ci_high": 0.0236
+          },
+          "prune30_int8": {
+            "point": -0.0368,
+            "ci_low": -0.1168,
+            "ci_high": 0.0403
+          },
+          "prune50": {
+            "point": -0.0692,
+            "ci_low": -0.1762,
+            "ci_high": 0.0352
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.996,
+                "p": 0.9811
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.95,
+                "p": 0.8483
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.895,
+                "p": 0.4972
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.141,
+                "p": 0.6543
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.987,
+                "p": 0.9431
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.736,
+                "p": 0.3916
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.856,
+                "p": 0.483
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.9,
+                "p": 0.8037
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.192,
+                "p": 0.2429
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.978,
+                "p": 0.9372
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.101,
+                "p": 0.5631
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.196,
+                "p": 0.5779
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.98,
+                "p": 0.8741
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.487,
+                "p": 0.1034
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.924,
+                "p": 0.5442
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.67,
+                "p": 0.0369
+              },
+              "margin": {
+                "odds_ratio": 0.024,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "squeezenet1_1": {
+      "DermaCon-IN": {
+        "fp32_margin_median_by_fst": {
+          "III-IV": 0.3912,
+          "V-VI": 0.4327
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": 0.0004,
+            "ci_low": -0.0044,
+            "ci_high": 0.005
+          },
+          "prune30": {
+            "point": -0.0006,
+            "ci_low": -0.015,
+            "ci_high": 0.0127
+          },
+          "prune30_int8": {
+            "point": 0.003,
+            "ci_low": -0.0137,
+            "ci_high": 0.0175
+          },
+          "prune50": {
+            "point": -0.0003,
+            "ci_low": -0.0311,
+            "ci_high": 0.0281
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.813,
+                "p": 0.5893
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.67,
+                "p": 0.4842
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.028,
+                "p": 0.9072
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.304,
+                "p": 0.3472
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.94,
+                "p": 0.7726
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 1.194,
+                "p": 0.471
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.765,
+                "p": 0.0847
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('III-IV'))[T.V-VI]": {
+                "odds_ratio": 0.924,
+                "p": 0.6428
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Fitzpatrick17k": {
+        "fp32_margin_median_by_fst": {
+          "I-II": 0.2225,
+          "III-IV": 0.2441,
+          "V-VI": 0.2407
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": -0.0025,
+            "ci_low": -0.0157,
+            "ci_high": 0.0125
+          },
+          "prune30": {
+            "point": 0.0182,
+            "ci_low": -0.0211,
+            "ci_high": 0.0659
+          },
+          "prune30_int8": {
+            "point": 0.0114,
+            "ci_low": -0.0289,
+            "ci_high": 0.0613
+          },
+          "prune50": {
+            "point": 0.0516,
+            "ci_low": -0.0197,
+            "ci_high": 0.122
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.572,
+                "p": 0.0809
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.023,
+                "p": 0.9496
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.582,
+                "p": 0.1232
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.164,
+                "p": 0.7011
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.837,
+                "p": 0.2947
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.92,
+                "p": 0.7147
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.891,
+                "p": 0.5379
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.059,
+                "p": 0.8319
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.846,
+                "p": 0.3256
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.088,
+                "p": 0.7004
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.902,
+                "p": 0.5783
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.297,
+                "p": 0.3062
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.896,
+                "p": 0.3999
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.928,
+                "p": 0.6729
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.944,
+                "p": 0.6765
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.021,
+                "p": 0.9148
+              },
+              "margin": {
+                "odds_ratio": 0.001,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      },
+      "SCIN": {
+        "fp32_margin_median_by_fst": {
+          "I-II": 0.1403,
+          "III-IV": 0.1541,
+          "V-VI": 0.2006
+        },
+        "dark_minus_light_delta_auc": {
+          "int8": {
+            "point": -0.0025,
+            "ci_low": -0.0177,
+            "ci_high": 0.0119
+          },
+          "prune30": {
+            "point": 0.0033,
+            "ci_low": -0.0486,
+            "ci_high": 0.045
+          },
+          "prune30_int8": {
+            "point": -0.0052,
+            "ci_low": -0.057,
+            "ci_high": 0.0406
+          },
+          "prune50": {
+            "point": -0.055,
+            "ci_low": -0.1543,
+            "ci_high": 0.0306
+          }
+        },
+        "flip_models": {
+          "int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.136,
+                "p": 0.6263
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.386,
+                "p": 0.1982
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.759,
+                "p": 0.3439
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.508,
+                "p": 0.3584
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.944,
+                "p": 0.7148
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.968,
+                "p": 0.9063
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.861,
+                "p": 0.3931
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.505,
+                "p": 0.1384
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune30_int8": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.071,
+                "p": 0.6611
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.978,
+                "p": 0.9362
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 1.022,
+                "p": 0.9018
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 1.491,
+                "p": 0.139
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          },
+          "prune50": {
+            "group_only": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.932,
+                "p": 0.5827
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.789,
+                "p": 0.3873
+              }
+            },
+            "group_plus_margin": {
+              "C(fst_group, Treatment('I-II'))[T.III-IV]": {
+                "odds_ratio": 0.896,
+                "p": 0.4242
+              },
+              "C(fst_group, Treatment('I-II'))[T.V-VI]": {
+                "odds_ratio": 0.978,
+                "p": 0.9401
+              },
+              "margin": {
+                "odds_ratio": 0.0,
+                "p": 0.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
