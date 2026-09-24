@@ -1,0 +1,269 @@
+{
+  "per_fold": [
+    {
+      "fold": 0,
+      "outer_macro_auc": 0.7005,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8118,
+        "Fitzpatrick17k": 0.7389,
+        "SCIN": 0.5507
+      },
+      "best": {
+        "auc": 0.7952337019927408,
+        "stage": 2,
+        "epoch": 3
+      },
+      "n_outer": 1048
+    },
+    {
+      "fold": 1,
+      "outer_macro_auc": 0.7554,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.7823,
+        "Fitzpatrick17k": 0.8195,
+        "SCIN": 0.6645
+      },
+      "best": {
+        "auc": 0.7811155122042144,
+        "stage": 2,
+        "epoch": 6
+      },
+      "n_outer": 1035
+    },
+    {
+      "fold": 2,
+      "outer_macro_auc": 0.7452,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.843,
+        "Fitzpatrick17k": 0.7651,
+        "SCIN": 0.6275
+      },
+      "best": {
+        "auc": 0.752270715101036,
+        "stage": 2,
+        "epoch": 2
+      },
+      "n_outer": 1042
+    },
+    {
+      "fold": 3,
+      "outer_macro_auc": 0.7242,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8495,
+        "Fitzpatrick17k": 0.7381,
+        "SCIN": 0.5851
+      },
+      "best": {
+        "auc": 0.7438160396194319,
+        "stage": 2,
+        "epoch": 2
+      },
+      "n_outer": 1033
+    },
+    {
+      "fold": 4,
+      "outer_macro_auc": 0.733,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.898,
+        "Fitzpatrick17k": 0.7381,
+        "SCIN": 0.5629
+      },
+      "best": {
+        "auc": 0.7508716383277787,
+        "stage": 1,
+        "epoch": 4
+      },
+      "n_outer": 1035
+    }
+  ],
+  "fold_macro_auc_mean": 0.7317,
+  "fold_macro_auc_sd": 0.0188,
+  "pooled_oof": {
+    "all": {
+      "auc": 0.7584,
+      "ci_low": 0.7419,
+      "ci_high": 0.7741,
+      "n_images": 5193,
+      "n_cases": 3670,
+      "n_pos": 1418
+    },
+    "zero_shot_all": {
+      "auc": 0.5814,
+      "ci_low": 0.5627,
+      "ci_high": 0.6003,
+      "n_images": 5193,
+      "n_cases": 3670,
+      "n_pos": 1418
+    },
+    "DermaCon-IN": {
+      "all": {
+        "auc": 0.8269,
+        "ci_low": 0.7966,
+        "ci_high": 0.8545,
+        "n_images": 1968,
+        "n_cases": 1254,
+        "n_pos": 295
+      },
+      "zero_shot": {
+        "auc": 0.5524,
+        "ci_low": 0.5169,
+        "ci_high": 0.5929,
+        "n_images": 1968,
+        "n_cases": 1254,
+        "n_pos": 295
+      },
+      "III-IV": {
+        "auc": 0.7876,
+        "ci_low": 0.7454,
+        "ci_high": 0.8277,
+        "n_images": 1395,
+        "n_cases": 930,
+        "n_pos": 164
+      },
+      "V-VI": {
+        "auc": 0.8682,
+        "ci_low": 0.8249,
+        "ci_high": 0.9042,
+        "n_images": 570,
+        "n_cases": 436,
+        "n_pos": 131
+      }
+    },
+    "Fitzpatrick17k": {
+      "all": {
+        "auc": 0.7552,
+        "ci_low": 0.7226,
+        "ci_high": 0.787,
+        "n_images": 1748,
+        "n_cases": 1747,
+        "n_pos": 333
+      },
+      "zero_shot": {
+        "auc": 0.6176,
+        "ci_low": 0.5866,
+        "ci_high": 0.6506,
+        "n_images": 1748,
+        "n_cases": 1747,
+        "n_pos": 333
+      },
+      "I-II": {
+        "auc": 0.7362,
+        "ci_low": 0.6884,
+        "ci_high": 0.7791,
+        "n_images": 876,
+        "n_cases": 875,
+        "n_pos": 167
+      },
+      "III-IV": {
+        "auc": 0.7947,
+        "ci_low": 0.7486,
+        "ci_high": 0.8399,
+        "n_images": 585,
+        "n_cases": 585,
+        "n_pos": 114
+      },
+      "V-VI": {
+        "auc": 0.7197,
+        "ci_low": 0.6328,
+        "ci_high": 0.8085,
+        "n_images": 238,
+        "n_cases": 238,
+        "n_pos": 45
+      }
+    },
+    "SCIN": {
+      "all": {
+        "auc": 0.5944,
+        "ci_low": 0.5579,
+        "ci_high": 0.6292,
+        "n_images": 1477,
+        "n_cases": 669,
+        "n_pos": 790
+      },
+      "zero_shot": {
+        "auc": 0.5783,
+        "ci_low": 0.5423,
+        "ci_high": 0.6143,
+        "n_images": 1477,
+        "n_cases": 669,
+        "n_pos": 790
+      },
+      "I-II": {
+        "auc": 0.6283,
+        "ci_low": 0.5745,
+        "ci_high": 0.68,
+        "n_images": 660,
+        "n_cases": 294,
+        "n_pos": 338
+      },
+      "III-IV": {
+        "auc": 0.5584,
+        "ci_low": 0.5038,
+        "ci_high": 0.6115,
+        "n_images": 668,
+        "n_cases": 300,
+        "n_pos": 364
+      },
+      "V-VI": {
+        "auc": 0.6756,
+        "ci_low": 0.5689,
+        "ci_high": 0.7845,
+        "n_images": 119,
+        "n_cases": 59,
+        "n_pos": 77
+      }
+    },
+    "by_fst_all_sources": {
+      "I-II": {
+        "auc": 0.7209,
+        "ci_low": 0.693,
+        "ci_high": 0.7504,
+        "n_images": 1536,
+        "n_cases": 1169,
+        "n_pos": 505
+      },
+      "III-IV": {
+        "auc": 0.7606,
+        "ci_low": 0.7385,
+        "ci_high": 0.7821,
+        "n_images": 2648,
+        "n_cases": 1815,
+        "n_pos": 642
+      },
+      "V-VI": {
+        "auc": 0.8118,
+        "ci_low": 0.7778,
+        "ci_high": 0.845,
+        "n_images": 927,
+        "n_cases": 733,
+        "n_pos": 253
+      }
+    }
+  },
+  "config": {
+    "model": "resnet18",
+    "init": "curated",
+    "sources": null,
+    "seed": 42,
+    "stages": [
+      [
+        [
+          "layer4"
+        ],
+        0.0001,
+        15
+      ],
+      [
+        [
+          "layer3",
+          "layer4"
+        ],
+        1e-05,
+        15
+      ]
+    ],
+    "patience": 4,
+    "test_manifest_used": false,
+    "device": "mps"
+  }
+}
