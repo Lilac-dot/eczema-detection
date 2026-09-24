@@ -1,0 +1,261 @@
+device mps; development set 5193 images, 3670 groups; sources ['DermaCon-IN', 'Fitzpatrick17k', 'SCIN']
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 0: inner-train 3463, inner-val 682, outer 1048 images ===
+fold 0: balanced inner-train 3463 -> 1690 images
+fold 0 stage 1 epoch 1: loss 0.7489 inner-val macro-AUC 0.7087 {'DermaCon-IN': 0.879, 'Fitzpatrick17k': 0.652, 'SCIN': 0.595}
+fold 0 stage 1 epoch 2: loss 0.5326 inner-val macro-AUC 0.7302 {'DermaCon-IN': 0.873, 'Fitzpatrick17k': 0.704, 'SCIN': 0.613}
+fold 0 stage 1 epoch 3: loss 0.4434 inner-val macro-AUC 0.7363 {'DermaCon-IN': 0.878, 'Fitzpatrick17k': 0.712, 'SCIN': 0.619}
+fold 0 stage 1 epoch 4: loss 0.3814 inner-val macro-AUC 0.7632 {'DermaCon-IN': 0.905, 'Fitzpatrick17k': 0.758, 'SCIN': 0.626}
+fold 0 stage 1 epoch 5: loss 0.3054 inner-val macro-AUC 0.7594 {'DermaCon-IN': 0.905, 'Fitzpatrick17k': 0.756, 'SCIN': 0.617}
+fold 0 stage 1 epoch 6: loss 0.2757 inner-val macro-AUC 0.7670 {'DermaCon-IN': 0.888, 'Fitzpatrick17k': 0.763, 'SCIN': 0.65}
+fold 0 stage 1 epoch 7: loss 0.2296 inner-val macro-AUC 0.7109 {'DermaCon-IN': 0.814, 'Fitzpatrick17k': 0.737, 'SCIN': 0.582}
+fold 0 stage 1 epoch 8: loss 0.2011 inner-val macro-AUC 0.7024 {'DermaCon-IN': 0.781, 'Fitzpatrick17k': 0.728, 'SCIN': 0.598}
+fold 0 stage 1 epoch 9: loss 0.1706 inner-val macro-AUC 0.7234 {'DermaCon-IN': 0.837, 'Fitzpatrick17k': 0.74, 'SCIN': 0.594}
+fold 0 stage 1 epoch 10: loss 0.1692 inner-val macro-AUC 0.7246 {'DermaCon-IN': 0.858, 'Fitzpatrick17k': 0.762, 'SCIN': 0.555}
+fold 0 stage 2 epoch 1: loss 0.2250 inner-val macro-AUC 0.7624 {'DermaCon-IN': 0.889, 'Fitzpatrick17k': 0.792, 'SCIN': 0.607}
+fold 0 stage 2 epoch 2: loss 0.1835 inner-val macro-AUC 0.7689 {'DermaCon-IN': 0.898, 'Fitzpatrick17k': 0.788, 'SCIN': 0.621}
+fold 0 stage 2 epoch 3: loss 0.1761 inner-val macro-AUC 0.7719 {'DermaCon-IN': 0.9, 'Fitzpatrick17k': 0.791, 'SCIN': 0.624}
+fold 0 stage 2 epoch 4: loss 0.1676 inner-val macro-AUC 0.7709 {'DermaCon-IN': 0.899, 'Fitzpatrick17k': 0.795, 'SCIN': 0.618}
+fold 0 OUTER macro-AUC 0.6873 {'DermaCon-IN': 0.7862585616438357, 'Fitzpatrick17k': 0.7021797820217978, 'SCIN': 0.5733259546209186}
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 1: inner-train 3481, inner-val 677, outer 1035 images ===
+fold 1: balanced inner-train 3481 -> 1736 images
+fold 1 stage 1 epoch 1: loss 0.7706 inner-val macro-AUC 0.7095 {'DermaCon-IN': 0.868, 'Fitzpatrick17k': 0.723, 'SCIN': 0.537}
+fold 1 stage 1 epoch 2: loss 0.5419 inner-val macro-AUC 0.7285 {'DermaCon-IN': 0.874, 'Fitzpatrick17k': 0.744, 'SCIN': 0.568}
+fold 1 stage 1 epoch 3: loss 0.4592 inner-val macro-AUC 0.7088 {'DermaCon-IN': 0.888, 'Fitzpatrick17k': 0.736, 'SCIN': 0.502}
+fold 1 stage 1 epoch 4: loss 0.3741 inner-val macro-AUC 0.7141 {'DermaCon-IN': 0.897, 'Fitzpatrick17k': 0.715, 'SCIN': 0.53}
+fold 1 stage 1 epoch 5: loss 0.3115 inner-val macro-AUC 0.7170 {'DermaCon-IN': 0.919, 'Fitzpatrick17k': 0.727, 'SCIN': 0.505}
+fold 1 stage 1 epoch 6: loss 0.2856 inner-val macro-AUC 0.7181 {'DermaCon-IN': 0.926, 'Fitzpatrick17k': 0.734, 'SCIN': 0.494}
+fold 1 stage 2 epoch 1: loss 0.4504 inner-val macro-AUC 0.7283 {'DermaCon-IN': 0.897, 'Fitzpatrick17k': 0.736, 'SCIN': 0.552}
+fold 1 stage 2 epoch 2: loss 0.4155 inner-val macro-AUC 0.7295 {'DermaCon-IN': 0.906, 'Fitzpatrick17k': 0.738, 'SCIN': 0.545}
+fold 1 stage 2 epoch 3: loss 0.3772 inner-val macro-AUC 0.7278 {'DermaCon-IN': 0.907, 'Fitzpatrick17k': 0.74, 'SCIN': 0.536}
+fold 1 stage 2 epoch 4: loss 0.3657 inner-val macro-AUC 0.7334 {'DermaCon-IN': 0.911, 'Fitzpatrick17k': 0.753, 'SCIN': 0.536}
+fold 1 OUTER macro-AUC 0.6966 {'DermaCon-IN': 0.722780257936508, 'Fitzpatrick17k': 0.7282773564463706, 'SCIN': 0.6386943306462269}
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 2: inner-train 3460, inner-val 691, outer 1042 images ===
+fold 2: balanced inner-train 3460 -> 1726 images
+fold 2 stage 1 epoch 1: loss 0.7357 inner-val macro-AUC 0.6837 {'DermaCon-IN': 0.83, 'Fitzpatrick17k': 0.657, 'SCIN': 0.564}
+fold 2 stage 1 epoch 2: loss 0.5294 inner-val macro-AUC 0.6616 {'DermaCon-IN': 0.795, 'Fitzpatrick17k': 0.654, 'SCIN': 0.536}
+fold 2 stage 1 epoch 3: loss 0.4390 inner-val macro-AUC 0.6868 {'DermaCon-IN': 0.84, 'Fitzpatrick17k': 0.639, 'SCIN': 0.581}
+fold 2 stage 1 epoch 4: loss 0.3728 inner-val macro-AUC 0.6876 {'DermaCon-IN': 0.845, 'Fitzpatrick17k': 0.697, 'SCIN': 0.521}
+fold 2 stage 1 epoch 5: loss 0.3053 inner-val macro-AUC 0.7202 {'DermaCon-IN': 0.894, 'Fitzpatrick17k': 0.686, 'SCIN': 0.58}
+fold 2 stage 1 epoch 6: loss 0.2720 inner-val macro-AUC 0.7036 {'DermaCon-IN': 0.831, 'Fitzpatrick17k': 0.728, 'SCIN': 0.552}
+fold 2 stage 1 epoch 7: loss 0.2410 inner-val macro-AUC 0.7031 {'DermaCon-IN': 0.827, 'Fitzpatrick17k': 0.731, 'SCIN': 0.552}
+fold 2 stage 2 epoch 1: loss 0.3565 inner-val macro-AUC 0.7094 {'DermaCon-IN': 0.868, 'Fitzpatrick17k': 0.692, 'SCIN': 0.568}
+fold 2 stage 2 epoch 2: loss 0.3473 inner-val macro-AUC 0.7121 {'DermaCon-IN': 0.871, 'Fitzpatrick17k': 0.705, 'SCIN': 0.561}
+fold 2 stage 2 epoch 3: loss 0.3242 inner-val macro-AUC 0.7093 {'DermaCon-IN': 0.867, 'Fitzpatrick17k': 0.71, 'SCIN': 0.55}
+fold 2 stage 2 epoch 4: loss 0.3127 inner-val macro-AUC 0.7110 {'DermaCon-IN': 0.87, 'Fitzpatrick17k': 0.714, 'SCIN': 0.549}
+fold 2 OUTER macro-AUC 0.6946 {'DermaCon-IN': 0.7695725584288634, 'Fitzpatrick17k': 0.7252831010452961, 'SCIN': 0.5890424679487181}
+
+=== fold 3: inner-train 3453, inner-val 707, outer 1033 images ===
+fold 3: balanced inner-train 3453 -> 1724 images
+fold 3 stage 1 epoch 1: loss 0.7292 inner-val macro-AUC 0.6988 {'DermaCon-IN': 0.818, 'Fitzpatrick17k': 0.639, 'SCIN': 0.639}
+fold 3 stage 1 epoch 2: loss 0.5155 inner-val macro-AUC 0.7084 {'DermaCon-IN': 0.825, 'Fitzpatrick17k': 0.703, 'SCIN': 0.597}
+fold 3 stage 1 epoch 3: loss 0.4289 inner-val macro-AUC 0.7303 {'DermaCon-IN': 0.87, 'Fitzpatrick17k': 0.679, 'SCIN': 0.642}
+fold 3 stage 1 epoch 4: loss 0.3615 inner-val macro-AUC 0.7173 {'DermaCon-IN': 0.825, 'Fitzpatrick17k': 0.69, 'SCIN': 0.637}
+fold 3 stage 1 epoch 5: loss 0.3173 inner-val macro-AUC 0.7094 {'DermaCon-IN': 0.827, 'Fitzpatrick17k': 0.692, 'SCIN': 0.609}
+fold 3 stage 1 epoch 6: loss 0.2822 inner-val macro-AUC 0.7115 {'DermaCon-IN': 0.829, 'Fitzpatrick17k': 0.689, 'SCIN': 0.616}
+fold 3 stage 1 epoch 7: loss 0.2296 inner-val macro-AUC 0.7188 {'DermaCon-IN': 0.845, 'Fitzpatrick17k': 0.69, 'SCIN': 0.621}
+fold 3 stage 2 epoch 1: loss 0.3632 inner-val macro-AUC 0.7211 {'DermaCon-IN': 0.855, 'Fitzpatrick17k': 0.669, 'SCIN': 0.64}
+fold 3 stage 2 epoch 2: loss 0.3274 inner-val macro-AUC 0.7296 {'DermaCon-IN': 0.853, 'Fitzpatrick17k': 0.675, 'SCIN': 0.661}
+fold 3 stage 2 epoch 3: loss 0.3199 inner-val macro-AUC 0.7310 {'DermaCon-IN': 0.849, 'Fitzpatrick17k': 0.676, 'SCIN': 0.668}
+fold 3 stage 2 epoch 4: loss 0.2786 inner-val macro-AUC 0.7326 {'DermaCon-IN': 0.848, 'Fitzpatrick17k': 0.68, 'SCIN': 0.67}
+fold 3 stage 2 epoch 5: loss 0.2798 inner-val macro-AUC 0.7347 {'DermaCon-IN': 0.855, 'Fitzpatrick17k': 0.681, 'SCIN': 0.668}
+fold 3 stage 2 epoch 6: loss 0.2624 inner-val macro-AUC 0.7363 {'DermaCon-IN': 0.849, 'Fitzpatrick17k': 0.69, 'SCIN': 0.669}
+fold 3 stage 2 epoch 7: loss 0.2514 inner-val macro-AUC 0.7323 {'DermaCon-IN': 0.845, 'Fitzpatrick17k': 0.693, 'SCIN': 0.659}
+fold 3 stage 2 epoch 8: loss 0.2380 inner-val macro-AUC 0.7403 {'DermaCon-IN': 0.852, 'Fitzpatrick17k': 0.694, 'SCIN': 0.675}
+fold 3 stage 2 epoch 9: loss 0.2277 inner-val macro-AUC 0.7339 {'DermaCon-IN': 0.851, 'Fitzpatrick17k': 0.691, 'SCIN': 0.66}
+fold 3 stage 2 epoch 10: loss 0.2160 inner-val macro-AUC 0.7305 {'DermaCon-IN': 0.844, 'Fitzpatrick17k': 0.687, 'SCIN': 0.661}
+fold 3 stage 2 epoch 11: loss 0.2148 inner-val macro-AUC 0.7344 {'DermaCon-IN': 0.841, 'Fitzpatrick17k': 0.708, 'SCIN': 0.654}
+fold 3 stage 2 epoch 12: loss 0.1955 inner-val macro-AUC 0.7359 {'DermaCon-IN': 0.839, 'Fitzpatrick17k': 0.703, 'SCIN': 0.665}
+fold 3 OUTER macro-AUC 0.7305 {'DermaCon-IN': 0.8371596647404862, 'Fitzpatrick17k': 0.7344107254209105, 'SCIN': 0.6200617283950617}
+/Users/tishy/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_split.py:1023: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=6.
+  warnings.warn(
+
+=== fold 4: inner-train 3446, inner-val 712, outer 1035 images ===
+fold 4: balanced inner-train 3446 -> 1778 images
+fold 4 stage 1 epoch 1: loss 0.7871 inner-val macro-AUC 0.7266 {'DermaCon-IN': 0.848, 'Fitzpatrick17k': 0.678, 'SCIN': 0.653}
+fold 4 stage 1 epoch 2: loss 0.5340 inner-val macro-AUC 0.7369 {'DermaCon-IN': 0.874, 'Fitzpatrick17k': 0.672, 'SCIN': 0.665}
+fold 4 stage 1 epoch 3: loss 0.4655 inner-val macro-AUC 0.7316 {'DermaCon-IN': 0.882, 'Fitzpatrick17k': 0.658, 'SCIN': 0.655}
+fold 4 stage 1 epoch 4: loss 0.3755 inner-val macro-AUC 0.7165 {'DermaCon-IN': 0.87, 'Fitzpatrick17k': 0.66, 'SCIN': 0.62}
+fold 4 stage 1 epoch 5: loss 0.2985 inner-val macro-AUC 0.7542 {'DermaCon-IN': 0.876, 'Fitzpatrick17k': 0.693, 'SCIN': 0.694}
+fold 4 stage 1 epoch 6: loss 0.2692 inner-val macro-AUC 0.7471 {'DermaCon-IN': 0.868, 'Fitzpatrick17k': 0.705, 'SCIN': 0.669}
+fold 4 stage 1 epoch 7: loss 0.2187 inner-val macro-AUC 0.7274 {'DermaCon-IN': 0.87, 'Fitzpatrick17k': 0.713, 'SCIN': 0.599}
+fold 4 stage 1 epoch 8: loss 0.1963 inner-val macro-AUC 0.7217 {'DermaCon-IN': 0.86, 'Fitzpatrick17k': 0.705, 'SCIN': 0.6}
+fold 4 stage 1 epoch 9: loss 0.1672 inner-val macro-AUC 0.7098 {'DermaCon-IN': 0.832, 'Fitzpatrick17k': 0.653, 'SCIN': 0.645}
+fold 4 stage 2 epoch 1: loss 0.2513 inner-val macro-AUC 0.7506 {'DermaCon-IN': 0.885, 'Fitzpatrick17k': 0.714, 'SCIN': 0.654}
+fold 4 stage 2 epoch 2: loss 0.2490 inner-val macro-AUC 0.7458 {'DermaCon-IN': 0.883, 'Fitzpatrick17k': 0.709, 'SCIN': 0.646}
+fold 4 stage 2 epoch 3: loss 0.2205 inner-val macro-AUC 0.7430 {'DermaCon-IN': 0.883, 'Fitzpatrick17k': 0.701, 'SCIN': 0.645}
+fold 4 stage 2 epoch 4: loss 0.2125 inner-val macro-AUC 0.7401 {'DermaCon-IN': 0.874, 'Fitzpatrick17k': 0.714, 'SCIN': 0.633}
+fold 4 OUTER macro-AUC 0.7458 {'DermaCon-IN': 0.8961189195442187, 'Fitzpatrick17k': 0.7494054532382058, 'SCIN': 0.5917470221213841}
+{
+  "all": {
+    "auc": 0.7255,
+    "ci_low": 0.7075,
+    "ci_high": 0.7418,
+    "n_images": 5193,
+    "n_cases": 3670,
+    "n_pos": 1418
+  },
+  "zero_shot_all": {
+    "auc": 0.5814,
+    "ci_low": 0.5627,
+    "ci_high": 0.6003,
+    "n_images": 5193,
+    "n_cases": 3670,
+    "n_pos": 1418
+  },
+  "DermaCon-IN": {
+    "all": {
+      "auc": 0.7999,
+      "ci_low": 0.7697,
+      "ci_high": 0.829,
+      "n_images": 1968,
+      "n_cases": 1254,
+      "n_pos": 295
+    },
+    "zero_shot": {
+      "auc": 0.5524,
+      "ci_low": 0.5169,
+      "ci_high": 0.5929,
+      "n_images": 1968,
+      "n_cases": 1254,
+      "n_pos": 295
+    },
+    "III-IV": {
+      "auc": 0.766,
+      "ci_low": 0.7247,
+      "ci_high": 0.8076,
+      "n_images": 1395,
+      "n_cases": 930,
+      "n_pos": 164
+    },
+    "V-VI": {
+      "auc": 0.8456,
+      "ci_low": 0.7988,
+      "ci_high": 0.8843,
+      "n_images": 570,
+      "n_cases": 436,
+      "n_pos": 131
+    }
+  },
+  "Fitzpatrick17k": {
+    "all": {
+      "auc": 0.7182,
+      "ci_low": 0.6864,
+      "ci_high": 0.7496,
+      "n_images": 1748,
+      "n_cases": 1747,
+      "n_pos": 333
+    },
+    "zero_shot": {
+      "auc": 0.6176,
+      "ci_low": 0.5866,
+      "ci_high": 0.6506,
+      "n_images": 1748,
+      "n_cases": 1747,
+      "n_pos": 333
+    },
+    "I-II": {
+      "auc": 0.6953,
+      "ci_low": 0.6498,
+      "ci_high": 0.7383,
+      "n_images": 876,
+      "n_cases": 875,
+      "n_pos": 167
+    },
+    "III-IV": {
+      "auc": 0.7581,
+      "ci_low": 0.7079,
+      "ci_high": 0.8084,
+      "n_images": 585,
+      "n_cases": 585,
+      "n_pos": 114
+    },
+    "V-VI": {
+      "auc": 0.6649,
+      "ci_low": 0.5813,
+      "ci_high": 0.7512,
+      "n_images": 238,
+      "n_cases": 238,
+      "n_pos": 45
+    }
+  },
+  "SCIN": {
+    "all": {
+      "auc": 0.6094,
+      "ci_low": 0.57,
+      "ci_high": 0.6488,
+      "n_images": 1477,
+      "n_cases": 669,
+      "n_pos": 790
+    },
+    "zero_shot": {
+      "auc": 0.5783,
+      "ci_low": 0.5423,
+      "ci_high": 0.6143,
+      "n_images": 1477,
+      "n_cases": 669,
+      "n_pos": 790
+    },
+    "I-II": {
+      "auc": 0.6118,
+      "ci_low": 0.558,
+      "ci_high": 0.6632,
+      "n_images": 660,
+      "n_cases": 294,
+      "n_pos": 338
+    },
+    "III-IV": {
+      "auc": 0.6144,
+      "ci_low": 0.5567,
+      "ci_high": 0.6695,
+      "n_images": 668,
+      "n_cases": 300,
+      "n_pos": 364
+    },
+    "V-VI": {
+      "auc": 0.615,
+      "ci_low": 0.4684,
+      "ci_high": 0.7549,
+      "n_images": 119,
+      "n_cases": 59,
+      "n_pos": 77
+    }
+  },
+  "by_fst_all_sources": {
+    "I-II": {
+      "auc": 0.6705,
+      "ci_low": 0.6369,
+      "ci_high": 0.7023,
+      "n_images": 1536,
+      "n_cases": 1169,
+      "n_pos": 505
+    },
+    "III-IV": {
+      "auc": 0.7387,
+      "ci_low": 0.7141,
+      "ci_high": 0.7614,
+      "n_images": 2648,
+      "n_cases": 1815,
+      "n_pos": 642
+    },
+    "V-VI": {
+      "auc": 0.7766,
+      "ci_low": 0.7398,
+      "ci_high": 0.8109,
+      "n_images": 927,
+      "n_cases": 733,
+      "n_pos": 253
+    }
+  }
+}
+per-fold macro-AUC mean 0.711 sd 0.0229
