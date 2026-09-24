@@ -1,0 +1,266 @@
+{
+  "per_fold": [
+    {
+      "fold": 0,
+      "outer_macro_auc": 0.7001,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8167,
+        "Fitzpatrick17k": 0.7305,
+        "SCIN": 0.553
+      },
+      "C": 0.001,
+      "inner_cv_worst_auc": {
+        "0.001": 0.6329517733158191,
+        "0.01": 0.5911052730343404,
+        "0.1": 0.5601426158753987,
+        "1.0": 0.5531994745730907
+      },
+      "n_reweight_set": 290
+    },
+    {
+      "fold": 1,
+      "outer_macro_auc": 0.7408,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.7747,
+        "Fitzpatrick17k": 0.7969,
+        "SCIN": 0.6509
+      },
+      "C": 0.001,
+      "inner_cv_worst_auc": {
+        "0.001": 0.6079865874104556,
+        "0.01": 0.5985368084133517,
+        "0.1": 0.5941167504953514,
+        "1.0": 0.5860387136107301
+      },
+      "n_reweight_set": 314
+    },
+    {
+      "fold": 2,
+      "outer_macro_auc": 0.6526,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.6901,
+        "Fitzpatrick17k": 0.6783,
+        "SCIN": 0.5895
+      },
+      "C": 1.0,
+      "inner_cv_worst_auc": {
+        "0.001": 0.5369429525330236,
+        "0.01": 0.5571200464508637,
+        "0.1": 0.5897808099869356,
+        "1.0": 0.6044418638409058
+      },
+      "n_reweight_set": 312
+    },
+    {
+      "fold": 3,
+      "outer_macro_auc": 0.71,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8244,
+        "Fitzpatrick17k": 0.6921,
+        "SCIN": 0.6136
+      },
+      "C": 0.001,
+      "inner_cv_worst_auc": {
+        "0.001": 0.5960737656157049,
+        "0.01": 0.5568114217727542,
+        "0.1": 0.5502676977989293,
+        "1.0": 0.541859410430839
+      },
+      "n_reweight_set": 368
+    },
+    {
+      "fold": 4,
+      "outer_macro_auc": 0.7034,
+      "outer_auc_by_source": {
+        "DermaCon-IN": 0.8812,
+        "Fitzpatrick17k": 0.6475,
+        "SCIN": 0.5814
+      },
+      "C": 0.001,
+      "inner_cv_worst_auc": {
+        "0.001": 0.6718035923052397,
+        "0.01": 0.6407694760335849,
+        "0.1": 0.6195132320119034,
+        "1.0": 0.6181315761504942
+      },
+      "n_reweight_set": 366
+    }
+  ],
+  "fold_macro_auc_mean": 0.7014,
+  "fold_macro_auc_sd": 0.0283,
+  "pooled_oof": {
+    "all": {
+      "auc": 0.7028,
+      "ci_low": 0.6852,
+      "ci_high": 0.7219,
+      "n_images": 5193,
+      "n_cases": 3670,
+      "n_pos": 1418
+    },
+    "zero_shot_all": {
+      "auc": 0.7584,
+      "ci_low": 0.7419,
+      "ci_high": 0.7741,
+      "n_images": 5193,
+      "n_cases": 3670,
+      "n_pos": 1418
+    },
+    "DermaCon-IN": {
+      "all": {
+        "auc": 0.7666,
+        "ci_low": 0.7337,
+        "ci_high": 0.7968,
+        "n_images": 1968,
+        "n_cases": 1254,
+        "n_pos": 295
+      },
+      "zero_shot": {
+        "auc": 0.8269,
+        "ci_low": 0.7966,
+        "ci_high": 0.8545,
+        "n_images": 1968,
+        "n_cases": 1254,
+        "n_pos": 295
+      },
+      "III-IV": {
+        "auc": 0.7151,
+        "ci_low": 0.6674,
+        "ci_high": 0.7589,
+        "n_images": 1395,
+        "n_cases": 930,
+        "n_pos": 164
+      },
+      "V-VI": {
+        "auc": 0.8269,
+        "ci_low": 0.7858,
+        "ci_high": 0.8678,
+        "n_images": 570,
+        "n_cases": 436,
+        "n_pos": 131
+      }
+    },
+    "Fitzpatrick17k": {
+      "all": {
+        "auc": 0.6929,
+        "ci_low": 0.6591,
+        "ci_high": 0.7257,
+        "n_images": 1748,
+        "n_cases": 1747,
+        "n_pos": 333
+      },
+      "zero_shot": {
+        "auc": 0.7552,
+        "ci_low": 0.7226,
+        "ci_high": 0.787,
+        "n_images": 1748,
+        "n_cases": 1747,
+        "n_pos": 333
+      },
+      "I-II": {
+        "auc": 0.6816,
+        "ci_low": 0.6315,
+        "ci_high": 0.728,
+        "n_images": 876,
+        "n_cases": 875,
+        "n_pos": 167
+      },
+      "III-IV": {
+        "auc": 0.7115,
+        "ci_low": 0.657,
+        "ci_high": 0.7636,
+        "n_images": 585,
+        "n_cases": 585,
+        "n_pos": 114
+      },
+      "V-VI": {
+        "auc": 0.7014,
+        "ci_low": 0.613,
+        "ci_high": 0.7871,
+        "n_images": 238,
+        "n_cases": 238,
+        "n_pos": 45
+      }
+    },
+    "SCIN": {
+      "all": {
+        "auc": 0.5832,
+        "ci_low": 0.546,
+        "ci_high": 0.6195,
+        "n_images": 1477,
+        "n_cases": 669,
+        "n_pos": 790
+      },
+      "zero_shot": {
+        "auc": 0.5944,
+        "ci_low": 0.5579,
+        "ci_high": 0.6292,
+        "n_images": 1477,
+        "n_cases": 669,
+        "n_pos": 790
+      },
+      "I-II": {
+        "auc": 0.6029,
+        "ci_low": 0.547,
+        "ci_high": 0.6597,
+        "n_images": 660,
+        "n_cases": 294,
+        "n_pos": 338
+      },
+      "III-IV": {
+        "auc": 0.5544,
+        "ci_low": 0.4951,
+        "ci_high": 0.608,
+        "n_images": 668,
+        "n_cases": 300,
+        "n_pos": 364
+      },
+      "V-VI": {
+        "auc": 0.6812,
+        "ci_low": 0.5562,
+        "ci_high": 0.7934,
+        "n_images": 119,
+        "n_cases": 59,
+        "n_pos": 77
+      }
+    },
+    "by_fst_all_sources": {
+      "I-II": {
+        "auc": 0.6653,
+        "ci_low": 0.6358,
+        "ci_high": 0.6985,
+        "n_images": 1536,
+        "n_cases": 1169,
+        "n_pos": 505
+      },
+      "III-IV": {
+        "auc": 0.6989,
+        "ci_low": 0.6743,
+        "ci_high": 0.7251,
+        "n_images": 2648,
+        "n_cases": 1815,
+        "n_pos": 642
+      },
+      "V-VI": {
+        "auc": 0.7781,
+        "ci_low": 0.7411,
+        "ci_high": 0.8146,
+        "n_images": 927,
+        "n_cases": 733,
+        "n_pos": 253
+      }
+    }
+  },
+  "config": {
+    "method": "DFR last-layer retraining",
+    "backbone_run": "experiments/skintone_cv/resnet18_curated_pooled",
+    "reweighting_set": "balanced inner-val",
+    "Cs": [
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "selection": "worst-source AUC",
+    "note": "prob_start in oof = original pooled head, for comparison"
+  }
+}
