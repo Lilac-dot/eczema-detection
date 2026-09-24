@@ -1,0 +1,26 @@
+before fine-tuning: val macro-AUC 0.3817 {'SCIN': np.float64(0.38168642951251647)}
+stage 1 epoch 1: loss 0.7444  val macro-AUC 0.4294 {'SCIN': np.float64(0.429)}
+stage 1 epoch 2: loss 0.6796  val macro-AUC 0.4872 {'SCIN': np.float64(0.487)}
+stage 1 epoch 3: loss 0.6376  val macro-AUC 0.5337 {'SCIN': np.float64(0.534)}
+stage 1 epoch 4: loss 0.6369  val macro-AUC 0.5615 {'SCIN': np.float64(0.561)}
+stage 1 epoch 5: loss 0.6155  val macro-AUC 0.5869 {'SCIN': np.float64(0.587)}
+stage 1 epoch 6: loss 0.6028  val macro-AUC 0.6072 {'SCIN': np.float64(0.607)}
+stage 1 epoch 7: loss 0.5807  val macro-AUC 0.6085 {'SCIN': np.float64(0.608)}
+stage 1 epoch 8: loss 0.5722  val macro-AUC 0.6097 {'SCIN': np.float64(0.61)}
+stage 1 epoch 9: loss 0.5662  val macro-AUC 0.6116 {'SCIN': np.float64(0.612)}
+stage 1 epoch 10: loss 0.5488  val macro-AUC 0.6115 {'SCIN': np.float64(0.612)}
+stage 1 epoch 11: loss 0.5447  val macro-AUC 0.6216 {'SCIN': np.float64(0.622)}
+stage 1 epoch 12: loss 0.5267  val macro-AUC 0.6094 {'SCIN': np.float64(0.609)}
+stage 1 epoch 13: loss 0.5160  val macro-AUC 0.6215 {'SCIN': np.float64(0.621)}
+stage 1 epoch 14: loss 0.4999  val macro-AUC 0.6262 {'SCIN': np.float64(0.626)}
+stage 1 epoch 15: loss 0.4937  val macro-AUC 0.6249 {'SCIN': np.float64(0.625)}
+stage 1 epoch 16: loss 0.4648  val macro-AUC 0.6223 {'SCIN': np.float64(0.622)}
+stage 1 epoch 17: loss 0.4668  val macro-AUC 0.6143 {'SCIN': np.float64(0.614)}
+stage 1 epoch 18: loss 0.4620  val macro-AUC 0.6151 {'SCIN': np.float64(0.615)}
+stage 1 epoch 19: loss 0.4322  val macro-AUC 0.6147 {'SCIN': np.float64(0.615)}
+stage 2 epoch 1: loss 0.5521  val macro-AUC 0.6122 {'SCIN': np.float64(0.612)}
+stage 2 epoch 2: loss 0.5534  val macro-AUC 0.6130 {'SCIN': np.float64(0.613)}
+stage 2 epoch 3: loss 0.5618  val macro-AUC 0.6172 {'SCIN': np.float64(0.617)}
+stage 2 epoch 4: loss 0.5434  val macro-AUC 0.6146 {'SCIN': np.float64(0.615)}
+stage 2 epoch 5: loss 0.5464  val macro-AUC 0.6222 {'SCIN': np.float64(0.622)}
+best: {'auc': 0.6262187088274045, 'stage': 1, 'epoch': 14}

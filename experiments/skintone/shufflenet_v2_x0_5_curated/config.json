@@ -1,0 +1,21 @@
+{
+  "model": "shufflenet_v2_x0_5",
+  "init": "curated",
+  "seed": 42,
+  "batch_size": 32,
+  "stage1_lr": 0.0001,
+  "stage2_lr": 1e-05,
+  "patience": 5,
+  "n_train": 1241,
+  "n_val": 247,
+  "test_manifest_used": false,
+  "val_macro_auc_before": 0.38168642951251647,
+  "val_auc_before_by_source": {
+    "SCIN": 0.38168642951251647
+  },
+  "best": {
+    "auc": 0.6262187088274045,
+    "stage": 1,
+    "epoch": 14
+  }
+}
