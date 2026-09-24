@@ -1,0 +1,194 @@
+{
+  "per_fold": [
+    {
+      "fold": 0,
+      "outer_macro_auc": 0.7024,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.7024
+      },
+      "best": {
+        "auc": 0.7665024630541872,
+        "stage": 2,
+        "epoch": 13,
+        "select": "macro"
+      },
+      "n_outer": 349
+    },
+    {
+      "fold": 1,
+      "outer_macro_auc": 0.7057,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.7057
+      },
+      "best": {
+        "auc": 0.7361015785861359,
+        "stage": 2,
+        "epoch": 12,
+        "select": "macro"
+      },
+      "n_outer": 349
+    },
+    {
+      "fold": 2,
+      "outer_macro_auc": 0.7476,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.7476
+      },
+      "best": {
+        "auc": 0.7322123083962481,
+        "stage": 1,
+        "epoch": 15,
+        "select": "macro"
+      },
+      "n_outer": 351
+    },
+    {
+      "fold": 3,
+      "outer_macro_auc": 0.7713,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.7713
+      },
+      "best": {
+        "auc": 0.731737721266517,
+        "stage": 1,
+        "epoch": 15,
+        "select": "macro"
+      },
+      "n_outer": 350
+    },
+    {
+      "fold": 4,
+      "outer_macro_auc": 0.617,
+      "outer_auc_by_source": {
+        "Fitzpatrick17k": 0.617
+      },
+      "best": {
+        "auc": 0.6404145077720207,
+        "stage": 2,
+        "epoch": 1,
+        "select": "macro"
+      },
+      "n_outer": 349
+    }
+  ],
+  "fold_macro_auc_mean": 0.7088,
+  "fold_macro_auc_sd": 0.0527,
+  "pooled_oof": {
+    "all": {
+      "auc": 0.7021,
+      "ci_low": 0.6724,
+      "ci_high": 0.7308,
+      "n_images": 1748,
+      "n_cases": 1747,
+      "n_pos": 333
+    },
+    "zero_shot_all": {
+      "auc": 0.5488,
+      "ci_low": 0.5132,
+      "ci_high": 0.5803,
+      "n_images": 1748,
+      "n_cases": 1747,
+      "n_pos": 333
+    },
+    "Fitzpatrick17k": {
+      "all": {
+        "auc": 0.7021,
+        "ci_low": 0.6724,
+        "ci_high": 0.7308,
+        "n_images": 1748,
+        "n_cases": 1747,
+        "n_pos": 333
+      },
+      "zero_shot": {
+        "auc": 0.5488,
+        "ci_low": 0.5132,
+        "ci_high": 0.5803,
+        "n_images": 1748,
+        "n_cases": 1747,
+        "n_pos": 333
+      },
+      "I-II": {
+        "auc": 0.7022,
+        "ci_low": 0.6617,
+        "ci_high": 0.7401,
+        "n_images": 876,
+        "n_cases": 875,
+        "n_pos": 167
+      },
+      "III-IV": {
+        "auc": 0.7061,
+        "ci_low": 0.6558,
+        "ci_high": 0.761,
+        "n_images": 585,
+        "n_cases": 585,
+        "n_pos": 114
+      },
+      "V-VI": {
+        "auc": 0.6861,
+        "ci_low": 0.595,
+        "ci_high": 0.7786,
+        "n_images": 238,
+        "n_cases": 238,
+        "n_pos": 45
+      }
+    },
+    "by_fst_all_sources": {
+      "I-II": {
+        "auc": 0.7022,
+        "ci_low": 0.6617,
+        "ci_high": 0.7401,
+        "n_images": 876,
+        "n_cases": 875,
+        "n_pos": 167
+      },
+      "III-IV": {
+        "auc": 0.7061,
+        "ci_low": 0.6558,
+        "ci_high": 0.761,
+        "n_images": 585,
+        "n_cases": 585,
+        "n_pos": 114
+      },
+      "V-VI": {
+        "auc": 0.6861,
+        "ci_low": 0.595,
+        "ci_high": 0.7786,
+        "n_images": 238,
+        "n_cases": 238,
+        "n_pos": 45
+      }
+    }
+  },
+  "config": {
+    "model": "shufflenet_v2_x0_5",
+    "init": "curated",
+    "sources": [
+      "Fitzpatrick17k"
+    ],
+    "seed": 42,
+    "balance": "none",
+    "select": "macro",
+    "stages": [
+      [
+        [
+          "stage4",
+          "conv5"
+        ],
+        0.0001,
+        15
+      ],
+      [
+        [
+          "stage3",
+          "stage4",
+          "conv5"
+        ],
+        1e-05,
+        15
+      ]
+    ],
+    "patience": 4,
+    "test_manifest_used": false,
+    "device": "mps"
+  }
+}

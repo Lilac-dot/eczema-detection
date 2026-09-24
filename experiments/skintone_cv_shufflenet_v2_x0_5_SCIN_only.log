@@ -1,0 +1,194 @@
+device mps; development set 1477 images, 669 groups; sources ['SCIN']
+
+=== fold 0: inner-train 1005, inner-val 188, outer 284 images ===
+fold 0 stage 1 epoch 1: loss 0.7621 inner-val macro-AUC 0.5751 {'SCIN': 0.575}
+fold 0 stage 1 epoch 2: loss 0.6999 inner-val macro-AUC 0.6207 {'SCIN': 0.621}
+fold 0 stage 1 epoch 3: loss 0.6692 inner-val macro-AUC 0.6435 {'SCIN': 0.643}
+fold 0 stage 1 epoch 4: loss 0.6537 inner-val macro-AUC 0.6442 {'SCIN': 0.644}
+fold 0 stage 1 epoch 5: loss 0.6405 inner-val macro-AUC 0.6639 {'SCIN': 0.664}
+fold 0 stage 1 epoch 6: loss 0.6255 inner-val macro-AUC 0.6694 {'SCIN': 0.669}
+fold 0 stage 1 epoch 7: loss 0.6129 inner-val macro-AUC 0.6670 {'SCIN': 0.667}
+fold 0 stage 1 epoch 8: loss 0.5996 inner-val macro-AUC 0.6704 {'SCIN': 0.67}
+fold 0 stage 1 epoch 9: loss 0.5790 inner-val macro-AUC 0.6768 {'SCIN': 0.677}
+fold 0 stage 1 epoch 10: loss 0.5755 inner-val macro-AUC 0.6761 {'SCIN': 0.676}
+fold 0 stage 1 epoch 11: loss 0.5633 inner-val macro-AUC 0.6659 {'SCIN': 0.666}
+fold 0 stage 1 epoch 12: loss 0.5446 inner-val macro-AUC 0.6696 {'SCIN': 0.67}
+fold 0 stage 1 epoch 13: loss 0.5449 inner-val macro-AUC 0.6631 {'SCIN': 0.663}
+fold 0 stage 2 epoch 1: loss 0.5945 inner-val macro-AUC 0.6502 {'SCIN': 0.65}
+fold 0 stage 2 epoch 2: loss 0.5872 inner-val macro-AUC 0.6474 {'SCIN': 0.647}
+fold 0 stage 2 epoch 3: loss 0.5904 inner-val macro-AUC 0.6453 {'SCIN': 0.645}
+fold 0 stage 2 epoch 4: loss 0.5872 inner-val macro-AUC 0.6503 {'SCIN': 0.65}
+fold 0 OUTER macro-AUC 0.6414 {'SCIN': 0.641435078560827}
+
+=== fold 1: inner-train 989, inner-val 201, outer 287 images ===
+fold 1 stage 1 epoch 1: loss 0.7561 inner-val macro-AUC 0.5649 {'SCIN': 0.565}
+fold 1 stage 1 epoch 2: loss 0.7044 inner-val macro-AUC 0.6077 {'SCIN': 0.608}
+fold 1 stage 1 epoch 3: loss 0.6761 inner-val macro-AUC 0.6344 {'SCIN': 0.634}
+fold 1 stage 1 epoch 4: loss 0.6520 inner-val macro-AUC 0.6493 {'SCIN': 0.649}
+fold 1 stage 1 epoch 5: loss 0.6356 inner-val macro-AUC 0.6557 {'SCIN': 0.656}
+fold 1 stage 1 epoch 6: loss 0.6110 inner-val macro-AUC 0.6586 {'SCIN': 0.659}
+fold 1 stage 1 epoch 7: loss 0.6041 inner-val macro-AUC 0.6641 {'SCIN': 0.664}
+fold 1 stage 1 epoch 8: loss 0.5811 inner-val macro-AUC 0.6642 {'SCIN': 0.664}
+fold 1 stage 1 epoch 9: loss 0.5859 inner-val macro-AUC 0.6655 {'SCIN': 0.666}
+fold 1 stage 1 epoch 10: loss 0.5694 inner-val macro-AUC 0.6615 {'SCIN': 0.661}
+fold 1 stage 1 epoch 11: loss 0.5669 inner-val macro-AUC 0.6602 {'SCIN': 0.66}
+fold 1 stage 1 epoch 12: loss 0.5521 inner-val macro-AUC 0.6648 {'SCIN': 0.665}
+fold 1 stage 1 epoch 13: loss 0.5417 inner-val macro-AUC 0.6611 {'SCIN': 0.661}
+fold 1 stage 2 epoch 1: loss 0.5880 inner-val macro-AUC 0.6592 {'SCIN': 0.659}
+fold 1 stage 2 epoch 2: loss 0.5837 inner-val macro-AUC 0.6592 {'SCIN': 0.659}
+fold 1 stage 2 epoch 3: loss 0.5897 inner-val macro-AUC 0.6593 {'SCIN': 0.659}
+fold 1 stage 2 epoch 4: loss 0.5776 inner-val macro-AUC 0.6620 {'SCIN': 0.662}
+fold 1 OUTER macro-AUC 0.6323 {'SCIN': 0.6322743612163606}
+
+=== fold 2: inner-train 969, inner-val 205, outer 303 images ===
+fold 2 stage 1 epoch 1: loss 0.7592 inner-val macro-AUC 0.5533 {'SCIN': 0.553}
+fold 2 stage 1 epoch 2: loss 0.7023 inner-val macro-AUC 0.5661 {'SCIN': 0.566}
+fold 2 stage 1 epoch 3: loss 0.6680 inner-val macro-AUC 0.5689 {'SCIN': 0.569}
+fold 2 stage 1 epoch 4: loss 0.6377 inner-val macro-AUC 0.5792 {'SCIN': 0.579}
+fold 2 stage 1 epoch 5: loss 0.6303 inner-val macro-AUC 0.5931 {'SCIN': 0.593}
+fold 2 stage 1 epoch 6: loss 0.6085 inner-val macro-AUC 0.5947 {'SCIN': 0.595}
+fold 2 stage 1 epoch 7: loss 0.5939 inner-val macro-AUC 0.6018 {'SCIN': 0.602}
+fold 2 stage 1 epoch 8: loss 0.5808 inner-val macro-AUC 0.6025 {'SCIN': 0.603}
+fold 2 stage 1 epoch 9: loss 0.5734 inner-val macro-AUC 0.6075 {'SCIN': 0.608}
+fold 2 stage 1 epoch 10: loss 0.5611 inner-val macro-AUC 0.6134 {'SCIN': 0.613}
+fold 2 stage 1 epoch 11: loss 0.5512 inner-val macro-AUC 0.6123 {'SCIN': 0.612}
+fold 2 stage 1 epoch 12: loss 0.5483 inner-val macro-AUC 0.6170 {'SCIN': 0.617}
+fold 2 stage 1 epoch 13: loss 0.5333 inner-val macro-AUC 0.6209 {'SCIN': 0.621}
+fold 2 stage 1 epoch 14: loss 0.5165 inner-val macro-AUC 0.6208 {'SCIN': 0.621}
+fold 2 stage 1 epoch 15: loss 0.5006 inner-val macro-AUC 0.6214 {'SCIN': 0.621}
+fold 2 stage 2 epoch 1: loss 0.5311 inner-val macro-AUC 0.6061 {'SCIN': 0.606}
+fold 2 stage 2 epoch 2: loss 0.5223 inner-val macro-AUC 0.6081 {'SCIN': 0.608}
+fold 2 stage 2 epoch 3: loss 0.5288 inner-val macro-AUC 0.6119 {'SCIN': 0.612}
+fold 2 stage 2 epoch 4: loss 0.5228 inner-val macro-AUC 0.6110 {'SCIN': 0.611}
+fold 2 OUTER macro-AUC 0.6224 {'SCIN': 0.6224237063246352}
+
+=== fold 3: inner-train 984, inner-val 196, outer 297 images ===
+fold 3 stage 1 epoch 1: loss 0.7572 inner-val macro-AUC 0.5465 {'SCIN': 0.546}
+fold 3 stage 1 epoch 2: loss 0.6979 inner-val macro-AUC 0.5857 {'SCIN': 0.586}
+fold 3 stage 1 epoch 3: loss 0.6655 inner-val macro-AUC 0.6093 {'SCIN': 0.609}
+fold 3 stage 1 epoch 4: loss 0.6481 inner-val macro-AUC 0.6286 {'SCIN': 0.629}
+fold 3 stage 1 epoch 5: loss 0.6345 inner-val macro-AUC 0.6516 {'SCIN': 0.652}
+fold 3 stage 1 epoch 6: loss 0.6197 inner-val macro-AUC 0.6477 {'SCIN': 0.648}
+fold 3 stage 1 epoch 7: loss 0.6136 inner-val macro-AUC 0.6508 {'SCIN': 0.651}
+fold 3 stage 1 epoch 8: loss 0.6049 inner-val macro-AUC 0.6562 {'SCIN': 0.656}
+fold 3 stage 1 epoch 9: loss 0.5861 inner-val macro-AUC 0.6667 {'SCIN': 0.667}
+fold 3 stage 1 epoch 10: loss 0.5731 inner-val macro-AUC 0.6685 {'SCIN': 0.669}
+fold 3 stage 1 epoch 11: loss 0.5660 inner-val macro-AUC 0.6668 {'SCIN': 0.667}
+fold 3 stage 1 epoch 12: loss 0.5517 inner-val macro-AUC 0.6598 {'SCIN': 0.66}
+fold 3 stage 1 epoch 13: loss 0.5429 inner-val macro-AUC 0.6601 {'SCIN': 0.66}
+fold 3 stage 1 epoch 14: loss 0.5364 inner-val macro-AUC 0.6503 {'SCIN': 0.65}
+fold 3 stage 2 epoch 1: loss 0.5908 inner-val macro-AUC 0.7008 {'SCIN': 0.701}
+fold 3 stage 2 epoch 2: loss 0.6008 inner-val macro-AUC 0.7027 {'SCIN': 0.703}
+fold 3 stage 2 epoch 3: loss 0.5856 inner-val macro-AUC 0.7012 {'SCIN': 0.701}
+fold 3 stage 2 epoch 4: loss 0.5837 inner-val macro-AUC 0.7002 {'SCIN': 0.7}
+fold 3 stage 2 epoch 5: loss 0.5721 inner-val macro-AUC 0.7053 {'SCIN': 0.705}
+fold 3 stage 2 epoch 6: loss 0.5859 inner-val macro-AUC 0.7032 {'SCIN': 0.703}
+fold 3 stage 2 epoch 7: loss 0.5854 inner-val macro-AUC 0.6985 {'SCIN': 0.698}
+fold 3 stage 2 epoch 8: loss 0.5866 inner-val macro-AUC 0.6979 {'SCIN': 0.698}
+fold 3 stage 2 epoch 9: loss 0.5722 inner-val macro-AUC 0.7021 {'SCIN': 0.702}
+fold 3 OUTER macro-AUC 0.6674 {'SCIN': 0.6673923112552108}
+
+=== fold 4: inner-train 966, inner-val 205, outer 306 images ===
+fold 4 stage 1 epoch 1: loss 0.7653 inner-val macro-AUC 0.5748 {'SCIN': 0.575}
+fold 4 stage 1 epoch 2: loss 0.6968 inner-val macro-AUC 0.6134 {'SCIN': 0.613}
+fold 4 stage 1 epoch 3: loss 0.6671 inner-val macro-AUC 0.6444 {'SCIN': 0.644}
+fold 4 stage 1 epoch 4: loss 0.6389 inner-val macro-AUC 0.6461 {'SCIN': 0.646}
+fold 4 stage 1 epoch 5: loss 0.6334 inner-val macro-AUC 0.6534 {'SCIN': 0.653}
+fold 4 stage 1 epoch 6: loss 0.6126 inner-val macro-AUC 0.6579 {'SCIN': 0.658}
+fold 4 stage 1 epoch 7: loss 0.6018 inner-val macro-AUC 0.6598 {'SCIN': 0.66}
+fold 4 stage 1 epoch 8: loss 0.5801 inner-val macro-AUC 0.6534 {'SCIN': 0.653}
+fold 4 stage 1 epoch 9: loss 0.5685 inner-val macro-AUC 0.6479 {'SCIN': 0.648}
+fold 4 stage 1 epoch 10: loss 0.5596 inner-val macro-AUC 0.6445 {'SCIN': 0.644}
+fold 4 stage 1 epoch 11: loss 0.5410 inner-val macro-AUC 0.6462 {'SCIN': 0.646}
+fold 4 stage 2 epoch 1: loss 0.5976 inner-val macro-AUC 0.6586 {'SCIN': 0.659}
+fold 4 stage 2 epoch 2: loss 0.6029 inner-val macro-AUC 0.6562 {'SCIN': 0.656}
+fold 4 stage 2 epoch 3: loss 0.5997 inner-val macro-AUC 0.6596 {'SCIN': 0.66}
+fold 4 stage 2 epoch 4: loss 0.5946 inner-val macro-AUC 0.6581 {'SCIN': 0.658}
+fold 4 OUTER macro-AUC 0.5923 {'SCIN': 0.592310737694101}
+{
+  "all": {
+    "auc": 0.6279,
+    "ci_low": 0.5938,
+    "ci_high": 0.6646,
+    "n_images": 1477,
+    "n_cases": 669,
+    "n_pos": 790
+  },
+  "zero_shot_all": {
+    "auc": 0.5206,
+    "ci_low": 0.4841,
+    "ci_high": 0.5596,
+    "n_images": 1477,
+    "n_cases": 669,
+    "n_pos": 790
+  },
+  "SCIN": {
+    "all": {
+      "auc": 0.6279,
+      "ci_low": 0.5938,
+      "ci_high": 0.6646,
+      "n_images": 1477,
+      "n_cases": 669,
+      "n_pos": 790
+    },
+    "zero_shot": {
+      "auc": 0.5206,
+      "ci_low": 0.4841,
+      "ci_high": 0.5596,
+      "n_images": 1477,
+      "n_cases": 669,
+      "n_pos": 790
+    },
+    "I-II": {
+      "auc": 0.6575,
+      "ci_low": 0.6037,
+      "ci_high": 0.7075,
+      "n_images": 660,
+      "n_cases": 294,
+      "n_pos": 338
+    },
+    "III-IV": {
+      "auc": 0.6171,
+      "ci_low": 0.5626,
+      "ci_high": 0.6736,
+      "n_images": 668,
+      "n_cases": 300,
+      "n_pos": 364
+    },
+    "V-VI": {
+      "auc": 0.5303,
+      "ci_low": 0.3803,
+      "ci_high": 0.6816,
+      "n_images": 119,
+      "n_cases": 59,
+      "n_pos": 77
+    }
+  },
+  "by_fst_all_sources": {
+    "I-II": {
+      "auc": 0.6575,
+      "ci_low": 0.6037,
+      "ci_high": 0.7075,
+      "n_images": 660,
+      "n_cases": 294,
+      "n_pos": 338
+    },
+    "III-IV": {
+      "auc": 0.6171,
+      "ci_low": 0.5626,
+      "ci_high": 0.6736,
+      "n_images": 668,
+      "n_cases": 300,
+      "n_pos": 364
+    },
+    "V-VI": {
+      "auc": 0.5303,
+      "ci_low": 0.3803,
+      "ci_high": 0.6816,
+      "n_images": 119,
+      "n_cases": 59,
+      "n_pos": 77
+    }
+  }
+}
+per-fold macro-AUC mean 0.6312 sd 0.0245
